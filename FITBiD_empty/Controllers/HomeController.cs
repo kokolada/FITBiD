@@ -14,7 +14,7 @@ namespace FITBiD_empty.Controllers
 
 		public ActionResult Index()
 		{
-			Student lista = ctx.Student.FirstOrDefault();
+			Ucionica uc = ctx.Ucionica.FirstOrDefault();
 			return View();
 		}
 
