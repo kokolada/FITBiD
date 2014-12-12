@@ -1,0 +1,28 @@
+﻿@using FITBiD_empty.Models
+@model FITBiD_empty.Models.Student
+
+<br />
+<form action="/Profile/Edit?studentId=1" method="post">
+	<div class="col-lg-offset-3 col-lg-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<b> @Model.Ime </b><b> @Model.Prezime</b>
+			</div>
+			<table class="table">
+				<tr>
+					<td>Broj indeksa :</td>
+					<td>@Model.BrojIndeksa</td>				
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>@Model.Email</td>
+				</tr>
+				<tr>
+					<td>Kontakt</td>	
+					<td>@Model.Kontakt</td>				
+				</tr>
+			</table>
+		</div>
+		<button type="submit" class="btn btn-primary right">Uredi profil</button>
+	</div>
+</form>
