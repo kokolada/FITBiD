@@ -1,0 +1,60 @@
+﻿@model IEnumerable<FITBiD_empty.Models.EvidencijaKnjigaZaIznajmljivanje>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Evidencija knjiga</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Knjiga.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Radnik.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.BrojIndeksa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumIzdavanja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumVracanja)
+        </th>
+        <th>
+            Akcije
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Knjiga.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Radnik.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.BrojIndeksa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumIzdavanja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumVracanja)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+            @*@Html.ActionLink("Done", "Done", new { id=item.Id })  --ovdje kazemo da je knjiga vraćena *@ 
+        </td>
+    </tr>
+}
+
+</table>
