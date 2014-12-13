@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FITBiD_empty.Models.EvidencijaKljuceva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kljuc.Barcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NastavnoOsoblje.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Radnik.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumPreuzimanja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumVracanja)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kljuc.Barcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NastavnoOsoblje.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Radnik.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumPreuzimanja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumVracanja)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
