@@ -118,7 +118,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookController.cs" />
+
+    <Compile Include="Controllers\BookRecordController.cs" />
+
     <Compile Include="Controllers\ClassroomController.cs" />
+
     <Compile Include="Controllers\DAController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KeyController.cs" />
@@ -169,6 +173,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\si009.app.fit.ba - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\harunCustom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -202,6 +207,12 @@
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Book\Edit.cshtml" />
+
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\BookRecord\Index.cshtml" />
+    <Content Include="Views\BookRecord\Create.cshtml" />
+    <Content Include="Views\BookRecord\Edit.cshtml" />
+
     <Content Include="Views\Classroom\Create.cshtml" />
     <Content Include="Views\Classroom\Edit.cshtml" />
     <Content Include="Views\Classroom\Index.cshtml" />
@@ -217,6 +228,7 @@
     <Content Include="Views\Workers\Create.cshtml" />
     <Content Include="Views\Workers\Delete.cshtml" />
     <Content Include="Views\Workers\Index.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
