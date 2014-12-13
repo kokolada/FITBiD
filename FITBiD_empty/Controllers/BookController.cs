@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace FITBiD_empty.Controllers
 {
-    public class BookController : Controller
+    public class BookController : DAController
     {
         // GET: Book
         public ActionResult Index()
