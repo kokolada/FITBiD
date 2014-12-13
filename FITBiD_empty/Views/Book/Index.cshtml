@@ -1,0 +1,108 @@
+﻿@model FITBiD_empty.Models.Knjiga
+
+@{
+    ViewBag.Title = "View";
+}
+
+<div class="container">
+    <br />
+    <div class="col-md-2 col-md-offset-2">
+        <img src="http://placehold.it/190x190&text=Korice" class="img-responsive" alt="Responsive image">
+    </div>
+    <div class="col-md-8">
+        <h4>@Html.DisplayFor(model => model.Naziv)Naslov knjige</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.GodinaObjavljivanja)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GodinaObjavljivanja)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Autor)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Autor)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OznakaStalaze)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OznakaStalaze)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ZaProdaju)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ZaProdaju)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cijena)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cijena)
+            </dd>
+
+            <dt>
+                Stanje:
+            </dt>
+
+            <dd>
+                22
+            </dd>
+
+            <dt>
+                Dostupna:
+            </dt>
+
+            <dd>
+                Da
+            </dd>
+        </dl>
+        <input class="btn btn-primary btn-sm" id="postaviPitanjeButton" type="button" value="Postavi pitanje" />
+        <input class="btn btn-primary btn-sm" id="izdvojiButton" type="button" value="Izdvoji" />
+        <input class="btn btn-primary btn-sm" id="rezervisiButton" type="button" value="Rezerviši" />
+        <input class="btn btn-primary btn-sm" id="kupiButton" type="button" value="Kupi" />
+    </div>
+    
+    <div class="col-lg-4 col-sm-6 col-md-offset-4"><br />
+        <div class="well">
+            <h4>What is on your mind?</h4>
+            <div class="input-group">
+                <input type="text" id="userComment" class="form-control input-sm chat-input" placeholder="Write your message here..." />
+                <span class="input-group-btn" onclick="addComment()">
+                    <a href="#" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-comment"></span> Add Comment</a>
+                </span>
+            </div>
+            <hr data-brackets-id="12673">
+            <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable">
+                <strong class="pull-left primary-font">James</strong>
+                <small class="pull-right text-muted">
+                    <span class="glyphicon glyphicon-time"></span>7 mins ago
+                </small>
+                </br>
+                <li class="ui-state-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
+                </br>
+                <strong class="pull-left primary-font">Taylor</strong>
+                <small class="pull-right text-muted">
+                    <span class="glyphicon glyphicon-time"></span>14 mins ago
+                </small>
+                </br>
+                <li class="ui-state-default">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+
+            </ul>
+        </div>
+    </div>
+
+    
+</div>
