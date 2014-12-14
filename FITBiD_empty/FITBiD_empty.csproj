@@ -119,10 +119,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\BookRecordController.cs" />
+    <Compile Include="Controllers\BookSaleController.cs" />
     <Compile Include="Controllers\ClassroomController.cs" />
     <Compile Include="Controllers\DAController.cs" />
-    <Compile Include="Controllers\ExamAccessoriesController.cs" />
-    <Compile Include="Controllers\ExamAccessoriesRecordController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KeyController.cs" />
     <Compile Include="Controllers\KeysRecordController.cs" />
@@ -225,15 +224,10 @@
     <Content Include="Views\Workers\Create.cshtml" />
     <Content Include="Views\Workers\Delete.cshtml" />
     <Content Include="Views\Workers\Index.cshtml" />
-    <Content Include="Views\ExamAccessories\Index.cshtml" />
-    <Content Include="Views\ExamAccessories\Create.cshtml" />
-    <Content Include="Views\ExamAccessories\Edit.cshtml" />
-    <Content Include="Views\ExamAccessoriesRecord\Index.cshtml" />
-    <Content Include="Views\ExamAccessoriesRecord\Create.cshtml" />
-    <Content Include="Views\ExamAccessoriesRecord\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\BookSale\" />
     <Folder Include="Views\DA\" />
   </ItemGroup>
   <ItemGroup>
