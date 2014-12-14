@@ -8,29 +8,29 @@ using System.Web.Mvc;
 
 namespace FITBiD_empty.Controllers
 {
-    public class BookRecordController : Controller
+    public class BookSaleController : Controller
     {
         MojContext ctx = new MojContext();
-        // GET: BookRecord
+        // GET: BookSale
         public ActionResult Index()
         {
-            List<EvidencijaKnjigaZaIznajmljivanje> Model = ctx.EvidencijaKnjigaZaIznajmljivanje.ToList();
+            List<EvidencijaKnjigaZaProdaju> Model = ctx.EvidencijaKnjigaZaProdaju.ToList();
             return View(Model);
         }
 
-        // GET: BookRecord/Details/5
+        // GET: BookSale/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: BookRecord/Create
+        // GET: BookSale/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: BookRecord/Create
+        // POST: BookSale/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -46,13 +46,14 @@ namespace FITBiD_empty.Controllers
             }
         }
 
-        // GET: BookRecord/Edit/5
+        // GET: BookSale/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            EvidencijaKnjigaZaProdaju Model = ctx.EvidencijaKnjigaZaProdaju.Find(id);
+            return View(Model);
         }
 
-        // POST: BookRecord/Edit/5
+        // POST: BookSale/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -68,13 +69,13 @@ namespace FITBiD_empty.Controllers
             }
         }
 
-        // GET: BookRecord/Delete/5
+        // GET: BookSale/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: BookRecord/Delete/5
+        // POST: BookSale/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
