@@ -1,0 +1,58 @@
+﻿@model FITBiD_empty.Models.EvidencijaKnjigaZaIznajmljivanje
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Detalji iznajmljivanja</h3>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Knjiga.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Knjiga.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Radnik.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Radnik.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.BrojIndeksa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.BrojIndeksa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumIzdavanja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumIzdavanja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumVracanja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumVracanja)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

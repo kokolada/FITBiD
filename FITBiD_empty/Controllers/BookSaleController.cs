@@ -11,84 +11,60 @@ namespace FITBiD_empty.Controllers
     public class BookSaleController : Controller
     {
         MojContext ctx = new MojContext();
-        // GET: BookSale
+       
         public ActionResult Index()
         {
             List<EvidencijaKnjigaZaProdaju> Model = ctx.EvidencijaKnjigaZaProdaju.ToList();
             return View(Model);
         }
 
-        // GET: BookSale/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            EvidencijaKnjigaZaProdaju Model = ctx.EvidencijaKnjigaZaProdaju.Find(id);
+            return View(Model);
         }
 
-        // GET: BookSale/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: BookSale/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: BookSale/Edit/5
         public ActionResult Edit(int id)
         {
             EvidencijaKnjigaZaProdaju Model = ctx.EvidencijaKnjigaZaProdaju.Find(id);
             return View(Model);
         }
 
-        // POST: BookSale/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: BookSale/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            EvidencijaKnjigaZaProdaju evidencija = ctx.EvidencijaKnjigaZaProdaju.Find(id);
+            ctx.EvidencijaKnjigaZaProdaju.Remove(evidencija);
+            ctx.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
-        // POST: BookSale/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Save(EvidencijaKnjigaZaProdaju evidencija) 
         {
-            try
+            EvidencijaKnjigaZaProdaju e;
+            if (evidencija.Id == 0)
             {
-                // TODO: Add delete logic here
+                e = new EvidencijaKnjigaZaProdaju();
+                ctx.EvidencijaKnjigaZaProdaju.Add(e);
+            }
+            else
+                e = ctx.EvidencijaKnjigaZaProdaju.Find(evidencija.Id);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            e.Knjiga = evidencija.Knjiga;
+            e.KnjigaId = evidencija.KnjigaId;
+            e.Radnik = evidencija.Radnik;
+            e.RadnikId = evidencija.RadnikId;
+            e.DatumEvidencije = evidencija.DatumEvidencije;
+
+            ctx.SaveChanges();
+
+            return RedirectToAction("Index");
         }
+        
     }
 }

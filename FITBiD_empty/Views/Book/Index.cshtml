@@ -1,106 +1,69 @@
-﻿@model FITBiD_empty.Models.Knjiga
+﻿@model IEnumerable<FITBiD_empty.Models.Knjiga>
 
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = "Index";
 }
 
-<div class="container">
-    <br />
-    <div class="col-md-2 ">
-        <img src="http://placehold.it/190x190&text=Korice" class="img-responsive" alt="Responsive image">
-    </div>
-    <div class="col-md-6" style="background-color:#f5f5f5; border: 1px solid #e3e3e3"> @*IZBACITI CSS U POSEBAN FAJL*@
-        <h4>@Html.DisplayFor(model => model.Naziv)</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayName("Godina")
-            </dt>
+<h3>Knjige</h3>
 
-            <dd>
-                @Html.DisplayFor(model => model.GodinaObjavljivanja)
-            </dd>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GodinaObjavljivanja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Barcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OznakaStalaze)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZaProdaju)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cijena)
+        </th>
+        <th></th>
+    </tr>
 
-            <dt>
-                @Html.DisplayName("Autor")
-            </dt>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GodinaObjavljivanja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Autor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Barcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OznakaStalaze)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZaProdaju)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cijena)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
-            <dd>
-                @Html.DisplayFor(model => model.Autor)
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Oznaka stalaže")
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.OznakaStalaze)
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Prodaja")
-            <dd>
-                @Html.DisplayFor(model => model.ZaProdaju)
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Cijena")
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Cijena) KM
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Stanje")
-            </dt>
-
-            <dd>
-                22
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Dostupno")
-            </dt>
-
-            <dd>
-                Da
-            </dd>
-        </dl>
-        <input class="btn btn-primary btn-sm" id="postaviPitanjeButton" type="button" value="Postavi pitanje" />
-        <input class="btn btn-primary btn-sm" id="izdvojiButton" type="button" value="Izdvoji" />
-        <input class="btn btn-primary btn-sm" id="rezervisiButton" type="button" value="Rezerviši" />
-        <input class="btn btn-primary btn-sm" id="kupiButton" type="button" value="Kupi" />
-    </div>
-    
-    <div class="col-lg-4 col-sm-6 col-md-4"><br />
-        <div class="well">
-            <h4>What is on your mind?</h4>
-            <div class="input-group">
-                <input type="text" id="userComment" class="form-control input-sm chat-input" placeholder="Write your message here..." />
-                <span class="input-group-btn" onclick="addComment()">
-                    <a href="#" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-comment"></span> Add Comment</a>
-                </span>
-            </div>
-            <hr data-brackets-id="12673">
-            <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable">
-                <strong class="pull-left primary-font">James</strong>
-                <small class="pull-right text-muted">
-                    <span class="glyphicon glyphicon-time"></span>7 mins ago
-                </small>
-                </br>
-                <li class="ui-state-default">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
-                </br>
-                <strong class="pull-left primary-font">Taylor</strong>
-                <small class="pull-right text-muted">
-                    <span class="glyphicon glyphicon-time"></span>14 mins ago
-                </small>
-                </br>
-                <li class="ui-state-default">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-
-            </ul>
-        </div>
-    </div>
-
-    
-</div>
+</table>

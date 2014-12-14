@@ -4,7 +4,7 @@
     ViewBag.Title = "View";
 }
 
-<h2>View</h2>
+<h3>Pregled prodaje knjiga</h3>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,7 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.DatumEvidencije)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayName("Opcije")
+        </th>
     </tr>
 
 @foreach (var item in Model) {

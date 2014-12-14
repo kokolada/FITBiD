@@ -11,25 +11,21 @@ namespace FITBiD_empty.Controllers
     public class BookController : DAController
     {
         MojContext ctx = new MojContext();
-        // GET: Book
-        public ActionResult Index(int bookId)
+        
+        public ActionResult Index()
         {
-            Knjiga Model = ctx.Knjiga.Find(bookId);
+            List<Knjiga> Model = ctx.Knjiga.ToList();
             return View(Model);
         }
 
-        // GET: Book/Create
         public ActionResult Create()
-        {
-            Knjiga Model = new Knjiga();
-            return View("Edit", Model);
+        {            
+            return View();
         }        
 
-        // GET: Book/Edit/5
         public ActionResult Edit(int bookId)
         {
-            Knjiga Model = ctx.Knjiga.Find(bookId);
-            
+            Knjiga Model = ctx.Knjiga.Find(bookId);            
             return View(Model);
         }
         
@@ -43,7 +39,7 @@ namespace FITBiD_empty.Controllers
             }
             else
                 knjiga = ctx.Knjiga.Find(k.Id);
-
+           
             knjiga.GodinaObjavljivanja = k.GodinaObjavljivanja;
             knjiga.Naziv = k.Naziv;
             knjiga.Autor = k.Autor;
@@ -51,40 +47,26 @@ namespace FITBiD_empty.Controllers
             knjiga.OznakaStalaze = k.OznakaStalaze;
             knjiga.Cijena = k.Cijena;
             knjiga.ZaProdaju = k.ZaProdaju;
-                        
+            knjiga.KnjigaKategorijas = k.KnjigaKategorijas;
+            
             ctx.SaveChanges();
 
             return RedirectToAction("Index");
         }
 
-        
-
-        // GET: Book/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Knjiga k = ctx.Knjiga.Find(id);
+            ctx.Knjiga.Remove(k);
+            ctx.SaveChanges();
+
+            return RedirectToAction("Index");
         }
-
-        // POST: Book/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Book/Details/5
+       
         public ActionResult Details(int id)
         {
-            return View();
+            Knjiga Model = ctx.Knjiga.Find(id);
+            return View(Model);
         }
     }
 }
