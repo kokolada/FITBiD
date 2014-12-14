@@ -1,0 +1,44 @@
+﻿@model IEnumerable<FITBiD_empty.Models.EvidencijaIspitnogMaterijala>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IspitniMaterijal.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Radnik.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumIzdavanjaMaterijala)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IspitniMaterijal.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Radnik.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumIzdavanjaMaterijala)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

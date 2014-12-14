@@ -118,12 +118,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BookController.cs" />
-
     <Compile Include="Controllers\BookRecordController.cs" />
-
     <Compile Include="Controllers\ClassroomController.cs" />
-
     <Compile Include="Controllers\DAController.cs" />
+    <Compile Include="Controllers\ExamAccessoriesController.cs" />
+    <Compile Include="Controllers\ExamAccessoriesRecordController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KeyController.cs" />
     <Compile Include="Controllers\KeysRecordController.cs" />
@@ -207,12 +206,10 @@
     <Content Include="Views\Profile\Edit.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Book\Edit.cshtml" />
-
     <Content Include="Views\Book\Create.cshtml" />
     <Content Include="Views\BookRecord\Index.cshtml" />
     <Content Include="Views\BookRecord\Create.cshtml" />
     <Content Include="Views\BookRecord\Edit.cshtml" />
-
     <Content Include="Views\Classroom\Create.cshtml" />
     <Content Include="Views\Classroom\Edit.cshtml" />
     <Content Include="Views\Classroom\Index.cshtml" />
@@ -228,7 +225,12 @@
     <Content Include="Views\Workers\Create.cshtml" />
     <Content Include="Views\Workers\Delete.cshtml" />
     <Content Include="Views\Workers\Index.cshtml" />
-
+    <Content Include="Views\ExamAccessories\Index.cshtml" />
+    <Content Include="Views\ExamAccessories\Create.cshtml" />
+    <Content Include="Views\ExamAccessories\Edit.cshtml" />
+    <Content Include="Views\ExamAccessoriesRecord\Index.cshtml" />
+    <Content Include="Views\ExamAccessoriesRecord\Create.cshtml" />
+    <Content Include="Views\ExamAccessoriesRecord\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
