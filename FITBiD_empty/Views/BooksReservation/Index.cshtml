@@ -1,0 +1,34 @@
+﻿@model FITBiD_empty.ViewModels.BooksReservationViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.NazivKnjige)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.StudentIme)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.DatumRezervacije)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.RezervacijaPotvrdjena)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>*@
+    </tr>
+
+
+</table>
