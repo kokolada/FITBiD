@@ -19,6 +19,7 @@ namespace FITBiD_empty.Controllers
             BooksReservationViewModel Model = new BooksReservationViewModel();
             Model.rezervacije = ctx.Rezervacija.Select(x => new BooksReservationViewModel.RezervacijaInfo
             {
+				Id = x.Id,
                 DatumRezervacije = x.DatumRezervacije,
                 RezervacijaPotvrdjena = x.RezervacijaPotvrdjena,
                 StudentIme = x.Student.Ime,
@@ -59,35 +60,33 @@ namespace FITBiD_empty.Controllers
 		
 
         // GET: BooksReservation/Edit/5
-        public ActionResult Edit(int rezervacijaId)
+        public ActionResult Edit(int id)
         {
-            Rezervacija r = ctx.Rezervacija.Where(x => x.Id == rezervacijaId).FirstOrDefault();
-            var Model = new BooksReservationEditViewModel.RezervacijaInfo
-            {
-                DatumRezervacije = r.DatumRezervacije,
-                RezervacijaPotvrdjena = r.RezervacijaPotvrdjena,
-
-                NazivKnjige = r.Knjiga.Naziv,
-                StudentIme = r.Student.Ime
-
+            Rezervacija r = ctx.Rezervacija.Where(x => x.Id == id).FirstOrDefault();
+			BooksReservationEditViewModel Model = new BooksReservationEditViewModel
+            {	
+			   ListaKnjiga = ctx.Knjiga.Select(x=> new SelectListItem {Value = x.Id.ToString(), Text = x.Naziv }).ToList()
             };
-            return View();
+            return View(Model);
         }
 
         // POST: BooksReservation/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+		public ActionResult Edit(BooksReservationEditViewModel rezervacija)
         {
-            try
-            {
-                // TODO: Add update logic here
+			if (!ModelState.IsValid) {
+				rezervacija.ListaKnjiga = ctx.Knjiga.Select(x=> new SelectListItem {Value = x.Id.ToString(), Text = x.Naziv }).ToList();
+				
+				return View("Edit",rezervacija);
+			}
+			else {
+				Rezervacija r = ctx.Rezervacija.Where(x => x.Id == rezervacija.Id).FirstOrDefault();
+				r.KnjigaId = rezervacija.KnjigaId;
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+				ctx.SaveChanges();
+				return RedirectToAction("Index");
+			}
+
         }
 
         // GET: BooksReservation/Delete/5
