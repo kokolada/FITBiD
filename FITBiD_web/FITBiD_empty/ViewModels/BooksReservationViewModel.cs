@@ -9,6 +9,7 @@ namespace FITBiD_empty.ViewModels
 	{
         public class RezervacijaInfo
         {
+			public int Id { get; set; }
             public DateTime DatumRezervacije { get; set; }
             public bool RezervacijaPotvrdjena { get; set; }
 
