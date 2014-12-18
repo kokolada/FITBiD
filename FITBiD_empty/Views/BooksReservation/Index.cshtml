@@ -10,25 +10,25 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-
+    @foreach(FITBiD_empty.ViewModels.BooksReservationViewModel.RezervacijaInfo item in Model.rezervacije) { 
     <tr>
         <td>
-            @Html.DisplayFor(model => model.NazivKnjige)
+            @item.NazivKnjige
         </td>
         <td>
-            @Html.DisplayFor(model => model.StudentIme)
+            @item.StudentIme
         </td>
         <td>
-            @Html.DisplayFor(model => model.DatumRezervacije)
+            @item.DatumRezervacije
         </td>
         <td>
-            @Html.DisplayFor(model => model.RezervacijaPotvrdjena)
+            @item.RezervacijaPotvrdjena
         </td>
         @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>*@
     </tr>
-
+    }
 
 </table>

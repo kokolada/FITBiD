@@ -5,7 +5,7 @@ using FITBiD_empty.Models;
 
 namespace FITBiD_empty.ViewModels
 {
-	public class BooksReservationViewModel
+	public class BooksReservationEditViewModel
 	{
         public class RezervacijaInfo
         {

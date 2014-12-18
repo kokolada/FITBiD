@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 using System.Web.Mvc;
-using System.Data.Entity;
 
 namespace FITBiD_empty.Controllers
 {
@@ -15,15 +15,18 @@ namespace FITBiD_empty.Controllers
         MojContext ctx = new MojContext();
         public ActionResult Index()
         {
-			//int id = 0;
-			BooksReservationViewModel booksReservationViewModel = new BooksReservationViewModel();
-				
-			//	booksReservationViewModel.DatumRezervacije = ctx.Rezervacija.FirstOrDefault().DatumRezervacije;
-			//	booksReservationViewModel.RezervacijaPotvrdjena = ctx.Rezervacija.FirstOrDefault().RezervacijaPotvrdjena;
-			//	booksReservationViewModel.NazivKnjige = ctx.Rezervacija.Include(x=>x.Knjiga).ToString();
-			//	booksReservationViewModel.StudentIme = ctx.Rezervacija.Include(u=>u.Student).ToString();
+            //int id = 0;
+            BooksReservationViewModel Model = new BooksReservationViewModel();
+            Model.rezervacije = ctx.Rezervacija.Select(x => new BooksReservationViewModel.RezervacijaInfo
+            {
+                DatumRezervacije = x.DatumRezervacije,
+                RezervacijaPotvrdjena = x.RezervacijaPotvrdjena,
+                StudentIme = x.Student.Ime,
+                NazivKnjige = x.Knjiga.Naziv
 
-			return View(booksReservationViewModel);
+            }).ToList();
+
+            return View(Model);
         }
 
         // GET: BooksReservation/Details/5
@@ -53,31 +56,21 @@ namespace FITBiD_empty.Controllers
                 return View();
             }
         }
-		public ActionResult Edit(BooksReservationViewModel booksReservationViewModel) {
-
-			Rezervacija rezervacija = new Rezervacija{
-
-				DatumRezervacije = booksReservationViewModel.DatumRezervacije,
-				RezervacijaPotvrdjena = booksReservationViewModel.RezervacijaPotvrdjena,
-
-			};
-			if (ModelState.IsValid) {
-				
-				return RedirectToAction("Edit");
-			}
-
-			else { 
-			
-			return View("Edit",booksReservationViewModel);
-			
-			}		
-		}
-
+		
 
         // GET: BooksReservation/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int rezervacijaId)
         {
+            Rezervacija r = ctx.Rezervacija.Where(x => x.Id == rezervacijaId).FirstOrDefault();
+            var Model = new BooksReservationEditViewModel.RezervacijaInfo
+            {
+                DatumRezervacije = r.DatumRezervacije,
+                RezervacijaPotvrdjena = r.RezervacijaPotvrdjena,
 
+                NazivKnjige = r.Knjiga.Naziv,
+                StudentIme = r.Student.Ime
+
+            };
             return View();
         }
 
