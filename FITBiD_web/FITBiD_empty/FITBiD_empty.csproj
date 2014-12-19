@@ -169,6 +169,7 @@
     <Compile Include="Models\Ucionica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BooksReservationEditViewModel.cs" />
+    <Compile Include="ViewModels\BooksReservationCreateViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -249,7 +250,7 @@
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\BooksReservation\Index.cshtml" />
     <Content Include="Views\BooksReservation\Edit.cshtml" />
-    <Content Include="Views\BooksReservation\Delete.cshtml" />
+    <Content Include="Views\BooksReservation\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
