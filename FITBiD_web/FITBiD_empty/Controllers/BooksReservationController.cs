@@ -15,14 +15,15 @@ namespace FITBiD_empty.Controllers
         MojContext ctx = new MojContext();
         public ActionResult Index()
         {
-            //int id = 0;
             BooksReservationViewModel Model = new BooksReservationViewModel();
             Model.rezervacije = ctx.Rezervacija.Select(x => new BooksReservationViewModel.RezervacijaInfo
             {
 				Id = x.Id,
                 DatumRezervacije = x.DatumRezervacije,
                 RezervacijaPotvrdjena = x.RezervacijaPotvrdjena,
-                StudentIme = x.Student.Ime,
+                BrojIndeskaStudenta = x.Student.BrojIndeksa,
+				ImeStudenta = x.Student.Ime,
+				PrezimeStudenta = x.Student.Prezime,
                 NazivKnjige = x.Knjiga.Naziv
 
             }).ToList();
@@ -39,23 +40,36 @@ namespace FITBiD_empty.Controllers
         // GET: BooksReservation/Create
         public ActionResult Create()
         {
-            return View();
+			BooksReservationCreateViewModel rezervacija = new BooksReservationCreateViewModel();
+			
+			rezervacija.ListaKnjiga = ctx.Knjiga.Select(x=> new SelectListItem {Value = x.Id.ToString(), Text = x.Naziv}).ToList();
+			rezervacija.ListaStudenata = ctx.Student.Select(y=> new SelectListItem {Value = y.Id.ToString(), Text = y.BrojIndeksa}).ToList();
+			
+			return View("Create",rezervacija);
         }
 
         // POST: BooksReservation/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+		public ActionResult Create(BooksReservationCreateViewModel rezervacija)
         {
-            try
-            {
-                // TODO: Add insert logic here
+			if (!ModelState.IsValid) {
+				rezervacija.ListaKnjiga = ctx.Knjiga.Select(x => new SelectListItem { Value = x.Id.ToString(), Text = x.Naziv }).ToList();
+				rezervacija.ListaStudenata = ctx.Student.Select(y => new SelectListItem { Value = y.Id.ToString(), Text = y.BrojIndeksa }).ToList();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+				return View("Create", rezervacija);
+			}
+			else { 
+				Rezervacija r = new Rezervacija();
+				r.DatumRezervacije = rezervacija.DatumRezervacije;
+				r.RezervacijaPotvrdjena = rezervacija.RezervacijaPotvrdjena;
+				r.KnjigaId = rezervacija.KnjigaId;
+				r.StudentId = rezervacija.StudentId;
+
+				ctx.Rezervacija.Add(r);
+				ctx.SaveChanges();
+				
+			}
+			return RedirectToAction("Index");
         }
 		
 
@@ -89,26 +103,13 @@ namespace FITBiD_empty.Controllers
 
         }
 
-        // GET: BooksReservation/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
-        }
+           Rezervacija r = ctx.Rezervacija.Find(id);
+		   ctx.Rezervacija.Remove(r);
+		   ctx.SaveChanges();
 
-        // POST: BooksReservation/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+		   return RedirectToAction("Index");
         }
 
     }

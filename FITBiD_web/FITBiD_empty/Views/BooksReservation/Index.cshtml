@@ -10,19 +10,46 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
+	<tr>
+		<th>
+			Naziv knjge
+		</th>
+		<th>
+			Broj Indeksa
+		</th>
+		<th>
+			Ime
+		</th>
+		<th>
+			Prezime
+		</th>
+		<th>
+			Datum rezervacije
+		</th>
+		<th>
+			Rezervacija potvrđena
+		</th>
+		<th></th>
+	</tr>
     @foreach(FITBiD_empty.ViewModels.BooksReservationViewModel.RezervacijaInfo item in Model.rezervacije) { 
     <tr>
         <td>
             @item.NazivKnjige
         </td>
+		<td>
+			@item.BrojIndeskaStudenta
+		</td>
         <td>
-            @item.StudentIme
+            @item.ImeStudenta
         </td>
+		<td>
+			@item.PrezimeStudenta
+		</td>
         <td>
             @item.DatumRezervacije
         </td>
         <td>
-            @item.RezervacijaPotvrdjena
+            @Html.DisplayFor(x => item.RezervacijaPotvrdjena)
         </td>
 		<td>
             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
