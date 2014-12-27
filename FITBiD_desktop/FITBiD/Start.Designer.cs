@@ -80,6 +80,7 @@
 			this.loginSubmit.TabIndex = 4;
 			this.loginSubmit.Text = "LOGIN";
 			this.loginSubmit.UseVisualStyleBackColor = true;
+			this.loginSubmit.Click += new System.EventHandler(this.loginSubmit_Click);
 			// 
 			// Start
 			// 
