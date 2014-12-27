@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace FITBiD
 {
-	public partial class Start : Form
+	public partial class Menu : Form
 	{
-		public Start()
+		public Menu()
 		{
 			InitializeComponent();
-		}
-
-		private void loginSubmit_Click(object sender, EventArgs e)
-		{
-			if (loginUsername.Text != "" && loginPassword.Text != "")
-			{
-				//pusti korisnika na glavnu formu
-			}
 		}
 	}
 }
