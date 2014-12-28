@@ -1,5 +1,6 @@
 ﻿using FITBiD_empty.DAL;
 using FITBiD_empty.Models;
+using FITBiD_empty.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,17 @@ using System.Web.Mvc;
 namespace FITBiD_empty.Controllers {
 	public class ProfileController : Controller {
 		MojContext ctx = new MojContext();
-		public ActionResult View(int studentId) {
-			Student Model = ctx.Student.Find(studentId);
+
+		public ActionResult Index(int studentId) {
+			ProfileViewModel Model = new ProfileViewModel();
+			Student s = ctx.Student.Find(studentId);
+			Model.brojIndeksa = s.BrojIndeksa;
+			Model.ime = s.Ime;
+			Model.prezime = s.Prezime;
+			Model.email = s.Email;
+			Model.kontakt = s.Kontakt;
+			Model.password=s.Password;
+
 			return View(Model);
 		}
 		public ActionResult Edit(int studentId) {
