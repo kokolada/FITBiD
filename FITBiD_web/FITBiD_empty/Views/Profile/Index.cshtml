@@ -1,31 +1,56 @@
-﻿@using FITBiD_empty.Models
-@model FITBiD_empty.Models.Student
-
-<br />
-@using (Html.BeginForm("Save", "Profile")) {
-	<div class="form-group">
-		<label for="imeInput">Ime</label>
-		<div>@Html.TextBoxFor(model => model.Ime, new { @class = "form-control" })</div>
-	</div>
-	<div class="form-group">
-		<label for="prezimeInput">Prezime</label>
-		<div>@Html.TextBoxFor(model => model.Prezime, new { @class = "form-control" })</div>
-	</div>
-	<div class="form-group">
-		<label for="passwordInput">Lozinka</label>
-		<div>@Html.TextBoxFor(model => model.Password, new { @class = "form-control" })</div>
-	</div>
-	<div class="form-group">
-		<label for="brojIndeksaInput">Broj indeksa</label>
-		<div>@Html.TextBoxFor(model => model.BrojIndeksa, new { @class = "form-control" })</div>
-	</div>
-	<div class="form-group">
-		<label for="emailInput">Email</label>
-		<div>@Html.TextBoxFor(model => model.Email, new { @class = "form-control", type = "email" })</div>
-	</div>
-	<div class="form-group">
-		<label for="kontaktInput">Kontakt</label>
-		<div>@Html.TextBoxFor(model => model.Kontakt, new { @class = "form-control" })</div>
-	</div>
-	<button type="submit" class="btn btn-primary">Sačuvaj</button>
+﻿@model FITBiD_empty.ViewModels.ProfileViewModel
+@{
+    ViewBag.Title = "Index";
 }
+
+<h2>Index</h2>
+
+<div class="form-horizontal">
+	<h4>Student</h4>
+	<hr />
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<div class="form-group">
+		<label class="control-label col-md-2">Broj indeksa</label>
+		<div class="col-md-10">
+			@Html.EditorFor(model => model.brojIndeksa, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.brojIndeksa, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2">Ime</label>
+		<div class="col-md-10">
+			@Html.EditorFor(model => model.ime, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.ime, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2">Prezime</label>
+		<div class="col-md-10">
+			@Html.EditorFor(model => model.prezime, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.prezime, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2">Email</label>
+		<div class="col-md-10">
+			@Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2">Kontakt</label>
+		<div class="col-md-10">
+			@Html.EditorFor(model => model.kontakt, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.kontakt, "", new { @class = "text-danger" })
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2">Password</label>
+		<div class="col-md-10">
+			@Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+			@Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+		</div>
+	</div>
+
+
+</div>
