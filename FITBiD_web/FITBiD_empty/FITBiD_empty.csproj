@@ -182,10 +182,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\BookRecordController.cs" />
     <Compile Include="Controllers\BookSaleController.cs" />
@@ -196,7 +193,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KeyController.cs" />
     <Compile Include="Controllers\KeysRecordController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\WorkersController.cs" />
@@ -214,7 +210,6 @@
     <Compile Include="Models\EvidencijaNarudzbeIspitnogMaterijala.cs" />
     <Compile Include="Models\EvidencijaNotifikacija.cs" />
     <Compile Include="Models\EvidencijaPrijava.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IspitniMaterijal.cs" />
     <Compile Include="Models\Izvjestaj.cs" />
     <Compile Include="Models\KategorijaKnjige.cs" />
@@ -249,7 +244,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
-    <Fakes Include="Fakes\EntityFramework.fakes" />
     <None Include="Properties\PublishProfiles\si009.app.fit.ba - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\harunCustom.js" />
