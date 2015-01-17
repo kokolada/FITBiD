@@ -19,10 +19,13 @@ namespace FITBiD
 
 		private void loginSubmit_Click(object sender, EventArgs e)
 		{
-			if (loginUsername.Text != "" && loginPassword.Text != "")
-			{
+
+			Menu frm_menu = new Menu();
+			frm_menu.Show();
+			/*if (loginUsername.Text != "" && loginPassword.Text != "") {
 				//pusti korisnika na glavnu formu
-			}
+
+			}*/
 		}
 	}
 }
