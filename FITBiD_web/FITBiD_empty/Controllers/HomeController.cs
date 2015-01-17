@@ -31,11 +31,6 @@ namespace FITBiD_empty.Controllers
 
 			return View();
 		}
-		public ActionResult Login() {
-			
-			ViewBag.Message = "Login stranica";
-
-			return View();
-		}
+		
 	}
 }
