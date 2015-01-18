@@ -1,50 +1,25 @@
-﻿@model IEnumerable<FITBiD_empty.Models.Radnik>
+﻿@model FITBiD_empty.ViewModels.WorkersViewModel
 
-@{
-    ViewBag.Title = "Index";
-}
 
-<h2>Index</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Ucionica</th>
+			<th>Bar Kod Kljuca</th>
+			<th>Nastavno osoblje</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(FITBiD_empty.ViewModels.WorkersViewModel.EvidencijaKljucevaInfo x in Model.eki) {
+			<tr>
+				<td>@x.NazivUcionice</td>
+				<td>@x.BarKodKljuca</td>
+				<td>@x.NastavnoOsoblje</td>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Ime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Prezime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Prezime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+			</tr>
 
+		}
+
+	</tbody>
 </table>
