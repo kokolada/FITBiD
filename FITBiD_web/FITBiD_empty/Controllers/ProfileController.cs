@@ -10,7 +10,7 @@ using System.Web.Mvc;
 namespace FITBiD_empty.Controllers {
 	public class ProfileController : Controller {
 		MojContext ctx = new MojContext();
-
+        
 		public ActionResult Index(int studentId) {
 			ProfileViewModel Model = new ProfileViewModel();
 			Student s = ctx.Student.Find(studentId);
@@ -45,5 +45,14 @@ namespace FITBiD_empty.Controllers {
 
 			return RedirectToAction("Index", "Home");
 		}
+
+        public ActionResult Home(int studentId)
+        {
+            StudentBoardViewModel board = new StudentBoardViewModel();
+            //board.ListaRezervisanihKnjiga = ctx.Rezervacija.Where(x => x.Id == studentId).ToList();
+            //board.ListaIznajmljenihKnjiga = ctx.
+            return View("Home", board);
+        }
+
 	}
 }
