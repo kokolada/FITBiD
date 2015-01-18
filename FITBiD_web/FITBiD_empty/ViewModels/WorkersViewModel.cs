@@ -14,6 +14,7 @@ namespace FITBiD_empty.ViewModels {
 			public string NastavnoOsoblje { get; set; }
 			public string BarKodKljuca { get; set; }
 			public DateTime DatumPreuzimanja { get; set; }
+			public DateTime? DatumVracanja { get; set;}
 
 		}
 		public List<EvidencijaKljucevaInfo> eki { get; set; }
