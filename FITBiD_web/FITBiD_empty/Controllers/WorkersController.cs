@@ -17,15 +17,15 @@ namespace FITBiD_empty.Controllers
         public ActionResult Index()
         {
 			WorkersViewModel Model = new WorkersViewModel();
-			List<WorkersViewModel.EvidencijaKljucevaInfo> KljuceviInfo = ctx.EvidencijaKljuceva
-				.Where(x=>x.KljucId != null && x.NastavnoOsobljeId != null)
+			Model.eki = ctx.EvidencijaKljuceva
+				.Where(x=>x.DatumVracanja != null)							//ne vraća sa uslovom ==
 				.Select(x=> new WorkersViewModel.EvidencijaKljucevaInfo(){
 					NazivUcionice = x.Kljuc.Ucionica.Naziv,
-					NastavnoOsoblje = x.Radnik.Ime + " " +x.Radnik.Prezime,
-					BarKodKljuca = x.Kljuc.Barcode
+					NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " +x.NastavnoOsoblje.Prezime,
+					BarKodKljuca = x.Kljuc.Barcode,
+					DatumPreuzimanja = x.DatumPreuzimanja
 				}).ToList();
 
-			Model.eki = KljuceviInfo;
 			return View(Model);
         }
 
