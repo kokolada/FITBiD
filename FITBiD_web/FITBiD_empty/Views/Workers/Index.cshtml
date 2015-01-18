@@ -1,27 +1,33 @@
 ﻿@using FITBiD_empty.ViewModels
 @model FITBiD_empty.ViewModels.WorkersViewModel
 
-
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Ucionica</th>
-			<th>Bar Kod Kljuca</th>
-			<th>Nastavno osoblje</th>
-			<th>Datum preuzimanja</th>
-
-		</tr>
-	</thead>
-	<tbody>
-		@foreach(var x in Model.eki) {
+<div class="col-md-6">
+	<table class="table table-striped col-md-4">
+		<thead>
 			<tr>
-				<td>@x.NazivUcionice</td>
-				<td>@x.BarKodKljuca</td>
-				<td>@x.NastavnoOsoblje</td>
-				<td>@x.DatumPreuzimanja</td>
+				<th>Ucionica</th>
+				<th>Barkod Kljuca</th>
+				<th>Nastavno osoblje</th>
+				<th>Datum preuzimanja</th>
+
 			</tr>
+		</thead>
+		<tbody>
+			@foreach (var x in Model.eki) {
+				<tr>
+					<td>@x.NazivUcionice</td>
+					<td>@x.BarKodKljuca</td>
+					<td>@x.NastavnoOsoblje</td>
+					<td>@x.DatumPreuzimanja</td>
+				</tr>
 
-		}
+			}
+		</tbody>
+	</table>
+	@using (Ajax.BeginForm("Create", "Workers", new AjaxOptions() { UpdateTargetId = "dodajNoviKljuc" })) { 
+		<input value="Dodaj" type="submit" class="btn btn-default"/>
+	}
+	
+</div>
 
-	</tbody>
-</table>
+<div id="dodajNoviKljuc"></div>

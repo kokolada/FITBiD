@@ -18,13 +18,13 @@ namespace FITBiD_empty.Controllers
         {
 			WorkersViewModel Model = new WorkersViewModel();
 			Model.eki = ctx.EvidencijaKljuceva
-				.Where(x=>x.DatumVracanja != null)							//ne vraća sa uslovom ==
 				.Select(x=> new WorkersViewModel.EvidencijaKljucevaInfo(){
 					NazivUcionice = x.Kljuc.Ucionica.Naziv,
-					NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " +x.NastavnoOsoblje.Prezime,
+					NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " + x.NastavnoOsoblje.Prezime,
 					BarKodKljuca = x.Kljuc.Barcode,
-					DatumPreuzimanja = x.DatumPreuzimanja
-				}).ToList();
+					DatumPreuzimanja = x.DatumPreuzimanja,
+					DatumVracanja = x.DatumVracanja
+				}).Where(y=>y.DatumVracanja == null).ToList();
 
 			return View(Model);
         }
