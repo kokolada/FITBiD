@@ -1,4 +1,5 @@
-﻿@model FITBiD_empty.ViewModels.WorkersViewModel
+﻿@using FITBiD_empty.ViewModels
+@model FITBiD_empty.ViewModels.WorkersViewModel
 
 
 <table class="table table-striped">
@@ -7,16 +8,17 @@
 			<th>Ucionica</th>
 			<th>Bar Kod Kljuca</th>
 			<th>Nastavno osoblje</th>
+			<th>Datum preuzimanja</th>
+
 		</tr>
 	</thead>
 	<tbody>
-		@foreach(FITBiD_empty.ViewModels.WorkersViewModel.EvidencijaKljucevaInfo x in Model.eki) {
+		@foreach(var x in Model.eki) {
 			<tr>
 				<td>@x.NazivUcionice</td>
 				<td>@x.BarKodKljuca</td>
 				<td>@x.NastavnoOsoblje</td>
-
-
+				<td>@x.DatumPreuzimanja</td>
 			</tr>
 
 		}
