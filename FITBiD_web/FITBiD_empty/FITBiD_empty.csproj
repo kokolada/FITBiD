@@ -193,6 +193,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KeyController.cs" />
     <Compile Include="Controllers\KeysRecordController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\WorkersController.cs" />
