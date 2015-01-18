@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FITBiD_empty", "FITBiD_empty\FITBiD_empty.csproj", "{EF141095-915A-4D86-B75E-369B9B40B7A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FITBiD", "..\FITBiD_desktop\FITBiD\FITBiD.csproj", "{1AFC6168-F3B6-496B-9A37-811438CB4788}"
-EndProject
 Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -17,19 +19,11 @@ Global
 		{EF141095-915A-4D86-B75E-369B9B40B7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF141095-915A-4D86-B75E-369B9B40B7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF141095-915A-4D86-B75E-369B9B40B7A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1AFC6168-F3B6-496B-9A37-811438CB4788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AFC6168-F3B6-496B-9A37-811438CB4788}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AFC6168-F3B6-496B-9A37-811438CB4788}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AFC6168-F3B6-496B-9A37-811438CB4788}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
-	EndGlobalSection
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
