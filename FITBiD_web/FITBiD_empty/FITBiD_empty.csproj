@@ -235,6 +235,7 @@
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationViewModel.cs" />
     <Compile Include="ViewModels\StudentBoardViewModel.cs" />
+    <Compile Include="ViewModels\WorkersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />

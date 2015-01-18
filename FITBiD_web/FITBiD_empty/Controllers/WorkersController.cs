@@ -1,10 +1,12 @@
 ﻿using FITBiD_empty.DAL;
 using FITBiD_empty.Models;
+using FITBiD_empty.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace FITBiD_empty.Controllers
 {
@@ -14,8 +16,17 @@ namespace FITBiD_empty.Controllers
 		MojContext ctx = new MojContext();
         public ActionResult Index()
         {
-			List<Radnik> radnici = ctx.Radnik.ToList();
-            return View(radnici);
+			WorkersViewModel Model = new WorkersViewModel();
+			List<WorkersViewModel.EvidencijaKljucevaInfo> KljuceviInfo = ctx.EvidencijaKljuceva
+				.Where(x=>x.KljucId != null && x.NastavnoOsobljeId != null)
+				.Select(x=> new WorkersViewModel.EvidencijaKljucevaInfo(){
+					NazivUcionice = x.Kljuc.Ucionica.Naziv,
+					NastavnoOsoblje = x.Radnik.Ime + " " +x.Radnik.Prezime,
+					BarKodKljuca = x.Kljuc.Barcode
+				}).ToList();
+
+			Model.eki = KljuceviInfo;
+			return View(Model);
         }
 
         // GET: Workers/Details/5
