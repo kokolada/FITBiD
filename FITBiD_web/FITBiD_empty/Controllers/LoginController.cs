@@ -1,4 +1,6 @@
 ﻿using FITBiD_empty.DAL;
+using FITBiD_empty.Helper;
+using FITBiD_empty.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,20 +28,44 @@ namespace FITBiD_empty.Controllers
 				var user = ctx.Radnik.Where(x => x.Username == username).Where(x => x.Password == password).FirstOrDefault();
 				if (user != null)
 				{
-					Session.Add("user", user);
-					return Redirect("/");
+					Korisnik k = new Korisnik();
+					k.Id = user.Id;
+					k.Ime = user.Ime;
+					k.Prezime = user.Prezime;
+					k.username = user.Username;
+					k.password = user.Password;
+					k.rola = "radnik";
+
+					Autentifikacija.PokreniNovuSesiju(k, HttpContext,false);
+
+					return Redirect("/");	
 				}
 				else
 				{
 					var student = ctx.Student.Where(x => x.BrojIndeksa == username).Where(x => x.Password == password).FirstOrDefault();
 					if (student != null)
 					{
-						Session.Add("user", student);
+						Korisnik k = new Korisnik();
+						k.Id = user.Id;
+						k.Ime = user.Ime;
+						k.Prezime = user.Prezime;
+						k.username = user.Username;
+						k.password = user.Password;
+						k.rola = "student";
+
+						Autentifikacija.PokreniNovuSesiju(k, HttpContext, false);
+
 						return Redirect("/Profile/Index?studentId=1");
 					}
 				}
 			}
 			return View("Login");
+		}
+
+		public ActionResult Logout()
+		{
+			Autentifikacija.PokreniNovuSesiju(null, HttpContext, true);
+			return RedirectToAction("Index");
 		}
 	}
 }
