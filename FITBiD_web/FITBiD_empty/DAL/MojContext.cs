@@ -34,6 +34,7 @@ namespace FITBiD_empty.DAL
 		public DbSet<Rezervacija> Rezervacija { get; set; }
 		public DbSet<Student> Student { get; set; }
 		public DbSet<Ucionica> Ucionica { get; set; }
+		public DbSet<Komentar> Komentar { get; set; }
 
 
 
@@ -53,6 +54,8 @@ namespace FITBiD_empty.DAL
 				.HasMany(c => c.KnjigaKategorijas)
 				.WithRequired()
 				.HasForeignKey(c => c.KategorijaKnjigeId);
+
+			modelBuilder.Entity<Komentar>().HasRequired(c => c.Student).WithMany().WillCascadeOnDelete(false);
 		}
 	}
 }

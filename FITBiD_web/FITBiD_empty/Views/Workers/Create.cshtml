@@ -1,8 +1,56 @@
-﻿@model FITBiD_empty.ViewModels.WorkersViewModel
+﻿@model FITBiD_empty.ViewModels.EvidencijaKljucaViewModel
+
+@{
+	ViewBag.Title = "Create";
+}
 
 <h2>Create</h2>
 
-<div>
-	<label>Radi</label>
-</div>
+@using (Html.BeginForm()) 
+{
+	@Html.AntiForgeryToken()
+	
+	<div class="form-horizontal">
+		<h4>EvidencijaKljuceva</h4>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+		<div class="form-group">
+			@Html.LabelFor(model => model.ListaOsoblja, "ListaOsoblja", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<select name="Nastavnik">
+					<option>Odaberi Nastavnika</option>
+					@foreach (FITBiD_empty.Models.NastavnoOsoblje nastavnik in Model.ListaOsoblja)
+					{
+						<option value="@nastavnik.Id">@nastavnik.Ime</option>
+					}
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.ListaKljuceva, "ListaKljuceva", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<select name="Kljuc">
+					<option>Odaberi Kljuc</option>
+					@foreach (FITBiD_empty.Models.Kljuc nastavnik in Model.ListaKljuceva)
+					{
+						<option value="@nastavnik.Id">@nastavnik.Barcode</option>
+					}
+				</select>
+			</div>
+		</div>
+
+		<input type="hidden" name="Radnik" value="@Model.RadnikID" />
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="Create" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>

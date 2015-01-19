@@ -10,12 +10,12 @@ using System.Web.Mvc;
 
 namespace FITBiD_empty.Controllers
 {
-    public class WorkersController : Controller
-    {
-        // GET: Workers
+	public class WorkersController : Controller
+	{
+		// GET: Workers
 		MojContext ctx = new MojContext();
-        public ActionResult Index()
-        {
+		public ActionResult Index()
+		{
 			WorkersViewModel Model = new WorkersViewModel();
 			Model.listaEvidencijaKljuceva = ctx.EvidencijaKljuceva
 				.Select(x=> new WorkersViewModel.EvidencijaKljucevaInfo(){
@@ -51,62 +51,81 @@ namespace FITBiD_empty.Controllers
 
 
 			return View(Model);
-        }
+		}
 
-        // GET: Workers/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+		// GET: Workers/Details/5
+		public ActionResult Details(int id)
+		{
+			return View();
+		}
 
-        // GET: Workers/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+		// GET: Workers/Create
+		public ActionResult Create()
+		{
+			EvidencijaKljucaViewModel Model = new EvidencijaKljucaViewModel();
+			Model.DatumPreuzimanja = DateTime.Now;
+			Model.ListaKljuceva = ctx.Kljuc.ToList();
+			Model.ListaOsoblja = ctx.NastavnoOsoblje.ToList();
+			Model.RadnikID = 1;
+			return View(Model);
+		}
+		[HttpPost]
+		public ActionResult Create(int Nastavnik, int Kljuc, int Radnik)
+		{
+			EvidencijaKljuceva evK = new EvidencijaKljuceva();
+			evK.KljucId = Kljuc;
+			evK.NastavnoOsobljeId = Nastavnik;
+			evK.RadnikId = Radnik;
+			evK.DatumPreuzimanja = DateTime.Now;
 
-        // GET: Workers/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+			ctx.EvidencijaKljuceva.Add(evK);
+			ctx.SaveChanges();
 
-        // POST: Workers/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
+			return RedirectToAction("Index");
+		}
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+		// GET: Workers/Edit/5
+		public ActionResult Edit(int id)
+		{
+			return View();
+		}
 
-        // GET: Workers/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+		// POST: Workers/Edit/5
+		[HttpPost]
+		public ActionResult Edit(int id, FormCollection collection)
+		{
+			try
+			{
+				// TODO: Add update logic here
 
-        // POST: Workers/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+				return RedirectToAction("Index");
+			}
+			catch
+			{
+				return View();
+			}
+		}
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-    }
+		// GET: Workers/Delete/5
+		public ActionResult Delete(int id)
+		{
+			return View();
+		}
+
+		// POST: Workers/Delete/5
+		[HttpPost]
+		public ActionResult Delete(int id, FormCollection collection)
+		{
+			try
+			{
+				// TODO: Add delete logic here
+
+				return RedirectToAction("Index");
+			}
+			catch
+			{
+				return View();
+			}
+		}
+	}
 }

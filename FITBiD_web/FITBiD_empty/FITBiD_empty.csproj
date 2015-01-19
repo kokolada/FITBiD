@@ -220,6 +220,7 @@
     <Compile Include="Models\Kljuc.cs" />
     <Compile Include="Models\Knjiga.cs" />
     <Compile Include="Models\KnjigaKategorija.cs" />
+    <Compile Include="Models\Komentar.cs" />
     <Compile Include="Models\LoginEvidencija.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Menadzment.cs" />
@@ -234,6 +235,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BooksReservationEditViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationCreateViewModel.cs" />
+    <Compile Include="ViewModels\EvidencijaKljucaViewModel.cs" />
     <Compile Include="ViewModels\Korisnik.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationViewModel.cs" />
@@ -304,7 +306,6 @@
     <Content Include="Views\Teachers\Create.cshtml" />
     <Content Include="Views\Teachers\Edit.cshtml" />
     <Content Include="Views\Teachers\Index.cshtml" />
-    <Content Include="Views\Workers\Create.cshtml" />
     <Content Include="Views\Workers\Delete.cshtml" />
     <Content Include="Views\Workers\Index.cshtml" />
     <Content Include="Views\BookSale\Create.cshtml" />
@@ -343,7 +344,6 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Profile\Create.cshtml" />
     <Content Include="Views\Profile\StudentBoard.cshtml" />
-    <Content Include="Views\Profile\PitanjeOdgovor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
