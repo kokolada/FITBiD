@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FITBiD_empty.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,26 +24,11 @@ namespace FITBiD_empty.Controllers
         // GET: KeysRecord/Create
         public ActionResult Create()
         {
-            return View();
+			EvidencijaKljuceva Model = new EvidencijaKljuceva();
+			Model.DatumPreuzimanja = DateTime.Now;
+            return View(Model);
         }
 
-        // POST: KeysRecord/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: KeysRecord/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
