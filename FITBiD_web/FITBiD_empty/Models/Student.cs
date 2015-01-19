@@ -14,5 +14,7 @@ namespace FITBiD_empty.Models
 		public string Email { get; set; }
 		public string Kontakt { get; set; }
 		public string Password { get; set; }
+
+		public List<Komentar> Komentars { get; set; }
 	}
 }
