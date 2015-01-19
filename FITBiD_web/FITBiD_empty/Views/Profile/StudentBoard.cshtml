@@ -1,0 +1,75 @@
+﻿@using FITBiD_empty.ViewModels;
+@{
+    ViewBag.Title = "StudentBoard";
+}
+
+@model FITBiD_empty.ViewModels.StudentBoardViewModel
+
+<h2 class="page-header">Student board</h2>
+<div class="col-md-6">
+    <h3>Pitanja i odgovori</h3>
+    <table class="table">
+        <tr>
+            <th>Status</th>
+            <th>Student</th>
+            <th>Kategorija</th>
+            <th>Akcije</th>
+        </tr>
+        @foreach (FITBiD_empty.Models.Objava x in Model.objave)
+        {
+            <tr>
+                <td>@x.Sadrzaj</td>
+                <td>@x.Student.Ime</td>
+                <td>@x.KategorijaObjave.Naziv</td>
+                <td>@Html.ActionLink("Odgovori", "")</td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+<div class="col-md-6" id="BookInfoTabels">
+    <h3>Rezervisane knjige</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>Knjiga</th>
+            <th>Datum rezervacije</th>
+            <th>Status</th>
+            <th>Akcije</th>
+        </tr>
+        @foreach (FITBiD_empty.Models.Rezervacija x in Model.rezervisaneKnjige)
+        {
+            <tr>
+                <td>@x.Knjiga.Naziv</td>
+                <td>@x.DatumRezervacije.ToShortDateString()</td>
+                <td>@(x.RezervacijaPotvrdjena ? "Prihvaćeno" : "Odbijeno")</td>
+                <td>@Html.ActionLink("Detalji", "")</td>
+            </tr>
+        }
+
+    </table>
+
+    <hr/>
+    <h3>Iznajmljene knjige</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>Knjiga</th>
+            <th>Datum izdavanja</th>
+            <th>Datum vraćanja</th>
+            <th>Akcije</th>
+        </tr>
+        @foreach (FITBiD_empty.Models.EvidencijaKnjigaZaIznajmljivanje x in Model.iznajmljeneKnjige)
+        {
+            <tr>
+                <td>@x.Knjiga.Naziv</td>
+                <td>@x.DatumIzdavanja.ToShortDateString()</td>
+                <td>@x.DatumVracanja.ToShortDateString()</td>
+                <td>@Html.ActionLink("Detalji", "Details", "BookRecordController", new {id = x.Id})</td>
+              
+            </tr>
+        }
+
+    </table>
+
+</div>
