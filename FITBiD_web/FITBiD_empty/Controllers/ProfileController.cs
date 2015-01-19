@@ -3,6 +3,7 @@ using FITBiD_empty.Models;
 using FITBiD_empty.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -46,12 +47,28 @@ namespace FITBiD_empty.Controllers {
 			return RedirectToAction("Index", "Home");
 		}
 
-        public ActionResult Home(int studentId)
+        public ActionResult StudentBoard(int studentId)
         {
-            StudentBoardViewModel board = new StudentBoardViewModel();
-            //board.ListaRezervisanihKnjiga = ctx.Rezervacija.Where(x => x.Id == studentId).ToList();
-            //board.ListaIznajmljenihKnjiga = ctx.
-            return View("Home", board);
+            
+            StudentBoardViewModel Model = new StudentBoardViewModel();
+
+            Model.objave = ctx.Objava
+                .Include(x => x.Student)
+                .Include(x => x.KategorijaObjave)
+                .ToList();
+
+            Model.iznajmljeneKnjige = ctx.EvidencijaKnjigaZaIznajmljivanje
+                    .Where(x => x.StudentId == studentId)
+                    .Include(x => x.Knjiga)
+                    .ToList();
+
+            
+            Model.rezervisaneKnjige = ctx.Rezervacija
+                .Where(x => x.StudentId == studentId)
+                .Include(x => x.Knjiga)
+                .ToList();
+
+            return View(Model);
         }
 
 	}
