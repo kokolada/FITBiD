@@ -1,56 +1,43 @@
-﻿@model FITBiD_empty.ViewModels.ProfileViewModel
+﻿@using Microsoft.AspNet.Identity
+@model FITBiD_empty.ViewModels.ProfileViewModel
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Podaci o studentu</h2>
 
-<div class="form-horizontal">
-	<h4>Student</h4>
-	<hr />
-	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-	<div class="form-group">
-		<label class="control-label col-md-2">Broj indeksa</label>
-		<div class="col-md-10">
-			@Html.EditorFor(model => model.brojIndeksa, new { htmlAttributes = new { @class = "form-control" } })
-			@Html.ValidationMessageFor(model => model.brojIndeksa, "", new { @class = "text-danger" })
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-2">Ime</label>
-		<div class="col-md-10">
-			@Html.EditorFor(model => model.ime, new { htmlAttributes = new { @class = "form-control" } })
-			@Html.ValidationMessageFor(model => model.ime, "", new { @class = "text-danger" })
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-2">Prezime</label>
-		<div class="col-md-10">
-			@Html.EditorFor(model => model.prezime, new { htmlAttributes = new { @class = "form-control" } })
-			@Html.ValidationMessageFor(model => model.prezime, "", new { @class = "text-danger" })
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-2">Email</label>
-		<div class="col-md-10">
-			@Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-			@Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-2">Kontakt</label>
-		<div class="col-md-10">
-			@Html.EditorFor(model => model.kontakt, new { htmlAttributes = new { @class = "form-control" } })
-			@Html.ValidationMessageFor(model => model.kontakt, "", new { @class = "text-danger" })
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label col-md-2">Password</label>
-		<div class="col-md-10">
-			@Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-			@Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-		</div>
-	</div>
-
-
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Broj indexa")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.brojIndeksa)
+        </dd>
+        <dt>
+            @Html.DisplayName("Ime")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ime)
+        </dd>
+        <dt>
+            @Html.DisplayName("Prezime")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.prezime)
+        </dd>
+        <dt>
+            @Html.DisplayName("Email")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayName("Kontakt")
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.kontakt)
+        </dd>
+    </dl>
 </div>

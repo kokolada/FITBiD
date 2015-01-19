@@ -65,7 +65,7 @@
                 <td>@x.Knjiga.Naziv</td>
                 <td>@x.DatumIzdavanja.ToShortDateString()</td>
                 <td>@x.DatumVracanja.ToShortDateString()</td>
-                <td>@Html.ActionLink("Detalji", "Details", "BookRecordController", new {id = x.Id})</td>
+                <td>@Html.ActionLink("Detalji", "Details", "BookRecord",routeValues: null, htmlAttributes: new{ id = x.Id })</td>
               
             </tr>
         }
