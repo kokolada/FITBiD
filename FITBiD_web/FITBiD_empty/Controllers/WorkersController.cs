@@ -1,4 +1,5 @@
 ﻿using FITBiD_empty.DAL;
+using FITBiD_empty.Helper;
 using FITBiD_empty.Models;
 using FITBiD_empty.ViewModels;
 using System;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace FITBiD_empty.Controllers
 {
+	[Autorizacija("radnik")]
 	public class WorkersController : Controller
 	{
 		// GET: Workers
@@ -47,7 +49,7 @@ namespace FITBiD_empty.Controllers
 					NazivMaterijala = x.IspitniMaterijal.Naziv,
 					Kolicina = x.Kolicina,
 					DatumNarudzbe = x.DatumNarudzbe
-				}).Where(z=>z.DatumNarudzbe == DateTime.Today).ToList();
+				}).ToList();
 
 
 			return View(Model);
@@ -63,22 +65,42 @@ namespace FITBiD_empty.Controllers
 		public ActionResult Create()
 		{
 			EvidencijaKljucaViewModel Model = new EvidencijaKljucaViewModel();
-			Model.DatumPreuzimanja = DateTime.Now;
 			Model.ListaKljuceva = ctx.Kljuc.ToList();
 			Model.ListaOsoblja = ctx.NastavnoOsoblje.ToList();
-			Model.RadnikID = 1;
 			return View(Model);
 		}
 		[HttpPost]
-		public ActionResult Create(int Nastavnik, int Kljuc, int Radnik)
+		public ActionResult Create(int Nastavnik, int Kljuc)
 		{
 			EvidencijaKljuceva evK = new EvidencijaKljuceva();
 			evK.KljucId = Kljuc;
 			evK.NastavnoOsobljeId = Nastavnik;
-			evK.RadnikId = Radnik;
+			evK.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
 			evK.DatumPreuzimanja = DateTime.Now;
 
 			ctx.EvidencijaKljuceva.Add(evK);
+			ctx.SaveChanges();
+
+			return RedirectToAction("Index");
+		}
+
+		public ActionResult CreateIspitniMaterijal()
+		{
+			IspitniMaterijalViewModel Model = new IspitniMaterijalViewModel();
+			Model.IspitniMaterijal = ctx.IspitniMaterijal.ToList();
+
+			return View(Model);
+		}
+		[HttpPost]
+		public ActionResult CreateIspitniMaterijal(int materijal, int kolicina)
+		{
+			EvidencijaNarudzbeIspitnogMaterijala evIM = new EvidencijaNarudzbeIspitnogMaterijala();
+			evIM.DatumNarudzbe = DateTime.Now;
+			evIM.IspitniMaterijalId = materijal;
+			evIM.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
+			evIM.Kolicina = kolicina;
+
+			ctx.EvidencijaNarudzbeIspitnogMaterijala.Add(evIM);
 			ctx.SaveChanges();
 
 			return RedirectToAction("Index");

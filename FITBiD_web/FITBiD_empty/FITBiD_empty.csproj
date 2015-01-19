@@ -236,6 +236,7 @@
     <Compile Include="ViewModels\BooksReservationEditViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationCreateViewModel.cs" />
     <Compile Include="ViewModels\EvidencijaKljucaViewModel.cs" />
+    <Compile Include="ViewModels\IspitniMaterijalViewModel.cs" />
     <Compile Include="ViewModels\Korisnik.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationViewModel.cs" />
@@ -344,6 +345,10 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Profile\Create.cshtml" />
     <Content Include="Views\Profile\StudentBoard.cshtml" />
+    <Content Include="Views\Workers\Create.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Workers\CreateIspitniMaterijal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -21,6 +21,12 @@ namespace FITBiD_empty.Helper
 				filterContext.HttpContext.Response.Redirect("/Login");
 			}
 
+			if (_rola != "")
+			{
+				if(_rola != k.rola)
+					filterContext.HttpContext.Response.Redirect("/");
+			}
+
 		}
 	}
 }

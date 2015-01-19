@@ -1,0 +1,46 @@
+﻿@model FITBiD_empty.ViewModels.IspitniMaterijalViewModel
+
+@{
+	ViewBag.Title = "CreateIspitniMaterijal";
+}
+
+<h2>CreateIspitniMaterijal</h2>
+
+@using (Html.BeginForm()) 
+{
+	@Html.AntiForgeryToken()
+	
+	<div class="form-horizontal">
+		<h4>EvidencijaIspitnogMaterijala</h4>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="form-group">
+			@Html.LabelFor(model => model.IspitniMaterijal, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<select name="materijal">
+					<option>Odaberi ispitni materijal</option>
+					@foreach (FITBiD_empty.Models.IspitniMaterijal Mat in Model.IspitniMaterijal)
+					{
+						<option value="@Mat.Id">@Mat.Naziv</option>
+					}
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="kolicina" class="control-label col-md-2">Kolicina</label>
+			<div class="col-md-10">
+				<input type="number" name="kolicina" placeholder="kolicina"/>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" value="Create" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
+}
+
+<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>
