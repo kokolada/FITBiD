@@ -70,5 +70,10 @@ namespace FITBiD_empty.Controllers {
             return View(Model);
         }
 
+
+	    public ActionResult PitanjeOdgovor()
+	    {
+	        return View();
+	    }
 	}
 }
