@@ -94,10 +94,10 @@
 	</table>
 	</div>
 	<div class="col-md-12">
-		@Html.ActionLink("Evidencija kljuca","Create", "KeysRecordController", new { @class = "btn btn-default"})
+		@Html.ActionLink("Evidencija kljuca","Create", "Workers", new { @class = "btn btn-default"})
 		<input class="btn btn-default" type="button" value="Iznajmljivanje knjige">
-		<input class="btn btn-default" type="button" value="Prodaja knjige">
-		<input class="btn btn-default" type="button" value="Evidencija ispitnog materijala">	
+		<input class="btn btn-default" type="button" value="Prodaja knjige">	
+		@Html.ActionLink("Evidencija ispitnog materijala", "CreateIspitniMaterijal", "Workers", new { @class = "btn btn-default" })
 	</div>	
 
 	@*@using (Ajax.BeginForm("Create", "KeysRecord", new AjaxOptions(){UpdateTargetId = "dodajNoviKljuc"})) {

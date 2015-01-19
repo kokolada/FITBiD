@@ -6,10 +6,8 @@ using System.Web;
 
 namespace FITBiD_empty.ViewModels
 {
-	public class EvidencijaKljucaViewModel
+	public class IspitniMaterijalViewModel
 	{
-		public List<Kljuc> ListaKljuceva { get; set; }
-		public List<NastavnoOsoblje> ListaOsoblja { get; set; }
-
+		public List<IspitniMaterijal> IspitniMaterijal { get; set; }
 	}
 }
