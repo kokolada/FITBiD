@@ -17,7 +17,7 @@ namespace FITBiD_empty.Controllers
         public ActionResult Index()
         {
 			WorkersViewModel Model = new WorkersViewModel();
-			Model.eki = ctx.EvidencijaKljuceva
+			Model.listaEvidencijaKljuceva = ctx.EvidencijaKljuceva
 				.Select(x=> new WorkersViewModel.EvidencijaKljucevaInfo(){
 					NazivUcionice = x.Kljuc.Ucionica.Naziv,
 					NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " + x.NastavnoOsoblje.Prezime,
@@ -25,6 +25,30 @@ namespace FITBiD_empty.Controllers
 					DatumPreuzimanja = x.DatumPreuzimanja,
 					DatumVracanja = x.DatumVracanja
 				}).Where(y=>y.DatumVracanja == null).ToList();
+
+			Model.listaEvidencijaKnjigaZaIznajmljivanje = ctx.EvidencijaKnjigaZaIznajmljivanje
+				.Select(x=> new WorkersViewModel.EvidencijaKnjigaZaIznajmljivanjeInfo(){
+					NazivKnjige = x.Knjiga.Naziv,
+					Autor = x.Knjiga.Autor,
+					DatumIzdavanja = x.DatumIzdavanja,
+					DatumVracanja = x.DatumVracanja,
+					Student = x.Student.Ime + " " + x.Student.Prezime
+				}).Where(y=>y.DatumVracanja == null).ToList();
+			
+			Model.listaEvidencijaKnjigaZaProdaju = ctx.EvidencijaKnjigaZaProdaju
+				.Select(x=> new WorkersViewModel.EvidencijaKnjigaZaProdajuInfo(){
+					DatumEvidencije = x.DatumEvidencije,
+					NazivKnjge = x.Knjiga.Naziv,
+					Autor = x.Knjiga.Autor
+				}).Where(y=>y.DatumEvidencije == DateTime.Today).ToList();
+
+			Model.listaEvidencijaMaterijala = ctx.EvidencijaNarudzbeIspitnogMaterijala
+				.Select(x => new WorkersViewModel.EvidencijaNarudzbeIspitnogMaterijalaInfo() {
+					NazivMaterijala = x.IspitniMaterijal.Naziv,
+					Kolicina = x.Kolicina,
+					DatumNarudzbe = x.DatumNarudzbe
+				}).Where(z=>z.DatumNarudzbe == DateTime.Today).ToList();
+
 
 			return View(Model);
         }
@@ -39,22 +63,6 @@ namespace FITBiD_empty.Controllers
         public ActionResult Create()
         {
             return View();
-        }
-
-        // POST: Workers/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         // GET: Workers/Edit/5

@@ -1,7 +1,8 @@
 ﻿@using FITBiD_empty.ViewModels
 @model FITBiD_empty.ViewModels.WorkersViewModel
 
-<div class="col-md-6">
+<div class="col-md-6 well">
+	<h3>Evidencija ključeva</h3>
 	<table class="table table-striped col-md-4">
 		<thead>
 			<tr>
@@ -13,21 +14,94 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var x in Model.eki) {
+			@foreach (var x in Model.listaEvidencijaKljuceva) {
 				<tr>
 					<td>@x.NazivUcionice</td>
 					<td>@x.BarKodKljuca</td>
 					<td>@x.NastavnoOsoblje</td>
 					<td>@x.DatumPreuzimanja</td>
 				</tr>
-
 			}
 		</tbody>
 	</table>
-	@using (Ajax.BeginForm("Create", "Workers", new AjaxOptions() { UpdateTargetId = "dodajNoviKljuc" })) { 
-		<input value="Dodaj" type="submit" class="btn btn-default"/>
-	}
-	
-</div>
+	</div>
+	<div class="col-md-6 well">
+	<h3>Evidencija knjiga za iznajmljivanje</h3>
+	<table class="table table-striped col-md-4">
+		<thead>
+			<tr>
+				<th>NazivKnjige</th>
+				<th>Autor</th>
+				<th>Datum izdavanja</th>
+				<th>Student</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var x in Model.listaEvidencijaKnjigaZaIznajmljivanje) {
+				<tr>
+					<td>@x.NazivKnjige</td>
+					<td>@x.Autor</td>
+					<td>@x.DatumIzdavanja</td>
+					<td>@x.Student</td>
 
-<div id="dodajNoviKljuc"></div>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+	<div class="col-md-6 well">
+		<h3>Evidencija knjiga za prodaju</h3>
+		<table class="table table-striped col-md-4">
+			<thead>
+				<tr>
+					<th>NazivKnjige</th>
+					<th>Autor</th>
+					<th>Datum izdavanja</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var x in Model.listaEvidencijaKnjigaZaProdaju) {
+					<tr>
+						<td>@x.NazivKnjge</td>
+						<td>@x.Autor</td>
+						<td>@x.DatumEvidencije</td>
+
+				</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-6 well">
+	<h3>Evidencija narudžbe ispitnog materijala</h3>
+	<table class="table table-striped col-md-4">
+		<thead>
+			<tr>
+				<th>Naziv materijala</th>
+				<th>Količina</th>
+				<th>Datum narudžbe</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var x in Model.listaEvidencijaMaterijala) {
+				<tr>
+					<td>@x.NazivMaterijala</td>
+					<td>@x.Kolicina</td>
+					<td>@x.DatumNarudzbe</td>
+
+				</tr>
+			}
+		</tbody>
+	</table>
+	</div>
+	<div class="col-md-12">
+		@Html.ActionLink("Evidencija kljuca","Create", "KeysRecordController", new { @class = "btn btn-default"})
+		<input class="btn btn-default" type="button" value="Iznajmljivanje knjige">
+		<input class="btn btn-default" type="button" value="Prodaja knjige">
+		<input class="btn btn-default" type="button" value="Evidencija ispitnog materijala">	
+	</div>	
+
+	@*@using (Ajax.BeginForm("Create", "KeysRecord", new AjaxOptions(){UpdateTargetId = "dodajNoviKljuc"})) {
+		<input value="Dodaj" type="submit" class="btn btn-info" />
+	}
+</div>
+<div id="dodajNoviKljuc"></div>*@

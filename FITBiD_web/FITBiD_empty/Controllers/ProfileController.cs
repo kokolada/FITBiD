@@ -27,9 +27,8 @@ namespace FITBiD_empty.Controllers {
 		public ActionResult Edit(int studentId) {
 
 			Student Model = new Student();
-			if (studentId != null) {
-				Model = ctx.Student.Find(studentId);
-			}
+			Model = ctx.Student.Find(studentId);
+		
 			return View(Model);
 		}
 		public ActionResult Save(Student student) {
