@@ -1,4 +1,5 @@
 ﻿using FITBiD_empty.DAL;
+using FITBiD_empty.Helper;
 using FITBiD_empty.Models;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace FITBiD_empty.Controllers
 {
+	[Autorizacija]
 	public class HomeController : Controller
 	{
 		MojContext ctx = new MojContext();
