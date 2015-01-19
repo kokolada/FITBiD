@@ -8,7 +8,7 @@
 <h2 class="page-header">Student board</h2>
 <div class="col-md-6">
     <h3>Pitanja i odgovori</h3>
-    <table class="table">
+    @*<table class="table">
         <tr>
             <th>Status</th>
             <th>Student</th>
@@ -24,7 +24,20 @@
                 <td>@Html.ActionLink("Odgovori", "")</td>
             </tr>
         }
-    </table>
+    </table>*@
+
+    <div class="well"><h4>"Trazim knjigu za računarskih mreža, pomoć ?&nbsp;"</h4>
+        <p>
+            <small>Obajvio: Antonio, 12.1.2014</small>
+            <a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
+
+        </p>
+    </div>
+    
+    
+
+
+
 
 
 </div>
@@ -65,7 +78,7 @@
                 <td>@x.Knjiga.Naziv</td>
                 <td>@x.DatumIzdavanja.ToShortDateString()</td>
                 <td>@x.DatumVracanja.ToShortDateString()</td>
-                <td>@Html.ActionLink("Detalji", "Details", "BookRecord",routeValues: null, htmlAttributes: new{ id = x.Id })</td>
+                <td>@Html.ActionLink("Detalji", "Details", "BookRecord",new{ id = x.Id },null)</td>
               
             </tr>
         }
