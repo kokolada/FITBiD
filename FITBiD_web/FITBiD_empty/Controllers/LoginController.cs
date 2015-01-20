@@ -36,7 +36,7 @@ namespace FITBiD_empty.Controllers
 					k.password = user.Password;
 					k.rola = "radnik";
 
-					Autentifikacija.PokreniNovuSesiju(k, HttpContext,false);
+					Autentifikacija.PokreniNovuSesiju(k, HttpContext,true);
 
 					return Redirect("/");	
 				}
