@@ -42,7 +42,7 @@ namespace FITBiD_empty.Controllers
 					DatumEvidencije = x.DatumEvidencije,
 					NazivKnjge = x.Knjiga.Naziv,
 					Autor = x.Knjiga.Autor
-				}).Where(y=>y.DatumEvidencije == DateTime.Today).ToList();
+				}).ToList();
 
 			Model.listaEvidencijaMaterijala = ctx.EvidencijaNarudzbeIspitnogMaterijala
 				.Select(x => new WorkersViewModel.EvidencijaNarudzbeIspitnogMaterijalaInfo() {
