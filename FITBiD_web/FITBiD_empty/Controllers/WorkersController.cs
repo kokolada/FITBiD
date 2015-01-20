@@ -21,21 +21,24 @@ namespace FITBiD_empty.Controllers
 			WorkersViewModel Model = new WorkersViewModel();
 			Model.listaEvidencijaKljuceva = ctx.EvidencijaKljuceva
 				.Select(x=> new WorkersViewModel.EvidencijaKljucevaInfo(){
+					Id = x.Id,
 					NazivUcionice = x.Kljuc.Ucionica.Naziv,
 					NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " + x.NastavnoOsoblje.Prezime,
 					BarKodKljuca = x.Kljuc.Barcode,
 					DatumPreuzimanja = x.DatumPreuzimanja,
 					DatumVracanja = x.DatumVracanja
-				}).Where(y=>y.DatumVracanja == null).ToList();
+				}).Where(y=>y.DatumVracanja == null && y.DatumPreuzimanja.Day == DateTime.Today.Day ).ToList();
 
 			Model.listaEvidencijaKnjigaZaIznajmljivanje = ctx.EvidencijaKnjigaZaIznajmljivanje
 				.Select(x=> new WorkersViewModel.EvidencijaKnjigaZaIznajmljivanjeInfo(){
+					Id = x.Id,
 					NazivKnjige = x.Knjiga.Naziv,
 					Autor = x.Knjiga.Autor,
 					DatumIzdavanja = x.DatumIzdavanja,
 					DatumVracanja = x.DatumVracanja,
-					Student = x.Student.Ime + " " + x.Student.Prezime
-				}).Where(y=>y.DatumVracanja == null).ToList();
+					Student = x.Student.Ime + " " + x.Student.Prezime,
+					Vracena = x.Vracena
+				}).Where(y=>y.Vracena == false).ToList();
 			
 			Model.listaEvidencijaKnjigaZaProdaju = ctx.EvidencijaKnjigaZaProdaju
 				.Select(x=> new WorkersViewModel.EvidencijaKnjigaZaProdajuInfo(){
@@ -148,6 +151,18 @@ namespace FITBiD_empty.Controllers
 			{
 				return View();
 			}
+		}
+		public ActionResult VracenaKnjiga(int id) {
+			EvidencijaKnjigaZaIznajmljivanje evidencija = ctx.EvidencijaKnjigaZaIznajmljivanje.Find(id);
+			evidencija.Vracena = true;
+			ctx.SaveChanges();
+			return RedirectToAction("Index");
+		}
+		public ActionResult VracenKljuc(int id){
+			EvidencijaKljuceva evidencija = ctx.EvidencijaKljuceva.Find(id);
+			evidencija.DatumVracanja = DateTime.Today;
+			ctx.SaveChanges();
+			return RedirectToAction("Index");
 		}
 	}
 }

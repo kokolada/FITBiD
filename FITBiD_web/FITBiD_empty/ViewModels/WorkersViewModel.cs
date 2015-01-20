@@ -9,6 +9,7 @@ namespace FITBiD_empty.ViewModels {
 	public class WorkersViewModel {
 
 		public class EvidencijaKljucevaInfo {
+			public int Id { get; set; }
 			public string NazivUcionice { get; set; }
 			public string NastavnoOsoblje { get; set; }
 			public string BarKodKljuca { get; set; }
@@ -18,20 +19,21 @@ namespace FITBiD_empty.ViewModels {
 		}
 
 		public class EvidencijaKnjigaZaIznajmljivanjeInfo {
+			public int Id { get; set; }
 			public string NazivKnjige { get; set; }
 			public string Autor { get; set; }
 			public DateTime DatumIzdavanja { get; set; }
 			public DateTime? DatumVracanja { get; set; }
 			public string Student { get; set; }
-			//dodati radnika iz sesije
+			public bool Vracena { get; set; }
 		}
 
 		public class EvidencijaKnjigaZaProdajuInfo {
 			public DateTime DatumEvidencije { get; set; }
 			public string NazivKnjge { get; set; }
 			public string Autor { get; set; }
-			//dodati radnika iz sesije
 		}
+
 		public class EvidencijaNarudzbeIspitnogMaterijalaInfo {
 			public string NazivMaterijala { get; set; }
 			public int Kolicina { get; set; }
