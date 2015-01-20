@@ -49,7 +49,7 @@ namespace FITBiD_empty.Controllers
 						k.Id = student.Id;
 						k.Ime = student.Ime;
 						k.Prezime = student.Prezime;
-						k.username = student.Username;
+						k.username = student.BrojIndeksa;
 						k.password = student.Password;
 						k.rola = "student";
 
