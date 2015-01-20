@@ -14,7 +14,9 @@ namespace FITBiD_empty.ViewModels
 
         public List<EvidencijaKnjigaZaIznajmljivanje> iznajmljeneKnjige { get; set; }
 
-        public List<Objava> objave { get; set; }  
+        public List<Objava> objave { get; set; }
+
+        public List<KategorijaObjave> kategorijeObjave { get; set; }
 
 
     }
