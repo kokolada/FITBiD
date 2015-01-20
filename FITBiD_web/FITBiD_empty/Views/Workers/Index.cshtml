@@ -67,14 +67,14 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-success">
-				<div class="panel-heading">Prodaja knjiga @Html.ActionLink("+ Prodaj knjigu", "Create", "BookSale", null, new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+				<div class="panel-heading">Prodane knjige @Html.ActionLink("+ Prodaj knjigu", "Create", "BookSale", null, new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
 				<div class="panel-body">
 					<table class="table table-striped col-md-4">
 						<thead>
 							<tr>
 								<th>Knjiga</th>
 								<th>Autor</th>
-								<th>Datum izdavanja</th>
+								<th>Datum prodaje</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -94,7 +94,7 @@
 		</div>
 		<div class="col-md-6">
 			<div class="panel panel-success">
-				<div class="panel-heading">Evidencija ispitnog materijala @Html.ActionLink("+ Naruči materijal", "CreateIspitniMaterijal", "Workers", new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+				<div class="panel-heading">Ispitni materijal @Html.ActionLink("+ Naruči materijal", "CreateIspitniMaterijal", "Workers", new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
 				<div class="panel-body">
 					<table class="table table-striped col-md-4">
 						<thead>
