@@ -2,6 +2,24 @@
 }
 
 
-#BookInfoTabels {
-    background-color: red;
+.divLayout {
+    background-color: #F5F5F5;
+    border: 1px dashed #CFCFCF;
+    border-radius: 2px;
+    padding: 10px; 
+}
+
+.divLayoutDivider {
+    margin-bottom: 8px;
+    margin-top: 18px;
+    border-color: #D2D4D3;
+}
+
+#knjigaWrapper {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.positionButton {
+    padding: 2px 10px;
 }

@@ -7,7 +7,7 @@
 <h3>Knjige</h3>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("+ Dodaj knjigu", "Create",null, new { @class = "btn btn-default btn-sm" })
 </p>
 <table class="table">
     <tr>
@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Naziv)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GodinaObjavljivanja)
+            @Html.DisplayName("Godina objavljivanja")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Autor)
@@ -24,10 +24,10 @@
             @Html.DisplayNameFor(model => model.Barcode)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OznakaStalaze)
+            @Html.DisplayName("Oznaka stalaže")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ZaProdaju)
+            @Html.DisplayName("Prodaja")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Cijena)
@@ -59,7 +59,7 @@
             @Html.DisplayFor(modelItem => item.Cijena)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>

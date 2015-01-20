@@ -1,105 +1,126 @@
 ﻿@using FITBiD_empty.ViewModels
 @model FITBiD_empty.ViewModels.WorkersViewModel
+<br />
+<div class="" id="workerBoard">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Evidencija ključeva @Html.ActionLink("+ Evidencija ključa", "Create", "Workers", new {@class = "btn btn-default btn-sm pull-right positionButton"}) </div>
+                <div class="panel-body">
+                    <table class="table table-striped col-md-4">
+                        <thead>
+                        <tr>
+                            <th>Učionica</th>
+                            <th>Barkod ključa</th>
+                            <th>Nastavno osoblje</th>
+                            <th>Datum preuzimanja</th>
 
-<div class="col-md-6 well">
-	<h3>Evidencija ključeva</h3>
-	<table class="table table-striped col-md-4">
-		<thead>
-			<tr>
-				<th>Ucionica</th>
-				<th>Barkod Kljuca</th>
-				<th>Nastavno osoblje</th>
-				<th>Datum preuzimanja</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var x in Model.listaEvidencijaKljuceva)
+                        {
+                            <tr>
+                                <td>@x.NazivUcionice</td>
+                                <td>@x.BarKodKljuca</td>
+                                <td>@x.NastavnoOsoblje</td>
+                                <td>@x.DatumPreuzimanja</td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var x in Model.listaEvidencijaKljuceva) {
-				<tr>
-					<td>@x.NazivUcionice</td>
-					<td>@x.BarKodKljuca</td>
-					<td>@x.NastavnoOsoblje</td>
-					<td>@x.DatumPreuzimanja</td>
-				</tr>
-			}
-		</tbody>
-	</table>
-	</div>
-	<div class="col-md-6 well">
-	<h3>Evidencija knjiga za iznajmljivanje</h3>
-	<table class="table table-striped col-md-4">
-		<thead>
-			<tr>
-				<th>NazivKnjige</th>
-				<th>Autor</th>
-				<th>Datum izdavanja</th>
-				<th>Student</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var x in Model.listaEvidencijaKnjigaZaIznajmljivanje) {
-				<tr>
-					<td>@x.NazivKnjige</td>
-					<td>@x.Autor</td>
-					<td>@x.DatumIzdavanja</td>
-					<td>@x.Student</td>
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">Iznajmljivanje knjiga @Html.ActionLink("+ Iznajmi knjigu", "Create", "BookRecord", null, new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+                <div class="panel-body">
+                    <table class="table table-striped col-md-4">
+                        <thead>
+                            <tr>
+                                <th>Knjiga</th>
+                                <th>Autor</th>
+                                <th>Datum izdavanja</th>
+                                <th>Student</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var x in Model.listaEvidencijaKnjigaZaIznajmljivanje)
+                            {
+                                <tr>
+                                    <td>@x.NazivKnjige</td>
+                                    <td>@x.Autor</td>
+                                    <td>@x.DatumIzdavanja</td>
+                                    <td>@x.Student</td>
 
-				</tr>
-			}
-		</tbody>
-	</table>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">Prodaja knjiga @Html.ActionLink("+ Prodaj knjigu", "Create", "BookSale", null, new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+                <div class="panel-body">
+                    <table class="table table-striped col-md-4">
+                        <thead>
+                            <tr>
+                                <th>Knjiga</th>
+                                <th>Autor</th>
+                                <th>Datum izdavanja</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var x in Model.listaEvidencijaKnjigaZaProdaju)
+                            {
+                                <tr>
+                                    <td>@x.NazivKnjge</td>
+                                    <td>@x.Autor</td>
+                                    <td>@x.DatumEvidencije</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">Evidencija ispitnog materijala @Html.ActionLink("+ Naruči materijal", "CreateIspitniMaterijal", "Workers", new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+                <div class="panel-body">
+                    <table class="table table-striped col-md-4">
+                        <thead>
+                            <tr>
+                                <th>Naziv materijala</th>
+                                <th>Količina</th>
+                                <th>Datum narudžbe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var x in Model.listaEvidencijaMaterijala)
+                            {
+                                <tr>
+                                    <td>@x.NazivMaterijala</td>
+                                    <td>@x.Kolicina</td>
+                                    <td>@x.DatumNarudzbe</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-	<div class="col-md-6 well">
-		<h3>Evidencija knjiga za prodaju</h3>
-		<table class="table table-striped col-md-4">
-			<thead>
-				<tr>
-					<th>NazivKnjige</th>
-					<th>Autor</th>
-					<th>Datum izdavanja</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach (var x in Model.listaEvidencijaKnjigaZaProdaju) {
-					<tr>
-						<td>@x.NazivKnjge</td>
-						<td>@x.Autor</td>
-						<td>@x.DatumEvidencije</td>
-
-				</tr>
-				}
-			</tbody>
-		</table>
-	</div>
-	<div class="col-md-6 well">
-	<h3>Evidencija narudžbe ispitnog materijala</h3>
-	<table class="table table-striped col-md-4">
-		<thead>
-			<tr>
-				<th>Naziv materijala</th>
-				<th>Količina</th>
-				<th>Datum narudžbe</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var x in Model.listaEvidencijaMaterijala) {
-				<tr>
-					<td>@x.NazivMaterijala</td>
-					<td>@x.Kolicina</td>
-					<td>@x.DatumNarudzbe</td>
-
-				</tr>
-			}
-		</tbody>
-	</table>
-	</div>
-	<div class="col-md-12">
-		@Html.ActionLink("Evidencija kljuca","Create", "Workers", new { @class = "btn btn-default"})
-		<input class="btn btn-default" type="button" value="Iznajmljivanje knjige">
-		<input class="btn btn-default" type="button" value="Prodaja knjige">	
-		@Html.ActionLink("Evidencija ispitnog materijala", "CreateIspitniMaterijal", "Workers", new { @class = "btn btn-default" })
-	</div>	
-
 	@*@using (Ajax.BeginForm("Create", "KeysRecord", new AjaxOptions(){UpdateTargetId = "dodajNoviKljuc"})) {
 		<input value="Dodaj" type="submit" class="btn btn-info" />
 	}
