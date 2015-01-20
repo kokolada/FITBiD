@@ -21,10 +21,11 @@
         </div>
         foreach (FITBiD_empty.Models.Komentar x in Model.Komentari)
         {
-            <div class="well col-md-offset-3 col-md-6" style="margin-top: 20px">
+            <div class="divLayout col-md-offset-3 col-md-6" style="margin-top: 20px">
                 <p>
-                    <b>"&nbsp;@x.Sadrzaj&nbsp;"</b>
+                    <b>@x.Student.Ime ka'e: @x.Sadrzaj</b>
                 </p>
+                <hr class="divLayoutDivider" />
                 <p>
                     <small>Odgovorio: @x.Student.Ime @x.Student.Prezime</small><br />
                 </p>

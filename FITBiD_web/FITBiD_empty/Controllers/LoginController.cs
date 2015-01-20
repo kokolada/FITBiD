@@ -38,7 +38,7 @@ namespace FITBiD_empty.Controllers
 
 					Autentifikacija.PokreniNovuSesiju(k, HttpContext,true);
 
-					return Redirect("/");	
+					return RedirectToAction("Index","Workers");	
 				}
 				else
 				{
@@ -55,7 +55,7 @@ namespace FITBiD_empty.Controllers
 
 						Autentifikacija.PokreniNovuSesiju(k, HttpContext, true);
 
-						return Redirect("/Profile/Index?studentId=1");
+					    return RedirectToAction("StudentBoard", "Profile");
 					}
 				}
 			}
