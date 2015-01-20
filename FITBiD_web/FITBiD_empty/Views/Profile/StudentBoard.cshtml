@@ -1,102 +1,105 @@
 ﻿@using FITBiD_empty.ViewModels;
 @{
-    ViewBag.Title = "StudentBoard";
+	ViewBag.Title = "StudentBoard";
 }
 
 @model FITBiD_empty.ViewModels.StudentBoardViewModel
 <div class="container">
-    <h2 class="page-header">Student board</h2>
-    <div class="col-md-6">
-        <h3>Pitanja i odgovori</h3>
-        @*<table class="table">
-                <tr>
-                    <th>Status</th>
-                    <th>Student</th>
-                    <th>Kategorija</th>
-                    <th>Akcije</th>
-                </tr>
-                @foreach (FITBiD_empty.Models.Objava x in Model.objave)
-                {
-                    <tr>
-                        <td>@x.Sadrzaj</td>
-                        <td>@x.Student.Ime</td>
-                        <td>@x.KategorijaObjave.Naziv</td>
-                        <td>@Html.ActionLink("Odgovori", "")</td>
-                    </tr>
-                }
-            </table>*@
+	<h2 class="page-header">Student board</h2>
+	<div class="col-md-6">
+		<label>Postavi pitanje:</label>
+		<textarea class="form-control" style="resize:none;">yo</textarea>
+		<button class="btn btn-primary">KLIK</button>
+		<h3>Pitanja i odgovori</h3>
+		@*<table class="table">
+				<tr>
+					<th>Status</th>
+					<th>Student</th>
+					<th>Kategorija</th>
+					<th>Akcije</th>
+				</tr>
+				@foreach (FITBiD_empty.Models.Objava x in Model.objave)
+				{
+					<tr>
+						<td>@x.Sadrzaj</td>
+						<td>@x.Student.Ime</td>
+						<td>@x.KategorijaObjave.Naziv</td>
+						<td>@Html.ActionLink("Odgovori", "")</td>
+					</tr>
+				}
+			</table>*@
 
-        <div class="well">
-            <h4>"&nbsp;Trazim knjigu za računarskih mreža, pomoć ?&nbsp;"</h4>
-            <p>
-                <small>Obajvio: Antonio, 12.1.2014</small>
-                <a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
+		<div class="well">
+			<h4>"&nbsp;Trazim knjigu za računarskih mreža, pomoć ?&nbsp;"</h4>
+			<p>
+				<small>Obajvio: Antonio, 12.1.2014</small>
+				<a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
 
-            </p>
-        </div>
+			</p>
+		</div>
 
-        <div class="well">
-            <h4>"&nbsp;Neka preporuka, avantura ?&nbsp;"</h4>
-            <p>
-                <small>Obajvio: IB120140, 12.1.2014</small>
-                <a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
+		<div class="well">
+			<h4>"&nbsp;Neka preporuka, avantura ?&nbsp;"</h4>
+			<p>
+				<small>Obajvio: IB120140, 12.1.2014</small>
+				<a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
 
-            </p>
-        </div>
+			</p>
+		</div>
 
-        <div class="well">
-            <h4>"&nbsp;Treba mi pomoć, HTML ili CSS knjiga ?&nbsp;"</h4>
-            <p>
-                <small>Obajvio: IB120046, 12.1.2014</small>
-                <a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
+		<div class="well">
+			<h4>"&nbsp;Treba mi pomoć, HTML ili CSS knjiga ?&nbsp;"</h4>
+			<p>
+				<small>Obajvio: IB120046, 12.1.2014</small>
+				<a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
 
-            </p>
-        </div>
+			</p>
+		</div>
 
-    </div>
+	</div>
 
-    <div class="col-md-6" id="BookInfoTabels">
-        <h3>Rezervisane knjige</h3>
-        <table class="table table-striped">
-            <tr>
-                <th>Knjiga</th>
-                <th>Datum rezervacije</th>
-                <th>Status</th>
-                <th>Akcije</th>
-            </tr>
-            @foreach (FITBiD_empty.Models.Rezervacija x in Model.rezervisaneKnjige)
-            {
-                <tr>
-                    <td>@x.Knjiga.Naziv</td>
-                    <td>@x.DatumRezervacije.ToShortDateString()</td>
-                    <td>@(x.RezervacijaPotvrdjena ? "Prihvaćeno" : "Odbijeno")</td>
-                    <td>@Html.ActionLink("Detalji", "")</td>
-                </tr>
-            }
+	<div class="col-md-6" id="BookInfoTabels">
+		<h3>Rezervisane knjige</h3>
+		<table class="table table-striped">
+			<tr>
+				<th>Knjiga</th>
+				<th>Datum rezervacije</th>
+				<th>Status</th>
+				<th>Akcije</th>
+			</tr>
+			@foreach (FITBiD_empty.Models.Rezervacija x in Model.rezervisaneKnjige)
+			{
+				<tr>
+					<td>@x.Knjiga.Naziv</td>
+					<td>@x.DatumRezervacije.ToShortDateString()</td>
+					<td>@(x.RezervacijaPotvrdjena ? "Prihvaćeno" : "Odbijeno")</td>
+					<td>@Html.ActionLink("Detalji", "")</td>
+				</tr>
+			}
 
-        </table>
+		</table>
 
-        <hr />
-        <h3>Iznajmljene knjige</h3>
-        <table class="table table-striped">
-            <tr>
-                <th>Knjiga</th>
-                <th>Datum izdavanja</th>
-                <th>Datum vraćanja</th>
-                <th>Akcije</th>
-            </tr>
-            @foreach (FITBiD_empty.Models.EvidencijaKnjigaZaIznajmljivanje x in Model.iznajmljeneKnjige)
-            {
-                <tr>
-                    <td>@x.Knjiga.Naziv</td>
-                    <td>@x.DatumIzdavanja.ToShortDateString()</td>
-                    <td>@x.DatumVracanja.ToShortDateString()</td>
-                    <td>@Html.ActionLink("Detalji", "Details", "BookRecord", new { id = x.Id }, null)</td>
+		<hr />
+		<h3>Iznajmljene knjige</h3>
+		<table class="table table-striped">
+			<tr>
+				<th>Knjiga</th>
+				<th>Datum izdavanja</th>
+				<th>Datum vraćanja</th>
+				<th>Akcije</th>
+			</tr>
+			@foreach (FITBiD_empty.Models.EvidencijaKnjigaZaIznajmljivanje x in Model.iznajmljeneKnjige)
+			{
+				<tr>
+					<td>@x.Knjiga.Naziv</td>
+					<td>@x.DatumIzdavanja.ToShortDateString()</td>
+					<td>@x.DatumVracanja.ToShortDateString()</td>
+					<td>@Html.ActionLink("Detalji", "Details", "BookRecord", new { id = x.Id }, null)</td>
 
-                </tr>
-            }
+				</tr>
+			}
 
-        </table>
+		</table>
 
-    </div>
+	</div>
 </div>
