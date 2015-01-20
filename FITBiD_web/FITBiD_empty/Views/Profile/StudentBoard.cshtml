@@ -4,59 +4,40 @@
 }
 
 @model FITBiD_empty.ViewModels.StudentBoardViewModel
+
 <div class="container">
 	<h2 class="page-header">Student board</h2>
-	<div class="col-md-6">
-		<label>Postavi pitanje:</label>
-		<textarea class="form-control" style="resize:none;">yo</textarea>
-		<button class="btn btn-primary">KLIK</button>
-		<h3>Pitanja i odgovori</h3>
-		@*<table class="table">
-				<tr>
-					<th>Status</th>
-					<th>Student</th>
-					<th>Kategorija</th>
-					<th>Akcije</th>
-				</tr>
-				@foreach (FITBiD_empty.Models.Objava x in Model.objave)
-				{
-					<tr>
-						<td>@x.Sadrzaj</td>
-						<td>@x.Student.Ime</td>
-						<td>@x.KategorijaObjave.Naziv</td>
-						<td>@Html.ActionLink("Odgovori", "")</td>
-					</tr>
-				}
-			</table>*@
+    <div class="col-md-6">
+        @using (Html.BeginForm())
+        {
+            <div class="alert alert-success" id="postavljanjePitanjaWrapper">
+                <h4>Postavi pitanje</h4>
+                <textarea name="sadrzajTetxarea" class="form-control" style="resize: none;" placeholder="Unesi pitanje..."></textarea> <br/>
+                <label>Izaberi kategoriju</label>
+                <select name="izabranaKategorijaObjave" class="form-control" id="izabranaKategorijaObjave">
+                    @foreach (FITBiD_empty.Models.KategorijaObjave x in Model.kategorijeObjave)
+                    {
+                        <option value="@x.Id">@x.Naziv</option>
+                    }
+                </select><br/>
+                <button class="btn btn-default btn-sm" type="submit" id="objavaButton">+ Objavi</button>
+            </div>
+        }
 
-		<div class="well">
-			<h4>"&nbsp;Trazim knjigu za računarskih mreža, pomoć ?&nbsp;"</h4>
-			<p>
-				<small>Obajvio: Antonio, 12.1.2014</small>
-				<a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
+        <h3>Pitanja i odgovori</h3>
+        @foreach (FITBiD_empty.Models.Objava x in Model.objave)
+        {
+            <div class="well">
+                <h4>"&nbsp;@x.Sadrzaj&nbsp;"</h4>
+                <p>
+                    <small>Obajvio: @x.Student.Ime @x.Student.Prezime; Kategorija: @x.KategorijaObjave.Naziv</small>
+                    @*<a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Komentariši</a>*@
+                    @Html.ActionLink("Komentariši", "PitanjeOdgovor", new { objavaId = x.Id }, new {@class="btn btn-sm btn-default pull-right"})
+                </p>
+            </div>
+        }
 
-			</p>
-		</div>
-
-		<div class="well">
-			<h4>"&nbsp;Neka preporuka, avantura ?&nbsp;"</h4>
-			<p>
-				<small>Obajvio: IB120140, 12.1.2014</small>
-				<a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
-
-			</p>
-		</div>
-
-		<div class="well">
-			<h4>"&nbsp;Treba mi pomoć, HTML ili CSS knjiga ?&nbsp;"</h4>
-			<p>
-				<small>Obajvio: IB120046, 12.1.2014</small>
-				<a href="/Profile/PitanjeOdgovor" class="btn btn-sm btn-default pull-right">Odgovori</a>
-
-			</p>
-		</div>
-
-	</div>
+    </div>
 
 	<div class="col-md-6" id="BookInfoTabels">
 		<h3>Rezervisane knjige</h3>
@@ -92,8 +73,8 @@
 			{
 				<tr>
 					<td>@x.Knjiga.Naziv</td>
-					<td>@x.DatumIzdavanja.ToShortDateString()</td>
-					<td>@x.DatumVracanja.ToShortDateString()</td>
+					<td>@x.DatumIzdavanja</td>
+					<td>@x.DatumVracanja</td>
 					<td>@Html.ActionLink("Detalji", "Details", "BookRecord", new { id = x.Id }, null)</td>
 
 				</tr>
