@@ -349,6 +349,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Workers\CreateIspitniMaterijal.cshtml" />
+    <Content Include="Views\Profile\PitanjeOdgovor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

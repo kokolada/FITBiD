@@ -4,21 +4,20 @@
 	ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Evidencija ključeva</h2>
 
 @using (Html.BeginForm()) 
 {
 	@Html.AntiForgeryToken()
 	
 	<div class="form-horizontal">
-		<h4>EvidencijaKljuceva</h4>
 		<hr />
 		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 		<div class="form-group">
-			@Html.LabelFor(model => model.ListaOsoblja, "ListaOsoblja", htmlAttributes: new { @class = "control-label col-md-2" })
+			@Html.LabelFor(model => model.ListaOsoblja, "Nastavnik", htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				<select name="Nastavnik">
+				<select name="Nastavnik" class="form-control">
 					<option>Odaberi Nastavnika</option>
 					@foreach (FITBiD_empty.Models.NastavnoOsoblje nastavnik in Model.ListaOsoblja)
 					{
@@ -29,9 +28,9 @@
 		</div>
 
 		<div class="form-group">
-			@Html.LabelFor(model => model.ListaKljuceva, "ListaKljuceva", htmlAttributes: new { @class = "control-label col-md-2" })
+			@Html.LabelFor(model => model.ListaKljuceva, "Ključ", htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				<select name="Kljuc">
+				<select name="Kljuc" class="form-control">
 					<option>Odaberi Kljuc</option>
 					@foreach (FITBiD_empty.Models.Kljuc nastavnik in Model.ListaKljuceva)
 					{
@@ -43,7 +42,7 @@
 
 		<div class="form-group">
 			<div class="col-md-offset-2 col-md-10">
-				<input type="submit" value="Create" class="btn btn-default" />
+				<input type="submit" value="Dodaj" class="btn btn-default" />
 			</div>
 		</div>
 	</div>
