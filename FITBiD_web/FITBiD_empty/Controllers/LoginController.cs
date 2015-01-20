@@ -46,14 +46,14 @@ namespace FITBiD_empty.Controllers
 					if (student != null)
 					{
 						Korisnik k = new Korisnik();
-						k.Id = user.Id;
-						k.Ime = user.Ime;
-						k.Prezime = user.Prezime;
-						k.username = user.Username;
-						k.password = user.Password;
+						k.Id = student.Id;
+						k.Ime = student.Ime;
+						k.Prezime = student.Prezime;
+						k.username = student.Username;
+						k.password = student.Password;
 						k.rola = "student";
 
-						Autentifikacija.PokreniNovuSesiju(k, HttpContext, false);
+						Autentifikacija.PokreniNovuSesiju(k, HttpContext, true);
 
 						return Redirect("/Profile/Index?studentId=1");
 					}
