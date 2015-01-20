@@ -23,8 +23,13 @@ namespace FITBiD_empty.Helper
 
 			if (_rola != "")
 			{
-				if(_rola != k.rola)
-					filterContext.HttpContext.Response.Redirect("/");
+			    if (_rola != k.rola)
+			    {
+			        if (k.rola == "student")
+			            filterContext.HttpContext.Response.Redirect("/Profile/StudentBoard");
+			        else
+			            filterContext.HttpContext.Response.Redirect("/Workers");		               
+			    }
 			}
 
 		}
