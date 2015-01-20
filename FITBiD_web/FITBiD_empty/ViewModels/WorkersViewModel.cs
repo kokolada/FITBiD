@@ -15,7 +15,6 @@ namespace FITBiD_empty.ViewModels {
 			public string BarKodKljuca { get; set; }
 			public DateTime DatumPreuzimanja { get; set; }
 			public DateTime? DatumVracanja { get; set;}
-			//dodati radnika iz sesije
 		}
 
 		public class EvidencijaKnjigaZaIznajmljivanjeInfo {

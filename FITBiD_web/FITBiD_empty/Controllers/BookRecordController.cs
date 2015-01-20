@@ -16,7 +16,17 @@ namespace FITBiD_empty.Controllers
 		
 		public ActionResult Index()
 		{
-			List<EvidencijaKnjigaZaIznajmljivanje> Model = ctx.EvidencijaKnjigaZaIznajmljivanje.ToList();
+			BooksRecordViewModel Model = new BooksRecordViewModel();
+			Model.listaEvidencijaKnjigaZaIznajmljivanje = ctx.EvidencijaKnjigaZaIznajmljivanje
+			.Select(x => new BooksRecordViewModel.BooksRecordInfo() {
+				Id = x.Id,
+				NazivKnjige = x.Knjiga.Naziv,
+				Autor = x.Knjiga.Autor,
+				DatumIzdavanja = x.DatumIzdavanja,
+				DatumVracanja = x.DatumVracanja,
+				Student = x.Student.Ime + " " + x.Student.Prezime,
+				Vracena = x.Vracena
+			}).ToList();
 			return View(Model);
 		}
 

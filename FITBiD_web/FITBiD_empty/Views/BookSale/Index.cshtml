@@ -1,4 +1,5 @@
-﻿@model IEnumerable<FITBiD_empty.Models.EvidencijaKnjigaZaProdaju>
+﻿@using FITBiD_empty.ViewModels
+@model FITBiD_empty.ViewModels.BookSaleViewModel
 
 @{
     ViewBag.Title = "View";
@@ -12,26 +13,26 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Knjiga.Naziv)
+            Naziv knjige
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Radnik.Ime)
+            Radnik
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DatumEvidencije)
+            Datum evidencije
         </th>
         <th>
-            @Html.DisplayName("Opcije")
+            Opcije
         </th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.listaEvidencijaKnjigaZaProdaju) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Knjiga.Naziv)
+            @Html.DisplayFor(modelItem => item.NazivKnjge)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Radnik.Ime)
+            @Html.DisplayFor(modelItem => item.Radnik)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DatumEvidencije)
