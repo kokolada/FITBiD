@@ -22,5 +22,7 @@ namespace FITBiD_empty.Models
 
 		public Student Student { get; set; }
 		public int StudentId { get; set; }
+
+		public bool Vracena { get; set; }
 	}
 }
