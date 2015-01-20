@@ -5,13 +5,12 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Evidencija ključeva @Html.ActionLink("+ Evidencija ključa", "Create", "Workers", new {@class = "btn btn-default btn-sm pull-right positionButton"}) </div>
+				<div class="panel-heading">Ne vraćeni ključevi @Html.ActionLink("+ Evidencija ključa", "Create", "Workers", new {@class = "btn btn-default btn-sm pull-right positionButton"}) </div>
 				<div class="panel-body">
 					<table class="table table-striped col-md-4">
 						<thead>
 						<tr>
 							<th>Učionica</th>
-							<th>Barkod ključa</th>
 							<th>Nastavno osoblje</th>
 							<th>Datum preuzimanja</th>
 
@@ -22,9 +21,10 @@
 						{
 							<tr>
 								<td>@x.NazivUcionice</td>
-								<td>@x.BarKodKljuca</td>
 								<td>@x.NastavnoOsoblje</td>
 								<td>@x.DatumPreuzimanja</td>
+								<td>@Html.ActionLink("Vraćen", "VracenKljuc", new { id = x.Id }, new { @class = "btn btn-info btn-sm pull-right positionButton" })</td>
+
 							</tr>
 						}
 						</tbody>
@@ -35,7 +35,7 @@
 
 		<div class="col-md-6">
 			<div class="panel panel-success">
-				<div class="panel-heading">Iznajmljivanje knjiga @Html.ActionLink("+ Iznajmi knjigu", "Create", "BookRecord", null, new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+				<div class="panel-heading">Iznajmljene knjige danas @Html.ActionLink("+ Iznajmi knjigu", "Create", "BookRecord", null, new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
 				<div class="panel-body">
 					<table class="table table-striped col-md-4">
 						<thead>
@@ -54,7 +54,7 @@
 									<td>@x.Autor</td>
 									<td>@x.DatumIzdavanja</td>
 									<td>@x.Student</td>
-
+									<td>@Html.ActionLink("Vraćena", "VracenaKnjiga",new {id = x.Id} ,new { @class = "btn btn-success btn-sm pull-right positionButton" })</td>
 								</tr>
 							}
 						</tbody>
@@ -121,8 +121,3 @@
 		</div>
 	</div>
 </div>
-	@*@using (Ajax.BeginForm("Create", "KeysRecord", new AjaxOptions(){UpdateTargetId = "dodajNoviKljuc"})) {
-		<input value="Dodaj" type="submit" class="btn btn-info" />
-	}
-</div>
-<div id="dodajNoviKljuc"></div>*@
