@@ -38,7 +38,7 @@ namespace FITBiD_empty.Controllers
 		
 		public ActionResult Create()
 		{
-			EvidencijaIznajmljivanjaKnjigaViewModel Model = new EvidencijaIznajmljivanjaKnjigaViewModel();
+			BooksRecordCreateViewModel Model = new BooksRecordCreateViewModel();
 			Model.Knjige = ctx.Knjiga.ToList();
 			Model.Studenti = ctx.Student.ToList();
 

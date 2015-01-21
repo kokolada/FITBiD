@@ -1,4 +1,4 @@
-﻿@model FITBiD_empty.ViewModels.EvidencijaIznajmljivanjaKnjigaViewModel
+﻿@model FITBiD_empty.ViewModels.BooksRecordCreateViewModel
 
 @{
 	ViewBag.Title = "Create";
@@ -17,9 +17,9 @@
 
 		
 		<div class="form-group">
-			@Html.LabelFor(model => model.Knjige, "Knjiga", htmlAttributes: new { @class = "control-label col-md-2" })
+			<label class="control-label col-md-2">Knjiga</label>
 			<div class="col-md-10">
-				<select name="knjiga">
+				<select name="knjiga" class="form-control">
 					<option>Odaberi knjigu</option>
 					@foreach(FITBiD_empty.Models.Knjiga k in Model.Knjige){
 						<option value="@k.Id">@k.Naziv</option>
@@ -28,15 +28,15 @@
 			</div>
 		</div>
 		<div class="form-group">
-			@Html.LabelFor(model => model.Studenti, "Student", htmlAttributes: new { @class = "control-label col-md-2" })
+			<label class="control-label col-md-2">Student</label>
 			<div class="col-md-10">
-				<select name="student">
+				<select name="student" class="form-control">
 					<option>Odaberi studenta</option>
-					@foreach (FITBiD_empty.Models.Student k in Model.Studenti)
-					{
+					@foreach (FITBiD_empty.Models.Student k in Model.Studenti) {
 						<option value="@k.Id">@k.BrojIndeksa</option>
 					}
 				</select>
+
 			</div>
 		</div>
 		@*<div class="form-group">
