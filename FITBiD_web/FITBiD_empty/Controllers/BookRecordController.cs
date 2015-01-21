@@ -67,7 +67,7 @@ namespace FITBiD_empty.Controllers
 			evIZ.KnjigaId = knjiga;
 			evIZ.StudentId = student;
 			evIZ.DatumIzdavanja = DateTime.Now;
-
+			evIZ.DatumVracanja = DateTime.Now.AddMonths(1);
 			ctx.EvidencijaKnjigaZaIznajmljivanje.Add(evIZ);
 			ctx.SaveChanges();
 

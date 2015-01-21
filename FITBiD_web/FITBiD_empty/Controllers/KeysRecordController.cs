@@ -1,4 +1,7 @@
-﻿using FITBiD_empty.Models;
+﻿using FITBiD_empty.DAL;
+using FITBiD_empty.Helper;
+using FITBiD_empty.Models;
+using FITBiD_empty.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +13,21 @@ namespace FITBiD_empty.Controllers
 	public class KeysRecordController : Controller
 	{
 		// GET: KeysRecord
+		MojContext ctx = new MojContext();
 		public ActionResult Index()
 		{
-			return View();
+			KeysRecordViewModel Model = new KeysRecordViewModel();
+			Model.listaEvidencijaKljuceva = ctx.EvidencijaKljuceva
+				.Select(x => new KeysRecordViewModel.KeyRecordInfo() {
+					Id = x.Id,
+					NazivUcionice = x.Kljuc.Ucionica.Naziv,
+					NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " + x.NastavnoOsoblje.Prezime,
+					BarKodKljuca = x.Kljuc.Barcode,
+					DatumPreuzimanja = x.DatumPreuzimanja,
+					DatumVracanja = x.DatumVracanja
+				}).Where(y => y.DatumVracanja == null && y.DatumPreuzimanja.Day == DateTime.Today.Day).ToList();
+			
+			return View(Model);
 		}
 
 		// GET: KeysRecord/Details/5
@@ -24,16 +39,30 @@ namespace FITBiD_empty.Controllers
 		// GET: KeysRecord/Create
 		public ActionResult Create()
 		{
-			EvidencijaKljuceva Model = new EvidencijaKljuceva();
+			KeysRecordCreateViewModel Model = new KeysRecordCreateViewModel();
+			Model.ListaKljuceva = ctx.Kljuc.ToList();
+			Model.ListaOsoblja = ctx.NastavnoOsoblje.ToList();
 			Model.DatumPreuzimanja = DateTime.Now;
 			return View(Model);
+		}
+		[HttpPost]
+		public ActionResult Create(int Nastavnik, int Kljuc) {
+			EvidencijaKljuceva evK = new EvidencijaKljuceva();
+			evK.KljucId = Kljuc;
+			evK.NastavnoOsobljeId = Nastavnik;
+			evK.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
+			evK.DatumPreuzimanja = DateTime.Now;
+
+			ctx.EvidencijaKljuceva.Add(evK);
+			ctx.SaveChanges();
+
+			return RedirectToAction("Index","Workers");
 		}
 
 		public ActionResult Edit(int id)
 		{
 			return View();
 		}
-
 		// POST: KeysRecord/Edit/5
 		[HttpPost]
 		public ActionResult Edit(int id, FormCollection collection)

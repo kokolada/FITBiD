@@ -19,15 +19,17 @@ namespace FITBiD_empty.Controllers
 		public ActionResult Index()
 		{
 			WorkersViewModel Model = new WorkersViewModel();
+
 			Model.listaEvidencijaKljuceva = ctx.EvidencijaKljuceva
-				.Select(x=> new WorkersViewModel.EvidencijaKljucevaInfo(){
+				.Select(x => new WorkersViewModel.EvidencijaKljucevaInfo() {
 					Id = x.Id,
 					NazivUcionice = x.Kljuc.Ucionica.Naziv,
 					NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " + x.NastavnoOsoblje.Prezime,
 					BarKodKljuca = x.Kljuc.Barcode,
 					DatumPreuzimanja = x.DatumPreuzimanja,
 					DatumVracanja = x.DatumVracanja
-				}).Where(y=>y.DatumVracanja == null && y.DatumPreuzimanja.Day == DateTime.Today.Day ).ToList();
+				}).Where(y => y.DatumVracanja == null && y.DatumPreuzimanja.Day == DateTime.Today.Day).ToList();
+			
 
 			Model.listaEvidencijaKnjigaZaIznajmljivanje = ctx.EvidencijaKnjigaZaIznajmljivanje
 				.Select(x=> new WorkersViewModel.EvidencijaKnjigaZaIznajmljivanjeInfo(){
@@ -67,26 +69,8 @@ namespace FITBiD_empty.Controllers
 		// GET: Workers/Create
 		public ActionResult Create()
 		{
-			EvidencijaKljucaViewModel Model = new EvidencijaKljucaViewModel();
-			Model.ListaKljuceva = ctx.Kljuc.ToList();
-			Model.ListaOsoblja = ctx.NastavnoOsoblje.ToList();
-			return View(Model);
+			return View();
 		}
-		[HttpPost]
-		public ActionResult Create(int Nastavnik, int Kljuc)
-		{
-			EvidencijaKljuceva evK = new EvidencijaKljuceva();
-			evK.KljucId = Kljuc;
-			evK.NastavnoOsobljeId = Nastavnik;
-			evK.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
-			evK.DatumPreuzimanja = DateTime.Now;
-
-			ctx.EvidencijaKljuceva.Add(evK);
-			ctx.SaveChanges();
-
-			return RedirectToAction("Index");
-		}
-
 		public ActionResult CreateIspitniMaterijal()
 		{
 			IspitniMaterijalViewModel Model = new IspitniMaterijalViewModel();

@@ -22,7 +22,7 @@ namespace FITBiD_empty.ViewModels {
 			public string NazivKnjige { get; set; }
 			public string Autor { get; set; }
 			public DateTime DatumIzdavanja { get; set; }
-			public DateTime? DatumVracanja { get; set; }
+			public DateTime DatumVracanja { get; set; }
 			public string Student { get; set; }
 			public bool Vracena { get; set; }
 		}
