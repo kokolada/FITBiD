@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Ne vraćeni ključevi @Html.ActionLink("+ Evidencija ključa", "Create", "Workers", new {@class = "btn btn-default btn-sm pull-right positionButton"}) </div>
+				<div class="panel-heading">Ne vraćeni ključevi @Html.ActionLink("+ Evidencija ključa", "Create", "KeysRecord", null,new {@class = "btn btn-default btn-sm pull-right positionButton"}) </div>
 				<div class="panel-body">
 					<table class="table table-striped col-md-4">
 						<thead>
@@ -43,6 +43,7 @@
 								<th>Knjiga</th>
 								<th>Autor</th>
 								<th>Datum izdavanja</th>
+								<th>Datum vraćanja</th>
 								<th>Student</th>
 							</tr>
 						</thead>
@@ -53,6 +54,7 @@
 									<td>@x.NazivKnjige</td>
 									<td>@x.Autor</td>
 									<td>@x.DatumIzdavanja</td>
+									<td>@x.DatumVracanja</td>
 									<td>@x.Student</td>
 									<td>@Html.ActionLink("Vraćena", "VracenaKnjiga",new {id = x.Id} ,new { @class = "btn btn-success btn-sm pull-right positionButton" })</td>
 								</tr>

@@ -12,7 +12,7 @@ namespace FITBiD_empty.Models
 		[Column(TypeName = "DateTime2")]
 		public DateTime DatumIzdavanja { get; set; }
 		[Column(TypeName = "DateTime2")]
-		public DateTime? DatumVracanja { get; set; }
+		public DateTime DatumVracanja { get; set; }
 
 		public Knjiga Knjiga { get; set; }
 		public int KnjigaId { get; set; }

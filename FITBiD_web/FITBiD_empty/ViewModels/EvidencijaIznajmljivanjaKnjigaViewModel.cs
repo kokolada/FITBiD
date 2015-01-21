@@ -8,6 +8,7 @@ namespace FITBiD_empty.ViewModels
 {
 	public class EvidencijaIznajmljivanjaKnjigaViewModel
 	{
+		public DateTime DatumVracanja { get; set; }
 		public List<Knjiga> Knjige { get; set; }
 		public List<Student> Studenti { get; set; }
 	}
