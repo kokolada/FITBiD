@@ -1,10 +1,11 @@
 ﻿@using Microsoft.AspNet.Identity
+@using Mvc.RazorTools.FontAwesome
 @model FITBiD_empty.ViewModels.ProfileViewModel
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Podaci o studentu</h2>
+<h2>@Html.FontAwesome(FontAwesomeIconSet.User) Profil studenta</h2>
 
 <div>
     <hr />

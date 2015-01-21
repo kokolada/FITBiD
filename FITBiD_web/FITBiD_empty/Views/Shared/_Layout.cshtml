@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Mvc.RazorTools.FontAwesome
+@{
 	ViewBag.user = FITBiD_empty.Helper.Autentifikacija.GetLogiraniKorisnik(Context);
 }
 <!DOCTYPE html>
@@ -9,18 +10,20 @@
 	<title>@ViewBag.Title FIT Biblioteka</title>
 	@Styles.Render("~/Content/css")
 	@Styles.Render("~/Content/Custom.css")
+    @Styles.Render("~/Content/font-awesome.css")
 	@Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				@Html.ActionLink("FIT biblioteka", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			    </button>
+                
+				@Html.ActionLink("FIT biblioteka", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 			</div>
 
 			<div class="navbar-collapse collapse">
