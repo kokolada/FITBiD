@@ -233,11 +233,12 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Ucionica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BookCreateViewModel.cs" />
     <Compile Include="ViewModels\BooksRecordViewModel.cs" />
+    <Compile Include="ViewModels\BooksRecordCreateViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationEditViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationCreateViewModel.cs" />
     <Compile Include="ViewModels\BookSaleViewModel.cs" />
-    <Compile Include="ViewModels\EvidencijaIznajmljivanjaKnjigaViewModel.cs" />
     <Compile Include="ViewModels\EvidencijaProdajeKnjigaViewModel.cs" />
     <Compile Include="ViewModels\IspitniMaterijalViewModel.cs" />
     <Compile Include="ViewModels\KeysRecordCreateViewModel.cs" />

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Faker;
+using FITBiD_empty.ViewModels;
 
 namespace FITBiD_empty.Controllers
 {
@@ -20,8 +21,11 @@ namespace FITBiD_empty.Controllers
 		}
 
 		public ActionResult Create()
-		{            
-			return View();
+		{        
+			BookCreateViewModel Model = new BookCreateViewModel();
+			//u model dodati listu kategorija
+
+			return View(Model);
 		}        
 
 		public ActionResult Edit(int bookId)
@@ -30,29 +34,29 @@ namespace FITBiD_empty.Controllers
 			return View(Model);
 		}
 		
-		public ActionResult Save(Knjiga k)
+		public ActionResult Save(BookCreateViewModel k)
 		{
-			Knjiga knjiga;
-			if (k.Id == 0)
-			{
-				knjiga = new Knjiga();
-				ctx.Knjiga.Add(knjiga);
-			}
-			else
-				knjiga = ctx.Knjiga.Find(k.Id);
-		   
-			knjiga.GodinaObjavljivanja = k.GodinaObjavljivanja;
+			//Knjiga knjiga;
+			//if (k.Id == 0) {
+			//	knjiga = new Knjiga();
+			//	ctx.Knjiga.Add(knjiga);
+			//}
+			//else {
+			//	knjiga = ctx.Knjiga.Find(k.Id);
+			//}
+			Knjiga knjiga = new Knjiga();
 			knjiga.Naziv = k.Naziv;
+			knjiga.GodinaObjavljivanja = Convert.ToDateTime(k.GodinaObjavljivanja);	
 			knjiga.Autor = k.Autor;
-			knjiga.Barcode = k.Barcode;
+			knjiga.Barcode = k.BarCode;
 			knjiga.OznakaStalaze = k.OznakaStalaze;
 			knjiga.Cijena = k.Cijena;
 			knjiga.ZaProdaju = k.ZaProdaju;
-			knjiga.KnjigaKategorijas = k.KnjigaKategorijas;
-			
+
+			ctx.Knjiga.Add(knjiga);
 			ctx.SaveChanges();
 
-			return RedirectToAction("Index");
+			return RedirectToAction("Index","Workers");
 		}
 
 		public ActionResult Delete(int id)
