@@ -17,7 +17,7 @@ namespace FITBiD_empty.ViewModels {
 			public float Cijena { get; set; }
 
 			public int KategorijaId { get; set; }
-			public List<SelectListItem> ListaKategorija { get; set; }
+			public List<KategorijaKnjige> ListaKategorija { get; set; }
 
 	}
 }
