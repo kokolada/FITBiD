@@ -3,7 +3,7 @@
 @model FITBiD_empty.ViewModels.BookCreateViewModel
 
 @{
-    ViewBag.Title = "View";
+	ViewBag.Title = "View";
 }
 
 <h2>Dodavanje knjige</h2>
@@ -11,92 +11,93 @@
 
 @using (Html.BeginForm("Save","Book")) 
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+	@Html.AntiForgeryToken()
+	
+	<div class="form-horizontal">
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="form-group">
 			<label class="control-label col-md-2">Naziv</label>
-            <div class="col-md-10">
+			<div class="col-md-10">
 				@Html.EditorFor(model => model.Naziv, new { htmlAttributes = new { @class = "form-control" } })
-            </div>
-        </div>
+				@Html.ValidationMessageFor(model => model.Naziv, "", new { @class ="text-danger"})
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.GodinaObjavljivanja,"Godina", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-               <input type="text" class="form-control"/>
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.GodinaObjavljivanja,"Godina", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+			   <input type="text" class="form-control"/>
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Autor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Autor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Autor, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.Autor, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Autor, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Autor, "", new { @class = "text-danger" })
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BarCode, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BarCode, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BarCode, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.BarCode, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.BarCode, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.BarCode, "", new { @class = "text-danger" })
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.OznakaStalaze,"Oznaka stalaže", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OznakaStalaze, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OznakaStalaze, "", new { @class = "text-danger" })
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.OznakaStalaze,"Oznaka stalaže", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.OznakaStalaze, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.OznakaStalaze, "", new { @class = "text-danger" })
+			</div>
+		</div>
 
-        <div class="form-group" >
-            @Html.LabelFor(model => model.ZaProdaju,"Prodaja", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.ZaProdaju, new { htmlAttributes = new { @id = "cijenaCheckbox", @onchange = "prikaziCijenu()" } })
-                    @Html.ValidationMessageFor(model => model.ZaProdaju, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+		<div class="form-group" >
+			@Html.LabelFor(model => model.ZaProdaju,"Prodaja", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<div class="checkbox">
+					@Html.EditorFor(model => model.ZaProdaju, new { htmlAttributes = new { @id = "cijenaCheckbox", @onchange = "prikaziCijenu()" } })
+					@Html.ValidationMessageFor(model => model.ZaProdaju, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
 
-        <div class="form-group hidden" id="cijenaTextbox">
-            @Html.LabelFor(model => model.Cijena, htmlAttributes: new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Cijena, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Cijena, "", new {@class = "text-danger"})
-            </div>
-        </div>
+		<div class="form-group hidden" id="cijenaTextbox">
+			@Html.LabelFor(model => model.Cijena, htmlAttributes: new {@class = "control-label col-md-2"})
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Cijena, new {htmlAttributes = new {@class = "form-control"}})
+				@Html.ValidationMessageFor(model => model.Cijena, "", new {@class = "text-danger"})
+			</div>
+		</div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ListaKategorija, "Kategorija", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <select name="izabranaKategorijaKnjiga" class="form-control" id="izabranaKategorijaKnjiga">
-                    <option value="-1">Izaberi kategoriju</option>
-                    @foreach (FITBiD_empty.Models.KategorijaKnjige x in Model.ListaKategorija)
-                    {
-                        <option value="@x.Id">@x.Naziv</option>
-                    }
-                </select><br/>
-                
-            </div>
-        </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Potvrdi" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.ListaKategorija, "Kategorija", htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<select name="izabranaKategorijaKnjiga" class="form-control" id="izabranaKategorijaKnjiga">
+					<option value="-1">Izaberi kategoriju</option>
+					@foreach (FITBiD_empty.Models.KategorijaKnjige x in Model.ListaKategorija)
+					{
+						<option value="@x.Id">@x.Naziv</option>
+					}
+				</select><br/>
+				
+			</div>
+		</div>
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Potvrdi" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+	@Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/jqueryval")
 }

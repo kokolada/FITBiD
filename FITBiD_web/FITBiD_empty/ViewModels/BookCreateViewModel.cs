@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using FITBiD_empty.Models;
 using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace FITBiD_empty.ViewModels {
 	public class BookCreateViewModel {
 
+			[Required]
 			public string Naziv { get; set; }
 			public DateTime GodinaObjavljivanja { get; set; }
 			public string Autor { get; set; }
