@@ -129,11 +129,30 @@ namespace FITBiD_empty.Controllers {
 	    }
 
         [Autorizacija("student")]
-	    public ActionResult Pretraga()
+        public ActionResult Pretraga(List<Knjiga> Model=null)
 	    {
-            List<Knjiga> Model = ctx.Knjiga.ToList();
+            if (Model == null)
+            {
+                Model = ctx.Knjiga.ToList();
+            }
 
             return View(Model);
 	    }
+
+        [HttpPost]
+        public ActionResult Pretraga(string nazivKnjige)
+        {
+            List<Knjiga> Model = ctx.Knjiga
+                                    .Where(x=>x.Naziv==nazivKnjige)
+                                    .ToList();
+            if (Model.Count == 0)
+            {
+                Model = ctx.Knjiga.ToList();
+                ViewData["Greska"] = "Nema rezultata pretage !";
+            }
+
+            return View(Model);
+        }
+
 	}
 }

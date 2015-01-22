@@ -13,12 +13,11 @@ namespace FITBiD_empty.ViewModels
             public DateTime DatumRezervacije { get; set; }
             public bool RezervacijaPotvrdjena { get; set; }
 
-
 			public int KnjigaId { get; set; }
-			public List<SelectListItem> ListaKnjiga { get; set; }
+            public List<SelectListItem> ListaKnjiga { get; set; }
 
             public int StudentId { get; set; }
-			public List<SelectListItem> ListaStudenata { get; set; }
+            public List<SelectListItem> ListaStudenata { get; set; }
         
 
     }
