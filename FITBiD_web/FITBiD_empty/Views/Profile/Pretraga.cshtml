@@ -1,45 +1,66 @@
 ﻿@using FITBiD_empty.Models
+@using Mvc.RazorTools.FontAwesome
 @model System.Collections.Generic.IEnumerable<FITBiD_empty.Models.Knjiga>
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
-
-<br />
-<div>
-    @using (Html.BeginForm())
-    {
-        <table class="table table-striped">
-            <tr>
-                <th>
-                    Naziv
-                </th>
-                <th>
-                   Godina objavljivanja
-                </th>
-                <th>
-                    Autor
-                </th>
-                <th>
-                    Prodaja
-                </th>
-                <th>
-                    Cijena
-                </th>
-                <th>Akcije</th>
-            </tr>
-            @foreach (Knjiga x in Model)
-            {
-                <tr>
-                    <td>x.Naziv</td>
-                    <td>Godina objavljivanja</td>
-                    <td>Autor</td>
-                    <td>Prodaja</td>
-                    <td>Cijena</td>
-                    <td>Akcije</td>
-                </tr>
-            }
-        </table>
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
     }
-</div>
+
+    <h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.Search) Pretraga knjiga</h2>
+
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input type="text" name="nazivKnjige" class="form-control" placeholder="Unesi naziv knjige..">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">@Html.FontAwesome(FontAwesomeIconSet.Search)</button>
+                        </span>
+                    </div><!-- /input-group -->
+                    @* ovdje iduu kategorije, ali treba njih prvo rijesiti *@
+                </div>
+            </div>
+            <br/>
+            if (ViewData["Greska"] != null)
+                    {
+                        <div class="alert alert-warning">@ViewData["Greska"]</div>
+                    }
+            <br />
+            <table class="table table-striped">
+                <tr>
+                    <th>
+                        Naziv
+                    </th>
+                    <th>
+                        Godina objavljivanja
+                    </th>
+                    <th>
+                        Autor
+                    </th>
+                    <th>
+                        Prodaja
+                    </th>
+                    <th>
+                        Cijena
+                    </th>
+                    <th>Akcije</th>
+                </tr>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.Naziv</td>
+                        <td>@x.GodinaObjavljivanja.Year</td>
+                        <td>@x.Autor</td>
+                        <td>@(x.ZaProdaju == true ? "Da" : "Ne")</td>
+                        <td>@(x.Cijena == 0 ? "Nema" : @x.Cijena.ToString() + " KM")</td>
+                        <td>
+                            @Html.ActionLink("Details", "Details", "Book", new {id = x.Id}, new {@class = "btn btn-default btn-sm buttonThinStyle"}) |
+                            @Html.ActionLink("Rezerviši", "Create", "BooksReservation", null, new { @class = "btn btn-success btn-sm buttonThinStyle" }) 
+                            
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
