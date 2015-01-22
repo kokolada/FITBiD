@@ -53,6 +53,7 @@ namespace FITBiD_empty.Controllers
 			knjiga.OznakaStalaze = k.OznakaStalaze;
             knjiga.Cijena = k.Cijena;
 			knjiga.ZaProdaju = k.ZaProdaju;
+			knjiga.KnjigaKategorijas.Select(x=>x.KategorijaKnjigeId = k.KategorijaId);
 
 			ctx.Knjiga.Add(knjiga);
 			ctx.SaveChanges();

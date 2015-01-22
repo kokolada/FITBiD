@@ -28,3 +28,6 @@ textarea {
 .left{
 	float:left;
 }
+.validation-summary-errors,.field-validation-error{
+	color:red;
+}
