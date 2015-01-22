@@ -375,6 +375,14 @@
     </Content>
     <Content Include="Views\Workers\CreateIspitniMaterijal.cshtml" />
     <Content Include="Views\Profile\PitanjeOdgovor.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\ExamAccessoriesRecord\Create.cshtml" />
+    <Content Include="Views\ExamAccessoriesRecord\Edit.cshtml" />
+    <Content Include="Views\ExamAccessoriesRecord\Index.cshtml" />
+    <Content Include="Views\ExamAccessories\Create.cshtml" />
+    <Content Include="Views\ExamAccessories\Edit.cshtml" />
+    <Content Include="Views\ExamAccessories\Index.cshtml" />
+    <Content Include="Views\Profile\Pretraga.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

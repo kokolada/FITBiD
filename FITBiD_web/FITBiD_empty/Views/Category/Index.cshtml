@@ -1,13 +1,14 @@
-﻿@model IEnumerable<FITBiD_empty.Models.KategorijaKnjige>
+﻿@using Mvc.RazorTools.FontAwesome
+@model System.Collections.Generic.IEnumerable<FITBiD_empty.Models.KategorijaKnjige>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Kategorije knjiga</h2>
+<h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.ListUl) Kategorije knjiga</h2>
 
 <p>
-    @Html.ActionLink("Dodaj kategoriju", "Create")
+    @Html.ActionLink("+ Dodaj kategoriju", "Create", null, new { @class = "btn btn-default btn-sm" })
 </p>
 <table class="table">
     <tr>
@@ -25,9 +26,9 @@
             @Html.DisplayFor(modelItem => item.Naziv)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm buttonThinStyle" })
         </td>
     </tr>
 }

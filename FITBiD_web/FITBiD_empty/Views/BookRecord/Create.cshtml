@@ -1,10 +1,11 @@
-﻿@model FITBiD_empty.ViewModels.BooksRecordCreateViewModel
+﻿@using Mvc.RazorTools.FontAwesome
+@model FITBiD_empty.ViewModels.BooksRecordCreateViewModel
 
 @{
-	ViewBag.Title = "Create";
+	ViewBag.Title = "Izdavanje knjige";
 }
 
-<h3>Izdavanje knjige</h3>
+<h2>Izdavanje knjige</h2>
 
 
 @using (Html.BeginForm("Save", "BookRecord")) 
@@ -48,7 +49,7 @@
 
 		<div class="form-group">
 			<div class="col-md-offset-2 col-md-10">
-				<input type="submit" value="Dodaj" class="btn btn-default" />
+                <input type="submit" value="Potvrdi" class="btn btn-default" />
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,45 @@
+﻿@using FITBiD_empty.Models
+@model System.Collections.Generic.IEnumerable<FITBiD_empty.Models.Knjiga>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<br />
+<div>
+    @using (Html.BeginForm())
+    {
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    Naziv
+                </th>
+                <th>
+                   Godina objavljivanja
+                </th>
+                <th>
+                    Autor
+                </th>
+                <th>
+                    Prodaja
+                </th>
+                <th>
+                    Cijena
+                </th>
+                <th>Akcije</th>
+            </tr>
+            @foreach (Knjiga x in Model)
+            {
+                <tr>
+                    <td>x.Naziv</td>
+                    <td>Godina objavljivanja</td>
+                    <td>Autor</td>
+                    <td>Prodaja</td>
+                    <td>Cijena</td>
+                    <td>Akcije</td>
+                </tr>
+            }
+        </table>
+    }
+</div>

@@ -30,48 +30,48 @@
 				<!-- AKO NIJE LOGIRAN NAVBAR -->
 				@if (FITBiD_empty.Helper.Autentifikacija.GetLogiraniKorisnik(Context) == null)
 				{
-					<ul class="nav navbar-nav">
+					@*<ul class="nav navbar-nav">
 						<li>@Html.ActionLink("Login", "Index", "Login")</li>
-					</ul>
+					</ul>*@
 				}else
 				if (FITBiD_empty.Helper.Autentifikacija.GetLogiraniKorisnik(Context).rola == "radnik")
 				{
-					<ul class="nav navbar-nav">
-						<li>@Html.ActionLink(" Home", "Index", "Home")</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Radnik<span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="/Workers/">Main</a></li>
-								<li class="divider"></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Knjige<span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="/Book/Index">Prikaži knjige</a></li>
-								<li><a href="/Book/Create">Dodaj knjigu</a></li>
-								<li class="divider"></li>
-								<li><a href="/BookRecord/Index">Evidencija iznajmljivanja</a></li>
-								<li><a href="/BookRecord/Create">Iznajmi knjigu</a></li>
-								<li class="divider"></li>
-								<li><a href="/BookSale/Index">Evidencija prodaje</a></li>
-								<li><a href="/BookSale/Create">Prodaj knjigu</a></li>
-								<li class="divider"></li>
-								<li><a href="/Category/Index">Prikaz kategorija</a></li>
-								<li><a href="/Category/Create">Dodaj kategoriju</a></li>
-							</ul>
-						</li>
-						<li>@Html.ActionLink("Logout", "Logout", "Login")</li>
-					</ul>
+				    <ul class="nav navbar-nav">
+                        <li><a href="/Workers/">Home</a></li>
+				        @*<li>@Html.ActionLink(" Home", "Index", "Home")</li>
+				        <li class="dropdown">
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Radnik<span class="caret"></span></a>
+				            <ul class="dropdown-menu" role="menu">
+				                <li><a href="/Workers/">Main</a></li>
+				                <li class="divider"></li>
+				            </ul>
+				        </li>*@
+				        <li class="dropdown">
+				            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Knjige<span class="caret"></span></a>
+				            <ul class="dropdown-menu" role="menu">
+				                <li><a href="/Book/Index">Prikaži knjige</a></li>
+				                <li><a href="/Book/Create">Dodaj knjigu</a></li>
+				                <li class="divider"></li>
+				                <li><a href="/BookRecord/Index">Evidencija iznajmljivanja</a></li>
+				                <li><a href="/BookRecord/Create">Iznajmi knjigu</a></li>
+				                <li class="divider"></li>
+				                <li><a href="/BookSale/Index">Evidencija prodaje</a></li>
+				                <li><a href="/BookSale/Create">Prodaj knjigu</a></li>
+				                <li class="divider"></li>
+				                <li><a href="/Category/Index">Prikaz kategorija</a></li>
+				                <li><a href="/Category/Create">Dodaj kategoriju</a></li>
+				            </ul>
+				        </li>
+				        <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
+				    </ul>
 				}else
 				if (FITBiD_empty.Helper.Autentifikacija.GetLogiraniKorisnik(Context).rola == "student")
 				{
 					<ul class="nav navbar-nav">
-						<li>@Html.ActionLink(" Home", "Index", "Home")</li>
-
-						<li><a href="/Profile/Index?studentId=1">Profil</a></li>
-						<li><a href="/Profile/StudentBoard?studentId=1">Board</a></li>
-
+						@*<li>@Html.ActionLink(" Home", "Index", "Home")</li>*@
+                        <li><a href="/Profile/StudentBoard?studentId=1">Home</a></li>
+                        <li><a href="/Profile/Index?studentId=1">Profil</a></li>
+						<li><a href="/Profile/Pretraga">Pretraga</a></li>
 						<li>@Html.ActionLink("Logout", "Logout", "Login")</li>
 					</ul>
 				}
