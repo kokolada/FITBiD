@@ -24,7 +24,7 @@ namespace FITBiD_empty.Controllers
 		{        
 			BookCreateViewModel Model = new BookCreateViewModel();
 			//u model dodati listu kategorija
-		    Model.ListaKategorija = ctx.KategorijaKnjige.ToList();
+			Model.ListaKategorija = ctx.KategorijaKnjige.ToList();
 
 			return View(Model);
 		}        
@@ -35,7 +35,7 @@ namespace FITBiD_empty.Controllers
 			return View(Model);
 		}
 
-        public ActionResult Save(BookCreateViewModel k, int izabranaKategorijaKnjiga)
+		public ActionResult Save(BookCreateViewModel k, int izabranaKategorijaKnjiga)
 		{
 			//Knjiga knjiga;
 			//if (k.Id == 0) {
@@ -45,27 +45,37 @@ namespace FITBiD_empty.Controllers
 			//else {
 			//	knjiga = ctx.Knjiga.Find(k.Id);
 			//}
-			Knjiga knjiga = new Knjiga();
-			knjiga.Naziv = k.Naziv;
-			knjiga.GodinaObjavljivanja = Convert.ToDateTime(k.GodinaObjavljivanja);	
-			knjiga.Autor = k.Autor;
-			knjiga.Barcode = k.BarCode;
-			knjiga.OznakaStalaze = k.OznakaStalaze;
-            knjiga.Cijena = k.Cijena;
-			knjiga.ZaProdaju = k.ZaProdaju;
-			knjiga.KnjigaKategorijas.Select(x=>x.KategorijaKnjigeId = k.KategorijaId);
+			if (ModelState.IsValid)
+			{
+				Knjiga knjiga = new Knjiga();
+				knjiga.Naziv = k.Naziv;
+				knjiga.GodinaObjavljivanja = Convert.ToDateTime(k.GodinaObjavljivanja);
+				knjiga.Autor = k.Autor;
+				knjiga.Barcode = k.BarCode;
+				knjiga.OznakaStalaze = k.OznakaStalaze;
+				knjiga.Cijena = k.Cijena;
+				knjiga.ZaProdaju = k.ZaProdaju;
 
-			ctx.Knjiga.Add(knjiga);
-			ctx.SaveChanges();
+				ctx.Knjiga.Add(knjiga);
+				ctx.SaveChanges();
 
-            //Knjiga knjiga2 = ctx.Knjiga.Where(x => x.Naziv == k.Naziv).FirstOrDefault();
+				KnjigaKategorija kkg = new KnjigaKategorija();
+				kkg.KnjigaId = knjiga.Id;
+				kkg.KategorijaKnjigeId = izabranaKategorijaKnjiga;
 
-            //KnjigaKategorija nova = new KnjigaKategorija();
-            //nova.KnjigaId = knjiga.Id;
-            //nova.KategorijaKnjigeId = izabranaKategorijaKnjiga;
-            //knjiga.KnjigaKategorijas.Add(nova);
+				ctx.KnjigaKategorija.Add(kkg);
+				ctx.SaveChanges();
 
-            //ctx.SaveChanges();
+			}
+
+			//Knjiga knjiga2 = ctx.Knjiga.Where(x => x.Naziv == k.Naziv).FirstOrDefault();
+
+			//KnjigaKategorija nova = new KnjigaKategorija();
+			//nova.KnjigaId = knjiga.Id;
+			//nova.KategorijaKnjigeId = izabranaKategorijaKnjiga;
+			//knjiga.KnjigaKategorijas.Add(nova);
+
+			//ctx.SaveChanges();
 
 			return RedirectToAction("Index","Workers");
 		}
