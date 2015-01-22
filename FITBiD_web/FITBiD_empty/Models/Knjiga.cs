@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,6 +10,7 @@ namespace FITBiD_empty.Models
 	{
 		public int Id { get; set; }
 		public string Naziv { get; set; }
+		[Column(TypeName = "DateTime2")]
 		public DateTime GodinaObjavljivanja { get; set; }
 		public string Autor { get; set; }
 		public string Barcode { get; set; }
