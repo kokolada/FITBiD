@@ -5,35 +5,24 @@
 }
 
 <h3>Detalji prodaje</h3>
-
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Knjiga.Naziv)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Knjiga.Naziv)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Radnik.Ime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Radnik.Ime)
-        </dd>
-
-        <dt>
-            @Html.DisplayName("Datum evidencije")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DatumEvidencije)
-        </dd>
-
-    </dl>
+<div class="row">
+    <div class="col-md-4">
+        <hr />
+        <table class="table table-striped">
+            <tr>
+                <td><b>@Html.DisplayNameFor(model => model.Knjiga.Naziv)</b></td>
+                <td>@Html.DisplayFor(model => model.Knjiga.Naziv)</td>
+            </tr>
+            <tr>
+                <td><b>@Html.DisplayNameFor(model => model.Radnik.Ime)</b></td>
+                <td>@Html.DisplayFor(model => model.Radnik.Ime)</td>
+            </tr>
+            <tr>
+                <td><b>@Html.DisplayName("Datum evidencije")</b></td>
+                <td>@Html.DisplayFor(model => model.DatumEvidencije)</td>
+            </tr>
+        </table>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

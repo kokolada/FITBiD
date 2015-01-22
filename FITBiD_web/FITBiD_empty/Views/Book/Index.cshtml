@@ -1,10 +1,11 @@
-﻿@model IEnumerable<FITBiD_empty.Models.Knjiga>
+﻿@using Mvc.RazorTools.FontAwesome
+@model System.Collections.Generic.IEnumerable<FITBiD_empty.Models.Knjiga>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h3>Knjige</h3>
+<h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.Book) Knjige</h2>
 
 <p>
     @Html.ActionLink("+ Dodaj knjigu", "Create",null, new { @class = "btn btn-default btn-sm" })
@@ -32,7 +33,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Cijena)
         </th>
-        <th></th>
+        <th>Akcije</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -41,7 +42,7 @@
             @Html.DisplayFor(modelItem => item.Naziv)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.GodinaObjavljivanja)
+            @Html.DisplayFor(modelItem => item.GodinaObjavljivanja.Year)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Autor)
@@ -59,9 +60,9 @@
             @Html.DisplayFor(modelItem => item.Cijena)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { bookId = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm buttonThinStyle" })
         </td>
     </tr>
 }

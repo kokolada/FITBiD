@@ -1,4 +1,7 @@
-﻿@model FITBiD_empty.Models.Knjiga
+﻿@using System
+@using Microsoft.Ajax.Utilities
+@using Mvc.RazorTools.FontAwesome
+@model FITBiD_empty.Models.Knjiga
 
 @{
     ViewBag.Title = "View";
@@ -9,67 +12,34 @@
     <div class="col-md-2 col-md-offset-1 ">
         <img src="http://placehold.it/190x190&text=Korice" class="img-responsive img-thumbnail" alt="Responsive image">
     </div>
-    <div class="col-md-6 divLayout" id="knjigaWrapper">
-        <h3>@Html.DisplayFor(model => model.Naziv) <input class="btn btn-default btn-sm pull-right" id="rezervisiButton" type="button" value="Rezerviši" /></h3>
+    <div class="col-md-6" id="knjigaWrapper">
+        <h3>@Html.FontAwesome(FontAwesomeIconSet.Book) @Html.DisplayFor(model => model.Naziv) <input class="btn btn-default btn-sm pull-right" id="rezervisiButton" type="button" value="Rezerviši" /></h3>
         <hr class="divLayoutDivider" />
-        
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayName("Godina")
-            </dt>
+        <table class="table table-striped">
+            <tr>
+                <td><b>@Html.DisplayName("Godina")</b></td>
+                <td>@Html.DisplayFor(model => model.GodinaObjavljivanja.Year)</td>
+            </tr>
+            <tr>
+                <td><b>@Html.DisplayName("Autor")</b></td>
+                <td>@Html.DisplayFor(model => model.Autor)</td>
+            </tr>
+            <tr>
+                <td><b>@Html.DisplayName("Oznaka stalaže")</b></td>
+                <td>@Html.DisplayFor(model => model.OznakaStalaze)</td>
+            </tr>
+            <tr>
+                <td><b>@Html.DisplayName("Prodaja")</b></td>
+                <td>@Html.DisplayFor(model => model.ZaProdaju)</td>
+            </tr>
+            <tr>
+                <td><b>@Html.DisplayName("Cijena")</b></td>
+                <td>@Html.DisplayFor(model => model.Cijena) KM</td>
+            </tr>
+            
+        </table>
 
-            <dd>
-                @Html.DisplayFor(model => model.GodinaObjavljivanja)
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Autor")
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Autor)
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Oznaka stalaže")
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.OznakaStalaze)
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Prodaja")
-            <dd>
-                @Html.DisplayFor(model => model.ZaProdaju)
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Cijena")
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Cijena) KM
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Stanje")
-            </dt>
-
-            <dd>
-                22 knjige
-            </dd>
-
-            <dt>
-                @Html.DisplayName("Dostupno")
-            </dt>
-
-            <dd>
-                Da
-            </dd>
-        </dl>
-        
-    </div>
+</div>
 
 
 

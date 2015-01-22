@@ -5,40 +5,31 @@
     ViewBag.Title = "Index";
 }
 
-<h2>@Html.FontAwesome(FontAwesomeIconSet.User) Profil studenta</h2>
-
-<div>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayName("Broj indexa")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.brojIndeksa)
-        </dd>
-        <dt>
-            @Html.DisplayName("Ime")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ime)
-        </dd>
-        <dt>
-            @Html.DisplayName("Prezime")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.prezime)
-        </dd>
-        <dt>
-            @Html.DisplayName("Email")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.email)
-        </dd>
-        <dt>
-            @Html.DisplayName("Kontakt")
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.kontakt)
-        </dd>
-    </dl>
+<h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.User) Profil studenta</h2>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <tr>
+                <td><b>@Html.DisplayName("Broj indexa")</b></td>
+                <td>@Html.DisplayFor(model => model.brojIndeksa)</td>
+            </tr>
+            <tr>
+                <td><b>Ime</b></td>
+                <td>@Html.DisplayFor(model => model.ime)</td>
+            </tr>
+            <tr>
+                <td><b>Prezime</b></td>
+                <td>@Html.DisplayFor(model => model.prezime)</td>
+            </tr>
+            <tr>
+                <td><b>Email</b></td>
+                <td>@Html.DisplayFor(model => model.email)</td>
+            </tr>
+            <tr>
+                <td><b>Kontakt</b></td>
+                <td>@Html.DisplayFor(model => model.kontakt)</td>
+            </tr>
+        </table>
+    </div>
 </div>

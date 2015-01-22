@@ -127,5 +127,13 @@ namespace FITBiD_empty.Controllers {
 
             return RedirectToAction("PitanjeOdgovor", new {objavaId=k.ObjavaId});
 	    }
+
+        [Autorizacija("student")]
+	    public ActionResult Pretraga()
+	    {
+            List<Knjiga> Model = ctx.Knjiga.ToList();
+
+            return View(Model);
+	    }
 	}
 }

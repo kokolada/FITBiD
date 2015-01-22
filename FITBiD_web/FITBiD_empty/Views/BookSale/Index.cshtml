@@ -1,11 +1,12 @@
 ﻿@using FITBiD_empty.ViewModels
+@using Mvc.RazorTools.FontAwesome
 @model FITBiD_empty.ViewModels.BookSaleViewModel
 
 @{
     ViewBag.Title = "View";
 }
 
-<h3>Pregled prodaje knjiga</h3>
+<h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.BarChartO) Evidencija prodaje knjiga</h2>
 
 <p>
     @Html.ActionLink("+ Prodaj knjigu", "Create",null,new {@class = "btn btn-default btn-sm"})
@@ -38,9 +39,9 @@
             @Html.DisplayFor(modelItem => item.DatumEvidencije)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm buttonThinStyle" })
         </td>
     </tr>
 }
