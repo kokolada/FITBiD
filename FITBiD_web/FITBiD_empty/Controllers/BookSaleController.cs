@@ -36,7 +36,7 @@ namespace FITBiD_empty.Controllers
 		public ActionResult Create()
 		{
 			EvidencijaProdajeKnjigaViewModel Model = new EvidencijaProdajeKnjigaViewModel();
-			Model.Knjige = ctx.Knjiga.ToList();
+			Model.Knjige = ctx.Knjiga.Where(x=>x.ZaProdaju).ToList();
 
 			return View(Model);
 		}

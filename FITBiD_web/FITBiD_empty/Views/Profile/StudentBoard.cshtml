@@ -54,8 +54,8 @@
 				<tr>
 					<td>@x.Knjiga.Naziv</td>
 					<td>@x.DatumRezervacije.ToShortDateString()</td>
-					<td>@(x.RezervacijaPotvrdjena ? "Prihvaćeno" : "Odbijeno")</td>
-					<td>@Html.ActionLink("Detalji", "")</td>
+					<td>@(x.RezervacijaPotvrdjena ? "Prihvaćeno" : "Na čekanju")</td>
+					<td>@Html.ActionLink("Obriši", "Delete", "BooksReservation", new { id = x.Id },new { onclick = "return confirm('Da li želiš obrisati rezervaciju ?');"})</td>
 				</tr>
 			}
 

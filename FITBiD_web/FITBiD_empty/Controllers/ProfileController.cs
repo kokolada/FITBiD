@@ -129,27 +129,46 @@ namespace FITBiD_empty.Controllers {
 	    }
 
         [Autorizacija("student")]
-        public ActionResult Pretraga(List<Knjiga> Model=null)
+        public ActionResult Pretraga(string poruka = "", List<Knjiga> Model = null)
 	    {
             if (Model == null)
             {
                 Model = ctx.Knjiga.ToList();
             }
+            if (poruka != "")
+            {
+                ViewData["Rezervacija"] = poruka;
+            }
+            ViewData["Kategorije"] = ctx.KategorijaKnjige.ToList();
 
             return View(Model);
 	    }
 
         [HttpPost]
-        public ActionResult Pretraga(string nazivKnjige)
+        public ActionResult Pretraga(string nazivKnjige, int izabranaKategorija = -1)
         {
-            List<Knjiga> Model = ctx.Knjiga
-                                    .Where(x=>x.Naziv==nazivKnjige)
-                                    .ToList();
+            List<Knjiga> Model = new List<Knjiga>();
+            if (nazivKnjige != "") { 
+                 Model = ctx.Knjiga
+                            .Where(x=>x.Naziv==nazivKnjige)
+                            .ToList();
+            }
+            if(izabranaKategorija>-1)
+            {
+                List<KnjigaKategorija> listaKnjiga = ctx.KnjigaKategorija.Where(x => x.KategorijaKnjigeId == izabranaKategorija).ToList();
+                foreach (KnjigaKategorija x in listaKnjiga)
+                {
+                    Model.Add(ctx.Knjiga.Find(x.KnjigaId));
+                }
+            }
+
             if (Model.Count == 0)
             {
                 Model = ctx.Knjiga.ToList();
                 ViewData["Greska"] = "Nema rezultata pretage !";
             }
+
+            ViewData["Kategorije"] = ctx.KategorijaKnjige.ToList();
 
             return View(Model);
         }

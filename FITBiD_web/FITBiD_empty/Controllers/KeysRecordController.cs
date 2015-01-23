@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Linq;
+using System.Data.Entity;
 
 namespace FITBiD_empty.Controllers
 {
@@ -40,7 +42,7 @@ namespace FITBiD_empty.Controllers
 		public ActionResult Create()
 		{
 			KeysRecordCreateViewModel Model = new KeysRecordCreateViewModel();
-			Model.ListaKljuceva = ctx.Kljuc.ToList();
+			Model.ListaKljuceva = ctx.Kljuc.Include(x => x.Ucionica).ToList();
 			Model.ListaOsoblja = ctx.NastavnoOsoblje.ToList();
 			Model.DatumPreuzimanja = DateTime.Now;
 			return View(Model);

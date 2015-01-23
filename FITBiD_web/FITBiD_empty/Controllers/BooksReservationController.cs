@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Web.Mvc;
+using FITBiD_empty.Helper;
 
 namespace FITBiD_empty.Controllers
 {
@@ -71,7 +72,23 @@ namespace FITBiD_empty.Controllers
 			}
 			return RedirectToAction("Index");
         }
-		
+
+        
+        public ActionResult Rezervisi(int knjigaId)
+        {
+            Rezervacija r = new Rezervacija();
+            r.DatumRezervacije = DateTime.Now;
+            r.RezervacijaPotvrdjena = false;
+            r.KnjigaId = knjigaId;
+            r.StudentId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
+
+            string Poruka =  "Knjiga je uspješno rezervisana. Radnik biblioteke će biti obavješten !";
+
+            ctx.Rezervacija.Add(r);
+            ctx.SaveChanges();
+            
+            return RedirectToAction("Pretraga", "Profile", new {poruka = Poruka});
+        }
 
         // GET: BooksReservation/Edit/5
         public ActionResult Edit(int id)
@@ -109,7 +126,7 @@ namespace FITBiD_empty.Controllers
 		   ctx.Rezervacija.Remove(r);
 		   ctx.SaveChanges();
 
-		   return RedirectToAction("Index");
+		   return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
         }
 
     }

@@ -37,7 +37,10 @@
 
         <div class="col-md-6">
             <div class="panel panel-success">
-                <div class="panel-heading">Iznajmljene knjige danas @Html.ActionLink("+ Iznajmi knjigu", "Create", "BookRecord", null, new {@class = "btn btn-default btn-sm pull-right positionButton"}) </div>
+                <div class="panel-heading">
+                    @Html.ActionLink("Iznajmljene knjige danas", "Index", "BookRecord", null, new { @class = "linkTextStyle" })
+                    @Html.ActionLink("+ Iznajmi knjigu", "Create", "BookRecord", null, new {@class = "btn btn-default btn-sm pull-right positionButton"})
+                </div>
                 <div class="panel-body">
                     <table class="table table-striped col-md-4">
                         <thead>
@@ -72,7 +75,10 @@
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-success">
-                <div class="panel-heading">Prodane knjige @Html.ActionLink("+ Prodaj knjigu", "Create", "BookSale", null, new {@class = "btn btn-default btn-sm pull-right positionButton"}) </div>
+                <div class="panel-heading">
+                     @Html.ActionLink("Prodane knjige", "Index", "BookSale", null, new { @class = "linkTextStyle" })
+                     @Html.ActionLink("+ Prodaj knjigu", "Create", "BookSale", null, new {@class = "btn btn-default btn-sm pull-right positionButton"})
+                </div>
                 <div class="panel-body">
                     <table class="table table-striped col-md-4">
                         <thead>

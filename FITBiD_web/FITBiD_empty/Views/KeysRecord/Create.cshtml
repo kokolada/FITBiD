@@ -16,9 +16,9 @@
 			@Html.LabelFor(model => model.ListaOsoblja, "Nastavnik", htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				<select name="Nastavnik" class="form-control">
-					<option>Odaberi Nastavnika</option>
+					<option>-- Odaberi nastavnika --</option>
 					@foreach (FITBiD_empty.Models.NastavnoOsoblje nastavnik in Model.ListaOsoblja) {
-						<option value="@nastavnik.Id">@nastavnik.Ime</option>
+						<option value="@nastavnik.Id">@nastavnik.Ime @nastavnik.Prezime</option>
 					}
 				</select>
 			</div>
@@ -28,9 +28,9 @@
 			@Html.LabelFor(model => model.ListaKljuceva, "Ključ", htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				<select name="Kljuc" class="form-control">
-					<option>Odaberi Kljuc</option>
-					@foreach (FITBiD_empty.Models.Kljuc nastavnik in Model.ListaKljuceva) {
-						<option value="@nastavnik.Id">@nastavnik.Barcode</option>
+					<option>-- Odaberi ključ --</option>
+					@foreach (FITBiD_empty.Models.Kljuc kljuc in Model.ListaKljuceva) {
+						<option value="@kljuc.Id">@kljuc.Ucionica.Naziv, @kljuc.Barcode</option>
 					}
 				</select>
 			</div>
