@@ -16,7 +16,7 @@
 			@Html.LabelFor(model => model.ListaOsoblja, "Nastavnik", htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				<select name="Nastavnik" class="form-control">
-					<option>-- Odaberi nastavnika --</option>
+					<option value="-1">-- Odaberi nastavnika --</option>
 					@foreach (FITBiD_empty.Models.NastavnoOsoblje nastavnik in Model.ListaOsoblja) {
 						<option value="@nastavnik.Id">@nastavnik.Ime @nastavnik.Prezime</option>
 					}
@@ -27,12 +27,14 @@
 		<div class="form-group">
 			@Html.LabelFor(model => model.ListaKljuceva, "Ključ", htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
-				<select name="Kljuc" class="form-control">
-					<option>-- Odaberi ključ --</option>
-					@foreach (FITBiD_empty.Models.Kljuc kljuc in Model.ListaKljuceva) {
-						<option value="@kljuc.Id">@kljuc.Ucionica.Naziv, @kljuc.Barcode</option>
-					}
-				</select>
+			    <select name="Kljuc" class="form-control">
+			        <option value="-1">-- Odaberi ključ --</option>
+			        @foreach (FITBiD_empty.Models.Kljuc kljuc in Model.ListaKljuceva)
+			        {
+			            <option value="@kljuc.Id">@kljuc.Ucionica.Naziv, @kljuc.Barcode</option>
+			        }
+			    </select>
+                @Html.ValidationMessageFor(model => model.ListaKljuceva)
 			</div>
 		</div>
 		<div class="form-group">
