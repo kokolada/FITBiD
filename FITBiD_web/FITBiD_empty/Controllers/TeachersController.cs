@@ -10,7 +10,6 @@ namespace FITBiD_empty.Controllers
 {
     public class TeachersController : Controller
     {
-        // GET: Teachers
 		MojContext ctx = new MojContext();
         public ActionResult Index()
         {
@@ -18,19 +17,16 @@ namespace FITBiD_empty.Controllers
             return View(nastavno);
         }
 
-        // GET: Teachers/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Teachers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Teachers/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -46,14 +42,12 @@ namespace FITBiD_empty.Controllers
             }
         }
 
-        // GET: Teachers/Edit/5
         public ActionResult Edit(int id)
         {
 			NastavnoOsoblje n = ctx.NastavnoOsoblje.Find(id);
             return View(n);
         }
 
-        // POST: Teachers/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -69,13 +63,11 @@ namespace FITBiD_empty.Controllers
             }
         }
 
-        // GET: Teachers/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Teachers/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

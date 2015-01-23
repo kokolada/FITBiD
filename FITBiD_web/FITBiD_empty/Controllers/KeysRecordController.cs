@@ -14,7 +14,6 @@ namespace FITBiD_empty.Controllers
 {
 	public class KeysRecordController : Controller
 	{
-		// GET: KeysRecord
 		MojContext ctx = new MojContext();
 		public ActionResult Index()
 		{
@@ -32,13 +31,11 @@ namespace FITBiD_empty.Controllers
 			return View(Model);
 		}
 
-		// GET: KeysRecord/Details/5
 		public ActionResult Details(int id)
 		{
 			return View();
 		}
 
-		// GET: KeysRecord/Create
 		public ActionResult Create()
 		{
 			KeysRecordCreateViewModel Model = new KeysRecordCreateViewModel();
@@ -49,6 +46,14 @@ namespace FITBiD_empty.Controllers
 		}
 		[HttpPost]
 		public ActionResult Create(int Nastavnik, int Kljuc) {
+		    if (Nastavnik == -1 || Kljuc==-1)
+		    {
+                KeysRecordCreateViewModel Model = new KeysRecordCreateViewModel();
+                Model.ListaKljuceva = ctx.Kljuc.Include(x => x.Ucionica).ToList();
+                Model.ListaOsoblja = ctx.NastavnoOsoblje.ToList();
+                Model.DatumPreuzimanja = DateTime.Now;
+                return View(Model);
+		    }
 			EvidencijaKljuceva evK = new EvidencijaKljuceva();
 			evK.KljucId = Kljuc;
 			evK.NastavnoOsobljeId = Nastavnik;
@@ -65,7 +70,7 @@ namespace FITBiD_empty.Controllers
 		{
 			return View();
 		}
-		// POST: KeysRecord/Edit/5
+
 		[HttpPost]
 		public ActionResult Edit(int id, FormCollection collection)
 		{
@@ -81,13 +86,11 @@ namespace FITBiD_empty.Controllers
 			}
 		}
 
-		// GET: KeysRecord/Delete/5
 		public ActionResult Delete(int id)
 		{
 			return View();
 		}
 
-		// POST: KeysRecord/Delete/5
 		[HttpPost]
 		public ActionResult Delete(int id, FormCollection collection)
 		{

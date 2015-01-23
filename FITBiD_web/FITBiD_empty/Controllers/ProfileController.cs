@@ -51,8 +51,7 @@ namespace FITBiD_empty.Controllers {
         [Autorizacija("student")]
         public ActionResult StudentBoard()
         {
-            int studentId = 1;
-            //int studentId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
+            int studentId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
 
             StudentBoardViewModel Model = new StudentBoardViewModel();
 
@@ -65,7 +64,6 @@ namespace FITBiD_empty.Controllers {
                     .Where(x => x.StudentId == studentId)
                     .Include(x => x.Knjiga)
                     .ToList();
-
             
             Model.rezervisaneKnjige = ctx.Rezervacija
                 .Where(x => x.StudentId == studentId)

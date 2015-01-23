@@ -32,13 +32,11 @@ namespace FITBiD_empty.Controllers
             return View(Model);
         }
 
-        // GET: BooksReservation/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: BooksReservation/Create
         public ActionResult Create()
         {
 			BooksReservationCreateViewModel rezervacija = new BooksReservationCreateViewModel();
@@ -49,7 +47,6 @@ namespace FITBiD_empty.Controllers
 			return View("Create",rezervacija);
         }
 
-        // POST: BooksReservation/Create
         [HttpPost]
 		public ActionResult Create(BooksReservationCreateViewModel rezervacija)
         {
@@ -72,7 +69,6 @@ namespace FITBiD_empty.Controllers
 			}
 			return RedirectToAction("Index");
         }
-
         
         public ActionResult Rezervisi(int knjigaId)
         {
@@ -90,7 +86,6 @@ namespace FITBiD_empty.Controllers
             return RedirectToAction("Pretraga", "Profile", new {poruka = Poruka});
         }
 
-        // GET: BooksReservation/Edit/5
         public ActionResult Edit(int id)
         {
             Rezervacija r = ctx.Rezervacija.Where(x => x.Id == id).FirstOrDefault();
@@ -101,7 +96,6 @@ namespace FITBiD_empty.Controllers
             return View(Model);
         }
 
-        // POST: BooksReservation/Edit/5
         [HttpPost]
 		public ActionResult Edit(BooksReservationEditViewModel rezervacija)
         {

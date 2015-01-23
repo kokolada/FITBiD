@@ -17,19 +17,16 @@ namespace FITBiD_empty.Controllers
             return View(kljucevi);
         }
 
-        // GET: Key/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Key/Create
         public ActionResult Create()
         {
 			return View();
         }
 
-        // POST: Key/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -45,13 +42,11 @@ namespace FITBiD_empty.Controllers
             }
         }
 
-        // GET: Key/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Key/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -67,13 +62,11 @@ namespace FITBiD_empty.Controllers
             }
         }
 
-        // GET: Key/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Key/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -23,7 +23,6 @@ namespace FITBiD_empty.Controllers
 		public ActionResult Create()
 		{        
 			BookCreateViewModel Model = new BookCreateViewModel();
-			//u model dodati listu kategorija
 			Model.ListaKategorija = ctx.KategorijaKnjige.ToList();
 
 			return View(Model);
@@ -37,14 +36,6 @@ namespace FITBiD_empty.Controllers
 
 		public ActionResult Save(BookCreateViewModel k, int izabranaKategorijaKnjiga)
 		{
-			//Knjiga knjiga;
-			//if (k.Id == 0) {
-			//	knjiga = new Knjiga();
-			//	ctx.Knjiga.Add(knjiga);
-			//}
-			//else {
-			//	knjiga = ctx.Knjiga.Find(k.Id);
-			//}
 			if (ModelState.IsValid)
 			{
 				Knjiga knjiga = new Knjiga();
@@ -67,15 +58,6 @@ namespace FITBiD_empty.Controllers
 				ctx.SaveChanges();
 
 			}
-
-			//Knjiga knjiga2 = ctx.Knjiga.Where(x => x.Naziv == k.Naziv).FirstOrDefault();
-
-			//KnjigaKategorija nova = new KnjigaKategorija();
-			//nova.KnjigaId = knjiga.Id;
-			//nova.KategorijaKnjigeId = izabranaKategorijaKnjiga;
-			//knjiga.KnjigaKategorijas.Add(nova);
-
-			//ctx.SaveChanges();
 
 			return RedirectToAction("Index","Workers");
 		}

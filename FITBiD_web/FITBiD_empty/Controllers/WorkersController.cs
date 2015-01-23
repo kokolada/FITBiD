@@ -14,7 +14,6 @@ namespace FITBiD_empty.Controllers
 	[Autorizacija("radnik")]
 	public class WorkersController : Controller
 	{
-		// GET: Workers
 		MojContext ctx = new MojContext();
 		public ActionResult Index()
 		{
@@ -60,13 +59,11 @@ namespace FITBiD_empty.Controllers
 			return View(Model);
 		}
 
-		// GET: Workers/Details/5
 		public ActionResult Details(int id)
 		{
 			return View();
 		}
 
-		// GET: Workers/Create
 		public ActionResult Create()
 		{
 			return View();
@@ -93,13 +90,11 @@ namespace FITBiD_empty.Controllers
 			return RedirectToAction("Index");
 		}
 
-		// GET: Workers/Edit/5
 		public ActionResult Edit(int id)
 		{
 			return View();
 		}
 
-		// POST: Workers/Edit/5
 		[HttpPost]
 		public ActionResult Edit(int id, FormCollection collection)
 		{
@@ -115,13 +110,11 @@ namespace FITBiD_empty.Controllers
 			}
 		}
 
-		// GET: Workers/Delete/5
 		public ActionResult Delete(int id)
 		{
 			return View();
 		}
 
-		// POST: Workers/Delete/5
 		[HttpPost]
 		public ActionResult Delete(int id, FormCollection collection)
 		{
