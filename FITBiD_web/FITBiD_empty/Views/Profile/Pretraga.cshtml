@@ -1,4 +1,7 @@
-﻿@using FITBiD_empty.Models
+﻿@using System.Collections
+@using FITBiD_empty.Helper
+@using FITBiD_empty.Models
+@using System.Web
 @using Mvc.RazorTools.FontAwesome
 @model System.Collections.Generic.IEnumerable<FITBiD_empty.Models.Knjiga>
     @{
@@ -10,30 +13,40 @@
     <div>
         @using (Html.BeginForm())
         {
+            
             <div class="row">
                 <div class="col-md-3">
-                    <div class="input-group">
-                        <input type="text" name="nazivKnjige" class="form-control" placeholder="Unesi naziv knjige..">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit">@Html.FontAwesome(FontAwesomeIconSet.Search)</button>
-                        </span>
-                    </div><!-- /input-group -->
-                    @* ovdje iduu kategorije, ali treba njih prvo rijesiti *@
+                    <input type="text" name="nazivKnjige" class="form-control" placeholder="Unesi naziv knjige..">
+                </div><!-- /input-group -->
+                
+                <div class="col-md-3">
+                    <select name="izabranaKategorija" class="form-control">
+                        <option value="-1">-- Izaberi kategoriju --</option>
+                        @foreach (KategorijaKnjige x in (IEnumerable) @ViewData["Kategorije"])
+                        {
+                            <option value="@x.Id">@x.Naziv</option> 
+                        }
+                    </select>
                 </div>
+                <button class="btn btn-default" type="submit">@Html.FontAwesome(FontAwesomeIconSet.Search)</button>
             </div>
             <br/>
             if (ViewData["Greska"] != null)
                     {
                         <div class="alert alert-warning">@ViewData["Greska"]</div>
                     }
-            <br />
+            if (ViewData["Rezervacija"] != null)
+                    {
+                        <div class="alert alert-success">@ViewData["Rezervacija"]</div>
+                    }
+            
             <table class="table table-striped">
                 <tr>
                     <th>
                         Naziv
                     </th>
                     <th>
-                        Godina objavljivanja
+                        Izdanje
                     </th>
                     <th>
                         Autor
@@ -44,7 +57,9 @@
                     <th>
                         Cijena
                     </th>
-                    <th>Akcije</th>
+                    <th>
+                        Akcije
+                    </th>
                 </tr>
                 @foreach (var x in Model)
                 {
@@ -56,7 +71,7 @@
                         <td>@(x.Cijena == 0 ? "Nema" : @x.Cijena.ToString() + " KM")</td>
                         <td>
                             @Html.ActionLink("Details", "Details", "Book", new {id = x.Id}, new {@class = "btn btn-default btn-sm buttonThinStyle"}) |
-                            @Html.ActionLink("Rezerviši", "Create", "BooksReservation", null, new { @class = "btn btn-success btn-sm buttonThinStyle" }) 
+                            @Html.ActionLink("Rezerviši", "Rezervisi", "BooksReservation", new { knjigaId = x.Id }, new { @class = "btn btn-success btn-sm buttonThinStyle" }) 
                             
                         </td>
                     </tr>
