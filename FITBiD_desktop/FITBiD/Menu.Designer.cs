@@ -26,8 +26,9 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.listOfStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.workerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.workersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.listOfWorkersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addWorkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -35,7 +36,7 @@
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportsToolStripMenuItem,
-            this.newToolStripMenuItem});
+            this.workersToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -57,20 +58,29 @@
 			this.listOfStudentsToolStripMenuItem.Text = "List of students";
 			this.listOfStudentsToolStripMenuItem.Click += new System.EventHandler(this.listOfStudentsToolStripMenuItem_Click);
 			// 
-			// newToolStripMenuItem
+			// workersToolStripMenuItem
 			// 
-			this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.workerToolStripMenuItem});
-			this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-			this.newToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-			this.newToolStripMenuItem.Text = "New";
+			this.workersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listOfWorkersToolStripMenuItem,
+            this.addWorkerToolStripMenuItem});
+			this.workersToolStripMenuItem.Name = "workersToolStripMenuItem";
+			this.workersToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+			this.workersToolStripMenuItem.Text = "Workers";
+			this.workersToolStripMenuItem.Click += new System.EventHandler(this.workersToolStripMenuItem_Click);
 			// 
-			// workerToolStripMenuItem
+			// listOfWorkersToolStripMenuItem
 			// 
-			this.workerToolStripMenuItem.Name = "workerToolStripMenuItem";
-			this.workerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.workerToolStripMenuItem.Text = "Worker";
-			this.workerToolStripMenuItem.Click += new System.EventHandler(this.workerToolStripMenuItem_Click);
+			this.listOfWorkersToolStripMenuItem.Name = "listOfWorkersToolStripMenuItem";
+			this.listOfWorkersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.listOfWorkersToolStripMenuItem.Text = "List of workers";
+			this.listOfWorkersToolStripMenuItem.Click += new System.EventHandler(this.listOfWorkersToolStripMenuItem_Click);
+			// 
+			// addWorkerToolStripMenuItem
+			// 
+			this.addWorkerToolStripMenuItem.Name = "addWorkerToolStripMenuItem";
+			this.addWorkerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.addWorkerToolStripMenuItem.Text = "Add worker";
+			this.addWorkerToolStripMenuItem.Click += new System.EventHandler(this.addWorkerToolStripMenuItem_Click);
 			// 
 			// Menu
 			// 
@@ -93,7 +103,8 @@
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem listOfStudentsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem workerToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem workersToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem listOfWorkersToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem addWorkerToolStripMenuItem;
 	}
 }

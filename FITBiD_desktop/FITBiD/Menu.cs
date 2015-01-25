@@ -19,10 +19,18 @@ namespace FITBiD {
 			frm.Show();
 		}
 
-		private void workerToolStripMenuItem_Click(object sender, EventArgs e) {
+		private void workersToolStripMenuItem_Click(object sender, EventArgs e) {
+			
+		}
+
+		private void addWorkerToolStripMenuItem_Click(object sender, EventArgs e) {
 			Forms.AddWorker frm = new Forms.AddWorker();
 			frm.Show();
+		}
 
+		private void listOfWorkersToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Workers frm = new Forms.Workers();
+			frm.Show();
 		}
 	}
 }
