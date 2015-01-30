@@ -15,7 +15,7 @@ namespace FITBiD {
 		}
 
 		private void listOfStudentsToolStripMenuItem_Click(object sender, EventArgs e) {
-			Forms.Reports frm = new Forms.Reports();
+			Forms.Reports frm = new Forms.Reports("students");
 			frm.Show();
 		}
 

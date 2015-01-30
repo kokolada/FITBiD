@@ -11,20 +11,28 @@ using System.Windows.Forms;
 
 namespace FITBiD.Forms {
 	public partial class Reports : Form {
-		public Reports() {
+		
+		string report="";
+		public Reports(string report) {
 			InitializeComponent();
+			this.report = report;
 		}
 
 		private void Reports_Load(object sender, EventArgs e) {
-			DA.DSStudents dsStudents = new DA.DSStudents();
-			DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter adapter = new DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter();
 
-			bindingSource.DataSource = dsStudents.Studenti_View;
+			if (report == "students") {
+				DA.DSStudents dsStudents = new DA.DSStudents();
+				DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter adapter = new DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter();
 
-			adapter.Fill(dsStudents.Studenti_View);
-			ReportDataSource reportDS = new ReportDataSource("Students",bindingSource);
-			reportViewer.LocalReport.DataSources.Add(reportDS);
-			
+				bindingSource.DataSource = dsStudents.Studenti_View;
+
+				adapter.Fill(dsStudents.Studenti_View);
+				ReportDataSource reportDS = new ReportDataSource("Students", bindingSource);
+				reportViewer.LocalReport.DataSources.Add(reportDS);
+				reportViewer.ServerReport.ReportPath = "PUTANJA";
+			}
+			//else if (report=="")
+
 
 			this.reportViewer.RefreshReport();
 		}

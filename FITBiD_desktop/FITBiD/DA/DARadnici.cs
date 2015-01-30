@@ -51,7 +51,7 @@ namespace FITBiD.DA {
 				}
 		}
 
-		public static void getRadniciByNLU(DSRadinici.RadniksDataTable dtRadnici, string Imetxt = null, string Prezimetxt = null, string Usernametxt = null) {
+		public static void getRadniciByNLU(DSRadinici.RadniksDataTable dtRadnici, string Imetxt, string Prezimetxt, string Usernametxt) {
 				dtRadnici.Clear();
 				SqlConnection cn = Connection.GetConnection();
 				if (cn.State == ConnectionState.Closed)
@@ -65,7 +65,7 @@ namespace FITBiD.DA {
 						cmd.Parameters.Add("@Ime", SqlDbType.NVarChar).Value = Imetxt;
 					if(Prezimetxt != "")
 						cmd.Parameters.Add("@Prezime", SqlDbType.NVarChar).Value = Prezimetxt;
-					if (Prezimetxt != "")
+					if (Usernametxt != "")
 						cmd.Parameters.Add("@Username", SqlDbType.NVarChar).Value = Usernametxt;
 
 					SqlDataAdapter adapter = new SqlDataAdapter(cmd);		
