@@ -32,5 +32,35 @@ namespace FITBiD {
 			Forms.Workers frm = new Forms.Workers();
 			frm.Show();
 		}
+
+		private void KeysRecordToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("izdavanjeKljuceva");
+			frm.Show();
+		}
+
+		private void booksRecordToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("izdavanjeKnjiga");
+			frm.Show();
+		}
+
+		private void mostActiveStudentsToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("najaktivnijiStudenti");
+			frm.Show();
+		}
+
+		private void bestWorkersToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("najboljiRadnici");
+			frm.Show();
+		}
+
+		private void materialUseToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("potrosnjaMaterijala");
+			frm.Show();
+		}
+
+		private void booksSalesToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("prodajaKnjiga");
+			frm.Show();
+		}
 	}
 }

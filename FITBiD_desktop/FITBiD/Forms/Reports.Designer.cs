@@ -32,9 +32,9 @@
 			// reportViewer
 			// 
 			this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.reportViewer.LocalReport.ReportEmbeddedResource = "FITBiD.Reports.Report.rdlc";
 			this.reportViewer.Location = new System.Drawing.Point(0, 0);
 			this.reportViewer.Name = "reportViewer";
+			this.reportViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
 			this.reportViewer.Size = new System.Drawing.Size(417, 310);
 			this.reportViewer.TabIndex = 0;
 			// 

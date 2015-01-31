@@ -21,18 +21,29 @@ namespace FITBiD.Forms {
 		private void Reports_Load(object sender, EventArgs e) {
 
 			if (report == "students") {
-				DA.DSStudents dsStudents = new DA.DSStudents();
-				DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter adapter = new DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter();
+				//DA.DSStudents dsStudents = new DA.DSStudents();
+				//DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter adapter = new DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter();
 
-				bindingSource.DataSource = dsStudents.Studenti_View;
+				//bindingSource.DataSource = dsStudents.Studenti_View;
 
-				adapter.Fill(dsStudents.Studenti_View);
-				ReportDataSource reportDS = new ReportDataSource("Students", bindingSource);
-				reportViewer.LocalReport.DataSources.Add(reportDS);
-				reportViewer.ServerReport.ReportPath = "PUTANJA";
+				//adapter.Fill(dsStudents.Studenti_View);
+				//ReportDataSource reportDS = new ReportDataSource("Students", bindingSource);
+				//reportViewer.LocalReport.DataSources.Add(reportDS);
+				reportViewer.ServerReport.ReportPath = "/rpt_ListaStudenata";
 			}
-			//else if (report=="")
-
+			else if (report == "izdavanjeKljuceva")
+				reportViewer.ServerReport.ReportPath = "/rpt_IzdavanjeKljuceva";
+			else if (report == "izdavanjeKnjiga")
+				reportViewer.ServerReport.ReportPath = "/rpt_IzdavanjeKnjiga";
+			else if (report == "najaktivnijiStudenti")
+				reportViewer.ServerReport.ReportPath = "/rpt_NajaktivnijiStudenti";
+			else if (report == "najboljiRadnici")
+				reportViewer.ServerReport.ReportPath = "/rpt_NajboljiRadnici";
+			else if (report == "potrosnjaMaterijala")
+				reportViewer.ServerReport.ReportPath = "/rpt_PotrosnjaMaterijala";
+			else if (report == "prodajaKnjiga")
+				reportViewer.ServerReport.ReportPath = "/rpt_ProdajaKnjiga";
+				
 
 			this.reportViewer.RefreshReport();
 		}
