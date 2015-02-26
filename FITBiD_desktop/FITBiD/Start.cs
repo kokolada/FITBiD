@@ -21,11 +21,12 @@ namespace FITBiD
 		{
 
 			Menu frm_menu = new Menu();
-			frm_menu.Show();
-			/*if (loginUsername.Text != "" && loginPassword.Text != "") {
-				//pusti korisnika na glavnu formu
-
-			}*/
+			if (DA.DAMenadzeri.ProvjeriLoginPodatke(loginUsername.Text, loginPassword.Text))
+			{
+				frm_menu.Show();
+				this.Hide();
+			}
+			
 		}
 	}
 }
