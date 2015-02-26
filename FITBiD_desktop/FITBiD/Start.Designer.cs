@@ -33,6 +33,7 @@
 			this.loginUsername = new System.Windows.Forms.TextBox();
 			this.loginPassword = new System.Windows.Forms.TextBox();
 			this.loginSubmit = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// labelUsername
@@ -82,11 +83,21 @@
 			this.loginSubmit.UseVisualStyleBackColor = true;
 			this.loginSubmit.Click += new System.EventHandler(this.loginSubmit_Click);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(141, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(202, 13);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Molimo unesite vas username i password!";
+			// 
 			// Start
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(390, 177);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.loginSubmit);
 			this.Controls.Add(this.loginPassword);
 			this.Controls.Add(this.loginUsername);
@@ -106,6 +117,7 @@
 		private System.Windows.Forms.TextBox loginUsername;
 		private System.Windows.Forms.TextBox loginPassword;
 		private System.Windows.Forms.Button loginSubmit;
+		private System.Windows.Forms.Label label1;
 	}
 }
 

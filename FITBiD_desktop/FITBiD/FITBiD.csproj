@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DA\Connection.cs" />
+    <Compile Include="DA\DAMenadzeri.cs" />
     <Compile Include="DA\DARadnici.cs" />
     <Compile Include="DA\DSRadinici.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -58,6 +59,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSStudents.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSMenadzeri.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSMenadzeri.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\AddWorker.cs">
       <SubType>Form</SubType>
@@ -138,6 +144,17 @@
     </None>
     <None Include="DA\DSStudents.xss">
       <DependentUpon>DSStudents.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSMenadzeri.xsc">
+      <DependentUpon>DSMenadzeri.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSMenadzeri.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSMenadzeri.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DA\DSMenadzeri.xss">
+      <DependentUpon>DSMenadzeri.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
