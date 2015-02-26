@@ -62,5 +62,11 @@ namespace FITBiD {
 			Forms.Reports frm = new Forms.Reports("prodajaKnjiga");
 			frm.Show();
 		}
+
+		private void addBookToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Forms.AddBook frm = new Forms.AddBook();
+			frm.Show();
+		}
 	}
 }
