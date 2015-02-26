@@ -68,5 +68,10 @@ namespace FITBiD {
 			Forms.AddBook frm = new Forms.AddBook();
 			frm.Show();
 		}
+
+		private void recordToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.KeysRecord frm = new Forms.KeysRecord();
+			frm.Show();
+		}
 	}
 }
