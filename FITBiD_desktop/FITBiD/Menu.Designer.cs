@@ -27,14 +27,16 @@
 			this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.listOfStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.izdaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.workersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.listOfWorkersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addWorkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.booksRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.mostActiveStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.bestWorkersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.materialUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.booksSalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.workersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.listOfWorkersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addWorkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -42,7 +44,8 @@
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportsToolStripMenuItem,
-            this.workersToolStripMenuItem});
+            this.workersToolStripMenuItem,
+            this.booksToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -66,45 +69,21 @@
 			// listOfStudentsToolStripMenuItem
 			// 
 			this.listOfStudentsToolStripMenuItem.Name = "listOfStudentsToolStripMenuItem";
-			this.listOfStudentsToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+			this.listOfStudentsToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
 			this.listOfStudentsToolStripMenuItem.Text = "List of students";
 			this.listOfStudentsToolStripMenuItem.Click += new System.EventHandler(this.listOfStudentsToolStripMenuItem_Click);
 			// 
 			// izdaToolStripMenuItem
 			// 
 			this.izdaToolStripMenuItem.Name = "izdaToolStripMenuItem";
-			this.izdaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+			this.izdaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
 			this.izdaToolStripMenuItem.Text = "Keys Record";
 			this.izdaToolStripMenuItem.Click += new System.EventHandler(this.KeysRecordToolStripMenuItem_Click);
-			// 
-			// workersToolStripMenuItem
-			// 
-			this.workersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listOfWorkersToolStripMenuItem,
-            this.addWorkerToolStripMenuItem});
-			this.workersToolStripMenuItem.Name = "workersToolStripMenuItem";
-			this.workersToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-			this.workersToolStripMenuItem.Text = "Workers";
-			this.workersToolStripMenuItem.Click += new System.EventHandler(this.workersToolStripMenuItem_Click);
-			// 
-			// listOfWorkersToolStripMenuItem
-			// 
-			this.listOfWorkersToolStripMenuItem.Name = "listOfWorkersToolStripMenuItem";
-			this.listOfWorkersToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-			this.listOfWorkersToolStripMenuItem.Text = "List of workers";
-			this.listOfWorkersToolStripMenuItem.Click += new System.EventHandler(this.listOfWorkersToolStripMenuItem_Click);
-			// 
-			// addWorkerToolStripMenuItem
-			// 
-			this.addWorkerToolStripMenuItem.Name = "addWorkerToolStripMenuItem";
-			this.addWorkerToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-			this.addWorkerToolStripMenuItem.Text = "Add worker";
-			this.addWorkerToolStripMenuItem.Click += new System.EventHandler(this.addWorkerToolStripMenuItem_Click);
 			// 
 			// booksRecordToolStripMenuItem
 			// 
 			this.booksRecordToolStripMenuItem.Name = "booksRecordToolStripMenuItem";
-			this.booksRecordToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+			this.booksRecordToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
 			this.booksRecordToolStripMenuItem.Text = "Books Record";
 			this.booksRecordToolStripMenuItem.Click += new System.EventHandler(this.booksRecordToolStripMenuItem_Click);
 			// 
@@ -136,6 +115,45 @@
 			this.booksSalesToolStripMenuItem.Text = "Books Sales";
 			this.booksSalesToolStripMenuItem.Click += new System.EventHandler(this.booksSalesToolStripMenuItem_Click);
 			// 
+			// workersToolStripMenuItem
+			// 
+			this.workersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listOfWorkersToolStripMenuItem,
+            this.addWorkerToolStripMenuItem});
+			this.workersToolStripMenuItem.Name = "workersToolStripMenuItem";
+			this.workersToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+			this.workersToolStripMenuItem.Text = "Workers";
+			this.workersToolStripMenuItem.Click += new System.EventHandler(this.workersToolStripMenuItem_Click);
+			// 
+			// listOfWorkersToolStripMenuItem
+			// 
+			this.listOfWorkersToolStripMenuItem.Name = "listOfWorkersToolStripMenuItem";
+			this.listOfWorkersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.listOfWorkersToolStripMenuItem.Text = "List of workers";
+			this.listOfWorkersToolStripMenuItem.Click += new System.EventHandler(this.listOfWorkersToolStripMenuItem_Click);
+			// 
+			// addWorkerToolStripMenuItem
+			// 
+			this.addWorkerToolStripMenuItem.Name = "addWorkerToolStripMenuItem";
+			this.addWorkerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.addWorkerToolStripMenuItem.Text = "Add worker";
+			this.addWorkerToolStripMenuItem.Click += new System.EventHandler(this.addWorkerToolStripMenuItem_Click);
+			// 
+			// booksToolStripMenuItem
+			// 
+			this.booksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addBookToolStripMenuItem});
+			this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
+			this.booksToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+			this.booksToolStripMenuItem.Text = "Books";
+			// 
+			// addBookToolStripMenuItem
+			// 
+			this.addBookToolStripMenuItem.Name = "addBookToolStripMenuItem";
+			this.addBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.addBookToolStripMenuItem.Text = "Add book";
+			this.addBookToolStripMenuItem.Click += new System.EventHandler(this.addBookToolStripMenuItem_Click);
+			// 
 			// Menu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +184,7 @@
 		private System.Windows.Forms.ToolStripMenuItem bestWorkersToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem materialUseToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem booksSalesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem addBookToolStripMenuItem;
 	}
 }
