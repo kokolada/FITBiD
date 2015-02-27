@@ -75,5 +75,24 @@ namespace FITBiD.DA {
 					cn.Close();
 				}
 		}
+
+
+		public static void getRadnici(DSEvidencijaKljuceva.RadniksDataTable radniksDataTable) {
+			radniksDataTable.Clear();
+			SqlConnection cn = Connection.GetConnection();
+			if (cn.State == ConnectionState.Closed)
+				cn.Open();
+
+			try {
+				SqlCommand cmd = new SqlCommand("usp_Select_Radniks", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+				adapter.Fill(radniksDataTable);
+			}
+			finally {
+				cn.Close();
+			}
+		}
 	}
 }

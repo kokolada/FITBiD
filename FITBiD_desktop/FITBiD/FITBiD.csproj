@@ -48,10 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DA\Connection.cs" />
+    <Compile Include="DA\DAEvidencijaKljuceva.cs" />
     <Compile Include="DA\DAKnjige.cs" />
     <Compile Include="DA\DAMenadzeri.cs" />
     <Compile Include="DA\DANastavnoOsoblje.cs" />
     <Compile Include="DA\DARadnici.cs" />
+    <Compile Include="DA\DAUcionice.cs" />
     <Compile Include="DA\DSEvidencijaKljuceva.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

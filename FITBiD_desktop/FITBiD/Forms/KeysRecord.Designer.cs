@@ -23,8 +23,8 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.datumPreuzimanja = new System.Windows.Forms.DateTimePicker();
+			this.datumVracanja = new System.Windows.Forms.DateTimePicker();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -34,22 +34,25 @@
 			this.cbxKljuc = new System.Windows.Forms.ComboBox();
 			this.cbxRadnik = new System.Windows.Forms.ComboBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtBarcode = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// dateTimePicker1
+			// datumPreuzimanja
 			// 
-			this.dateTimePicker1.Location = new System.Drawing.Point(167, 31);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-			this.dateTimePicker1.TabIndex = 0;
+			this.datumPreuzimanja.Location = new System.Drawing.Point(167, 31);
+			this.datumPreuzimanja.Name = "datumPreuzimanja";
+			this.datumPreuzimanja.Size = new System.Drawing.Size(200, 20);
+			this.datumPreuzimanja.TabIndex = 0;
 			// 
-			// dateTimePicker2
+			// datumVracanja
 			// 
-			this.dateTimePicker2.Location = new System.Drawing.Point(167, 68);
-			this.dateTimePicker2.Name = "dateTimePicker2";
-			this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-			this.dateTimePicker2.TabIndex = 1;
+			this.datumVracanja.Location = new System.Drawing.Point(167, 68);
+			this.datumVracanja.Name = "datumVracanja";
+			this.datumVracanja.Size = new System.Drawing.Size(200, 20);
+			this.datumVracanja.TabIndex = 1;
 			// 
 			// label1
 			// 
@@ -72,7 +75,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(8, 16);
+			this.label3.Location = new System.Drawing.Point(11, 16);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(89, 13);
 			this.label3.TabIndex = 4;
@@ -90,7 +93,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(11, 81);
+			this.label5.Location = new System.Drawing.Point(11, 103);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(41, 13);
 			this.label5.TabIndex = 6;
@@ -117,7 +120,7 @@
 			// cbxRadnik
 			// 
 			this.cbxRadnik.FormattingEnabled = true;
-			this.cbxRadnik.Location = new System.Drawing.Point(123, 78);
+			this.cbxRadnik.Location = new System.Drawing.Point(123, 100);
 			this.cbxRadnik.Name = "cbxRadnik";
 			this.cbxRadnik.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.cbxRadnik.Size = new System.Drawing.Size(200, 21);
@@ -125,6 +128,8 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Controls.Add(this.txtBarcode);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.cbxRadnik);
 			this.groupBox1.Controls.Add(this.label4);
@@ -137,16 +142,43 @@
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			// 
+			// txtBarcode
+			// 
+			this.txtBarcode.Location = new System.Drawing.Point(123, 70);
+			this.txtBarcode.Name = "txtBarcode";
+			this.txtBarcode.Size = new System.Drawing.Size(200, 20);
+			this.txtBarcode.TabIndex = 10;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(11, 73);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(47, 13);
+			this.label6.TabIndex = 11;
+			this.label6.Text = "Barcode";
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(291, 284);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 11;
+			this.button1.Text = "Sačuvaj";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// KeysRecord
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(409, 297);
+			this.ClientSize = new System.Drawing.Size(409, 323);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.dateTimePicker2);
-			this.Controls.Add(this.dateTimePicker1);
+			this.Controls.Add(this.datumVracanja);
+			this.Controls.Add(this.datumPreuzimanja);
 			this.Name = "KeysRecord";
 			this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.Text = "Keys Record";
@@ -159,8 +191,8 @@
 
 		#endregion
 
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
-		private System.Windows.Forms.DateTimePicker dateTimePicker2;
+		private System.Windows.Forms.DateTimePicker datumPreuzimanja;
+		private System.Windows.Forms.DateTimePicker datumVracanja;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
@@ -170,5 +202,8 @@
 		private System.Windows.Forms.ComboBox cbxKljuc;
 		private System.Windows.Forms.ComboBox cbxRadnik;
 		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.TextBox txtBarcode;
+		private System.Windows.Forms.Button button1;
 	}
 }
