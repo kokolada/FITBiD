@@ -86,6 +86,12 @@
     <Compile Include="Forms\AddWorker.Designer.cs">
       <DependentUpon>AddWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BookSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookSearch.Designer.cs">
+      <DependentUpon>BookSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KeysRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddWorker.resx">
       <DependentUpon>AddWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookSearch.resx">
+      <DependentUpon>BookSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KeysRecord.resx">
       <DependentUpon>KeysRecord.cs</DependentUpon>
