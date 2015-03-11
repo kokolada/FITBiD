@@ -19,16 +19,17 @@ namespace FITBiD_empty.Controllers
 		{
 			WorkersViewModel Model = new WorkersViewModel();
 
-			Model.listaEvidencijaKljuceva = ctx.EvidencijaKljuceva
-				.Select(x => new WorkersViewModel.EvidencijaKljucevaInfo() {
-					Id = x.Id,
-					NazivUcionice = x.Kljuc.Ucionica.Naziv,
-					NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " + x.NastavnoOsoblje.Prezime,
-					BarKodKljuca = x.Kljuc.Barcode,
-					DatumPreuzimanja = x.DatumPreuzimanja,
-					DatumVracanja = x.DatumVracanja
-				}).Where(y => y.DatumVracanja == null && y.DatumPreuzimanja.Day == DateTime.Today.Day).ToList();
-			
+            Model.listaEvidencijaKljuceva = ctx.EvidencijaKljuceva
+                .Select(x => new WorkersViewModel.EvidencijaKljucevaInfo()
+                {
+                    Id = x.Id,
+                    NazivUcionice = x.Kljuc.Ucionica.Naziv,
+                    NastavnoOsoblje = x.NastavnoOsoblje.Ime + " " + x.NastavnoOsoblje.Prezime,
+                    BarKodKljuca = x.Kljuc.Barcode,
+                    DatumPreuzimanja = x.DatumPreuzimanja,
+                    DatumVracanja = x.DatumVracanja
+                }).Where(y => y.DatumVracanja == null).ToList();
+			//.Where(y => y.DatumVracanja == null && y.DatumPreuzimanja.Day == DateTime.Today.Day).ToList();
 
 			Model.listaEvidencijaKnjigaZaIznajmljivanje = ctx.EvidencijaKnjigaZaIznajmljivanje
 				.Select(x=> new WorkersViewModel.EvidencijaKnjigaZaIznajmljivanjeInfo(){
@@ -55,6 +56,17 @@ namespace FITBiD_empty.Controllers
 					DatumNarudzbe = x.DatumNarudzbe
 				}).ToList();
 
+            Model.listaRezervisanihKnjiga = ctx.Rezervacija
+                .Select(x => new WorkersViewModel.RezervacijeKnjigaInfo()
+                {
+                    Id = x.Id,
+                    knjigaId = x.KnjigaId,
+                    studentId = x.StudentId,
+                    BrojIndexa = x.Student.BrojIndeksa,
+                    Naziv = x.Knjiga.Naziv,
+                    DatumRezervacije = x.DatumRezervacije,
+                    Status = x.RezervacijaPotvrdjena
+                }).Where(x => x.Status==false).ToList();
 
 			return View(Model);
 		}
@@ -141,5 +153,21 @@ namespace FITBiD_empty.Controllers
 			ctx.SaveChanges();
 			return RedirectToAction("Index");
 		}
+        public ActionResult OdobriRezervaciju(int id) {
+            Rezervacija r = ctx.Rezervacija.Find(id);
+            if (r != null)
+            {
+                r.RezervacijaPotvrdjena = true;
+                ctx.SaveChanges();
+                ViewData["RezervacijaPotvrdjena"] = "Uspješno ste odobrili rezervaciju!";
+            }
+            else
+                ViewData["RezervacijaNijePotvrdjena"] = "Došlo je do greške pri odobravanju rezervacije";
+            
+            return RedirectToAction("Index");
+        }
+
+
+
 	}
 }

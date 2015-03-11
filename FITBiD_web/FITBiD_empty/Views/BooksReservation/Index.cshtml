@@ -4,24 +4,19 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="page-header">Sve rezervacije</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
 	<tr>
 		<th>
 			Naziv knjge
 		</th>
 		<th>
-			Broj Indeksa
+			Broj indeksa
 		</th>
 		<th>
-			Ime
-		</th>
-		<th>
-			Prezime
+			Student
 		</th>
 		<th>
 			Datum rezervacije
@@ -29,7 +24,9 @@
 		<th>
 			Rezervacija potvrđena
 		</th>
-		<th></th>
+		<th>
+            Opcije
+        </th>
 	</tr>
     @foreach(FITBiD_empty.ViewModels.BooksReservationViewModel.RezervacijaInfo item in Model.rezervacije) { 
     <tr>
@@ -40,11 +37,8 @@
 			@item.BrojIndeskaStudenta
 		</td>
         <td>
-            @item.ImeStudenta
+            @item.ImeStudenta @item.PrezimeStudenta
         </td>
-		<td>
-			@item.PrezimeStudenta
-		</td>
         <td>
             @item.DatumRezervacije
         </td>
@@ -52,8 +46,9 @@
             @Html.DisplayFor(x => item.RezervacijaPotvrdjena)
         </td>
 		<td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm buttonThinStyle" })
+            
         </td>
     </tr>
     }

@@ -39,9 +39,22 @@ namespace FITBiD_empty.ViewModels {
 			public DateTime DatumNarudzbe { get; set; }
 		}
 
+        public class RezervacijeKnjigaInfo
+        {
+            public int Id { get; set; }
+            public int knjigaId { get; set; }
+            public int studentId { get; set; }
+            public string BrojIndexa { get; set; }
+            public string Naziv { get; set; }
+            public bool Status { get; set; }
+            public DateTime DatumRezervacije { get; set; }
+        }
+
 		public List<EvidencijaKljucevaInfo> listaEvidencijaKljuceva { get; set; }
 		public List<EvidencijaKnjigaZaIznajmljivanjeInfo> listaEvidencijaKnjigaZaIznajmljivanje { get; set; }
 		public List<EvidencijaKnjigaZaProdajuInfo> listaEvidencijaKnjigaZaProdaju { get; set; }
 		public List<EvidencijaNarudzbeIspitnogMaterijalaInfo> listaEvidencijaMaterijala { get; set; }
+        public List<RezervacijeKnjigaInfo> listaRezervisanihKnjiga { get; set; }
+
 	}
 }

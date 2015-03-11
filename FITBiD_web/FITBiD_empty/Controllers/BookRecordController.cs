@@ -33,6 +33,9 @@ namespace FITBiD_empty.Controllers
 		public ActionResult Details(int id)
 		{
 			EvidencijaKnjigaZaIznajmljivanje Model = ctx.EvidencijaKnjigaZaIznajmljivanje.Find(id);
+            Model.Knjiga = ctx.Knjiga.Find(Model.KnjigaId);
+            Model.Student = ctx.Student.Find(Model.StudentId);
+            Model.Radnik = ctx.Radnik.Find(Model.RadnikId);
 			return View(Model);
 		}
 		
@@ -48,6 +51,10 @@ namespace FITBiD_empty.Controllers
 		public ActionResult Edit(int id)
 		{
 			EvidencijaKnjigaZaIznajmljivanje Model = ctx.EvidencijaKnjigaZaIznajmljivanje.Find(id);
+            Model.Knjiga = ctx.Knjiga.Find(Model.KnjigaId);
+            Model.Student = ctx.Student.Find(Model.StudentId);
+            Model.Radnik = ctx.Radnik.Find(Model.RadnikId);
+            
 			return View(Model);
 		}
 
