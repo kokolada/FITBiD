@@ -23,13 +23,15 @@ namespace FITBiD_empty.Controllers
 				DatumEvidencije = x.DatumEvidencije,
 				NazivKnjge = x.Knjiga.Naziv,
 				Radnik = x.Radnik.Ime + " " + x.Radnik.Prezime 
-			}).ToList();
+			}).OrderByDescending(x => x.DatumEvidencije).ToList();
 			return View(Model);
 		}
 
 		public ActionResult Details(int id)
 		{
 			EvidencijaKnjigaZaProdaju Model = ctx.EvidencijaKnjigaZaProdaju.Find(id);
+            Model.Knjiga = ctx.Knjiga.Find(Model.KnjigaId);
+            Model.Radnik = ctx.Radnik.Find(Model.RadnikId);
 			return View(Model);
 		}
 

@@ -1,7 +1,7 @@
 ﻿@model FITBiD_empty.Models.EvidencijaKnjigaZaProdaju
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "";
 }
 
 <h3>Detalji prodaje</h3>
@@ -10,15 +10,15 @@
         <hr />
         <table class="table table-striped">
             <tr>
-                <td><b>@Html.DisplayNameFor(model => model.Knjiga.Naziv)</b></td>
+                <td><b>Knjiga</b></td>
                 <td>@Html.DisplayFor(model => model.Knjiga.Naziv)</td>
             </tr>
             <tr>
-                <td><b>@Html.DisplayNameFor(model => model.Radnik.Ime)</b></td>
+                <td><b>Radnik</b></td>
                 <td>@Html.DisplayFor(model => model.Radnik.Ime)</td>
             </tr>
             <tr>
-                <td><b>@Html.DisplayName("Datum evidencije")</b></td>
+                <td><b>Datum prodaje</b></td>
                 <td>@Html.DisplayFor(model => model.DatumEvidencije)</td>
             </tr>
         </table>
