@@ -54,10 +54,10 @@
             @Html.DisplayFor(modelItem => item.OznakaStalaze)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ZaProdaju)
+            @(item.ZaProdaju == true ? "Da" : "Ne")
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Cijena)
+            @Html.DisplayFor(modelItem => item.Cijena) KM
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { bookId = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
