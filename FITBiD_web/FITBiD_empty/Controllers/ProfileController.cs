@@ -126,7 +126,7 @@ namespace FITBiD_empty.Controllers {
             return RedirectToAction("PitanjeOdgovor", new {objavaId=k.ObjavaId});
 	    }
 
-        [Autorizacija("student")]
+       
         public ActionResult Pretraga(string poruka = "", List<Knjiga> Model = null)
 	    {
             if (Model == null)

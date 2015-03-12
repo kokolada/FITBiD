@@ -8,6 +8,7 @@
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
 
+
     <h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.Search) Pretraga knjiga</h2>
 
     <div>
@@ -70,9 +71,10 @@
                         <td>@(x.ZaProdaju == true ? "Da" : "Ne")</td>
                         <td>@(x.Cijena == 0 ? "Nema" : @x.Cijena.ToString() + " KM")</td>
                         <td>
-                            @Html.ActionLink("Details", "Details", "Book", new {id = x.Id}, new {@class = "btn btn-default btn-sm buttonThinStyle"}) |
-                            @Html.ActionLink("Rezerviši", "Rezervisi", "BooksReservation", new { knjigaId = x.Id }, new { @class = "btn btn-success btn-sm buttonThinStyle" }) 
-                            
+                            @Html.ActionLink("Details", "Details", "Book", new {id = x.Id}, new {@class = "btn btn-default btn-sm buttonThinStyle"}) 
+                            @if (Autentifikacija.GetLogiraniKorisnik(Context).rola == "student") { 
+                               @Html.ActionLink("Rezerviši", "Rezervisi", "BooksReservation", new { knjigaId = x.Id }, new { @class = "btn btn-success btn-sm buttonThinStyle" }) 
+                            }
                         </td>
                     </tr>
                 }
