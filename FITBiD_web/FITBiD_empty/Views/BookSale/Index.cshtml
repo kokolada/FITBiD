@@ -13,18 +13,11 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            Naziv knjige
-        </th>
-        <th>
-            Radnik
-        </th>
-        <th>
-            Datum evidencije
-        </th>
-        <th>
-            Opcije
-        </th>
+        <th>Naziv knjige</th>
+        <th>Radnik</th>
+        <th>Cijena</th>
+        <th>Datum evidencije</th>
+        <th>Opcije</th>
     </tr>
 
 @foreach (var item in Model.listaEvidencijaKnjigaZaProdaju) {
@@ -34,6 +27,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Radnik)
+        </td>
+        <td>
+            @item.Cijena KM
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DatumEvidencije)

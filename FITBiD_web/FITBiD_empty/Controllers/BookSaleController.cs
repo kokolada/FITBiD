@@ -22,7 +22,9 @@ namespace FITBiD_empty.Controllers
 				Id = x.Id,
 				DatumEvidencije = x.DatumEvidencije,
 				NazivKnjge = x.Knjiga.Naziv,
-				Radnik = x.Radnik.Ime + " " + x.Radnik.Prezime 
+				Radnik = x.Radnik.Ime + " " + x.Radnik.Prezime,
+                Cijena = x.Knjiga.Cijena
+                
 			}).OrderByDescending(x => x.DatumEvidencije).ToList();
 			return View(Model);
 		}

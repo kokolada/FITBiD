@@ -10,6 +10,7 @@ namespace FITBiD_empty.ViewModels {
 			public DateTime DatumEvidencije { get; set; }
 			public string NazivKnjge { get; set; }
 			public string Radnik { get; set; }
+            public double Cijena { get; set; }
 		}
 		public List<BooksSaleInfo> listaEvidencijaKnjigaZaProdaju { get; set; }
 

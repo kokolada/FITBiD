@@ -46,7 +46,8 @@ namespace FITBiD_empty.Controllers
 				.Select(x=> new WorkersViewModel.EvidencijaKnjigaZaProdajuInfo(){
 					DatumEvidencije = x.DatumEvidencije,
 					NazivKnjge = x.Knjiga.Naziv,
-					Autor = x.Knjiga.Autor
+					Autor = x.Knjiga.Autor,
+                    Cijena = x.Knjiga.Cijena
 				}).ToList();
 
 			Model.listaEvidencijaMaterijala = ctx.EvidencijaNarudzbeIspitnogMaterijala
