@@ -3,13 +3,28 @@
 
 @model FITBiD_empty.ViewModels.WorkersViewModel
 
-<br />
-<div class="" id="workerBoard">
-    <h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.Reorder) Evidencije</h2>
+
+<h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.Reorder) Evidencije</h2>
+<div class="col-md-3">
+    <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+        <div data-spy="affix" data-offset-top="45" data-offset-bottom="90">
+            <ul class="nav" id="sidebar-nav">
+                <li><a href="#kljucevi">Nevraćeni ključevi</a></li>
+                <li><a href="#iznajmljene">Iznajmljene knjige</a></li>
+                <li><a href="#prodane">Prodane knjige</a></li>
+                <li><a href="#materijal">Ispitni materijal</a></li>
+                <li><a href="#rezervacije">Rezervacije knjiga</a></li>                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-9" id="workerBoard">
+    
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="panel panel-primary">
-                <div class="panel-heading">Nevraćeni ključevi @Html.ActionLink("+ Iznajmi ključ", "Create", "KeysRecord", null, new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+                <div class="panel-heading" >Nevraćeni ključevi @Html.ActionLink("+ Iznajmi ključ", "Create", "KeysRecord", null, new {  id = "kljucevi", @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
                 <div class="panel-body">
                     <table class="table table-striped col-md-4">
                         <thead>
@@ -37,10 +52,10 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    @Html.ActionLink("Iznajmljene knjige danas", "Index", "BookRecord", null, new { @class = "linkTextStyle" })
+                    @Html.ActionLink("Iznajmljene knjige", "Index", "BookRecord", null, new { id = "iznajmljene", @class = "linkTextStyle" })
                     @Html.ActionLink("+ Iznajmi knjigu", "Create", "BookRecord", null, new { @class = "btn btn-default btn-sm pull-right positionButton" })
                 </div>
                 <div class="panel-body">
@@ -75,10 +90,10 @@
     </div>
     <br />
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    @Html.ActionLink("Prodane knjige", "Index", "BookSale", null, new { @class = "linkTextStyle" })
+                    @Html.ActionLink("Prodane knjige", "Index", "BookSale", null, new { id = "prodane", @class = "linkTextStyle" })
                     @Html.ActionLink("+ Prodaj knjigu", "Create", "BookSale", null, new { @class = "btn btn-default btn-sm pull-right positionButton" })
                 </div>
                 <div class="panel-body">
@@ -88,6 +103,7 @@
                             <tr>
                                 <th>Knjiga</th>
                                 <th>Autor</th>
+                                <th>Cijena</th>
                                 <th>Datum prodaje</th>
                             </tr>
                         </thead>
@@ -97,6 +113,7 @@
                                 <tr>
                                     <td>@x.NazivKnjge</td>
                                     <td>@x.Autor</td>
+                                    <td>@x.Cijena KM</td>
                                     <td>@x.DatumEvidencije</td>
                                 </tr>
                             }
@@ -105,9 +122,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="panel panel-success">
-                <div class="panel-heading">Ispitni materijal @Html.ActionLink("+ Naruči materijal", "CreateIspitniMaterijal", "Workers", new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+                <div class="panel-heading">Ispitni materijal @Html.ActionLink("+ Naruči materijal", "CreateIspitniMaterijal", "Workers", new {id = "materijal", @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
                 <div class="panel-body">
                     <table class="table table-striped col-md-4">
                         <thead>
@@ -134,17 +151,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="panel panel-success">
-                <div class="panel-heading">Rezervacije knjiga @Html.ActionLink("Više...", "Index", "BooksReservation", null, new { @class = "btn btn-default btn-sm pull-right positionButton" }) </div>
+                <div class="panel-heading">Rezervacije knjiga @Html.ActionLink("Više...", "Index", "BooksReservation", null, new { id = "rezervacije",@class = "btn btn-default btn-sm pull-right positionButton" }) </div>
                 <div class="panel-body">
                     @if (ViewData["RezervacijaPotvrdjena"] != null)
                     {   <div class="alert alert-danger" role="alert"><div class="alert alert-success" role="alert">@ViewData["RezervacijaPotvrdjena"]</div></div>}
-                     
-                    
-                    @if (ViewData["RezervacijaNijePotvrdjena"] != null)                    
+
+
+                    @if (ViewData["RezervacijaNijePotvrdjena"] != null)
                     {   <div class="alert alert-danger" role="alert">@ViewData["RezervacijaNijePotvrdjena"]</div>}
-                    
+
                     <table class="table table-striped col-md-4">
                         <thead>
                             <tr>

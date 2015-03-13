@@ -31,6 +31,7 @@ namespace FITBiD_empty.ViewModels {
 			public DateTime DatumEvidencije { get; set; }
 			public string NazivKnjge { get; set; }
 			public string Autor { get; set; }
+            public double Cijena { get; set; }
 		}
 
 		public class EvidencijaNarudzbeIspitnogMaterijalaInfo {
