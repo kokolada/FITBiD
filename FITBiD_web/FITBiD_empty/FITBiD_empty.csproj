@@ -387,13 +387,13 @@
     <Content Include="Views\ExamAccessories\Edit.cshtml" />
     <Content Include="Views\ExamAccessories\Index.cshtml" />
     <Content Include="Views\Profile\Pretraga.cshtml" />
-    <Content Include="Views\Upload\Index.cshtml" />
     <Content Include="Views\EntryRecord\Index.cshtml" />
     <Content Include="Views\EntryRecord\Edit.cshtml" />
     <Content Include="Views\EntryRecord\Create.cshtml" />
+    <Content Include="Views\Upload\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Uploads\" />
     <Folder Include="Views\DA\" />
   </ItemGroup>
   <ItemGroup>
