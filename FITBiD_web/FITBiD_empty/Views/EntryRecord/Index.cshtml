@@ -1,0 +1,51 @@
+﻿@model FITBiD_empty.ViewModels.EntryRecordViewModel
+@using Mvc.RazorTools.FontAwesome
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.FileTextO) Izdate prijave</h2>
+
+
+<table class="table">
+	<tr>
+		<th>
+			Broj Indeksa
+		</th>
+		<th>
+			Student
+		</th>
+		<th>
+			Količina
+		</th>
+		<th>
+			Radnik
+		</th>
+		<th>
+			Opcije
+		</th>
+	</tr>
+	@foreach (FITBiD_empty.ViewModels.EntryRecordViewModel.EvidencijaInfo item in Model.listaEvidencija) {
+		<tr>
+			<td>
+				@item.brojIndeksa
+			</td>
+			<td>
+				@item.studentIme @item.studentPrezime
+			</td>
+			<td>
+				@item.kolicina
+			</td>
+			<td>
+				@item.radnikIme @item.radnikPrezime
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default btn-sm buttonThinStyle" }) |
+				@Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm buttonThinStyle" })
+			</td>
+
+		</tr>
+	}
+</table>
+@Html.ActionLink("Dodaj", "Create", null, new { @class = "btn btn-success btn-md buttonThinStyle" })
+

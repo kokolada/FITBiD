@@ -200,12 +200,14 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ClassroomController.cs" />
     <Compile Include="Controllers\DAController.cs" />
+    <Compile Include="Controllers\EntryRecordController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KeyController.cs" />
     <Compile Include="Controllers\KeysRecordController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\WorkersController.cs" />
     <Compile Include="DAL\MojContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -249,6 +251,8 @@
     <Compile Include="ViewModels\BooksReservationEditViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationCreateViewModel.cs" />
     <Compile Include="ViewModels\BookSaleViewModel.cs" />
+    <Compile Include="ViewModels\EntryRecordCreateViewModel.cs" />
+    <Compile Include="ViewModels\EntryRecordViewModel.cs" />
     <Compile Include="ViewModels\EvidencijaProdajeKnjigaViewModel.cs" />
     <Compile Include="ViewModels\IspitniMaterijalViewModel.cs" />
     <Compile Include="ViewModels\KeysRecordCreateViewModel.cs" />
@@ -383,6 +387,10 @@
     <Content Include="Views\ExamAccessories\Edit.cshtml" />
     <Content Include="Views\ExamAccessories\Index.cshtml" />
     <Content Include="Views\Profile\Pretraga.cshtml" />
+    <Content Include="Views\Upload\Index.cshtml" />
+    <Content Include="Views\EntryRecord\Index.cshtml" />
+    <Content Include="Views\EntryRecord\Edit.cshtml" />
+    <Content Include="Views\EntryRecord\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

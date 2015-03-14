@@ -80,7 +80,11 @@ namespace FITBiD_empty.Controllers {
 	    public ActionResult StudentBoard(int izabranaKategorijaObjave, string sadrzajTetxarea)
 	    {
             Objava o = new Objava();
+			if (!ModelState.IsValid || sadrzajTetxarea == "") {
+				
+				return RedirectToAction("StudentBoard");
 
+			}
             o.StudentId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
 	        o.Sadrzaj = sadrzajTetxarea;
 	        o.KategorijaObjaveId = izabranaKategorijaObjave;
@@ -170,6 +174,7 @@ namespace FITBiD_empty.Controllers {
 
             return View(Model);
         }
+
 
 	}
 }

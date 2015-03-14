@@ -14,7 +14,8 @@
             <div class="alert alert-success" id="postavljanjePitanjaWrapper">
                 <h4>Postavi pitanje</h4>
                 <textarea required="required" name="sadrzajTetxarea" class="form-control" style="resize: none;" placeholder="Unesi pitanje..."></textarea> <br/>
-                <label>Izaberi kategoriju</label>
+				@Html.ValidationMessageFor(model=>model.objave)
+				<label>Izaberi kategoriju</label>
                 <select name="izabranaKategorijaObjave" class="form-control" id="izabranaKategorijaObjave">
                     @foreach (FITBiD_empty.Models.KategorijaObjave x in Model.kategorijeObjave)
                     {
@@ -39,7 +40,7 @@
         }
 
     </div>
-
+	<a href="~/Views/Profile/StudentBoard/Upload.cshtml" class="btn btn-info" role="button">Upload</a>
 	<div class="col-md-6" id="BookInfoTabels">
 		<h3>@Html.FontAwesome(FontAwesomeIconSet.Tags) Rezervisane knjige</h3>
 		<table class="table table-striped">
@@ -82,6 +83,8 @@
 			}
 
 		</table>
-
+		<div>
+			@Html.ValidationSummary()
+		</div>
 	</div>
 </div>
