@@ -18,6 +18,7 @@ namespace FITBiD_empty.ViewModels
 			public string BrojIndeskaStudenta { get; set; }
 			public string ImeStudenta { get; set; }
 			public string PrezimeStudenta { get; set; }
+			public string BrojIndeksa { get; set; }
 		}
 
 		public List<RezervacijaInfo> rezervacije { get; set; }
