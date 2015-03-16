@@ -208,6 +208,7 @@
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\UserActivityController.cs" />
     <Compile Include="Controllers\WorkersController.cs" />
     <Compile Include="DAL\MojContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -262,6 +263,7 @@
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationViewModel.cs" />
     <Compile Include="ViewModels\StudentBoardViewModel.cs" />
+    <Compile Include="ViewModels\UserActivityViewModel.cs" />
     <Compile Include="ViewModels\WorkersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -391,6 +393,8 @@
     <Content Include="Views\EntryRecord\Edit.cshtml" />
     <Content Include="Views\EntryRecord\Create.cshtml" />
     <Content Include="Views\Upload\Index.cshtml" />
+    <Content Include="Views\UserActivity\Index.cshtml" />
+    <Content Include="Views\UserActivity\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Uploads\" />
