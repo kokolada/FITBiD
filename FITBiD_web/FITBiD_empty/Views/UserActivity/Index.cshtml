@@ -1,0 +1,34 @@
+﻿@using FITBiD_empty.ViewModels;
+@using Mvc.RazorTools.FontAwesome
+@{
+	ViewBag.Title = "Index";
+}
+@model FITBiD_empty.ViewModels.UserActivityViewModel
+
+@using (Ajax.BeginForm("Details", "UserActivity", new AjaxOptions(){UpdateTargetId="rezultat"})) {
+	<div class="container">
+		<h4>@Html.FontAwesome(FontAwesomeIconSet.Tags) Praćenje aktivnosti studenta</h4>
+		<hr />
+		<div class="row">
+			<div class="carousel-search">
+				<div class="btn-group">
+					<select name="student" class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown">
+						<option selected disabled>Odaberi studenta</option>
+						@foreach (FITBiD_empty.Models.Student k in Model.listaStudenata) {
+							<option value="@k.Id">@k.BrojIndeksa @k.Ime @k.Prezime</option>
+						}
+					</select>
+				</div>
+				<div class="btn-group">
+					<button type="submit" id="btnSearch" class="btn btn-default">@Html.FontAwesome(FontAwesomeIconSet.Search)</button>
+				</div>
+			</div>
+		</div>
+	</div>
+}
+<div id="rezultat"></div>
+
+
+
+
+
