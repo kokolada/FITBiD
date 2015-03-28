@@ -63,6 +63,22 @@ namespace FITBiD {
 			frm.Show();
 		}
 
+		private void mostActiveStudentToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("najaktivnijiStudent");
+			frm.Show();
+		}
+
+		private void mostActiveStudentOnSystemToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("najaktivnijiStudentPoLoginu");
+			frm.Show();
+		}
+
+		private void mostPopulatedCategoryToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.Reports frm = new Forms.Reports("najzastupljenijeKategorije");
+			frm.Show();
+		}
+
+
 		private void addBookToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Forms.AddBook frm = new Forms.AddBook();
@@ -73,5 +89,7 @@ namespace FITBiD {
 			Forms.KeysRecord frm = new Forms.KeysRecord();
 			frm.Show();
 		}
+
+
 	}
 }
