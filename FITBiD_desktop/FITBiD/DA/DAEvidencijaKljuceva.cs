@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FITBiD.DA;
 
 namespace FITBiD.DA {
 	class DAEvidencijaKljuceva {
@@ -20,7 +21,7 @@ namespace FITBiD.DA {
 
 				cmd.Parameters.Add("@NastavnoOsobljeID", SqlDbType.Int).Value = NastavnoOsobljeID;
 				cmd.Parameters.Add("@KljucID", SqlDbType.Int).Value = KljucID;
-				cmd.Parameters.Add("@RadnikID", SqlDbType.Int).Value = 1;
+				cmd.Parameters.Add("@RadnikID", SqlDbType.Int).Value = DALoginEvidencija.LogiraniKorisnik;
 				cmd.Parameters.Add("@DatumPreuzimanja", SqlDbType.DateTime).Value = DatumPreuzimanja;
 				cmd.Parameters.Add("@DatumVracanja", SqlDbType.DateTime).Value = DatumVracanja;
 

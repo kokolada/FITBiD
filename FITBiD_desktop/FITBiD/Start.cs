@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FITBiD.DA;
 
 namespace FITBiD
 {
@@ -21,10 +22,12 @@ namespace FITBiD
 		{
 
 			Menu frm_menu = new Menu();
-			if (DA.DAMenadzeri.ProvjeriLoginPodatke(loginUsername.Text, loginPassword.Text))
+			
+			DALoginEvidencija.LogiraniKorisnik = DA.DAMenadzeri.ProvjeriLoginPodatke(loginUsername.Text, loginPassword.Text);
+			if (DALoginEvidencija.LogiraniKorisnik > 0)
 			{
 				frm_menu.Show();
-				//DA.DALoginEvidencija.LogiraniKorisnik = DA.DALoginEvidencija.EvidencijaLogina(DateTime.Now,menadzmentId);
+				DALoginEvidencija.EvidencijaLogina(DateTime.Now, DALoginEvidencija.LogiraniKorisnik);
 				this.Hide();
 			}
 			
