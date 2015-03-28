@@ -17,7 +17,6 @@ namespace FITBiD.DA
 			SqlConnection cn = Connection.GetConnection();
 			if (cn.State == ConnectionState.Closed)
 				cn.Open();
-			int MenadzerID;
 			try
 			{
 				SqlCommand cmd = new SqlCommand("usp_getMenadzerLogin", cn);
@@ -27,7 +26,7 @@ namespace FITBiD.DA
 			
 				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 				adapter.Fill(menadzer);
-				MenadzerID = Convert.ToInt32(menadzer.IdColumn.Table.Rows[0]["Id"].ToString());
+				
 			}
 			finally
 			{
@@ -35,8 +34,10 @@ namespace FITBiD.DA
 			}
 
 
-			if (MenadzerID > 0)
+			if (menadzer.Count > 0) { 
+				int MenadzerID = Convert.ToInt32(menadzer.IdColumn.Table.Rows[0]["Id"].ToString()); 
 				return MenadzerID;
+			}
 			return 0;
 		}
 	}
