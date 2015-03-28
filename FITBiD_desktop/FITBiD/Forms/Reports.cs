@@ -21,14 +21,6 @@ namespace FITBiD.Forms {
 		private void Reports_Load(object sender, EventArgs e) {
 
 			if (report == "students") {
-				//DA.DSStudents dsStudents = new DA.DSStudents();
-				//DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter adapter = new DA.DSStudentsTableAdapters.Studenti_ViewTableAdapter();
-
-				//bindingSource.DataSource = dsStudents.Studenti_View;
-
-				//adapter.Fill(dsStudents.Studenti_View);
-				//ReportDataSource reportDS = new ReportDataSource("Students", bindingSource);
-				//reportViewer.LocalReport.DataSources.Add(reportDS);
 				reportViewer.ServerReport.ReportPath = "/rpt_ListaStudenata";
 			}
 			else if (report == "izdavanjeKljuceva")
@@ -43,7 +35,12 @@ namespace FITBiD.Forms {
 				reportViewer.ServerReport.ReportPath = "/rpt_PotrosnjaMaterijala";
 			else if (report == "prodajaKnjiga")
 				reportViewer.ServerReport.ReportPath = "/rpt_ProdajaKnjiga";
-				
+			/**/	else if (report == "najaktivnijiStudent")
+				reportViewer.ServerReport.ReportPath = "/rpt_NajaktivnijiStudent";
+			else if (report == "najaktivnijiStudentPoLoginu")
+				reportViewer.ServerReport.ReportPath = "/rpt_NajaktivnijiStudentPoLoginu";
+			else if (report == "najzastupljenijeKategorije")
+				reportViewer.ServerReport.ReportPath = "/rpt_NajzastupljenijeKategorije";
 
 			this.reportViewer.RefreshReport();
 		}
