@@ -23,12 +23,17 @@ namespace FITBiD
 
 			Menu frm_menu = new Menu();
 			
-			DALoginEvidencija.LogiraniKorisnik = DA.DAMenadzeri.ProvjeriLoginPodatke(loginUsername.Text, loginPassword.Text);
-			if (DALoginEvidencija.LogiraniKorisnik > 0)
+			
+			if (DA.DAMenadzeri.ProvjeriLoginPodatke(loginUsername.Text, loginPassword.Text) > 0)
 			{
 				frm_menu.Show();
+				DALoginEvidencija.LogiraniKorisnik = DA.DAMenadzeri.ProvjeriLoginPodatke(loginUsername.Text, loginPassword.Text);
 				DALoginEvidencija.EvidencijaLogina(DateTime.Now, DALoginEvidencija.LogiraniKorisnik);
 				this.Hide();
+			}
+			else {
+				lblGreska.Visible = true;
+				loginPassword.Clear();
 			}
 			
 		}
