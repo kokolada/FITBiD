@@ -7,20 +7,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FITBiD.DA {
-	class DAUcionice {
-			public static void GetAllUcionice(DSEvidencijaKljuceva.UcionicasDataTable dtUcionice) {
-			dtUcionice.Clear();
+	class DAKljucevi {
+			public static void GetAllKljucevi(DSEvidencijaKljuceva.KljucsDataTable dtKljucevi) {
+			dtKljucevi.Clear();
 
 			SqlConnection cn = Connection.GetConnection();
 			if (cn.State == ConnectionState.Closed)
 				cn.Open();
 
 			try {
-				SqlCommand cmd = new SqlCommand("usp_GetAllUcionice", cn);
+				SqlCommand cmd = new SqlCommand("usp_GetAllKljucevi", cn);
 				cmd.CommandType = CommandType.StoredProcedure;
 
 				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-				adapter.Fill(dtUcionice);
+				adapter.Fill(dtKljucevi);
 			}
 			finally {
 				cn.Close();

@@ -105,6 +105,7 @@
 			this.Controls.Add(this.labelUsername);
 			this.Name = "Start";
 			this.Text = "Login";
+			this.Load += new System.EventHandler(this.Start_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

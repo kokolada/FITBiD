@@ -24,13 +24,21 @@ namespace FITBiD.DA
 				cmd.Parameters.Add("username", username);
 				cmd.Parameters.Add("password", password);
 
+				//var returnParameter = cmd.Parameters.Add("@Result", SqlDbType.Int);
+				//returnParameter.Direction = ParameterDirection.ReturnValue;
+				
 				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 				adapter.Fill(menadzer);
+
+				//if (Convert.ToInt32(returnParameter.Value) > 0)
+				//	return Convert.ToInt32(returnParameter.Value);
+				//return 0;
 			}
 			finally
 			{
 				cn.Close();
 			}
+
 
 			if (menadzer.Count > 0)
 				return true;

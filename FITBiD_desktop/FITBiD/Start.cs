@@ -24,9 +24,14 @@ namespace FITBiD
 			if (DA.DAMenadzeri.ProvjeriLoginPodatke(loginUsername.Text, loginPassword.Text))
 			{
 				frm_menu.Show();
+				//DA.DALoginEvidencija.LogiraniKorisnik = DA.DALoginEvidencija.EvidencijaLogina(DateTime.Now,menadzmentId);
 				this.Hide();
 			}
 			
+		}
+
+		private void Start_Load(object sender, EventArgs e) {
+
 		}
 	}
 }

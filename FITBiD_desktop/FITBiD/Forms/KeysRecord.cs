@@ -25,31 +25,23 @@ namespace FITBiD.Forms {
 			cbxOsoblje.ValueMember = "Id";
 
 			//ucionica
-			DAUcionice.GetAllUcionice(dsEvidencija.Ucionicas);
-			DSEvidencijaKljuceva.UcionicasRow ucionica = dsEvidencija.Ucionicas.NewUcionicasRow();
-			ucionica.Id = 0;
-			dsEvidencija.Ucionicas.Rows.InsertAt(ucionica, 0);
-			cbxKljuc.DataSource = dsEvidencija.Ucionicas;
-			cbxKljuc.DisplayMember = "Naziv";
+			DAKljucevi.GetAllKljucevi(dsEvidencija.Kljucs);
+			DSEvidencijaKljuceva.KljucsRow kljuc = dsEvidencija.Kljucs.NewKljucsRow();
+			cbxKljuc.DataSource = dsEvidencija.Kljucs;
+			cbxKljuc.DisplayMember = "Barcode";
 			cbxKljuc.ValueMember = "Id";
 
-			//radnici
-			DARadnici.getRadnici(dsEvidencija.Radniks);
-			DSEvidencijaKljuceva.RadniksRow radnik = dsEvidencija.Radniks.NewRadniksRow();
-			radnik.Id = 0;
-			dsEvidencija.Radniks.Rows.InsertAt(radnik, 0);
-			cbxRadnik.DataSource = dsEvidencija.Radniks;
-			cbxRadnik.DisplayMember = "Ime";
-			cbxRadnik.ValueMember = "Id";
 
 			//na osnovu učionice preuzeti ključId i dodati u bazu
 			
 		}
 
-		private void button1_Click(object sender, EventArgs e) {
-
-			
+		private void button1_Click(object sender, EventArgs e) {	
+			DAEvidencijaKljuceva.EvidentirajKljuc(datumPreuzimanja.Value.Date, datumVracanja.Value.Date, Convert.ToInt32(cbxKljuc.SelectedValue), Convert.ToInt32(cbxOsoblje.SelectedValue));
+			MessageBox.Show("Uspješno ste evidentirali kljuc", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);	
 		}
+
+
 
 	}
 }

@@ -28,13 +28,9 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
 			this.cbxOsoblje = new System.Windows.Forms.ComboBox();
-			this.cbxKljuc = new System.Windows.Forms.ComboBox();
-			this.cbxRadnik = new System.Windows.Forms.ComboBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.txtBarcode = new System.Windows.Forms.TextBox();
+			this.cbxKljuc = new System.Windows.Forms.ComboBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
@@ -81,24 +77,6 @@
 			this.label3.TabIndex = 4;
 			this.label3.Text = "Nastavno osoblje";
 			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(11, 46);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(49, 13);
-			this.label4.TabIndex = 5;
-			this.label4.Text = "Učionica";
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(11, 103);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(41, 13);
-			this.label5.TabIndex = 6;
-			this.label5.Text = "Radnik";
-			// 
 			// cbxOsoblje
 			// 
 			this.cbxOsoblje.FormattingEnabled = true;
@@ -108,59 +86,39 @@
 			this.cbxOsoblje.Size = new System.Drawing.Size(200, 21);
 			this.cbxOsoblje.TabIndex = 7;
 			// 
-			// cbxKljuc
-			// 
-			this.cbxKljuc.FormattingEnabled = true;
-			this.cbxKljuc.Location = new System.Drawing.Point(123, 43);
-			this.cbxKljuc.Name = "cbxKljuc";
-			this.cbxKljuc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.cbxKljuc.Size = new System.Drawing.Size(200, 21);
-			this.cbxKljuc.TabIndex = 8;
-			// 
-			// cbxRadnik
-			// 
-			this.cbxRadnik.FormattingEnabled = true;
-			this.cbxRadnik.Location = new System.Drawing.Point(123, 100);
-			this.cbxRadnik.Name = "cbxRadnik";
-			this.cbxRadnik.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.cbxRadnik.Size = new System.Drawing.Size(200, 21);
-			this.cbxRadnik.TabIndex = 9;
-			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.label6);
-			this.groupBox1.Controls.Add(this.txtBarcode);
-			this.groupBox1.Controls.Add(this.label3);
-			this.groupBox1.Controls.Add(this.cbxRadnik);
-			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.cbxKljuc);
-			this.groupBox1.Controls.Add(this.label5);
+			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.cbxOsoblje);
 			this.groupBox1.Location = new System.Drawing.Point(38, 139);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(329, 129);
+			this.groupBox1.Size = new System.Drawing.Size(329, 90);
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			// 
-			// txtBarcode
+			// cbxKljuc
 			// 
-			this.txtBarcode.Location = new System.Drawing.Point(123, 70);
-			this.txtBarcode.Name = "txtBarcode";
-			this.txtBarcode.Size = new System.Drawing.Size(200, 20);
-			this.txtBarcode.TabIndex = 10;
+			this.cbxKljuc.FormattingEnabled = true;
+			this.cbxKljuc.Location = new System.Drawing.Point(123, 55);
+			this.cbxKljuc.Name = "cbxKljuc";
+			this.cbxKljuc.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.cbxKljuc.Size = new System.Drawing.Size(200, 21);
+			this.cbxKljuc.TabIndex = 12;
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(11, 73);
+			this.label6.Location = new System.Drawing.Point(11, 55);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(47, 13);
+			this.label6.Size = new System.Drawing.Size(30, 13);
 			this.label6.TabIndex = 11;
-			this.label6.Text = "Barcode";
+			this.label6.Text = "Ključ";
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(291, 284);
+			this.button1.Location = new System.Drawing.Point(292, 247);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 11;
@@ -172,7 +130,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(409, 323);
+			this.ClientSize = new System.Drawing.Size(395, 297);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.label2);
@@ -196,14 +154,10 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.ComboBox cbxOsoblje;
-		private System.Windows.Forms.ComboBox cbxKljuc;
-		private System.Windows.Forms.ComboBox cbxRadnik;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox txtBarcode;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.ComboBox cbxKljuc;
 	}
 }
