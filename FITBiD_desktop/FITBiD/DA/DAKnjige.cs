@@ -20,13 +20,13 @@ namespace FITBiD.DA
 			{
 				SqlCommand cmd = new SqlCommand("usp_AddKnjiga", cn);
 				cmd.CommandType = CommandType.StoredProcedure;
-				cmd.Parameters.Add("naziv", naziv);
-				cmd.Parameters.Add("autor", autor);
-				cmd.Parameters.Add("godina", godina);
-				cmd.Parameters.Add("barcode", barcode);
-				cmd.Parameters.Add("oznaka", oznaka);
-				cmd.Parameters.Add("zaprodaju", zaprodaju);
-				cmd.Parameters.Add("cijena", cijena);
+				cmd.Parameters.Add("@naziv", naziv);
+				cmd.Parameters.Add("@autor", autor);
+				cmd.Parameters.Add("@godina", godina);
+				cmd.Parameters.Add("@barcode", barcode);
+				cmd.Parameters.Add("@oznaka", oznaka);
+				cmd.Parameters.Add("@zaprodaju", zaprodaju);
+				cmd.Parameters.Add("@cijena", cijena);
 
 				cmd.ExecuteNonQuery();
 			}

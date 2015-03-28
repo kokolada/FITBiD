@@ -16,16 +16,13 @@ namespace FITBiD.DA {
 				cn.Open();
 
 			try {
-				SqlCommand cmd = new SqlCommand("ups_LoginEvidencija_Insert", cn);
+				SqlCommand cmd = new SqlCommand("usp_LoginEvidencija_Insert_Desktop", cn);
 				cmd.CommandType = CommandType.StoredProcedure;
-				cmd.Parameters.Add("@DatumLogina", SqlDbType.DateTime);
-				cmd.Parameters.Add("@MenadzmentID", SqlDbType.Int);
 
-				//SqlParameter returnParameter = cmd.Parameters.Add("@Id", SqlDbType.Int);
-				//returnParameter.Direction = ParameterDirection.Output;
+				cmd.Parameters.Add("@DatumLogina", SqlDbType.DateTime).Value = datumLogina;
+				cmd.Parameters.Add("@MenadzmentID", SqlDbType.Int).Value = MenadzmentId;
 
 				cmd.ExecuteNonQuery();
-				//return Convert.ToInt32(returnParameter.Value);
 			}
 			finally {
 				cn.Close();
