@@ -37,6 +37,7 @@
 			this.addWorkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.pretragaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -128,21 +129,22 @@
 			// listOfWorkersToolStripMenuItem
 			// 
 			this.listOfWorkersToolStripMenuItem.Name = "listOfWorkersToolStripMenuItem";
-			this.listOfWorkersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.listOfWorkersToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.listOfWorkersToolStripMenuItem.Text = "List of workers";
 			this.listOfWorkersToolStripMenuItem.Click += new System.EventHandler(this.listOfWorkersToolStripMenuItem_Click);
 			// 
 			// addWorkerToolStripMenuItem
 			// 
 			this.addWorkerToolStripMenuItem.Name = "addWorkerToolStripMenuItem";
-			this.addWorkerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.addWorkerToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
 			this.addWorkerToolStripMenuItem.Text = "Add worker";
 			this.addWorkerToolStripMenuItem.Click += new System.EventHandler(this.addWorkerToolStripMenuItem_Click);
 			// 
 			// booksToolStripMenuItem
 			// 
 			this.booksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addBookToolStripMenuItem});
+            this.addBookToolStripMenuItem,
+            this.pretragaToolStripMenuItem});
 			this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
 			this.booksToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
 			this.booksToolStripMenuItem.Text = "Books";
@@ -153,6 +155,13 @@
 			this.addBookToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.addBookToolStripMenuItem.Text = "Add book";
 			this.addBookToolStripMenuItem.Click += new System.EventHandler(this.addBookToolStripMenuItem_Click);
+			// 
+			// pretragaToolStripMenuItem
+			// 
+			this.pretragaToolStripMenuItem.Name = "pretragaToolStripMenuItem";
+			this.pretragaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.pretragaToolStripMenuItem.Text = "Pretraga";
+			this.pretragaToolStripMenuItem.Click += new System.EventHandler(this.pretragaToolStripMenuItem_Click);
 			// 
 			// Menu
 			// 
@@ -186,5 +195,6 @@
 		private System.Windows.Forms.ToolStripMenuItem booksSalesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addBookToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem pretragaToolStripMenuItem;
 	}
 }

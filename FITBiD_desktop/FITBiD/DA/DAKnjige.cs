@@ -35,5 +35,31 @@ namespace FITBiD.DA
 				cn.Close();
 			}
 		}
+
+		public static DSKnjige.KnjigasDataTable KnjigaSearch(string naziv, string autor)
+		{
+			SqlConnection cn = Connection.GetConnection();
+			if (cn.State == ConnectionState.Closed)
+				cn.Open();
+
+			try
+			{
+				SqlCommand cmd = new SqlCommand("usp_KnjigaPretraga", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.Add("@naziv", naziv);
+				cmd.Parameters.Add("@autor", autor);
+
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+				DSKnjige.KnjigasDataTable knjige = new DSKnjige.KnjigasDataTable();
+				adapter.Fill(knjige);
+
+				return knjige;
+			}
+			finally
+			{
+				cn.Close();
+			}
+		}
 	}
 }

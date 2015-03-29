@@ -32,5 +32,10 @@ namespace FITBiD.Forms {
 			dgRadnici.DataSource = dtRadnici;
 		}
 
+		private void dgRadnici_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
 	}
 }

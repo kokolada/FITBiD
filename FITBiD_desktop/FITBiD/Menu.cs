@@ -90,6 +90,12 @@ namespace FITBiD {
 			frm.Show();
 		}
 
+		private void pretragaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Forms.BookSearch frm = new Forms.BookSearch();
+			frm.Show();
+		}
+
 
 	}
 }

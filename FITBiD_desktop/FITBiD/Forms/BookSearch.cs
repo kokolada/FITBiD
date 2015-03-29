@@ -16,5 +16,18 @@ namespace FITBiD.Forms
 		{
 			InitializeComponent();
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			if (txtNazivKnjige.Text != "" && txtAutor.Text != "")
+			{
+				gridPretraga.DataSource = DA.DAKnjige.KnjigaSearch(txtNazivKnjige.Text, txtAutor.Text);
+			}
+		}
+
+		private void BookSearch_Load(object sender, EventArgs e)
+		{
+			gridPretraga.DataSource = DA.DAKnjige.KnjigaSearch(null, null);
+		}
 	}
 }
