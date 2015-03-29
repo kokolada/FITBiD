@@ -36,7 +36,7 @@ namespace FITBiD.DA
 			}
 		}
 
-		public static DSKnjige.KnjigasDataTable KnjigaSearch(string naziv, string autor)
+		public static DSKnjige.KnjigasDataTable KnjigaSearch(string naziv="pero", string autor="peric")
 		{
 			SqlConnection cn = Connection.GetConnection();
 			if (cn.State == ConnectionState.Closed)
@@ -46,8 +46,8 @@ namespace FITBiD.DA
 			{
 				SqlCommand cmd = new SqlCommand("usp_KnjigaPretraga", cn);
 				cmd.CommandType = CommandType.StoredProcedure;
-				cmd.Parameters.Add("@naziv", naziv);
-				cmd.Parameters.Add("@autor", autor);
+				cmd.Parameters.Add("@naziv",SqlDbType.VarChar).Value = naziv;
+				cmd.Parameters.Add("@autor", SqlDbType.VarChar).Value = autor;
 
 				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
