@@ -50,6 +50,7 @@
 			this.dgRadnici.Name = "dgRadnici";
 			this.dgRadnici.Size = new System.Drawing.Size(523, 385);
 			this.dgRadnici.TabIndex = 0;
+			this.dgRadnici.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgRadnici_CellContentClick);
 			// 
 			// Ime
 			// 

@@ -28,15 +28,20 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtNazivKnjige = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtAutor = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			this.gridPretraga = new System.Windows.Forms.DataGridView();
+			this.dSKnjigeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.dSKnjige = new FITBiD.DA.DSKnjige();
+			this.gridDetalji = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.gridPretraga)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dSKnjigeBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dSKnjige)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridDetalji)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -48,12 +53,12 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Naziv knjige";
 			// 
-			// textBox1
+			// txtNazivKnjige
 			// 
-			this.textBox1.Location = new System.Drawing.Point(84, 10);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(157, 20);
-			this.textBox1.TabIndex = 1;
+			this.txtNazivKnjige.Location = new System.Drawing.Point(84, 10);
+			this.txtNazivKnjige.Name = "txtNazivKnjige";
+			this.txtNazivKnjige.Size = new System.Drawing.Size(157, 20);
+			this.txtNazivKnjige.TabIndex = 1;
 			// 
 			// label2
 			// 
@@ -64,12 +69,12 @@
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Autor";
 			// 
-			// textBox2
+			// txtAutor
 			// 
-			this.textBox2.Location = new System.Drawing.Point(285, 10);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(157, 20);
-			this.textBox2.TabIndex = 3;
+			this.txtAutor.Location = new System.Drawing.Point(285, 10);
+			this.txtAutor.Name = "txtAutor";
+			this.txtAutor.Size = new System.Drawing.Size(157, 20);
+			this.txtAutor.TabIndex = 3;
 			// 
 			// button1
 			// 
@@ -79,39 +84,55 @@
 			this.button1.TabIndex = 4;
 			this.button1.Text = "button1";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// dataGridView1
+			// gridPretraga
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(1, 37);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(546, 150);
-			this.dataGridView1.TabIndex = 5;
+			this.gridPretraga.AutoGenerateColumns = false;
+			this.gridPretraga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridPretraga.DataSource = this.dSKnjigeBindingSource;
+			this.gridPretraga.Location = new System.Drawing.Point(1, 37);
+			this.gridPretraga.Name = "gridPretraga";
+			this.gridPretraga.Size = new System.Drawing.Size(546, 150);
+			this.gridPretraga.TabIndex = 5;
 			// 
-			// dataGridView2
+			// dSKnjigeBindingSource
 			// 
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(1, 193);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.Size = new System.Drawing.Size(546, 150);
-			this.dataGridView2.TabIndex = 6;
+			this.dSKnjigeBindingSource.DataSource = this.dSKnjige;
+			this.dSKnjigeBindingSource.Position = 0;
+			// 
+			// dSKnjige
+			// 
+			this.dSKnjige.DataSetName = "DSKnjige";
+			this.dSKnjige.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
+			// gridDetalji
+			// 
+			this.gridDetalji.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridDetalji.Location = new System.Drawing.Point(1, 193);
+			this.gridDetalji.Name = "gridDetalji";
+			this.gridDetalji.Size = new System.Drawing.Size(546, 150);
+			this.gridDetalji.TabIndex = 6;
 			// 
 			// BookSearch
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(548, 362);
-			this.Controls.Add(this.dataGridView2);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.gridDetalji);
+			this.Controls.Add(this.gridPretraga);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.txtAutor);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.txtNazivKnjige);
 			this.Controls.Add(this.label1);
 			this.Name = "BookSearch";
 			this.Text = "BookSearch";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			this.Load += new System.EventHandler(this.BookSearch_Load);
+			((System.ComponentModel.ISupportInitialize)(this.gridPretraga)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dSKnjigeBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dSKnjige)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridDetalji)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -120,11 +141,13 @@
 		#endregion
 
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtNazivKnjige;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtAutor;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridView dataGridView2;
+		private System.Windows.Forms.DataGridView gridPretraga;
+		private System.Windows.Forms.DataGridView gridDetalji;
+		private System.Windows.Forms.BindingSource dSKnjigeBindingSource;
+		private DA.DSKnjige dSKnjige;
 	}
 }
