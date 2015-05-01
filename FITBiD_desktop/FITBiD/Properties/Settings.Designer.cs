@@ -33,5 +33,16 @@ namespace FITBiD.Properties {
                 return ((string)(this["ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=\"si009.app.fit.ba, 1434\";Initial Catalog=FITBiD;Persist Security Info" +
+            "=True;User ID=kokolada;Password=llI0o3?4")]
+        public string FITBiDConnectionString {
+            get {
+                return ((string)(this["FITBiDConnectionString"]));
+            }
+        }
     }
 }

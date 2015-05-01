@@ -36,8 +36,30 @@ namespace FITBiD.DA
 			}
 		}
 
-		public static DSKnjige.KnjigasDataTable KnjigaSearch(string naziv="pero", string autor="peric")
+        public static void SaleKnjiga(int knjigaId)
+        {
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_insertPodajaKnjige", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@id", knjigaId);
+        
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+		public static void KnjigaSearch(DSKnjige.KnjigasDataTable knjige, string naziv, string autor)
 		{
+            knjige.Clear();
+			// = null;
 			SqlConnection cn = Connection.GetConnection();
 			if (cn.State == ConnectionState.Closed)
 				cn.Open();
@@ -46,15 +68,68 @@ namespace FITBiD.DA
 			{
 				SqlCommand cmd = new SqlCommand("usp_KnjigaPretraga", cn);
 				cmd.CommandType = CommandType.StoredProcedure;
-				cmd.Parameters.Add("@naziv",SqlDbType.VarChar).Value = naziv;
-				cmd.Parameters.Add("@autor", SqlDbType.VarChar).Value = autor;
+				if(naziv != "")
+				cmd.Parameters.Add("@Naziv",naziv);
+
+				if(autor != "")
+				cmd.Parameters.Add("@Autor", autor);
 
 				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-				DSKnjige.KnjigasDataTable knjige = new DSKnjige.KnjigasDataTable();
 				adapter.Fill(knjige);
+			}
+			finally
+			{
+				cn.Close();
+			}
+		}
 
-				return knjige;
+		public static DSEvidencijaProdaje.EvidencijaKnjigaZaProdajusDataTable getProdateKnjige(DSEvidencijaProdaje.EvidencijaKnjigaZaProdajusDataTable dt)
+		{
+			SqlConnection cn = Connection.GetConnection();
+			if (cn.State == ConnectionState.Closed)
+				cn.Open();
+
+			try
+			{
+				SqlCommand cmd = new SqlCommand("usp_ListaProdatihKnjiga", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+				
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+				adapter.Fill(dt);
+
+				return dt;
+			}
+			finally
+			{
+				cn.Close();
+			}
+		}
+
+		public static DSEvidencijaProdaje.EvidencijaKnjigaZaProdajusDataTable getProdateKnjigeByNaziv(DSEvidencijaProdaje.EvidencijaKnjigaZaProdajusDataTable dt, string knjiga )
+		{
+			dt.Clear();
+			SqlConnection cn = Connection.GetConnection();
+			if (cn.State == ConnectionState.Closed)
+				cn.Open();
+
+			try
+			{
+				SqlCommand cmd = new SqlCommand("usp_prodaneKnjigeByNaziv", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+				if (knjiga.Length == 0)
+				{
+					cmd.Parameters.Add("nazivKnjige", null);                    
+				}
+				else
+					cmd.Parameters.Add("nazivKnjige", knjiga);
+
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+				adapter.Fill(dt);
+
+				return dt;
 			}
 			finally
 			{

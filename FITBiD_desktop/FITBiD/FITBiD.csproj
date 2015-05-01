@@ -60,6 +60,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEvidencijaKljuceva.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DA\DSEvidencijaProdaje.cs">
+      <DependentUpon>DSEvidencijaProdaje.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DA\DSEvidencijaProdaje.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEvidencijaProdaje.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DA\DSRadinici.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +101,18 @@
     <Compile Include="Forms\AddWorker.Designer.cs">
       <DependentUpon>AddWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BookSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookSale.Designer.cs">
+      <DependentUpon>BookSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BookSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookSales.Designer.cs">
+      <DependentUpon>BookSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BookSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +124,12 @@
     </Compile>
     <Compile Include="Forms\KeysRecord.Designer.cs">
       <DependentUpon>KeysRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KeysRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KeysRecords.Designer.cs">
+      <DependentUpon>KeysRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports.cs">
       <SubType>Form</SubType>
@@ -136,11 +163,20 @@
     <EmbeddedResource Include="Forms\AddWorker.resx">
       <DependentUpon>AddWorker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookSale.resx">
+      <DependentUpon>BookSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookSales.resx">
+      <DependentUpon>BookSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookSearch.resx">
       <DependentUpon>BookSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KeysRecord.resx">
       <DependentUpon>KeysRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KeysRecords.resx">
+      <DependentUpon>KeysRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
@@ -175,6 +211,17 @@
     </None>
     <None Include="DA\DSEvidencijaKljuceva.xss">
       <DependentUpon>DSEvidencijaKljuceva.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSEvidencijaProdaje.xsc">
+      <DependentUpon>DSEvidencijaProdaje.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSEvidencijaProdaje.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEvidencijaProdaje.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DA\DSEvidencijaProdaje.xss">
+      <DependentUpon>DSEvidencijaProdaje.xsd</DependentUpon>
     </None>
     <None Include="DA\DSRadinici.xsc">
       <DependentUpon>DSRadinici.xsd</DependentUpon>

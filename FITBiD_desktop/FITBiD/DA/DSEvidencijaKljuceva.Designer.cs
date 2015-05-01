@@ -461,7 +461,7 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EvidencijaKljucevasDataTable() {
+            public KljucsDataTableEvidencijaKljucevasDataTable() {
                 this.TableName = "EvidencijaKljucevas";
                 this.BeginInit();
                 this.InitClass();

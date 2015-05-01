@@ -96,6 +96,30 @@ namespace FITBiD {
 			frm.Show();
 		}
 
+        private void prodaneKnjigeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.BookSales frm = new Forms.BookSales();
+            frm.Show();
+        }
+
+        private void prodajKnjiguToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.BookSale frm = new Forms.BookSale();
+            frm.Show();
+        }
+
+        private void izdavanjeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.KeysRecord frm = new Forms.KeysRecord();
+            frm.Show();
+        }
+
+        private void pregledIzdavanjaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.KeysRecords frm = new Forms.KeysRecords();
+            frm.Show();
+        }
+
 
 	}
 }

@@ -41,5 +41,10 @@ namespace FITBiD
 		private void Start_Load(object sender, EventArgs e) {
 
 		}
+
+        private void labelUsername_Click(object sender, EventArgs e)
+        {
+
+        }
 	}
 }
