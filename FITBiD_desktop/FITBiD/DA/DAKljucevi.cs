@@ -6,25 +6,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FITBiD.DA {
-	class DAKljucevi {
-			public static void GetAllKljucevi(DSEvidencijaKljuceva.KljucsDataTable dtKljucevi) {
-			dtKljucevi.Clear();
+namespace FITBiD.DA
+{
+    class DAKljucevi
+    {
+        public static void GetAllKljucevi(DSEvidencijaKljuceva.KljucsDataTable dtKljucevi)
+        {
+            dtKljucevi.Clear();
 
-			SqlConnection cn = Connection.GetConnection();
-			if (cn.State == ConnectionState.Closed)
-				cn.Open();
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
 
-			try {
-				SqlCommand cmd = new SqlCommand("usp_GetAllKljucevi", cn);
-				cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_GetAllKljucevi", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-				adapter.Fill(dtKljucevi);
-			}
-			finally {
-				cn.Close();
-			}
-		}
-	}
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtKljucevi);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void GetEvidencijeKljuceva(DSEvidencijaKljuceva.KljucsDataTable dtKljucevi)
+        {
+            dtKljucevi.Clear();
+
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_GetAllKljucevi", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtKljucevi);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+    }
 }
