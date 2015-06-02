@@ -9,7 +9,8 @@ using System.Data;
 
 namespace FITBiD.DA {
 	class DANastavnoOsoblje {
-		public static void GetAllOsoblje(DSEvidencijaKljuceva.NastavnoOsobljesDataTable dtNastavnoOsoblje) {
+		public static void GetAllOsoblje(DSEvidencijaKljucevaV2.NastavnoOsobljesDataTable dtNastavnoOsoblje)
+		{
 			dtNastavnoOsoblje.Clear();
 
 			SqlConnection cn = Connection.GetConnection();

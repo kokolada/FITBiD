@@ -77,7 +77,8 @@ namespace FITBiD.DA {
 		}
 
 
-		public static void getRadnici(DSEvidencijaKljuceva.RadniksDataTable radniksDataTable) {
+		public static void getRadnici(DSEvidencijaKljucevaV2.RadniksDataTable radniksDataTable)
+		{
 			radniksDataTable.Clear();
 			SqlConnection cn = Connection.GetConnection();
 			if (cn.State == ConnectionState.Closed)

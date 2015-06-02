@@ -12,7 +12,7 @@ namespace FITBiD.Forms
 {
     public partial class KeysRecords : Form
     {
-        DA.DSEvidencijaKljuceva.KljucsDataTable kljucevi = new DA.DSEvidencijaKljuceva.KljucsDataTable();
+       // DA.DSEvidencijaKljuceva.KljucsDataTable kljucevi = new DA.DSEvidencijaKljuceva.KljucsDataTable();
         public KeysRecords()
         {
             InitializeComponent();
@@ -21,8 +21,8 @@ namespace FITBiD.Forms
 
         private void KeysRecords_Load(object sender, EventArgs e)
         {
-            DA.DAKljucevi.GetEvidencijeKljuceva(kljucevi);
-            dataGridView1.DataSource = kljucevi;
+       //     DA.DAKljucevi.GetEvidencijeKljuceva(kljucevi);
+       //     dataGridView1.DataSource = kljucevi;
         }
     }
 }
