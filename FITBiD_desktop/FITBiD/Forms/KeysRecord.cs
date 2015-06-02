@@ -11,13 +11,13 @@ using FITBiD.DA;
 
 namespace FITBiD.Forms {
 	public partial class KeysRecord : Form {
-		DSEvidencijaKljuceva dsEvidencija = new DSEvidencijaKljuceva();
+		DSEvidencijaKljucevaV2 dsEvidencija = new DSEvidencijaKljucevaV2();
 		public KeysRecord() {
 			InitializeComponent();
 
 			//nastavno osoblje
 			DANastavnoOsoblje.GetAllOsoblje(dsEvidencija.NastavnoOsobljes);
-			DSEvidencijaKljuceva.NastavnoOsobljesRow osoblje = dsEvidencija.NastavnoOsobljes.NewNastavnoOsobljesRow();
+			DSEvidencijaKljucevaV2.NastavnoOsobljesRow osoblje = dsEvidencija.NastavnoOsobljes.NewNastavnoOsobljesRow();
 			osoblje.Id = 0;
 			dsEvidencija.NastavnoOsobljes.Rows.InsertAt(osoblje, 0);
 			cbxOsoblje.DataSource = dsEvidencija.NastavnoOsobljes;
@@ -26,7 +26,7 @@ namespace FITBiD.Forms {
 
 			//ucionica
 			DAKljucevi.GetAllKljucevi(dsEvidencija.Kljucs);
-			DSEvidencijaKljuceva.KljucsRow kljuc = dsEvidencija.Kljucs.NewKljucsRow();
+			DSEvidencijaKljucevaV2.KljucsRow kljuc = dsEvidencija.Kljucs.NewKljucsRow();
 			cbxKljuc.DataSource = dsEvidencija.Kljucs;
 			cbxKljuc.DisplayMember = "Barcode";
 			cbxKljuc.ValueMember = "Id";

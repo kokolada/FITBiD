@@ -10,7 +10,7 @@ namespace FITBiD.DA
 {
     class DAKljucevi
     {
-        public static void GetAllKljucevi(DSEvidencijaKljuceva.KljucsDataTable dtKljucevi)
+        public static void GetAllKljucevi(DSEvidencijaKljucevaV2.KljucsDataTable dtKljucevi)
         {
             dtKljucevi.Clear();
 
@@ -32,7 +32,7 @@ namespace FITBiD.DA
             }
         }
 
-        public static void GetEvidencijeKljuceva(DSEvidencijaKljuceva.KljucsDataTable dtKljucevi)
+        public static void GetEvidencijeKljuceva(DSEvidencijaKljucevaV2.KljucsDataTable dtKljucevi)
         {
             dtKljucevi.Clear();
 

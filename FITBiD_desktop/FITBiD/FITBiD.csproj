@@ -55,10 +55,10 @@
     <Compile Include="DA\DANastavnoOsoblje.cs" />
     <Compile Include="DA\DARadnici.cs" />
     <Compile Include="DA\DAKljucevi.cs" />
-    <Compile Include="DA\DSEvidencijaKljuceva.Designer.cs">
+    <Compile Include="DA\DSEvidencijaKljucevaV2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSEvidencijaKljuceva.xsd</DependentUpon>
+      <DependentUpon>DSEvidencijaKljucevaV2.xsd</DependentUpon>
     </Compile>
     <Compile Include="DA\DSEvidencijaProdaje.cs">
       <DependentUpon>DSEvidencijaProdaje.xsd</DependentUpon>
@@ -201,16 +201,16 @@
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DA\DSEvidencijaKljuceva.xsc">
-      <DependentUpon>DSEvidencijaKljuceva.xsd</DependentUpon>
+    <None Include="DA\DSEvidencijaKljucevaV2.xsc">
+      <DependentUpon>DSEvidencijaKljucevaV2.xsd</DependentUpon>
     </None>
-    <None Include="DA\DSEvidencijaKljuceva.xsd">
+    <None Include="DA\DSEvidencijaKljucevaV2.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSEvidencijaKljuceva.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSEvidencijaKljucevaV2.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DA\DSEvidencijaKljuceva.xss">
-      <DependentUpon>DSEvidencijaKljuceva.xsd</DependentUpon>
+    <None Include="DA\DSEvidencijaKljucevaV2.xss">
+      <DependentUpon>DSEvidencijaKljucevaV2.xsd</DependentUpon>
     </None>
     <None Include="DA\DSEvidencijaProdaje.xsc">
       <DependentUpon>DSEvidencijaProdaje.xsd</DependentUpon>
