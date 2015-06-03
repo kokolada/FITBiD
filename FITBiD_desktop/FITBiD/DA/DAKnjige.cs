@@ -36,29 +36,29 @@ namespace FITBiD.DA
 			}
 		}
 
-        public static void SaleKnjiga(int knjigaId)
-        {
-            SqlConnection cn = Connection.GetConnection();
-            if (cn.State == ConnectionState.Closed)
-                cn.Open();
+		public static void SaleKnjiga(int knjigaId)
+		{
+			SqlConnection cn = Connection.GetConnection();
+			if (cn.State == ConnectionState.Closed)
+				cn.Open();
 
-            try
-            {
-                SqlCommand cmd = new SqlCommand("usp_insertPodajaKnjige", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@id", knjigaId);
-        
-                cmd.ExecuteNonQuery();
-            }
-            finally
-            {
-                cn.Close();
-            }
-        }
+			try
+			{
+				SqlCommand cmd = new SqlCommand("usp_insertPodajaKnjige", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.Add("@id", knjigaId);
+		
+				cmd.ExecuteNonQuery();
+			}
+			finally
+			{
+				cn.Close();
+			}
+		}
 
 		public static void KnjigaSearch(DSKnjige.KnjigasDataTable knjige, string naziv, string autor)
 		{
-            knjige.Clear();
+			knjige.Clear();
 			// = null;
 			SqlConnection cn = Connection.GetConnection();
 			if (cn.State == ConnectionState.Closed)

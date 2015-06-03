@@ -55,6 +55,11 @@
     <Compile Include="DA\DANastavnoOsoblje.cs" />
     <Compile Include="DA\DARadnici.cs" />
     <Compile Include="DA\DAKljucevi.cs" />
+    <Compile Include="DA\DSEvidencijaIzdavanjaKljuceva.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEvidencijaIzdavanjaKljuceva.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DA\DSEvidencijaKljucevaV2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,6 +206,17 @@
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DA\DSEvidencijaIzdavanjaKljuceva.xsc">
+      <DependentUpon>DSEvidencijaIzdavanjaKljuceva.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSEvidencijaIzdavanjaKljuceva.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEvidencijaIzdavanjaKljuceva.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DA\DSEvidencijaIzdavanjaKljuceva.xss">
+      <DependentUpon>DSEvidencijaIzdavanjaKljuceva.xsd</DependentUpon>
+    </None>
     <None Include="DA\DSEvidencijaKljucevaV2.xsc">
       <DependentUpon>DSEvidencijaKljucevaV2.xsd</DependentUpon>
     </None>

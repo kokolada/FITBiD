@@ -32,9 +32,9 @@ namespace FITBiD.DA
             }
         }
 
-        public static void GetEvidencijeKljuceva(DSEvidencijaKljucevaV2.KljucsDataTable dtKljucevi)
+        public static void GetEvidencijeKljuceva(DSEvidencijaIzdavanjaKljuceva.EvidencijaKljucevasDataTable dtEvidencijeKljuceva)
         {
-            dtKljucevi.Clear();
+            dtEvidencijeKljuceva.Clear();
 
             SqlConnection cn = Connection.GetConnection();
             if (cn.State == ConnectionState.Closed)
@@ -42,11 +42,11 @@ namespace FITBiD.DA
 
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_GetAllKljucevi", cn);
+                SqlCommand cmd = new SqlCommand("usp_getEvidencijeKljuceva", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.Fill(dtKljucevi);
+                adapter.Fill(dtEvidencijeKljuceva);
             }
             finally
             {

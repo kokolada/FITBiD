@@ -46,7 +46,8 @@
             this.ucionica});
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(614, 299);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(446, 211);
             this.dataGridView1.TabIndex = 0;
             // 
             // Preuzimanje
@@ -54,33 +55,37 @@
             this.Preuzimanje.DataPropertyName = "preuzimanje";
             this.Preuzimanje.HeaderText = "Preuzimanje";
             this.Preuzimanje.Name = "Preuzimanje";
+            this.Preuzimanje.ReadOnly = true;
             // 
             // Vracanje
             // 
             this.Vracanje.DataPropertyName = "vracanje";
             this.Vracanje.HeaderText = "Vraćanje";
             this.Vracanje.Name = "Vracanje";
+            this.Vracanje.ReadOnly = true;
             // 
             // Nastavnik
             // 
             this.Nastavnik.DataPropertyName = "ImePrezime";
             this.Nastavnik.HeaderText = "Nastavnik";
             this.Nastavnik.Name = "Nastavnik";
+            this.Nastavnik.ReadOnly = true;
             // 
             // ucionica
             // 
             this.ucionica.DataPropertyName = "Naziv";
             this.ucionica.HeaderText = "Učionica";
             this.ucionica.Name = "ucionica";
+            this.ucionica.ReadOnly = true;
             // 
             // KeysRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 338);
+            this.ClientSize = new System.Drawing.Size(468, 244);
             this.Controls.Add(this.dataGridView1);
             this.Name = "KeysRecords";
-            this.Text = "KeysRecords";
+            this.Text = "Izdati ključevi";
             this.Load += new System.EventHandler(this.KeysRecords_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

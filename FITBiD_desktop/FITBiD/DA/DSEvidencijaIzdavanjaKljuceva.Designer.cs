@@ -20,17 +20,17 @@ namespace FITBiD.DA {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DSKnjige")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DSEvidencijaIzdavanjaKljuceva")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DSKnjige : global::System.Data.DataSet {
+    public partial class DSEvidencijaIzdavanjaKljuceva : global::System.Data.DataSet {
         
-        private KnjigasDataTable tableKnjigas;
+        private EvidencijaKljucevasDataTable tableEvidencijaKljucevas;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DSKnjige() {
+        public DSEvidencijaIzdavanjaKljuceva() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace FITBiD.DA {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DSKnjige(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DSEvidencijaIzdavanjaKljuceva(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace FITBiD.DA {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Knjigas"] != null)) {
-                    base.Tables.Add(new KnjigasDataTable(ds.Tables["Knjigas"]));
+                if ((ds.Tables["EvidencijaKljucevas"] != null)) {
+                    base.Tables.Add(new EvidencijaKljucevasDataTable(ds.Tables["EvidencijaKljucevas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace FITBiD.DA {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public KnjigasDataTable Knjigas {
+        public EvidencijaKljucevasDataTable EvidencijaKljucevas {
             get {
-                return this.tableKnjigas;
+                return this.tableEvidencijaKljucevas;
             }
         }
         
@@ -127,7 +127,7 @@ namespace FITBiD.DA {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DSKnjige cln = ((DSKnjige)(base.Clone()));
+            DSEvidencijaIzdavanjaKljuceva cln = ((DSEvidencijaIzdavanjaKljuceva)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace FITBiD.DA {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Knjigas"] != null)) {
-                    base.Tables.Add(new KnjigasDataTable(ds.Tables["Knjigas"]));
+                if ((ds.Tables["EvidencijaKljucevas"] != null)) {
+                    base.Tables.Add(new EvidencijaKljucevasDataTable(ds.Tables["EvidencijaKljucevas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace FITBiD.DA {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableKnjigas = ((KnjigasDataTable)(base.Tables["Knjigas"]));
+            this.tableEvidencijaKljucevas = ((EvidencijaKljucevasDataTable)(base.Tables["EvidencijaKljucevas"]));
             if ((initTable == true)) {
-                if ((this.tableKnjigas != null)) {
-                    this.tableKnjigas.InitVars();
+                if ((this.tableEvidencijaKljucevas != null)) {
+                    this.tableEvidencijaKljucevas.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace FITBiD.DA {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DSKnjige";
+            this.DataSetName = "DSEvidencijaIzdavanjaKljuceva";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DSKnjige.xsd";
+            this.Namespace = "http://tempuri.org/DSEvidencijaIzdavanjaKljuceva.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableKnjigas = new KnjigasDataTable();
-            base.Tables.Add(this.tableKnjigas);
+            this.tableEvidencijaKljucevas = new EvidencijaKljucevasDataTable();
+            base.Tables.Add(this.tableEvidencijaKljucevas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeKnjigas() {
+        private bool ShouldSerializeEvidencijaKljucevas() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace FITBiD.DA {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DSKnjige ds = new DSKnjige();
+            DSEvidencijaIzdavanjaKljuceva ds = new DSEvidencijaIzdavanjaKljuceva();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,39 +270,35 @@ namespace FITBiD.DA {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void KnjigasRowChangeEventHandler(object sender, KnjigasRowChangeEvent e);
+        public delegate void EvidencijaKljucevasRowChangeEventHandler(object sender, EvidencijaKljucevasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class KnjigasDataTable : global::System.Data.TypedTableBase<KnjigasRow> {
+        public partial class EvidencijaKljucevasDataTable : global::System.Data.TypedTableBase<EvidencijaKljucevasRow> {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnNaziv;
+            private global::System.Data.DataColumn columnpreuzimanje;
             
-            private global::System.Data.DataColumn columnGodinaObjavljivanja;
+            private global::System.Data.DataColumn columnvracanje;
             
-            private global::System.Data.DataColumn columnAutor;
+            private global::System.Data.DataColumn columnNastavnoOsobljeId;
             
-            private global::System.Data.DataColumn columnBarcode;
+            private global::System.Data.DataColumn columnKljucId;
             
-            private global::System.Data.DataColumn columnOznakaStalaze;
+            private global::System.Data.DataColumn columnRadnikId;
             
-            private global::System.Data.DataColumn columnZaProdaju;
+            private global::System.Data.DataColumn columnImePrezime;
             
-            private global::System.Data.DataColumn columnCijena;
-            
-            private global::System.Data.DataColumn columnKnjigaKategorija_KategorijaKnjigeId;
-            
-            private global::System.Data.DataColumn columnKnjigaKategorija_KnjigaId;
+            private global::System.Data.DataColumn columnnaziv;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KnjigasDataTable() {
-                this.TableName = "Knjigas";
+            public EvidencijaKljucevasDataTable() {
+                this.TableName = "EvidencijaKljucevas";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -310,7 +306,7 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal KnjigasDataTable(global::System.Data.DataTable table) {
+            internal EvidencijaKljucevasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -327,7 +323,7 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected KnjigasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EvidencijaKljucevasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -342,73 +338,57 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NazivColumn {
+            public global::System.Data.DataColumn preuzimanjeColumn {
                 get {
-                    return this.columnNaziv;
+                    return this.columnpreuzimanje;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn GodinaObjavljivanjaColumn {
+            public global::System.Data.DataColumn vracanjeColumn {
                 get {
-                    return this.columnGodinaObjavljivanja;
+                    return this.columnvracanje;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AutorColumn {
+            public global::System.Data.DataColumn NastavnoOsobljeIdColumn {
                 get {
-                    return this.columnAutor;
+                    return this.columnNastavnoOsobljeId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BarcodeColumn {
+            public global::System.Data.DataColumn KljucIdColumn {
                 get {
-                    return this.columnBarcode;
+                    return this.columnKljucId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OznakaStalazeColumn {
+            public global::System.Data.DataColumn RadnikIdColumn {
                 get {
-                    return this.columnOznakaStalaze;
+                    return this.columnRadnikId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ZaProdajuColumn {
+            public global::System.Data.DataColumn ImePrezimeColumn {
                 get {
-                    return this.columnZaProdaju;
+                    return this.columnImePrezime;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CijenaColumn {
+            public global::System.Data.DataColumn nazivColumn {
                 get {
-                    return this.columnCijena;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn KnjigaKategorija_KategorijaKnjigeIdColumn {
-                get {
-                    return this.columnKnjigaKategorija_KategorijaKnjigeId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn KnjigaKategorija_KnjigaIdColumn {
-                get {
-                    return this.columnKnjigaKategorija_KnjigaId;
+                    return this.columnnaziv;
                 }
             }
             
@@ -423,61 +403,59 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KnjigasRow this[int index] {
+            public EvidencijaKljucevasRow this[int index] {
                 get {
-                    return ((KnjigasRow)(this.Rows[index]));
+                    return ((EvidencijaKljucevasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event KnjigasRowChangeEventHandler KnjigasRowChanging;
+            public event EvidencijaKljucevasRowChangeEventHandler EvidencijaKljucevasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event KnjigasRowChangeEventHandler KnjigasRowChanged;
+            public event EvidencijaKljucevasRowChangeEventHandler EvidencijaKljucevasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event KnjigasRowChangeEventHandler KnjigasRowDeleting;
+            public event EvidencijaKljucevasRowChangeEventHandler EvidencijaKljucevasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event KnjigasRowChangeEventHandler KnjigasRowDeleted;
+            public event EvidencijaKljucevasRowChangeEventHandler EvidencijaKljucevasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddKnjigasRow(KnjigasRow row) {
+            public void AddEvidencijaKljucevasRow(EvidencijaKljucevasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KnjigasRow AddKnjigasRow(string Naziv, System.DateTime GodinaObjavljivanja, string Autor, string Barcode, string OznakaStalaze, bool ZaProdaju, double Cijena, int KnjigaKategorija_KategorijaKnjigeId, int KnjigaKategorija_KnjigaId) {
-                KnjigasRow rowKnjigasRow = ((KnjigasRow)(this.NewRow()));
+            public EvidencijaKljucevasRow AddEvidencijaKljucevasRow(System.DateTime preuzimanje, System.DateTime vracanje, int NastavnoOsobljeId, int KljucId, int RadnikId, string ImePrezime, string naziv) {
+                EvidencijaKljucevasRow rowEvidencijaKljucevasRow = ((EvidencijaKljucevasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Naziv,
-                        GodinaObjavljivanja,
-                        Autor,
-                        Barcode,
-                        OznakaStalaze,
-                        ZaProdaju,
-                        Cijena,
-                        KnjigaKategorija_KategorijaKnjigeId,
-                        KnjigaKategorija_KnjigaId};
-                rowKnjigasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowKnjigasRow);
-                return rowKnjigasRow;
+                        preuzimanje,
+                        vracanje,
+                        NastavnoOsobljeId,
+                        KljucId,
+                        RadnikId,
+                        ImePrezime,
+                        naziv};
+                rowEvidencijaKljucevasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEvidencijaKljucevasRow);
+                return rowEvidencijaKljucevasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KnjigasRow FindById(int Id) {
-                return ((KnjigasRow)(this.Rows.Find(new object[] {
+            public EvidencijaKljucevasRow FindById(int Id) {
+                return ((EvidencijaKljucevasRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                KnjigasDataTable cln = ((KnjigasDataTable)(base.Clone()));
+                EvidencijaKljucevasDataTable cln = ((EvidencijaKljucevasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -485,22 +463,20 @@ namespace FITBiD.DA {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new KnjigasDataTable();
+                return new EvidencijaKljucevasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnNaziv = base.Columns["Naziv"];
-                this.columnGodinaObjavljivanja = base.Columns["GodinaObjavljivanja"];
-                this.columnAutor = base.Columns["Autor"];
-                this.columnBarcode = base.Columns["Barcode"];
-                this.columnOznakaStalaze = base.Columns["OznakaStalaze"];
-                this.columnZaProdaju = base.Columns["ZaProdaju"];
-                this.columnCijena = base.Columns["Cijena"];
-                this.columnKnjigaKategorija_KategorijaKnjigeId = base.Columns["KnjigaKategorija_KategorijaKnjigeId"];
-                this.columnKnjigaKategorija_KnjigaId = base.Columns["KnjigaKategorija_KnjigaId"];
+                this.columnpreuzimanje = base.Columns["preuzimanje"];
+                this.columnvracanje = base.Columns["vracanje"];
+                this.columnNastavnoOsobljeId = base.Columns["NastavnoOsobljeId"];
+                this.columnKljucId = base.Columns["KljucId"];
+                this.columnRadnikId = base.Columns["RadnikId"];
+                this.columnImePrezime = base.Columns["ImePrezime"];
+                this.columnnaziv = base.Columns["naziv"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -508,24 +484,20 @@ namespace FITBiD.DA {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnNaziv = new global::System.Data.DataColumn("Naziv", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNaziv);
-                this.columnGodinaObjavljivanja = new global::System.Data.DataColumn("GodinaObjavljivanja", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGodinaObjavljivanja);
-                this.columnAutor = new global::System.Data.DataColumn("Autor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAutor);
-                this.columnBarcode = new global::System.Data.DataColumn("Barcode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBarcode);
-                this.columnOznakaStalaze = new global::System.Data.DataColumn("OznakaStalaze", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOznakaStalaze);
-                this.columnZaProdaju = new global::System.Data.DataColumn("ZaProdaju", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnZaProdaju);
-                this.columnCijena = new global::System.Data.DataColumn("Cijena", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCijena);
-                this.columnKnjigaKategorija_KategorijaKnjigeId = new global::System.Data.DataColumn("KnjigaKategorija_KategorijaKnjigeId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKnjigaKategorija_KategorijaKnjigeId);
-                this.columnKnjigaKategorija_KnjigaId = new global::System.Data.DataColumn("KnjigaKategorija_KnjigaId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKnjigaKategorija_KnjigaId);
+                this.columnpreuzimanje = new global::System.Data.DataColumn("preuzimanje", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpreuzimanje);
+                this.columnvracanje = new global::System.Data.DataColumn("vracanje", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvracanje);
+                this.columnNastavnoOsobljeId = new global::System.Data.DataColumn("NastavnoOsobljeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNastavnoOsobljeId);
+                this.columnKljucId = new global::System.Data.DataColumn("KljucId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKljucId);
+                this.columnRadnikId = new global::System.Data.DataColumn("RadnikId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRadnikId);
+                this.columnImePrezime = new global::System.Data.DataColumn("ImePrezime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImePrezime);
+                this.columnnaziv = new global::System.Data.DataColumn("naziv", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnaziv);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -534,39 +506,35 @@ namespace FITBiD.DA {
                 this.columnId.AllowDBNull = false;
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnNaziv.MaxLength = 2147483647;
-                this.columnGodinaObjavljivanja.AllowDBNull = false;
-                this.columnAutor.MaxLength = 2147483647;
-                this.columnBarcode.MaxLength = 2147483647;
-                this.columnOznakaStalaze.MaxLength = 2147483647;
-                this.columnZaProdaju.AllowDBNull = false;
-                this.columnCijena.AllowDBNull = false;
+                this.columnpreuzimanje.AllowDBNull = false;
+                this.columnpreuzimanje.Caption = "DatumPreuzimanja";
+                this.columnvracanje.Caption = "DatumVracanja";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KnjigasRow NewKnjigasRow() {
-                return ((KnjigasRow)(this.NewRow()));
+            public EvidencijaKljucevasRow NewEvidencijaKljucevasRow() {
+                return ((EvidencijaKljucevasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new KnjigasRow(builder);
+                return new EvidencijaKljucevasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(KnjigasRow);
+                return typeof(EvidencijaKljucevasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.KnjigasRowChanged != null)) {
-                    this.KnjigasRowChanged(this, new KnjigasRowChangeEvent(((KnjigasRow)(e.Row)), e.Action));
+                if ((this.EvidencijaKljucevasRowChanged != null)) {
+                    this.EvidencijaKljucevasRowChanged(this, new EvidencijaKljucevasRowChangeEvent(((EvidencijaKljucevasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -574,8 +542,8 @@ namespace FITBiD.DA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.KnjigasRowChanging != null)) {
-                    this.KnjigasRowChanging(this, new KnjigasRowChangeEvent(((KnjigasRow)(e.Row)), e.Action));
+                if ((this.EvidencijaKljucevasRowChanging != null)) {
+                    this.EvidencijaKljucevasRowChanging(this, new EvidencijaKljucevasRowChangeEvent(((EvidencijaKljucevasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -583,8 +551,8 @@ namespace FITBiD.DA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.KnjigasRowDeleted != null)) {
-                    this.KnjigasRowDeleted(this, new KnjigasRowChangeEvent(((KnjigasRow)(e.Row)), e.Action));
+                if ((this.EvidencijaKljucevasRowDeleted != null)) {
+                    this.EvidencijaKljucevasRowDeleted(this, new EvidencijaKljucevasRowChangeEvent(((EvidencijaKljucevasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -592,14 +560,14 @@ namespace FITBiD.DA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.KnjigasRowDeleting != null)) {
-                    this.KnjigasRowDeleting(this, new KnjigasRowChangeEvent(((KnjigasRow)(e.Row)), e.Action));
+                if ((this.EvidencijaKljucevasRowDeleting != null)) {
+                    this.EvidencijaKljucevasRowDeleting(this, new EvidencijaKljucevasRowChangeEvent(((EvidencijaKljucevasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveKnjigasRow(KnjigasRow row) {
+            public void RemoveEvidencijaKljucevasRow(EvidencijaKljucevasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -608,7 +576,7 @@ namespace FITBiD.DA {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DSKnjige ds = new DSKnjige();
+                DSEvidencijaIzdavanjaKljuceva ds = new DSEvidencijaIzdavanjaKljuceva();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -626,7 +594,7 @@ namespace FITBiD.DA {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "KnjigasDataTable";
+                attribute2.FixedValue = "EvidencijaKljucevasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -670,228 +638,206 @@ namespace FITBiD.DA {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class KnjigasRow : global::System.Data.DataRow {
+        public partial class EvidencijaKljucevasRow : global::System.Data.DataRow {
             
-            private KnjigasDataTable tableKnjigas;
+            private EvidencijaKljucevasDataTable tableEvidencijaKljucevas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal KnjigasRow(global::System.Data.DataRowBuilder rb) : 
+            internal EvidencijaKljucevasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableKnjigas = ((KnjigasDataTable)(this.Table));
+                this.tableEvidencijaKljucevas = ((EvidencijaKljucevasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableKnjigas.IdColumn]));
+                    return ((int)(this[this.tableEvidencijaKljucevas.IdColumn]));
                 }
                 set {
-                    this[this.tableKnjigas.IdColumn] = value;
+                    this[this.tableEvidencijaKljucevas.IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Naziv {
+            public System.DateTime preuzimanje {
+                get {
+                    return ((global::System.DateTime)(this[this.tableEvidencijaKljucevas.preuzimanjeColumn]));
+                }
+                set {
+                    this[this.tableEvidencijaKljucevas.preuzimanjeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime vracanje {
                 get {
                     try {
-                        return ((string)(this[this.tableKnjigas.NazivColumn]));
+                        return ((global::System.DateTime)(this[this.tableEvidencijaKljucevas.vracanjeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Naziv\' in table \'Knjigas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'vracanje\' in table \'EvidencijaKljucevas\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKnjigas.NazivColumn] = value;
+                    this[this.tableEvidencijaKljucevas.vracanjeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime GodinaObjavljivanja {
-                get {
-                    return ((global::System.DateTime)(this[this.tableKnjigas.GodinaObjavljivanjaColumn]));
-                }
-                set {
-                    this[this.tableKnjigas.GodinaObjavljivanjaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Autor {
+            public int NastavnoOsobljeId {
                 get {
                     try {
-                        return ((string)(this[this.tableKnjigas.AutorColumn]));
+                        return ((int)(this[this.tableEvidencijaKljucevas.NastavnoOsobljeIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Autor\' in table \'Knjigas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NastavnoOsobljeId\' in table \'EvidencijaKljucevas\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableKnjigas.AutorColumn] = value;
+                    this[this.tableEvidencijaKljucevas.NastavnoOsobljeIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Barcode {
+            public int KljucId {
                 get {
                     try {
-                        return ((string)(this[this.tableKnjigas.BarcodeColumn]));
+                        return ((int)(this[this.tableEvidencijaKljucevas.KljucIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Barcode\' in table \'Knjigas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'KljucId\' in table \'EvidencijaKljucevas\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKnjigas.BarcodeColumn] = value;
+                    this[this.tableEvidencijaKljucevas.KljucIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OznakaStalaze {
+            public int RadnikId {
                 get {
                     try {
-                        return ((string)(this[this.tableKnjigas.OznakaStalazeColumn]));
+                        return ((int)(this[this.tableEvidencijaKljucevas.RadnikIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'OznakaStalaze\' in table \'Knjigas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RadnikId\' in table \'EvidencijaKljucevas\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKnjigas.OznakaStalazeColumn] = value;
+                    this[this.tableEvidencijaKljucevas.RadnikIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool ZaProdaju {
-                get {
-                    return ((bool)(this[this.tableKnjigas.ZaProdajuColumn]));
-                }
-                set {
-                    this[this.tableKnjigas.ZaProdajuColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Cijena {
-                get {
-                    return ((double)(this[this.tableKnjigas.CijenaColumn]));
-                }
-                set {
-                    this[this.tableKnjigas.CijenaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int KnjigaKategorija_KategorijaKnjigeId {
+            public string ImePrezime {
                 get {
                     try {
-                        return ((int)(this[this.tableKnjigas.KnjigaKategorija_KategorijaKnjigeIdColumn]));
+                        return ((string)(this[this.tableEvidencijaKljucevas.ImePrezimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KnjigaKategorija_KategorijaKnjigeId\' in table \'Knjigas\' is " +
-                                "DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ImePrezime\' in table \'EvidencijaKljucevas\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKnjigas.KnjigaKategorija_KategorijaKnjigeIdColumn] = value;
+                    this[this.tableEvidencijaKljucevas.ImePrezimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int KnjigaKategorija_KnjigaId {
+            public string naziv {
                 get {
                     try {
-                        return ((int)(this[this.tableKnjigas.KnjigaKategorija_KnjigaIdColumn]));
+                        return ((string)(this[this.tableEvidencijaKljucevas.nazivColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KnjigaKategorija_KnjigaId\' in table \'Knjigas\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'naziv\' in table \'EvidencijaKljucevas\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableKnjigas.KnjigaKategorija_KnjigaIdColumn] = value;
+                    this[this.tableEvidencijaKljucevas.nazivColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNazivNull() {
-                return this.IsNull(this.tableKnjigas.NazivColumn);
+            public bool IsvracanjeNull() {
+                return this.IsNull(this.tableEvidencijaKljucevas.vracanjeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNazivNull() {
-                this[this.tableKnjigas.NazivColumn] = global::System.Convert.DBNull;
+            public void SetvracanjeNull() {
+                this[this.tableEvidencijaKljucevas.vracanjeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAutorNull() {
-                return this.IsNull(this.tableKnjigas.AutorColumn);
+            public bool IsNastavnoOsobljeIdNull() {
+                return this.IsNull(this.tableEvidencijaKljucevas.NastavnoOsobljeIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAutorNull() {
-                this[this.tableKnjigas.AutorColumn] = global::System.Convert.DBNull;
+            public void SetNastavnoOsobljeIdNull() {
+                this[this.tableEvidencijaKljucevas.NastavnoOsobljeIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBarcodeNull() {
-                return this.IsNull(this.tableKnjigas.BarcodeColumn);
+            public bool IsKljucIdNull() {
+                return this.IsNull(this.tableEvidencijaKljucevas.KljucIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBarcodeNull() {
-                this[this.tableKnjigas.BarcodeColumn] = global::System.Convert.DBNull;
+            public void SetKljucIdNull() {
+                this[this.tableEvidencijaKljucevas.KljucIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOznakaStalazeNull() {
-                return this.IsNull(this.tableKnjigas.OznakaStalazeColumn);
+            public bool IsRadnikIdNull() {
+                return this.IsNull(this.tableEvidencijaKljucevas.RadnikIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOznakaStalazeNull() {
-                this[this.tableKnjigas.OznakaStalazeColumn] = global::System.Convert.DBNull;
+            public void SetRadnikIdNull() {
+                this[this.tableEvidencijaKljucevas.RadnikIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsKnjigaKategorija_KategorijaKnjigeIdNull() {
-                return this.IsNull(this.tableKnjigas.KnjigaKategorija_KategorijaKnjigeIdColumn);
+            public bool IsImePrezimeNull() {
+                return this.IsNull(this.tableEvidencijaKljucevas.ImePrezimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetKnjigaKategorija_KategorijaKnjigeIdNull() {
-                this[this.tableKnjigas.KnjigaKategorija_KategorijaKnjigeIdColumn] = global::System.Convert.DBNull;
+            public void SetImePrezimeNull() {
+                this[this.tableEvidencijaKljucevas.ImePrezimeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsKnjigaKategorija_KnjigaIdNull() {
-                return this.IsNull(this.tableKnjigas.KnjigaKategorija_KnjigaIdColumn);
+            public bool IsnazivNull() {
+                return this.IsNull(this.tableEvidencijaKljucevas.nazivColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetKnjigaKategorija_KnjigaIdNull() {
-                this[this.tableKnjigas.KnjigaKategorija_KnjigaIdColumn] = global::System.Convert.DBNull;
+            public void SetnazivNull() {
+                this[this.tableEvidencijaKljucevas.nazivColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -899,22 +845,22 @@ namespace FITBiD.DA {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class KnjigasRowChangeEvent : global::System.EventArgs {
+        public class EvidencijaKljucevasRowChangeEvent : global::System.EventArgs {
             
-            private KnjigasRow eventRow;
+            private EvidencijaKljucevasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KnjigasRowChangeEvent(KnjigasRow row, global::System.Data.DataRowAction action) {
+            public EvidencijaKljucevasRowChangeEvent(EvidencijaKljucevasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KnjigasRow Row {
+            public EvidencijaKljucevasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -930,7 +876,7 @@ namespace FITBiD.DA {
         }
     }
 }
-namespace FITBiD.DA.DSKnjigeTableAdapters {
+namespace FITBiD.DA.DSEvidencijaIzdavanjaKljucevaTableAdapters {
     
     
     /// <summary>
@@ -942,7 +888,7 @@ namespace FITBiD.DA.DSKnjigeTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class KnjigasTableAdapter : global::System.ComponentModel.Component {
+    public partial class EvidencijaKljucevasTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -956,7 +902,7 @@ namespace FITBiD.DA.DSKnjigeTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public KnjigasTableAdapter() {
+        public EvidencijaKljucevasTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1053,66 +999,52 @@ namespace FITBiD.DA.DSKnjigeTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Knjigas";
+            tableMapping.DataSetTable = "EvidencijaKljucevas";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("Naziv", "Naziv");
-            tableMapping.ColumnMappings.Add("GodinaObjavljivanja", "GodinaObjavljivanja");
-            tableMapping.ColumnMappings.Add("Autor", "Autor");
-            tableMapping.ColumnMappings.Add("Barcode", "Barcode");
-            tableMapping.ColumnMappings.Add("OznakaStalaze", "OznakaStalaze");
-            tableMapping.ColumnMappings.Add("ZaProdaju", "ZaProdaju");
-            tableMapping.ColumnMappings.Add("Cijena", "Cijena");
-            tableMapping.ColumnMappings.Add("KnjigaKategorija_KategorijaKnjigeId", "KnjigaKategorija_KategorijaKnjigeId");
-            tableMapping.ColumnMappings.Add("KnjigaKategorija_KnjigaId", "KnjigaKategorija_KnjigaId");
+            tableMapping.ColumnMappings.Add("DatumPreuzimanja", "preuzimanje");
+            tableMapping.ColumnMappings.Add("DatumVracanja", "vracanje");
+            tableMapping.ColumnMappings.Add("NastavnoOsobljeId", "NastavnoOsobljeId");
+            tableMapping.ColumnMappings.Add("KljucId", "KljucId");
+            tableMapping.ColumnMappings.Add("RadnikId", "RadnikId");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Knjigas] WHERE (([Id] = @Original_Id) AND ([GodinaObjavljivanja] = @Original_GodinaObjavljivanja) AND ([ZaProdaju] = @Original_ZaProdaju) AND ([Cijena] = @Original_Cijena) AND ((@IsNull_KnjigaKategorija_KategorijaKnjigeId = 1 AND [KnjigaKategorija_KategorijaKnjigeId] IS NULL) OR ([KnjigaKategorija_KategorijaKnjigeId] = @Original_KnjigaKategorija_KategorijaKnjigeId)) AND ((@IsNull_KnjigaKategorija_KnjigaId = 1 AND [KnjigaKategorija_KnjigaId] IS NULL) OR ([KnjigaKategorija_KnjigaId] = @Original_KnjigaKategorija_KnjigaId)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EvidencijaKljucevas] WHERE (([Id] = @Original_Id) AND ([DatumPreuzimanja] = @Original_DatumPreuzimanja) AND ((@IsNull_DatumVracanja = 1 AND [DatumVracanja] IS NULL) OR ([DatumVracanja] = @Original_DatumVracanja)) AND ([NastavnoOsobljeId] = @Original_NastavnoOsobljeId) AND ([KljucId] = @Original_KljucId) AND ([RadnikId] = @Original_RadnikId))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GodinaObjavljivanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GodinaObjavljivanja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZaProdaju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZaProdaju", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cijena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cijena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KnjigaKategorija_KategorijaKnjigeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KategorijaKnjigeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KnjigaKategorija_KategorijaKnjigeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KategorijaKnjigeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KnjigaKategorija_KnjigaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KnjigaId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KnjigaKategorija_KnjigaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KnjigaId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DatumPreuzimanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumPreuzimanja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DatumVracanja", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumVracanja", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DatumVracanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumVracanja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NastavnoOsobljeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NastavnoOsobljeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KljucId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KljucId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RadnikId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RadnikId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Knjigas] ([Naziv], [GodinaObjavljivanja], [Autor], [Barcode], [OznakaStalaze], [ZaProdaju], [Cijena], [KnjigaKategorija_KategorijaKnjigeId], [KnjigaKategorija_KnjigaId]) VALUES (@Naziv, @GodinaObjavljivanja, @Autor, @Barcode, @OznakaStalaze, @ZaProdaju, @Cijena, @KnjigaKategorija_KategorijaKnjigeId, @KnjigaKategorija_KnjigaId);
-SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju, Cijena, KnjigaKategorija_KategorijaKnjigeId, KnjigaKategorija_KnjigaId FROM dbo.Knjigas WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[EvidencijaKljucevas] ([DatumPreuzimanja], [DatumVracanja], [NastavnoOsobljeId], [KljucId], [RadnikId]) VALUES (@DatumPreuzimanja, @DatumVracanja, @NastavnoOsobljeId, @KljucId, @RadnikId);
+SELECT Id, DatumPreuzimanja, DatumVracanja, NastavnoOsobljeId, KljucId, RadnikId FROM dbo.EvidencijaKljucevas WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GodinaObjavljivanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GodinaObjavljivanja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Autor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Barcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Barcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OznakaStalaze", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OznakaStalaze", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZaProdaju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZaProdaju", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cijena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cijena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KnjigaKategorija_KategorijaKnjigeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KategorijaKnjigeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KnjigaKategorija_KnjigaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KnjigaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatumPreuzimanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumPreuzimanja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatumVracanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumVracanja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NastavnoOsobljeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NastavnoOsobljeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KljucId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KljucId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RadnikId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RadnikId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Knjigas] SET [Naziv] = @Naziv, [GodinaObjavljivanja] = @GodinaObjavljivanja, [Autor] = @Autor, [Barcode] = @Barcode, [OznakaStalaze] = @OznakaStalaze, [ZaProdaju] = @ZaProdaju, [Cijena] = @Cijena, [KnjigaKategorija_KategorijaKnjigeId] = @KnjigaKategorija_KategorijaKnjigeId, [KnjigaKategorija_KnjigaId] = @KnjigaKategorija_KnjigaId WHERE (([Id] = @Original_Id) AND ([GodinaObjavljivanja] = @Original_GodinaObjavljivanja) AND ([ZaProdaju] = @Original_ZaProdaju) AND ([Cijena] = @Original_Cijena) AND ((@IsNull_KnjigaKategorija_KategorijaKnjigeId = 1 AND [KnjigaKategorija_KategorijaKnjigeId] IS NULL) OR ([KnjigaKategorija_KategorijaKnjigeId] = @Original_KnjigaKategorija_KategorijaKnjigeId)) AND ((@IsNull_KnjigaKategorija_KnjigaId = 1 AND [KnjigaKategorija_KnjigaId] IS NULL) OR ([KnjigaKategorija_KnjigaId] = @Original_KnjigaKategorija_KnjigaId)));
-SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju, Cijena, KnjigaKategorija_KategorijaKnjigeId, KnjigaKategorija_KnjigaId FROM dbo.Knjigas WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EvidencijaKljucevas] SET [DatumPreuzimanja] = @DatumPreuzimanja, [DatumVracanja] = @DatumVracanja, [NastavnoOsobljeId] = @NastavnoOsobljeId, [KljucId] = @KljucId, [RadnikId] = @RadnikId WHERE (([Id] = @Original_Id) AND ([DatumPreuzimanja] = @Original_DatumPreuzimanja) AND ((@IsNull_DatumVracanja = 1 AND [DatumVracanja] IS NULL) OR ([DatumVracanja] = @Original_DatumVracanja)) AND ([NastavnoOsobljeId] = @Original_NastavnoOsobljeId) AND ([KljucId] = @Original_KljucId) AND ([RadnikId] = @Original_RadnikId));
+SELECT Id, DatumPreuzimanja, DatumVracanja, NastavnoOsobljeId, KljucId, RadnikId FROM dbo.EvidencijaKljucevas WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Naziv", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Naziv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GodinaObjavljivanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GodinaObjavljivanja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Autor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Autor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Barcode", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Barcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OznakaStalaze", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OznakaStalaze", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZaProdaju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZaProdaju", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cijena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cijena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KnjigaKategorija_KategorijaKnjigeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KategorijaKnjigeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KnjigaKategorija_KnjigaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KnjigaId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatumPreuzimanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumPreuzimanja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatumVracanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumVracanja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NastavnoOsobljeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NastavnoOsobljeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KljucId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KljucId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RadnikId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RadnikId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GodinaObjavljivanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GodinaObjavljivanja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZaProdaju", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZaProdaju", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cijena", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cijena", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KnjigaKategorija_KategorijaKnjigeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KategorijaKnjigeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KnjigaKategorija_KategorijaKnjigeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KategorijaKnjigeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KnjigaKategorija_KnjigaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KnjigaId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KnjigaKategorija_KnjigaId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KnjigaKategorija_KnjigaId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DatumPreuzimanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumPreuzimanja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DatumVracanja", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumVracanja", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DatumVracanja", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DatumVracanja", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NastavnoOsobljeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NastavnoOsobljeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KljucId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KljucId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RadnikId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RadnikId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1120,7 +1052,7 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::FITBiD.Properties.Settings.Default.ConnectionString;
+            this._connection.ConnectionString = global::FITBiD.Properties.Settings.Default.FITBiDConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1129,9 +1061,8 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju, " +
-                "Cijena, KnjigaKategorija_KategorijaKnjigeId, KnjigaKategorija_KnjigaId FROM dbo." +
-                "Knjigas";
+            this._commandCollection[0].CommandText = "SELECT Id, DatumPreuzimanja, DatumVracanja, NastavnoOsobljeId, KljucId, RadnikId " +
+                "FROM dbo.EvidencijaKljucevas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1139,7 +1070,7 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSKnjige.KnjigasDataTable dataTable) {
+        public virtual int Fill(DSEvidencijaIzdavanjaKljuceva.EvidencijaKljucevasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1152,9 +1083,9 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSKnjige.KnjigasDataTable GetData() {
+        public virtual DSEvidencijaIzdavanjaKljuceva.EvidencijaKljucevasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSKnjige.KnjigasDataTable dataTable = new DSKnjige.KnjigasDataTable();
+            DSEvidencijaIzdavanjaKljuceva.EvidencijaKljucevasDataTable dataTable = new DSEvidencijaIzdavanjaKljuceva.EvidencijaKljucevasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1162,15 +1093,15 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSKnjige.KnjigasDataTable dataTable) {
+        public virtual int Update(DSEvidencijaIzdavanjaKljuceva.EvidencijaKljucevasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DSKnjige dataSet) {
-            return this.Adapter.Update(dataSet, "Knjigas");
+        public virtual int Update(DSEvidencijaIzdavanjaKljuceva dataSet) {
+            return this.Adapter.Update(dataSet, "EvidencijaKljucevas");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1192,26 +1123,34 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, System.DateTime Original_GodinaObjavljivanja, bool Original_ZaProdaju, double Original_Cijena, global::System.Nullable<int> Original_KnjigaKategorija_KategorijaKnjigeId, global::System.Nullable<int> Original_KnjigaKategorija_KnjigaId) {
+        public virtual int Delete(int Original_Id, System.DateTime Original_DatumPreuzimanja, global::System.Nullable<global::System.DateTime> Original_DatumVracanja, global::System.Nullable<int> Original_NastavnoOsobljeId, global::System.Nullable<int> Original_KljucId, global::System.Nullable<int> Original_RadnikId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_GodinaObjavljivanja));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((bool)(Original_ZaProdaju));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((double)(Original_Cijena));
-            if ((Original_KnjigaKategorija_KategorijaKnjigeId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_KnjigaKategorija_KategorijaKnjigeId.Value));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_DatumPreuzimanja));
+            if ((Original_DatumVracanja.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_DatumVracanja.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NastavnoOsobljeId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_NastavnoOsobljeId.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_KljucId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_KljucId.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Original_KnjigaKategorija_KnjigaId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_KnjigaKategorija_KnjigaId.Value));
+            if ((Original_RadnikId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_RadnikId.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1233,45 +1172,31 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Naziv, System.DateTime GodinaObjavljivanja, string Autor, string Barcode, string OznakaStalaze, bool ZaProdaju, double Cijena, global::System.Nullable<int> KnjigaKategorija_KategorijaKnjigeId, global::System.Nullable<int> KnjigaKategorija_KnjigaId) {
-            if ((Naziv == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(System.DateTime DatumPreuzimanja, global::System.Nullable<global::System.DateTime> DatumVracanja, global::System.Nullable<int> NastavnoOsobljeId, global::System.Nullable<int> KljucId, global::System.Nullable<int> RadnikId) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(DatumPreuzimanja));
+            if ((DatumVracanja.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(DatumVracanja.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Naziv));
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(GodinaObjavljivanja));
-            if ((Autor == null)) {
+            if ((NastavnoOsobljeId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(NastavnoOsobljeId.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Autor));
+            if ((KljucId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(KljucId.Value));
             }
-            if ((Barcode == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Barcode));
+            if ((RadnikId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(RadnikId.Value));
             }
-            if ((OznakaStalaze == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(OznakaStalaze));
-            }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(ZaProdaju));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((double)(Cijena));
-            if ((KnjigaKategorija_KategorijaKnjigeId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(KnjigaKategorija_KategorijaKnjigeId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((KnjigaKategorija_KnjigaId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(KnjigaKategorija_KnjigaId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1293,83 +1218,61 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string Naziv, 
-                    System.DateTime GodinaObjavljivanja, 
-                    string Autor, 
-                    string Barcode, 
-                    string OznakaStalaze, 
-                    bool ZaProdaju, 
-                    double Cijena, 
-                    global::System.Nullable<int> KnjigaKategorija_KategorijaKnjigeId, 
-                    global::System.Nullable<int> KnjigaKategorija_KnjigaId, 
-                    int Original_Id, 
-                    System.DateTime Original_GodinaObjavljivanja, 
-                    bool Original_ZaProdaju, 
-                    double Original_Cijena, 
-                    global::System.Nullable<int> Original_KnjigaKategorija_KategorijaKnjigeId, 
-                    global::System.Nullable<int> Original_KnjigaKategorija_KnjigaId, 
-                    int Id) {
-            if ((Naziv == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Update(System.DateTime DatumPreuzimanja, global::System.Nullable<global::System.DateTime> DatumVracanja, global::System.Nullable<int> NastavnoOsobljeId, global::System.Nullable<int> KljucId, global::System.Nullable<int> RadnikId, int Original_Id, System.DateTime Original_DatumPreuzimanja, global::System.Nullable<global::System.DateTime> Original_DatumVracanja, global::System.Nullable<int> Original_NastavnoOsobljeId, global::System.Nullable<int> Original_KljucId, global::System.Nullable<int> Original_RadnikId, int Id) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(DatumPreuzimanja));
+            if ((DatumVracanja.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(DatumVracanja.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Naziv));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(GodinaObjavljivanja));
-            if ((Autor == null)) {
+            if ((NastavnoOsobljeId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(NastavnoOsobljeId.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Autor));
+            if ((KljucId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(KljucId.Value));
             }
-            if ((Barcode == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Barcode));
+            if ((RadnikId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(RadnikId.Value));
             }
-            if ((OznakaStalaze == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(OznakaStalaze));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(ZaProdaju));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(Cijena));
-            if ((KnjigaKategorija_KategorijaKnjigeId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(KnjigaKategorija_KategorijaKnjigeId.Value));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_DatumPreuzimanja));
+            if ((Original_DatumVracanja.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DatumVracanja.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((KnjigaKategorija_KnjigaId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(KnjigaKategorija_KnjigaId.Value));
-            }
-            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_GodinaObjavljivanja));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_ZaProdaju));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Original_Cijena));
-            if ((Original_KnjigaKategorija_KategorijaKnjigeId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_KnjigaKategorija_KategorijaKnjigeId.Value));
+            if ((Original_NastavnoOsobljeId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_NastavnoOsobljeId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_KnjigaKategorija_KnjigaId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_KnjigaKategorija_KnjigaId.Value));
+            if ((Original_KljucId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_KljucId.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Id));
+            if ((Original_RadnikId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_RadnikId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1390,8 +1293,8 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Naziv, System.DateTime GodinaObjavljivanja, string Autor, string Barcode, string OznakaStalaze, bool ZaProdaju, double Cijena, global::System.Nullable<int> KnjigaKategorija_KategorijaKnjigeId, global::System.Nullable<int> KnjigaKategorija_KnjigaId, int Original_Id, System.DateTime Original_GodinaObjavljivanja, bool Original_ZaProdaju, double Original_Cijena, global::System.Nullable<int> Original_KnjigaKategorija_KategorijaKnjigeId, global::System.Nullable<int> Original_KnjigaKategorija_KnjigaId) {
-            return this.Update(Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju, Cijena, KnjigaKategorija_KategorijaKnjigeId, KnjigaKategorija_KnjigaId, Original_Id, Original_GodinaObjavljivanja, Original_ZaProdaju, Original_Cijena, Original_KnjigaKategorija_KategorijaKnjigeId, Original_KnjigaKategorija_KnjigaId, Original_Id);
+        public virtual int Update(System.DateTime DatumPreuzimanja, global::System.Nullable<global::System.DateTime> DatumVracanja, global::System.Nullable<int> NastavnoOsobljeId, global::System.Nullable<int> KljucId, global::System.Nullable<int> RadnikId, int Original_Id, System.DateTime Original_DatumPreuzimanja, global::System.Nullable<global::System.DateTime> Original_DatumVracanja, global::System.Nullable<int> Original_NastavnoOsobljeId, global::System.Nullable<int> Original_KljucId, global::System.Nullable<int> Original_RadnikId) {
+            return this.Update(DatumPreuzimanja, DatumVracanja, NastavnoOsobljeId, KljucId, RadnikId, Original_Id, Original_DatumPreuzimanja, Original_DatumVracanja, Original_NastavnoOsobljeId, Original_KljucId, Original_RadnikId, Original_Id);
         }
     }
     
@@ -1407,7 +1310,7 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         
         private UpdateOrderOption _updateOrder;
         
-        private KnjigasTableAdapter _knjigasTableAdapter;
+        private EvidencijaKljucevasTableAdapter _evidencijaKljucevasTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1429,12 +1332,12 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public KnjigasTableAdapter KnjigasTableAdapter {
+        public EvidencijaKljucevasTableAdapter EvidencijaKljucevasTableAdapter {
             get {
-                return this._knjigasTableAdapter;
+                return this._evidencijaKljucevasTableAdapter;
             }
             set {
-                this._knjigasTableAdapter = value;
+                this._evidencijaKljucevasTableAdapter = value;
             }
         }
         
@@ -1457,9 +1360,9 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._knjigasTableAdapter != null) 
-                            && (this._knjigasTableAdapter.Connection != null))) {
-                    return this._knjigasTableAdapter.Connection;
+                if (((this._evidencijaKljucevasTableAdapter != null) 
+                            && (this._evidencijaKljucevasTableAdapter.Connection != null))) {
+                    return this._evidencijaKljucevasTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1474,7 +1377,7 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._knjigasTableAdapter != null)) {
+                if ((this._evidencijaKljucevasTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1486,14 +1389,14 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DSKnjige dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DSEvidencijaIzdavanjaKljuceva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._knjigasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Knjigas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._evidencijaKljucevasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EvidencijaKljucevas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._knjigasTableAdapter.Update(updatedRows));
+                    result = (result + this._evidencijaKljucevasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1505,13 +1408,13 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DSKnjige dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DSEvidencijaIzdavanjaKljuceva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._knjigasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Knjigas.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._evidencijaKljucevasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EvidencijaKljucevas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._knjigasTableAdapter.Update(addedRows));
+                    result = (result + this._evidencijaKljucevasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1523,13 +1426,13 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DSKnjige dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DSEvidencijaIzdavanjaKljuceva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._knjigasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Knjigas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._evidencijaKljucevasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EvidencijaKljucevas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._knjigasTableAdapter.Update(deletedRows));
+                    result = (result + this._evidencijaKljucevasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1565,15 +1468,15 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DSKnjige dataSet) {
+        public virtual int UpdateAll(DSEvidencijaIzdavanjaKljuceva dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._knjigasTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._knjigasTableAdapter.Connection) == false))) {
+            if (((this._evidencijaKljucevasTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._evidencijaKljucevasTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1609,13 +1512,13 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._knjigasTableAdapter != null)) {
-                    revertConnections.Add(this._knjigasTableAdapter, this._knjigasTableAdapter.Connection);
-                    this._knjigasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._knjigasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._knjigasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._knjigasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._knjigasTableAdapter.Adapter);
+                if ((this._evidencijaKljucevasTableAdapter != null)) {
+                    revertConnections.Add(this._evidencijaKljucevasTableAdapter, this._evidencijaKljucevasTableAdapter.Connection);
+                    this._evidencijaKljucevasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._evidencijaKljucevasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._evidencijaKljucevasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._evidencijaKljucevasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._evidencijaKljucevasTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1676,9 +1579,9 @@ SELECT Id, Naziv, GodinaObjavljivanja, Autor, Barcode, OznakaStalaze, ZaProdaju,
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._knjigasTableAdapter != null)) {
-                    this._knjigasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._knjigasTableAdapter]));
-                    this._knjigasTableAdapter.Transaction = null;
+                if ((this._evidencijaKljucevasTableAdapter != null)) {
+                    this._evidencijaKljucevasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._evidencijaKljucevasTableAdapter]));
+                    this._evidencijaKljucevasTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

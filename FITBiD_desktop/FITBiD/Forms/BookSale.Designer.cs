@@ -32,11 +32,11 @@
             this.nazivKnjiga = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.knjigaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cijena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -55,12 +55,12 @@
             // 
             this.nazivKnjiga.Location = new System.Drawing.Point(26, 31);
             this.nazivKnjiga.Name = "nazivKnjiga";
-            this.nazivKnjiga.Size = new System.Drawing.Size(261, 20);
+            this.nazivKnjiga.Size = new System.Drawing.Size(228, 20);
             this.nazivKnjiga.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(295, 182);
+            this.button1.Location = new System.Drawing.Point(258, 182);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -78,26 +78,19 @@
             this.Cijena});
             this.dataGridView1.Location = new System.Drawing.Point(26, 57);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(344, 119);
+            this.dataGridView1.Size = new System.Drawing.Size(307, 119);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(293, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Pretraga";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // knjigaId
             // 
             this.knjigaId.DataPropertyName = "Id";
             this.knjigaId.HeaderText = "knjigaId";
             this.knjigaId.Name = "knjigaId";
+            this.knjigaId.ReadOnly = true;
             this.knjigaId.Visible = false;
             // 
             // Naziv
@@ -105,18 +98,31 @@
             this.Naziv.DataPropertyName = "Naziv";
             this.Naziv.HeaderText = "Naziv";
             this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
             // 
             // Autor
             // 
             this.Autor.DataPropertyName = "Autor";
             this.Autor.HeaderText = "Autor";
             this.Autor.Name = "Autor";
+            this.Autor.ReadOnly = true;
             // 
             // Cijena
             // 
             this.Cijena.DataPropertyName = "Cijena";
             this.Cijena.HeaderText = "Cijena";
             this.Cijena.Name = "Cijena";
+            this.Cijena.ReadOnly = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(268, 29);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Pretraga";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -130,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 231);
+            this.ClientSize = new System.Drawing.Size(362, 216);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
