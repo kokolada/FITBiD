@@ -17,9 +17,11 @@ namespace FITBiD.Forms {
 
 			//nastavno osoblje
 			DANastavnoOsoblje.GetAllOsoblje(dsEvidencija.NastavnoOsobljes);
+
 			DSEvidencijaKljucevaV2.NastavnoOsobljesRow osoblje = dsEvidencija.NastavnoOsobljes.NewNastavnoOsobljesRow();
 			osoblje.Id = 0;
 			dsEvidencija.NastavnoOsobljes.Rows.InsertAt(osoblje, 0);
+
 			cbxOsoblje.DataSource = dsEvidencija.NastavnoOsobljes;
 			cbxOsoblje.DisplayMember = "ImePrezime";
 			cbxOsoblje.ValueMember = "Id";
@@ -36,9 +38,22 @@ namespace FITBiD.Forms {
 			
 		}
 
-		private void button1_Click(object sender, EventArgs e) {	
-			DAEvidencijaKljuceva.EvidentirajKljuc(datumPreuzimanja.Value.Date, datumVracanja.Value.Date, Convert.ToInt32(cbxKljuc.SelectedValue), Convert.ToInt32(cbxOsoblje.SelectedValue));
-			MessageBox.Show("Uspješno ste evidentirali kljuc", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);	
+		private void button1_Click(object sender, EventArgs e) {
+
+			if (Convert.ToInt32(cbxOsoblje.SelectedIndex) != 0)
+			{
+				DAEvidencijaKljuceva.EvidentirajKljuc(datumPreuzimanja.Value.Date, datumVracanja.Value.Date, Convert.ToInt32(cbxKljuc.SelectedValue), Convert.ToInt32(cbxOsoblje.SelectedValue));
+				MessageBox.Show("Uspješno ste evidentirali ključ", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			else
+			{
+				MessageBox.Show("Neuspješno evidentiranje izdavanja ključa", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void KeysRecord_Load(object sender, EventArgs e)
+		{
+
 		}
 
 

@@ -34,6 +34,7 @@ namespace FITBiD.Forms
 			if (sveUdure())
 			{
 				DA.DAKnjige.AddKnjiga(txtAutor.Text, txtBarcode.Text, Convert.ToInt32(txtCijena.Text), txtGodinaObjavljivanja.Text, txtNaziv.Text, txtOznakaStalaze.Text, cbxZaProdaju.Checked);
+				MessageBox.Show("Dodavanje knjige je uspješno izvršeno!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				btnPonisti_Click(sender, e);
 			}
 		}
@@ -42,5 +43,30 @@ namespace FITBiD.Forms
 		{
 			return txtAutor.Text != "" && txtBarcode.Text != "" && txtCijena.Text != "" && txtGodinaObjavljivanja.Text != "" && txtNaziv.Text != "" && txtOznakaStalaze.Text != "";
 		}
+
+		private void AddBook_Load(object sender, EventArgs e)
+		{
+
+		}
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCijena_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 	}
 }

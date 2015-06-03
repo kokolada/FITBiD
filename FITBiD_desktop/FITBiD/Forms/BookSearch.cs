@@ -43,5 +43,10 @@ namespace FITBiD.Forms
 			DA.DAKnjige.KnjigaSearch(selectekKnjiga, Naziv, null);
 			gridDetalji.DataSource = selectekKnjiga;
 		}
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
 	}
 }
