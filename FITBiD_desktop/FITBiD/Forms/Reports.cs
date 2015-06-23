@@ -19,7 +19,6 @@ namespace FITBiD.Forms {
 		}
 
 		private void Reports_Load(object sender, EventArgs e) {
-
 			if (report == "students") {
 				reportViewer.ServerReport.ReportPath = "/rpt_ListaStudenata";
 			}
@@ -35,12 +34,13 @@ namespace FITBiD.Forms {
 				reportViewer.ServerReport.ReportPath = "/rpt_PotrosnjaMaterijala";
 			else if (report == "prodajaKnjiga")
 				reportViewer.ServerReport.ReportPath = "/rpt_ProdajaKnjiga";
-			/**/	else if (report == "najaktivnijiStudent")
+			else if (report == "najaktivnijiStudent")
 				reportViewer.ServerReport.ReportPath = "/rpt_NajaktivnijiStudent";
 			else if (report == "najaktivnijiStudentPoLoginu")
 				reportViewer.ServerReport.ReportPath = "/rpt_NajaktivnijiStudentPoLoginu";
 			else if (report == "najzastupljenijeKategorije")
 				reportViewer.ServerReport.ReportPath = "/rpt_NajzastupljenijeKategorije";
+				
 
 			this.reportViewer.RefreshReport();
 		}

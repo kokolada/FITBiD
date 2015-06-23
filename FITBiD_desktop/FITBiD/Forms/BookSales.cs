@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FITBiD.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,6 @@ namespace FITBiD.Forms
 
         private void BookSale_Load(object sender, EventArgs e)
         {
-
             dataGridView.DataSource = DA.DAKnjige.getProdateKnjige(dt);
 
         }
@@ -40,5 +40,10 @@ namespace FITBiD.Forms
         {
 
         }
+
+		private void btnReport_Click(object sender, EventArgs e) {
+			BookSalesReport frm = new BookSalesReport(dt);
+			frm.Show(); 
+		}
     }
 }

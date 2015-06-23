@@ -1,5 +1,5 @@
-﻿namespace FITBiD.Forms {
-	partial class Reports {
+﻿namespace FITBiD.Reports {
+	partial class LocalReport {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -24,30 +24,31 @@
 		/// </summary>
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
-			this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+			this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// reportViewer
 			// 
 			this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.reportViewer.LocalReport.ReportEmbeddedResource = "FITBiD.Reports.rpt_Materials.rdlc";
 			this.reportViewer.Location = new System.Drawing.Point(0, 0);
 			this.reportViewer.Name = "reportViewer";
-			this.reportViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
-			this.reportViewer.Size = new System.Drawing.Size(417, 310);
+			this.reportViewer.Size = new System.Drawing.Size(650, 399);
 			this.reportViewer.TabIndex = 0;
 			// 
-			// Reports
+			// LocalReport
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(417, 310);
+			this.ClientSize = new System.Drawing.Size(650, 399);
 			this.Controls.Add(this.reportViewer);
-			this.Name = "Reports";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Reports";
-			this.Load += new System.EventHandler(this.Reports_Load);
+			this.Name = "LocalReport";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+			this.Text = "Evidencija materijala report";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+			this.Load += new System.EventHandler(this.LocalReport_Load);
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
 			this.ResumeLayout(false);
 
@@ -55,7 +56,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.BindingSource bindingSource;
 		private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+		private System.Windows.Forms.BindingSource bindingSource;
 	}
 }

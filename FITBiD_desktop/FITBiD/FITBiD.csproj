@@ -94,6 +94,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSKnjige.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DA\DSEvidencijaIspitnogMaterijala.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEvidencijaIspitnogMaterijala.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +159,18 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\BookSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\BookSalesReport.Designer.cs">
+      <DependentUpon>BookSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LocalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\LocalReport.Designer.cs">
+      <DependentUpon>LocalReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,7 +219,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\BookSalesReport.resx">
+      <DependentUpon>BookSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LocalReport.resx">
+      <DependentUpon>LocalReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report.rdlc" />
+    <EmbeddedResource Include="Reports\rpt_Materials.rdlc" />
+    <EmbeddedResource Include="Reports\rpt_ProdaneKnjige.rdlc" />
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +308,19 @@
     <None Include="DA\DSKnjige.xss">
       <DependentUpon>DSKnjige.xsd</DependentUpon>
     </None>
+    <None Include="DA\DSEvidencijaIspitnogMaterijala.xsc">
+      <DependentUpon>DSEvidencijaIspitnogMaterijala.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSEvidencijaIspitnogMaterijala.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEvidencijaIspitnogMaterijala.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DA\DSEvidencijaIspitnogMaterijala.xss">
+      <DependentUpon>DSEvidencijaIspitnogMaterijala.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\FITBiD.DA.DAKnjige.datasource" />
+    <None Include="Properties\DataSources\FITBiD.DA.DSEvidencijaProdaje.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
