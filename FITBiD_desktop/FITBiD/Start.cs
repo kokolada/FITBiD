@@ -37,14 +37,9 @@ namespace FITBiD
 			}
 			
 		}
-
-		private void Start_Load(object sender, EventArgs e) {
-
+		private void loginPassword_KeyPress(object sender, KeyPressEventArgs e) {
+			if (e.KeyChar == 13)
+				loginSubmit_Click(sender, EventArgs.Empty);
 		}
-
-        private void labelUsername_Click(object sender, EventArgs e)
-        {
-
-        }
 	}
 }

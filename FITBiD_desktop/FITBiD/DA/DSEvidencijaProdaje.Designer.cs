@@ -289,13 +289,13 @@ namespace FITBiD.DA {
             
             private global::System.Data.DataColumn columnNaziv;
             
-            private global::System.Data.DataColumn columnGodina_objavljivanja;
+            private global::System.Data.DataColumn columnGodinaObjavljivanja;
             
             private global::System.Data.DataColumn columnAutor;
             
             private global::System.Data.DataColumn columnCijena;
             
-            private global::System.Data.DataColumn columnIme_i_prezime;
+            private global::System.Data.DataColumn columnImePrezime;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -372,9 +372,9 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Godina_objavljivanjaColumn {
+            public global::System.Data.DataColumn GodinaObjavljivanjaColumn {
                 get {
-                    return this.columnGodina_objavljivanja;
+                    return this.columnGodinaObjavljivanja;
                 }
             }
             
@@ -396,9 +396,9 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Ime_i_prezimeColumn {
+            public global::System.Data.DataColumn ImePrezimeColumn {
                 get {
-                    return this.columnIme_i_prezime;
+                    return this.columnImePrezime;
                 }
             }
             
@@ -439,7 +439,7 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EvidencijaKnjigaZaProdajusRow AddEvidencijaKnjigaZaProdajusRow(System.DateTime DatumEvidencije, int KnjigaId, int RadnikId, string Naziv, string Godina_objavljivanja, string Autor, decimal Cijena, string Ime_i_prezime) {
+            public EvidencijaKnjigaZaProdajusRow AddEvidencijaKnjigaZaProdajusRow(System.DateTime DatumEvidencije, int KnjigaId, int RadnikId, string Naziv, string GodinaObjavljivanja, string Autor, decimal Cijena, string ImePrezime) {
                 EvidencijaKnjigaZaProdajusRow rowEvidencijaKnjigaZaProdajusRow = ((EvidencijaKnjigaZaProdajusRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -447,10 +447,10 @@ namespace FITBiD.DA {
                         KnjigaId,
                         RadnikId,
                         Naziv,
-                        Godina_objavljivanja,
+                        GodinaObjavljivanja,
                         Autor,
                         Cijena,
-                        Ime_i_prezime};
+                        ImePrezime};
                 rowEvidencijaKnjigaZaProdajusRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEvidencijaKnjigaZaProdajusRow);
                 return rowEvidencijaKnjigaZaProdajusRow;
@@ -485,10 +485,10 @@ namespace FITBiD.DA {
                 this.columnKnjigaId = base.Columns["KnjigaId"];
                 this.columnRadnikId = base.Columns["RadnikId"];
                 this.columnNaziv = base.Columns["Naziv"];
-                this.columnGodina_objavljivanja = base.Columns["Godina objavljivanja"];
+                this.columnGodinaObjavljivanja = base.Columns["GodinaObjavljivanja"];
                 this.columnAutor = base.Columns["Autor"];
                 this.columnCijena = base.Columns["Cijena"];
-                this.columnIme_i_prezime = base.Columns["Ime i prezime"];
+                this.columnImePrezime = base.Columns["ImePrezime"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -504,14 +504,14 @@ namespace FITBiD.DA {
                 base.Columns.Add(this.columnRadnikId);
                 this.columnNaziv = new global::System.Data.DataColumn("Naziv", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNaziv);
-                this.columnGodina_objavljivanja = new global::System.Data.DataColumn("Godina objavljivanja", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGodina_objavljivanja);
+                this.columnGodinaObjavljivanja = new global::System.Data.DataColumn("GodinaObjavljivanja", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGodinaObjavljivanja);
                 this.columnAutor = new global::System.Data.DataColumn("Autor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAutor);
                 this.columnCijena = new global::System.Data.DataColumn("Cijena", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCijena);
-                this.columnIme_i_prezime = new global::System.Data.DataColumn("Ime i prezime", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIme_i_prezime);
+                this.columnImePrezime = new global::System.Data.DataColumn("ImePrezime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImePrezime);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -738,18 +738,18 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Godina_objavljivanja {
+            public string GodinaObjavljivanja {
                 get {
                     try {
-                        return ((string)(this[this.tableEvidencijaKnjigaZaProdajus.Godina_objavljivanjaColumn]));
+                        return ((string)(this[this.tableEvidencijaKnjigaZaProdajus.GodinaObjavljivanjaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Godina objavljivanja\' in table \'EvidencijaKnjigaZaProdajus\'" +
-                                " is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'GodinaObjavljivanja\' in table \'EvidencijaKnjigaZaProdajus\' " +
+                                "is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEvidencijaKnjigaZaProdajus.Godina_objavljivanjaColumn] = value;
+                    this[this.tableEvidencijaKnjigaZaProdajus.GodinaObjavljivanjaColumn] = value;
                 }
             }
             
@@ -787,18 +787,18 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Ime_i_prezime {
+            public string ImePrezime {
                 get {
                     try {
-                        return ((string)(this[this.tableEvidencijaKnjigaZaProdajus.Ime_i_prezimeColumn]));
+                        return ((string)(this[this.tableEvidencijaKnjigaZaProdajus.ImePrezimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ime i prezime\' in table \'EvidencijaKnjigaZaProdajus\' is DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ImePrezime\' in table \'EvidencijaKnjigaZaProdajus\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableEvidencijaKnjigaZaProdajus.Ime_i_prezimeColumn] = value;
+                    this[this.tableEvidencijaKnjigaZaProdajus.ImePrezimeColumn] = value;
                 }
             }
             
@@ -852,14 +852,14 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGodina_objavljivanjaNull() {
-                return this.IsNull(this.tableEvidencijaKnjigaZaProdajus.Godina_objavljivanjaColumn);
+            public bool IsGodinaObjavljivanjaNull() {
+                return this.IsNull(this.tableEvidencijaKnjigaZaProdajus.GodinaObjavljivanjaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGodina_objavljivanjaNull() {
-                this[this.tableEvidencijaKnjigaZaProdajus.Godina_objavljivanjaColumn] = global::System.Convert.DBNull;
+            public void SetGodinaObjavljivanjaNull() {
+                this[this.tableEvidencijaKnjigaZaProdajus.GodinaObjavljivanjaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -888,14 +888,14 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsIme_i_prezimeNull() {
-                return this.IsNull(this.tableEvidencijaKnjigaZaProdajus.Ime_i_prezimeColumn);
+            public bool IsImePrezimeNull() {
+                return this.IsNull(this.tableEvidencijaKnjigaZaProdajus.ImePrezimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetIme_i_prezimeNull() {
-                this[this.tableEvidencijaKnjigaZaProdajus.Ime_i_prezimeColumn] = global::System.Convert.DBNull;
+            public void SetImePrezimeNull() {
+                this[this.tableEvidencijaKnjigaZaProdajus.ImePrezimeColumn] = global::System.Convert.DBNull;
             }
         }
         

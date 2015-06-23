@@ -28,67 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Preuzimanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vracanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nastavnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ucionica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Preuzimanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Vracanje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Nastavnik = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ucionica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Preuzimanje,
             this.Vracanje,
             this.Nastavnik,
             this.ucionica});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(446, 211);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Preuzimanje
-            // 
-            this.Preuzimanje.DataPropertyName = "preuzimanje";
-            this.Preuzimanje.HeaderText = "Preuzimanje";
-            this.Preuzimanje.Name = "Preuzimanje";
-            this.Preuzimanje.ReadOnly = true;
-            // 
-            // Vracanje
-            // 
-            this.Vracanje.DataPropertyName = "vracanje";
-            this.Vracanje.HeaderText = "Vraćanje";
-            this.Vracanje.Name = "Vracanje";
-            this.Vracanje.ReadOnly = true;
-            // 
-            // Nastavnik
-            // 
-            this.Nastavnik.DataPropertyName = "ImePrezime";
-            this.Nastavnik.HeaderText = "Nastavnik";
-            this.Nastavnik.Name = "Nastavnik";
-            this.Nastavnik.ReadOnly = true;
-            // 
-            // ucionica
-            // 
-            this.ucionica.DataPropertyName = "Naziv";
-            this.ucionica.HeaderText = "Učionica";
-            this.ucionica.Name = "ucionica";
-            this.ucionica.ReadOnly = true;
-            // 
-            // KeysRecords
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 244);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "KeysRecords";
-            this.Text = "Izdati ključevi";
-            this.Load += new System.EventHandler(this.KeysRecords_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
+			this.dataGridView1.Location = new System.Drawing.Point(12, 27);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
+			this.dataGridView1.Size = new System.Drawing.Size(446, 211);
+			this.dataGridView1.TabIndex = 0;
+			// 
+			// Preuzimanje
+			// 
+			this.Preuzimanje.DataPropertyName = "preuzimanje";
+			this.Preuzimanje.HeaderText = "Preuzimanje";
+			this.Preuzimanje.Name = "Preuzimanje";
+			this.Preuzimanje.ReadOnly = true;
+			// 
+			// Vracanje
+			// 
+			this.Vracanje.DataPropertyName = "vracanje";
+			this.Vracanje.HeaderText = "Vraćanje";
+			this.Vracanje.Name = "Vracanje";
+			this.Vracanje.ReadOnly = true;
+			// 
+			// Nastavnik
+			// 
+			this.Nastavnik.DataPropertyName = "ImePrezime";
+			this.Nastavnik.HeaderText = "Nastavnik";
+			this.Nastavnik.Name = "Nastavnik";
+			this.Nastavnik.ReadOnly = true;
+			// 
+			// ucionica
+			// 
+			this.ucionica.DataPropertyName = "Naziv";
+			this.ucionica.HeaderText = "Učionica";
+			this.ucionica.Name = "ucionica";
+			this.ucionica.ReadOnly = true;
+			// 
+			// KeysRecords
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(468, 244);
+			this.Controls.Add(this.dataGridView1);
+			this.Name = "KeysRecords";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Izdati ključevi";
+			this.Load += new System.EventHandler(this.KeysRecords_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.ResumeLayout(false);
 
         }
 
