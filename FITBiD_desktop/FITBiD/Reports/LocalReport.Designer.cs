@@ -24,6 +24,7 @@
 		/// </summary>
 		private void InitializeComponent() {
 			this.components = new System.ComponentModel.Container();
+			Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
 			this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
 			this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
@@ -32,11 +33,14 @@
 			// reportViewer
 			// 
 			this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+			reportDataSource1.Name = "BookSales";
+			this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
 			this.reportViewer.LocalReport.ReportEmbeddedResource = "FITBiD.Reports.rpt_Materials.rdlc";
 			this.reportViewer.Location = new System.Drawing.Point(0, 0);
 			this.reportViewer.Name = "reportViewer";
 			this.reportViewer.Size = new System.Drawing.Size(650, 399);
 			this.reportViewer.TabIndex = 0;
+			this.reportViewer.Load += new System.EventHandler(this.reportViewer_Load);
 			// 
 			// LocalReport
 			// 

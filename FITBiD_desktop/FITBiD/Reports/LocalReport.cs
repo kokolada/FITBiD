@@ -17,7 +17,7 @@ namespace FITBiD.Reports {
 
 		private void LocalReport_Load(object sender, EventArgs e) {
 
-			DA.DSEvidencijaIspitnogMaterijala dsIspitniMaterijal = new DA.DSEvidencijaIspitnogMaterijala();
+			DA.DSEvidencijaIspitnogMaterijala dsIspitniMaterijal= new DA.DSEvidencijaIspitnogMaterijala();
 			DA.DSEvidencijaIspitnogMaterijalaTableAdapters.EvidencijaIspitnogMaterijalaTableAdapter adapter = new DA.DSEvidencijaIspitnogMaterijalaTableAdapters.EvidencijaIspitnogMaterijalaTableAdapter();
 
 			adapter.Fill(dsIspitniMaterijal.EvidencijaIspitnogMaterijala);
@@ -28,6 +28,10 @@ namespace FITBiD.Reports {
 
 
 			this.reportViewer.RefreshReport();
+		}
+
+		private void reportViewer_Load(object sender, EventArgs e) {
+
 		}
 	}
 }
