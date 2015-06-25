@@ -29,13 +29,17 @@ namespace FITBiD.Forms
 		}
 
 		private void btnSacuvaj_Click(object sender, EventArgs e)
-		{
+		{            
 			//pozvati proceduru
 			if (sveUdure())
 			{
-				DA.DAKnjige.AddKnjiga(txtAutor.Text, txtBarcode.Text, Convert.ToInt32(txtCijena.Text), txtGodinaObjavljivanja.Text, txtNaziv.Text, txtOznakaStalaze.Text, cbxZaProdaju.Checked);
+                DA.DAKnjige.AddKnjiga(txtAutor.Text, txtBarcode.Text, Convert.ToInt32(txtCijena.Text), Convert.ToInt32(txtGodinaObjavljivanja.Text), txtNaziv.Text, txtOznakaStalaze.Text, cbxZaProdaju.Checked);
 				MessageBox.Show("Dodavanje knjige je uspješno izvršeno!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				btnPonisti_Click(sender, e);
+                this.Close();
+
+                Forms.Book frm = new Forms.Book();
+                frm.Show();                
 			}
 		}
 

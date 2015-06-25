@@ -42,6 +42,8 @@ namespace FITBiD.Forms
         {
             DA.DAKnjige.SaleKnjiga(id);
             MessageBox.Show("Prodaja knjige uspješno evidentirana!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
+           
         }
 
         private void button2_Click(object sender, EventArgs e)

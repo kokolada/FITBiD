@@ -10,7 +10,7 @@ namespace FITBiD.DA
 {
 	class DAKnjige
 	{
-		public static void AddKnjiga(string autor, string barcode, int cijena, string godina, string naziv, string oznaka, bool zaprodaju)
+		public static void AddKnjiga(string autor, string barcode, int cijena, int godina, string naziv, string oznaka, bool zaprodaju)
 		{
 			SqlConnection cn = Connection.GetConnection();
 			if (cn.State == ConnectionState.Closed)
@@ -107,6 +107,31 @@ namespace FITBiD.DA
 			}
 		}
 
+        public static DSKnjige.KnjigasDataTable getLastAddedBook(DSKnjige.KnjigasDataTable dt)
+		{
+			
+
+			SqlConnection cn = Connection.GetConnection();
+			if (cn.State == ConnectionState.Closed)
+				cn.Open();
+
+			try
+			{
+				SqlCommand cmd = new SqlCommand("getLastAddedBook", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+				adapter.Fill(dt);
+
+				return dt;
+			}
+			finally
+			{
+				cn.Close();
+			}
+		}
+
 		public static DSEvidencijaProdaje.EvidencijaKnjigaZaProdajusDataTable getProdateKnjigeByNaziv(DSEvidencijaProdaje.EvidencijaKnjigaZaProdajusDataTable dt, string knjiga )
 		{
 			dt.Clear();
@@ -136,5 +161,6 @@ namespace FITBiD.DA
 				cn.Close();
 			}
 		}
+
 	}
 }
