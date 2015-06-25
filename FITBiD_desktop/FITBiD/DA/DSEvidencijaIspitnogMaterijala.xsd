@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSEvidencijaIspitnogMaterijala" targetNamespace="http://tempuri.org/DSEvidencijaIspitnogMaterijala.xsd" xmlns:mstns="http://tempuri.org/DSEvidencijaIspitnogMaterijala.xsd" xmlns="http://tempuri.org/DSEvidencijaIspitnogMaterijala.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FITBiD.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EvidencijaIspitnogMaterijalaTableAdapter" GeneratorDataComponentClassName="EvidencijaIspitnogMaterijalaTableAdapter" Name="EvidencijaIspitnogMaterijala" UserDataComponentName="EvidencijaIspitnogMaterijalaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="FITBiD.dbo.View_EvidencijaIspitnogMaterijala" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DatumIzdavanja, Materijal, Radnik FROM dbo.View_EvidencijaIspitnogMaterijala</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DatumIzdavanja" DataSetColumn="DatumIzdavanja" />
+              <Mapping SourceColumn="Materijal" DataSetColumn="Materijal" />
+              <Mapping SourceColumn="Radnik" DataSetColumn="Radnik" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSEvidencijaIspitnogMaterijala" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DSEvidencijaIspitnogMaterijala" msprop:Generator_UserDSName="DSEvidencijaIspitnogMaterijala">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EvidencijaIspitnogMaterijala" msprop:Generator_TableClassName="EvidencijaIspitnogMaterijalaDataTable" msprop:Generator_TableVarName="tableEvidencijaIspitnogMaterijala" msprop:Generator_RowChangedName="EvidencijaIspitnogMaterijalaRowChanged" msprop:Generator_TablePropName="EvidencijaIspitnogMaterijala" msprop:Generator_RowDeletingName="EvidencijaIspitnogMaterijalaRowDeleting" msprop:Generator_RowChangingName="EvidencijaIspitnogMaterijalaRowChanging" msprop:Generator_RowEvHandlerName="EvidencijaIspitnogMaterijalaRowChangeEventHandler" msprop:Generator_RowDeletedName="EvidencijaIspitnogMaterijalaRowDeleted" msprop:Generator_RowClassName="EvidencijaIspitnogMaterijalaRow" msprop:Generator_UserTableName="EvidencijaIspitnogMaterijala" msprop:Generator_RowEvArgName="EvidencijaIspitnogMaterijalaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DatumIzdavanja" msprop:Generator_ColumnVarNameInTable="columnDatumIzdavanja" msprop:Generator_ColumnPropNameInRow="DatumIzdavanja" msprop:Generator_ColumnPropNameInTable="DatumIzdavanjaColumn" msprop:Generator_UserColumnName="DatumIzdavanja" type="xs:dateTime" />
+              <xs:element name="Materijal" msprop:Generator_ColumnVarNameInTable="columnMaterijal" msprop:Generator_ColumnPropNameInRow="Materijal" msprop:Generator_ColumnPropNameInTable="MaterijalColumn" msprop:Generator_UserColumnName="Materijal" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Radnik" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRadnik" msprop:Generator_ColumnPropNameInRow="Radnik" msprop:Generator_ColumnPropNameInTable="RadnikColumn" msprop:Generator_UserColumnName="Radnik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
