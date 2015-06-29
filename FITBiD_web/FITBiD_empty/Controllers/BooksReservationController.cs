@@ -27,7 +27,7 @@ namespace FITBiD_empty.Controllers
 				PrezimeStudenta = x.Student.Prezime,
                 NazivKnjige = x.Knjiga.Naziv
 
-            }).ToList();
+            }).OrderByDescending(x => x.DatumRezervacije).ToList();
 
             return View(Model);
         }

@@ -110,6 +110,7 @@ namespace FITBiD_empty.Controllers {
                 .Where(x => x.ObjavaId == objavaId)
                 .Include(x => x.Student)
                 .Include(x => x.Objava)
+                .OrderByDescending(x => x.Id)
                 .ToList();
 
 	        return View(Model);
