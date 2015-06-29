@@ -2,63 +2,65 @@
 @model FITBiD_empty.ViewModels.BooksRecordCreateViewModel
 
 @{
-	ViewBag.Title = "Izdavanje knjige";
+    ViewBag.Title = "Izdavanje knjige";
 }
 
 <h2>Izdavanje knjige</h2>
 
 
-@using (Html.BeginForm("Save", "BookRecord")) 
+@using (Html.BeginForm("Save", "BookRecord"))
 {
-	@Html.AntiForgeryToken()
-	
-	<div class="form-horizontal">
-		<hr />
-		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.AntiForgeryToken()
 
-		
-		<div class="form-group">
-			<label class="control-label col-md-2">Knjiga</label>
-			<div class="col-md-10">
-				<select name="knjiga" class="form-control">
-					<option>Odaberi knjigu</option>
-					@foreach(FITBiD_empty.Models.Knjiga k in Model.Knjige){
-						<option value="@k.Id">@k.Naziv</option>
-					}
-				</select>
-			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label col-md-2">Student</label>
-			<div class="col-md-10">
-				<select name="student" class="form-control">
-					<option>Odaberi studenta</option>
-					@foreach (FITBiD_empty.Models.Student k in Model.Studenti) {
-						<option value="@k.Id">@k.BrojIndeksa</option>
-					}
-				</select>
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-			</div>
-		</div>
-		@*<div class="form-group">
-			@Html.LabelFor(model => model, "Datum vraćanja", htmlAttributes: new { @class = "control-label col-md-2" })
-			<div class="col-md-10">
-				@Html.TextBoxFor(model => model.DatumVracanja, new { @class = "form-control" })
-			</div>
-		</div>*@
 
-		<div class="form-group">
-			<div class="col-md-offset-2 col-md-10">
+        <div class="ui-widget ">
+            <label for="knjiges">Knjiga: </label>
+            @*<input id="knjiges" class="form-control">*@
+            @Html.TextBox("knjiges",null, new { @class = "form-control" })
+        </div>
+        <br />
+
+        <div class="ui-widget ">
+            <label for="students">Student: </label>
+            @*<input id="students" class="form-control">*@
+            @Html.TextBox("students",null,new { @class = "form-control" })
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Potvrdi" class="btn btn-default" />
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 }
 
 <div>
-	@Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {
-	@Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+
+        $(document).ready(function () {
+            $('#knjiges').autocomplete(
+                {
+                    source: '@Url.Action("BookSearch", "BookRecord")'
+                });
+        })
+
+        $(document).ready(function () {
+            $('#students').autocomplete(
+                {
+                    source: '@Url.Action("StudentSearch", "BookRecord")'
+                });
+        })
+
+    </script>
 }
+
