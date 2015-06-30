@@ -205,6 +205,7 @@
     <Compile Include="Controllers\KeyController.cs" />
     <Compile Include="Controllers\KeysRecordController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MenadzmentController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
@@ -262,6 +263,7 @@
     <Compile Include="ViewModels\PitanjeOdogovorViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
     <Compile Include="ViewModels\BooksReservationViewModel.cs" />
+    <Compile Include="ViewModels\MenadzmentBoardViewModel.cs" />
     <Compile Include="ViewModels\StudentBoardViewModel.cs" />
     <Compile Include="ViewModels\UserActivityViewModel.cs" />
     <Compile Include="ViewModels\WorkersViewModel.cs" />
@@ -395,6 +397,13 @@
     <Content Include="Views\Upload\Index.cshtml" />
     <Content Include="Views\UserActivity\Index.cshtml" />
     <Content Include="Views\UserActivity\Details.cshtml" />
+    <Content Include="Views\Menadzment\Create.cshtml" />
+    <Content Include="Views\Menadzment\Delete.cshtml" />
+    <Content Include="Views\Menadzment\Details.cshtml" />
+    <Content Include="Views\Menadzment\Edit.cshtml" />
+    <Content Include="Views\Menadzment\Index.cshtml" />
+    <Content Include="Views\Menadzment\MenadzmentBoard.cshtml" />
+    <Content Include="Views\Workers\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Uploads\" />
