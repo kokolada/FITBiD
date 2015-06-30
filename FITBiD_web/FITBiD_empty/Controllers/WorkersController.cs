@@ -11,10 +11,11 @@ using System.Web.Mvc;
 
 namespace FITBiD_empty.Controllers
 {
-	[Autorizacija("radnik")]
+	
 	public class WorkersController : Controller
 	{
 		MojContext ctx = new MojContext();
+		[Autorizacija("radnik")]
 		public ActionResult Index()
 		{
 			WorkersViewModel Model = new WorkersViewModel();
@@ -71,16 +72,17 @@ namespace FITBiD_empty.Controllers
 
 			return View(Model);
 		}
-
+		[Autorizacija("radnik")]
 		public ActionResult Details(int id)
 		{
 			return View();
 		}
-
+		[Autorizacija("radnik")]
 		public ActionResult Create()
 		{
 			return View();
 		}
+		[Autorizacija("radnik")]
 		public ActionResult CreateIspitniMaterijal()
 		{
 			IspitniMaterijalViewModel Model = new IspitniMaterijalViewModel();
@@ -89,6 +91,7 @@ namespace FITBiD_empty.Controllers
 			return View(Model);
 		}
 		[HttpPost]
+		[Autorizacija("radnik")]
 		public ActionResult CreateIspitniMaterijal(int materijal, int kolicina)
 		{
 			EvidencijaNarudzbeIspitnogMaterijala evIM = new EvidencijaNarudzbeIspitnogMaterijala();
@@ -102,58 +105,38 @@ namespace FITBiD_empty.Controllers
 
 			return RedirectToAction("Index");
 		}
-
-		public ActionResult Edit(int id)
+		public ActionResult Edit(int? id)
 		{
-			return View();
+			Radnik Model = new Radnik();
+			Model = ctx.Radnik.Find(id);
+
+			return View(Model); ;
 		}
 
-		[HttpPost]
-		public ActionResult Edit(int id, FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add update logic here
-
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
-
+		[Autorizacija("menadzment")]
 		public ActionResult Delete(int id)
 		{
-			return View();
+			Radnik s = ctx.Radnik.Find(id);
+			ctx.Radnik.Remove(s);
+			ctx.SaveChanges();
+			return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+		
 		}
-
-		[HttpPost]
-		public ActionResult Delete(int id, FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add delete logic here
-
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
+		[Autorizacija("radnik")]
 		public ActionResult VracenaKnjiga(int id) {
 			EvidencijaKnjigaZaIznajmljivanje evidencija = ctx.EvidencijaKnjigaZaIznajmljivanje.Find(id);
 			evidencija.Vracena = true;
 			ctx.SaveChanges();
 			return RedirectToAction("Index");
 		}
+		[Autorizacija("radnik")]
 		public ActionResult VracenKljuc(int id){
 			EvidencijaKljuceva evidencija = ctx.EvidencijaKljuceva.Find(id);
 			evidencija.DatumVracanja = DateTime.Today;
 			ctx.SaveChanges();
 			return RedirectToAction("Index");
 		}
+		[Autorizacija("radnik")]
         public ActionResult OdobriRezervaciju(int id) {
             Rezervacija r = ctx.Rezervacija.Find(id);
             if (r != null)
@@ -168,6 +151,22 @@ namespace FITBiD_empty.Controllers
             return RedirectToAction("Index");
         }
 
+		public ActionResult Save(Radnik radnik) {
+			Radnik r = ctx.Radnik.Find(radnik.Id);
+			r.Ime = radnik.Ime;
+			r.Prezime = radnik.Prezime;
+			r.Email = radnik.Email;
+			r.Username = radnik.Username;
+			r.Password = radnik.Password;
+			ctx.SaveChanges();
+
+			if (Autentifikacija.GetLogiraniKorisnik(HttpContext).rola == "radnik")
+				return RedirectToAction("Index", "Workers");
+			if (Autentifikacija.GetLogiraniKorisnik(HttpContext).rola == "menadzment")
+				return RedirectToAction("MenadzmentBoard", "Menadzment");
+			return View("Index", "Profile");
+
+		}
 
 
 	}

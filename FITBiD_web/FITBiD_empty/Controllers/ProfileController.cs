@@ -34,9 +34,7 @@ namespace FITBiD_empty.Controllers {
 			return View(Model);
 		}
 		public ActionResult Save(Student student) {
-			int studentID = 1;
-
-			Student s = ctx.Student.Find(studentID);
+			Student s = ctx.Student.Find(student.Id);
 			s.Ime = student.Ime;
 			s.Prezime = student.Prezime;
 			s.BrojIndeksa = student.BrojIndeksa;
@@ -45,7 +43,12 @@ namespace FITBiD_empty.Controllers {
 			s.Password = student.Password;
 			ctx.SaveChanges();
 
-			return RedirectToAction("Index", "Home");
+			if (Autentifikacija.GetLogiraniKorisnik(HttpContext).rola == "student")
+				return RedirectToAction("StudentBoard","Profile");
+			if(Autentifikacija.GetLogiraniKorisnik(HttpContext).rola == "menadzment")
+				return RedirectToAction("MenadzmentBoard","Menadzment");
+			return View("Index","Profile");
+				
 		}
 
         [Autorizacija("student")]
@@ -175,7 +178,12 @@ namespace FITBiD_empty.Controllers {
 
             return View(Model);
         }
-
-
+		[Autorizacija("menadzment")]
+		public ActionResult Delete(int id) {
+			Student s = ctx.Student.Find(id);
+			ctx.Student.Remove(s);
+			ctx.SaveChanges();
+			return Redirect(ControllerContext.HttpContext.Request.UrlReferrer.ToString());
+		}
 	}
 }
