@@ -17,46 +17,57 @@ namespace FITBiD_empty.Controllers
         MojContext ctx = new MojContext();
         public ActionResult Index()
         {
-			UserActivityViewModel Model = new UserActivityViewModel();
-			Model.listaStudenata = ctx.Student.ToList();
+			
 
-
-			return View(Model);
+			return View();
         }
 
-        public ActionResult Details(int student)
+        public ActionResult Details(string students)
         {
-		
-			int	studentId = student; 
-			UserActivityViewModel Model = new UserActivityViewModel();
 
-			if (!ModelState.IsValid) {
-				Model.listaStudenata = ctx.Student.ToList();
-				return View(Model);
-			}
-			else { 
-			Model.praceniStudent = ctx.Student.Find(student);
+            Student s = ctx.Student.Where(x => x.BrojIndeksa == students).FirstOrDefault();
+            UserActivityViewModel Model = new UserActivityViewModel();
 
-			Model.objave = ctx.Objava.Where(x => x.StudentId == student)
-				.Include(x => x.Student)
-				.Include(x => x.KategorijaObjave)
-				.ToList();
+            ViewData["Greska"] = null;
 
-			Model.iznajmljeneKnjige = ctx.EvidencijaKnjigaZaIznajmljivanje
-					.Where(x => x.StudentId == student)
-					.Include(x => x.Knjiga)
-					.ToList();
+            if (s != null)
+            {
+                int studentId = s.Id;
 
-			Model.rezervisaneKnjige = ctx.Rezervacija
-				.Where(x => x.StudentId == student)
-				.Include(x => x.Knjiga)
-				.ToList();
+                if (!ModelState.IsValid)
+                {
+                    Model.listaStudenata = ctx.Student.ToList();
+                    return View(Model);
+                }
+                else
+                {
+                    Model.praceniStudent = s;
 
-			Model.kategorijaObjave = ctx.KategorijaObjave.ToList();
+                    Model.objave = ctx.Objava.Where(x => x.StudentId == s.Id)
+                        .Include(x => x.Student)
+                        .Include(x => x.KategorijaObjave)
+                        .ToList();
 
-			Model.prijave = ctx.EvidencijaPrijava.Where(x=>x.StudentId==student).Include(x=>x.Radnik).ToList();
-			}
-            return View(Model);
+                    Model.iznajmljeneKnjige = ctx.EvidencijaKnjigaZaIznajmljivanje
+                            .Where(x => x.StudentId == s.Id)
+                            .Include(x => x.Knjiga)
+                            .ToList();
+
+                    Model.rezervisaneKnjige = ctx.Rezervacija
+                        .Where(x => x.StudentId == s.Id)
+                        .Include(x => x.Knjiga)
+                        .ToList();
+
+                    Model.kategorijaObjave = ctx.KategorijaObjave.ToList();
+
+                    Model.prijave = ctx.EvidencijaPrijava.Where(x => x.StudentId == s.Id).Include(x => x.Radnik).ToList();
+                }
+                return View(Model);
+            }
+            else
+                ViewData["Greska"] = "Traženi student ne postoji u bazi!";
+            return null;
+            
         }
 
         // GET: UserActivity/Create
@@ -123,6 +134,21 @@ namespace FITBiD_empty.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult StudentSearch(string term)
+        {
+            List<string> studenti = ctx.Student.Select(x => x.BrojIndeksa).ToList();
+            // Get Tags from database
+            string[] tags = new string[studenti.Count];
+
+            for (int i = 0; i < studenti.Count; i++)
+            {
+                tags[i] = studenti[i];
+
+            }
+
+            return this.Json(tags.Where(t => t.StartsWith(term)),
+                            JsonRequestBehavior.AllowGet);
         }
     }
 }

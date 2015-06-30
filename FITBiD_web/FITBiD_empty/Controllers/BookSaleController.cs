@@ -45,14 +45,19 @@ namespace FITBiD_empty.Controllers
 			return View(Model);
 		}
 		[HttpPost]
-		public ActionResult Create(int knjiga)
+        public ActionResult Create(string knjiges)
 		{
 			EvidencijaKnjigaZaProdaju evK = new EvidencijaKnjigaZaProdaju();
-			evK.DatumEvidencije = DateTime.Now;
-			evK.KnjigaId = knjiga;
-			evK.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
+            Knjiga k = ctx.Knjiga.Where(x => x.Naziv == knjiges).FirstOrDefault();
 
-			ctx.EvidencijaKnjigaZaProdaju.Add(evK);
+            if (k != null)
+            {
+                evK.DatumEvidencije = DateTime.Now;
+                evK.KnjigaId = k.Id;
+                evK.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
+                ctx.EvidencijaKnjigaZaProdaju.Add(evK);
+            }			
+
 			ctx.SaveChanges();
 
 			return RedirectToAction("Index", "Workers");
@@ -94,6 +99,22 @@ namespace FITBiD_empty.Controllers
 
 			return RedirectToAction("Index");
 		}
+
+        public ActionResult BookSearch(string term)
+        {
+            List<string> knjige =  ctx.Knjiga.Select(x => x.Naziv).ToList();
+            // Get Tags from database
+            string[] tags = new string[knjige.Count];
+
+            for (int i = 0; i < knjige.Count; i++)
+            {
+                tags[i] = knjige[i];
+
+            }
+            
+            return this.Json(tags.Where(t => t.StartsWith(term)),
+                            JsonRequestBehavior.AllowGet);
+        }
 		
 	}
 }
