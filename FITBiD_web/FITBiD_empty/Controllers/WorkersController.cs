@@ -40,7 +40,7 @@ namespace FITBiD_empty.Controllers
 					DatumVracanja = x.DatumVracanja,
 					Student = x.Student.Ime + " " + x.Student.Prezime,
 					Vracena = x.Vracena
-				}).Where(y=>y.Vracena == false).ToList();
+				}).Where(y=>y.Vracena == false).Take(8).ToList();
 			
 			Model.listaEvidencijaKnjigaZaProdaju = ctx.EvidencijaKnjigaZaProdaju
 				.Select(x=> new WorkersViewModel.EvidencijaKnjigaZaProdajuInfo(){
@@ -48,14 +48,14 @@ namespace FITBiD_empty.Controllers
 					NazivKnjge = x.Knjiga.Naziv,
 					Autor = x.Knjiga.Autor,
                     Cijena = x.Knjiga.Cijena
-				}).ToList();
+				}).OrderByDescending(x => x.DatumEvidencije).Take(8).ToList();
 
 			Model.listaEvidencijaMaterijala = ctx.EvidencijaNarudzbeIspitnogMaterijala
 				.Select(x => new WorkersViewModel.EvidencijaNarudzbeIspitnogMaterijalaInfo() {
 					NazivMaterijala = x.IspitniMaterijal.Naziv,
 					Kolicina = x.Kolicina,
 					DatumNarudzbe = x.DatumNarudzbe
-				}).ToList();
+				}).OrderByDescending(x => x.DatumNarudzbe).Take(8).ToList();
 
             Model.listaRezervisanihKnjiga = ctx.Rezervacija
                 .Select(x => new WorkersViewModel.RezervacijeKnjigaInfo()
@@ -67,7 +67,7 @@ namespace FITBiD_empty.Controllers
                     Naziv = x.Knjiga.Naziv,
                     DatumRezervacije = x.DatumRezervacije,
                     Status = x.RezervacijaPotvrdjena
-                }).Where(x => x.Status==false).ToList();
+                }).Where(x => x.Status==false).OrderByDescending(x => x.DatumRezervacije).ToList();
 
 			return View(Model);
 		}
