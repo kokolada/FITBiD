@@ -96,6 +96,10 @@
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\MicosoftReportViewerWebForms_v11.1.0.1\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Mvc.RazorTools">
       <HintPath>..\packages\Mvc.RazorTools.Base.1.0.5\lib\net45\Mvc.RazorTools.dll</HintPath>
     </Reference>
@@ -108,6 +112,10 @@
     <Reference Include="Owin.Builder">
       <HintPath>..\packages\Owin.Builder.0.8.5\lib\net40\Owin.Builder.dll</HintPath>
     </Reference>
+    <Reference Include="ReportViewerForMvc, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportViewerForMvc.1.0.1\lib\net45\ReportViewerForMvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -115,6 +123,8 @@
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3-beta1\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -207,6 +217,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenadzmentController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserActivityController.cs" />
@@ -247,6 +258,18 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Ucionica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporti\DS_Knjige.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Knjige.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BookCreateViewModel.cs" />
     <Compile Include="ViewModels\BooksRecordViewModel.cs" />
     <Compile Include="ViewModels\BooksRecordCreateViewModel.cs" />
@@ -279,15 +302,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Reports\Report.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ClassDiagram1.cd" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="App_Code\GlyphIcon.cshtml" />
     <None Include="Properties\PublishProfiles\si009.app.fit.ba - Web Deploy.pubxml" />
+    <Content Include="Reporti\DS_Knjige.xsc">
+      <DependentUpon>DS_Knjige.xsd</DependentUpon>
+    </Content>
+    <None Include="Reporti\DS_Knjige.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Knjige.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Reporti\DS_Knjige.xss">
+      <DependentUpon>DS_Knjige.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\harunCustom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -407,7 +441,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Uploads\" />
-    <Folder Include="Views\DA\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -418,6 +451,15 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reporti\rpt_Knjige.rdlc" />
+    <EmbeddedResource Include="Reporti\rpt_Osoblje.rdlc" />
+    <EmbeddedResource Include="Reporti\rpt_Radnici.rdlc" />
+    <EmbeddedResource Include="Reporti\rpt_Studenti.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -25,7 +25,7 @@ namespace FITBiD_empty.Controllers
 		public ActionResult Index(string username, string password)
 		{
 			LoginEvidencija evidencija = new LoginEvidencija();
-			evidencija.RadnikId = 1;evidencija.MenadzmentId=1;evidencija.StudentId = 1;
+			evidencija.RadnikId = null;evidencija.MenadzmentId=null;evidencija.StudentId = null;
 			evidencija.DatumLogina = DateTime.Now;
 
 			using (MojContext ctx = new MojContext())
