@@ -8,7 +8,13 @@
 
 <div class="container">
 	<h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.Cogs) Menadžment board</h2>
-
+    <div>
+        <b>Izvještaji</b>
+        @Html.ActionLink("Lista knjiga", "Knjige", "Reports", null, null) |
+        @Html.ActionLink("Lista studenata", "Studenti", "Reports", null, null) |
+        @Html.ActionLink("Lista osoblja", "Osoblje", "Reports", null, null) |
+        @Html.ActionLink("Lista radnika", "Radnici", "Reports", null, null) 
+    </div>
 	<div class="col-md-7" id="RadniciInfoTabel">
 		<h3>@Html.FontAwesome(FontAwesomeIconSet.SignIn) Evidencija Logina</h3>
 		<table class="table table-striped">
