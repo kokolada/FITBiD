@@ -438,6 +438,8 @@
     <Content Include="Views\Menadzment\Index.cshtml" />
     <Content Include="Views\Menadzment\MenadzmentBoard.cshtml" />
     <Content Include="Views\Workers\Edit.cshtml" />
+    <Content Include="Views\UserActivity\DetaljiStudentaMenadzment.cshtml" />
+    <Content Include="Views\Workers\DetaljiRadnikaMenadzment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Uploads\" />

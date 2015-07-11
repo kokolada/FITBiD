@@ -167,7 +167,32 @@ namespace FITBiD_empty.Controllers
 			return View("Index", "Profile");
 
 		}
+        public ActionResult WorkerSearch(string term)
+        {
+            List<string> radnici = ctx.Radnik.Select(x => x.Ime).ToList();
+            string[] tags = new string[radnici.Count];
 
+            for (int i = 0; i < radnici.Count; i++)
+            {
+                tags[i] = radnici[i];
+
+            }
+
+            return this.Json(tags.Where(t => t.StartsWith(term)),
+                            JsonRequestBehavior.AllowGet);
+        }
+
+	    public ActionResult DetaljiRadnikaMenadzment(string workers)
+	    {
+            Radnik r = ctx.Radnik.Where(x => x.Ime == workers).FirstOrDefault();
+            Korisnik Model = new Korisnik();
+	        Model.Id = r.Id;
+	        Model.username = r.Username;
+	        Model.Ime = r.Ime;
+	        Model.Prezime = r.Prezime;
+            return View(Model);
+
+	    }
 
 	}
 }

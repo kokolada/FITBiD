@@ -13,7 +13,6 @@ namespace FITBiD_empty.ViewModels
         
         public List<Student> aktivniStudenti { get; set; }
 		public List<Radnik> aktivniRadnici { get; set;}
-
 		public List<LoginEvidencija> evidencijaLogina { get; set;}
 
 		//public List<EvidencijaKnjigaZaIznajmljivanje> iznajmljeneKnjige { get; set; }
