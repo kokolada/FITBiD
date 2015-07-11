@@ -150,5 +150,14 @@ namespace FITBiD_empty.Controllers
             return this.Json(tags.Where(t => t.StartsWith(term)),
                             JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult DetaljiStudentaMenadzment(string students)
+        {
+            Student s = ctx.Student.Where(x => x.BrojIndeksa == students).FirstOrDefault();
+            UserActivityViewModel Model = new UserActivityViewModel();
+            Model.praceniStudent = s;
+            return View(Model);
+        }
+
     }
 }

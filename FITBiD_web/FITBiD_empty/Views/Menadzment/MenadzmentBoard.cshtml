@@ -1,87 +1,174 @@
 ﻿@using FITBiD_empty.ViewModels;
 @using Mvc.RazorTools.FontAwesome
 @{
-	ViewBag.Title = "MenadzmentBoard";
+    ViewBag.Title = "MenadzmentBoard";
 }
 
 @model FITBiD_empty.ViewModels.MenadzmentBoardViewModel
-
 <div class="container">
-	<h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.Cogs) Menadžment board</h2>
+    <h2 class="page-header">@Html.FontAwesome(FontAwesomeIconSet.Cogs) Menadžment board</h2>
     <div>
         <b>Izvještaji</b>
         @Html.ActionLink("Lista knjiga", "Knjige", "Reports", null, null) |
         @Html.ActionLink("Lista studenata", "Studenti", "Reports", null, null) |
         @Html.ActionLink("Lista osoblja", "Osoblje", "Reports", null, null) |
-        @Html.ActionLink("Lista radnika", "Radnici", "Reports", null, null) 
+        @Html.ActionLink("Lista radnika", "Radnici", "Reports", null, null)
     </div>
-	<div class="col-md-7" id="RadniciInfoTabel">
-		<h3>@Html.FontAwesome(FontAwesomeIconSet.SignIn) Evidencija Logina</h3>
-		<table class="table table-striped">
-			<tr>
-				<th>Datum logina</th>
-				<th>Radnik</th>
-				<th>Student</th>
-				<th>Menadzment</th>
-			</tr>
-			@foreach (FITBiD_empty.Models.LoginEvidencija x in Model.evidencijaLogina) {
-				<tr>
-					<td>@x.DatumLogina</td>
-					<td>@if (x.Radnik != null){@x.Radnik.Ime}</td>
-					<td>@if (x.Student != null) {@x.Student.Ime}</td>
-					<td>@if (x.Menadzment != null) {@x.Menadzment.Ime}</td>
-				</tr>
-			}
-		</table>
-		<hr />
-	</div>
-	<div class="col-md-7" id="RadniciInfoTabel">
-		<h3>@Html.FontAwesome(FontAwesomeIconSet.Users) Radnici</h3>
-		<table class="table table-striped">
-			<tr>
-				<th>Username</th>
-				<th>Ime</th>
-				<th>Prezime</th>
-				<th>Email</th>
-			</tr>
-			@foreach (FITBiD_empty.Models.Radnik x in Model.aktivniRadnici) {
-				<tr>
-					<td>@x.Username</td>
-					<td>@x.Ime</td>
-					<td>@x.Prezime</td>
-					<td>@x.Email</td>
-					<td>@Html.ActionLink("Uredi", "Edit", "Workers", new { id = x.Id }, null)</td>
-					<td>@Html.ActionLink("Ukloni", "Delete", "Workers", new { id = x.Id }, new { onclick = "return confirm('Da li želiš obrisati korisnika ?');" })</td>
-				</tr>
-			}
-		</table>
-		<hr />
-	</div>
+    <div class="col-md-12" id="RadniciInfoTabel">
+        <h3>@Html.FontAwesome(FontAwesomeIconSet.Users) Radnici</h3>
+        @*<table class="table table-striped">
+                <tr>
+                    <th>Username</th>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Email</th>
+                </tr>
+                @foreach (FITBiD_empty.Models.Radnik x in Model.aktivniRadnici)
+                {
+                    <tr>
+                        <td>@x.Username</td>
+                        <td>@x.Ime</td>
+                        <td>@x.Prezime</td>
+                        <td>@x.Email</td>
+                        <td>@Html.ActionLink("Uredi", "Edit", "Workers", new { id = x.Id }, null)</td>
+                        <td>@Html.ActionLink("Ukloni", "Delete", "Workers", new { id = x.Id }, new { onclick = "return confirm('Da li želiš obrisati korisnika ?');" })</td>
+                    </tr>
+                }
+            </table>
+            <hr />*@
+        @using (Ajax.BeginForm("DetaljiRadnikaMenadzment", "Workers", new AjaxOptions() {UpdateTargetId = "rezultatRadnici"}))
+        {
+            <div class="container">
+                <br/>
+                <div class="row">
+                    <label for="workers">Ime radnika: </label>
+                    <br/>
+                    <div class="btn-group">
+                        <div class="ui-widget ">
+                            @Html.TextBox("workers", null, new {@class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" id="btnSearch" class="btn btn-default">@Html.FontAwesome(FontAwesomeIconSet.Search)</button>
+                    </div>
 
-	<div class="col-md-6" id="StudentsInfoTabel">
-		<h3>@Html.FontAwesome(FontAwesomeIconSet.Users) Studenti</h3>
-		<table class="table table-striped">
-			<tr>
-				<th>Broj indeksa</th>
-				<th>Ime</th>
-				<th>Prezime</th>
-				<th>Email</th>
-			</tr>
-			@foreach (FITBiD_empty.Models.Student x in Model.aktivniStudenti) {
-				<tr>
-					<td>@x.BrojIndeksa</td>
-					<td>@x.Ime</td>
-					<td>@x.Prezime</td>
-					<td>@x.Email</td>
-					<td>@Html.ActionLink("Uredi", "Edit", "Profile", new { studentId = x.Id },null)</td>
-					<td>@Html.ActionLink("Ukloni", "Delete", "Profile", new { id = x.Id }, new { onclick = "return confirm('Da li želiš obrisati korisnika ?');" })</td>
-				</tr>
-			}
-		</table>
-		<hr />
-	</div>
-	<div>
-		@Html.ValidationSummary()
-	</div>
+                    @if (ViewData["Greska"] != null)
+                    {
+                        <div class="alert alert-warning">ViewData["Greska"]</div>
+                    }
 
+                </div>
+            </div>
+        }
+        <div id="rezultatRadnici"></div>
+    </div>
+    <div class="col-md-12" id="StudentsInfoTabel">
+        <h3>@Html.FontAwesome(FontAwesomeIconSet.Users) Studenti</h3>
+        @*<table class="table table-striped">
+            <tr>
+                <th>Broj indeksa</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Email</th>
+            </tr>
+            @foreach (FITBiD_empty.Models.Student x in Model.aktivniStudenti) {
+                <tr>
+                    <td>@x.BrojIndeksa</td>
+                    <td>@x.Ime</td>
+                    <td>@x.Prezime</td>
+                    <td>@x.Email</td>
+                    <td>@Html.ActionLink("Uredi", "Edit", "Profile", new { studentId = x.Id },null)</td>
+                    <td>@Html.ActionLink("Ukloni", "Delete", "Profile", new { id = x.Id }, new { onclick = "return confirm('Da li želiš obrisati korisnika ?');" })</td>
+                </tr>
+            }
+        </table>
+        <hr />*@
+        @using (Ajax.BeginForm("DetaljiStudentaMenadzment", "UserActivity", new AjaxOptions() {UpdateTargetId = "rezultat"}))
+        {
+            <div class="container">
+                <br/>
+                <div class="row">
+                    <label for="students">Broj indeksa: </label>
+                    <br/>
+                    <div class="btn-group">
+                        <div class="ui-widget ">
+                            @Html.TextBox("students", null, new {@class = "form-control"})
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" id="btnSearch" class="btn btn-default">@Html.FontAwesome(FontAwesomeIconSet.Search)</button>
+                    </div>
+
+                    @if (ViewData["Greska"] != null)
+                    {
+                        <div class="alert alert-warning">ViewData["Greska"]</div>
+                    }
+
+                </div>
+            </div>
+        }
+        <div id="rezultat"></div>
+    </div>
+    <div>
+        @Html.ValidationSummary()
+    </div>
+
+
+
+    <div class="col-md-7" id="RadniciInfoTabel">
+        <h3>@Html.FontAwesome(FontAwesomeIconSet.SignIn) Evidencija Logina</h3>
+       
+            <table class="table table-striped">
+                <tr>
+                    <th>Datum logina</th>
+                    <th>Radnik</th>
+                    <th>Student</th>
+                    <th>Menadzment</th>
+                </tr>
+                @foreach (FITBiD_empty.Models.LoginEvidencija x in Model.evidencijaLogina)
+                {
+                    <tr>
+                        <td>@x.DatumLogina</td>
+                        <td>
+                            @if (x.Radnik != null)
+                            {@x.Radnik.Ime
+                            }
+                        </td>
+                        <td>
+                            @if (x.Student != null)
+                            {@x.Student.Ime
+                            }
+                        </td>
+                        <td>
+                            @if (x.Menadzment != null)
+                            {@x.Menadzment.Ime
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        <hr/>
+    </div>
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+
+        $(document).ready(function () {
+            $('#workers').autocomplete(
+            {
+                source: '@Url.Action("WorkerSearch", "Workers")'
+            });
+        })
+
+
+        $(document).ready(function () {
+            $('#students').autocomplete(
+            {
+                source: '@Url.Action("StudentSearch", "BookRecord")'
+            });
+        })
+
+    </script>
+}

@@ -1,0 +1,24 @@
+﻿@model FITBiD_empty.ViewModels.UserActivityViewModel
+@{
+    ViewBag.Title = "DetaljiStudentaMenadzment";
+    Layout = null;
+}
+<div class="col-md-12">
+    <table class="table table-striped">
+        <tr>
+            <th>Broj indeksa</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>@Model.praceniStudent.BrojIndeksa</td>
+            <td>@Model.praceniStudent.Ime</td>
+            <td>@Model.praceniStudent.Prezime</td>
+            <td>@Model.praceniStudent.Email</td>
+            <td>@Html.ActionLink("Uredi", "Edit", "Profile", new { studentId = Model.praceniStudent.Id }, null)</td>
+            <td>@Html.ActionLink("Ukloni", "Delete", "Profile", new { id = Model.praceniStudent.Id }, new { onclick = "return confirm('Da li želiš obrisati korisnika ?');" })</td>
+        </tr>
+    </table>
+</div>
+

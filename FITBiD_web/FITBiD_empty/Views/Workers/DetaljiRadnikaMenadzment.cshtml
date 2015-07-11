@@ -1,0 +1,23 @@
+﻿@model FITBiD_empty.ViewModels.Korisnik
+@{
+    ViewBag.Title = "DetaljiRadnikaMenadzment";
+    Layout = null;
+}
+
+<div class="col-md-12">
+    <table class="table table-striped">
+        <tr>
+            <th>Username</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+        </tr>
+        <tr>
+            <th>@Model.username</th>
+            <th>@Model.Ime</th>
+            <th>@Model.Prezime</th>
+            <td>@Html.ActionLink("Uredi", "Edit", "Workers", new { id = Model.Id }, null)</td>
+            <td>@Html.ActionLink("Ukloni", "Delete", "Profile", new { id = Model.Id }, new { onclick = "return confirm('Da li želiš obrisati korisnika ?');" })</td>
+        </tr>
+    </table>
+</div>
+
