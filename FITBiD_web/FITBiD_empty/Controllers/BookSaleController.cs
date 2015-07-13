@@ -60,7 +60,7 @@ namespace FITBiD_empty.Controllers
 
 			ctx.SaveChanges();
 
-			return RedirectToAction("Index", "Workers");
+			return RedirectToAction("Index", "BookSale");
 		}
 
 		public ActionResult Edit(int id)
