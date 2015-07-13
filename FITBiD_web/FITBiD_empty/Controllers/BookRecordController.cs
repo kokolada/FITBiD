@@ -72,7 +72,6 @@ namespace FITBiD_empty.Controllers
             Knjiga k = ctx.Knjiga.Where(x => x.Naziv == knjiges ).FirstOrDefault();
             Student s = ctx.Student.Where(x => x.BrojIndeksa == students).FirstOrDefault();
 
-
 			EvidencijaKnjigaZaIznajmljivanje evIZ = new EvidencijaKnjigaZaIznajmljivanje();
 			evIZ.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
 			evIZ.KnjigaId = k.Id;
@@ -82,7 +81,7 @@ namespace FITBiD_empty.Controllers
 			ctx.EvidencijaKnjigaZaIznajmljivanje.Add(evIZ);
 			ctx.SaveChanges();
 
-			return RedirectToAction("Index", "Workers");
+			return RedirectToAction("Index", "BookRecord");
 		}
 
         public ActionResult BookSearch(string term)
