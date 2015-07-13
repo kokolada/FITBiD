@@ -69,7 +69,7 @@ namespace FITBiD_empty.Controllers
 
 		public ActionResult Save(string knjiges, string students)
 		{
-            Knjiga k = ctx.Knjiga.Where(x => x.Naziv == knjiges ).FirstOrDefault();
+            Knjiga k = ctx.Knjiga.Where(x => x.Barcode == knjiges ).FirstOrDefault();
             Student s = ctx.Student.Where(x => x.BrojIndeksa == students).FirstOrDefault();
 
 			EvidencijaKnjigaZaIznajmljivanje evIZ = new EvidencijaKnjigaZaIznajmljivanje();
@@ -86,7 +86,7 @@ namespace FITBiD_empty.Controllers
 
         public ActionResult BookSearch(string term)
         {
-            List<string> knjige =  ctx.Knjiga.Select(x => x.Naziv).ToList();
+            List<string> knjige =  ctx.Knjiga.Select(x => x.Barcode).ToList();
             // Get Tags from database
             string[] tags = new string[knjige.Count];
 
