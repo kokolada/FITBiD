@@ -38,11 +38,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgStudents = new System.Windows.Forms.DataGridView();
-            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BrojIndexa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBrojStudentata = new System.Windows.Forms.Label();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrojIndeksa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudents)).BeginInit();
@@ -78,6 +78,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Traži";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -140,7 +141,7 @@
             this.dgStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ime,
             this.Prezime,
-            this.BrojIndexa});
+            this.BrojIndeksa});
             this.dgStudents.Location = new System.Drawing.Point(6, 19);
             this.dgStudents.MultiSelect = false;
             this.dgStudents.Name = "dgStudents";
@@ -149,6 +150,24 @@
             this.dgStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgStudents.Size = new System.Drawing.Size(558, 241);
             this.dgStudents.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 372);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Pronađeno studenata :";
+            // 
+            // txtBrojStudentata
+            // 
+            this.txtBrojStudentata.AutoSize = true;
+            this.txtBrojStudentata.Location = new System.Drawing.Point(138, 372);
+            this.txtBrojStudentata.Name = "txtBrojStudentata";
+            this.txtBrojStudentata.Size = new System.Drawing.Size(35, 13);
+            this.txtBrojStudentata.TabIndex = 9;
+            this.txtBrojStudentata.Text = "label5";
             // 
             // Ime
             // 
@@ -164,30 +183,12 @@
             this.Prezime.Name = "Prezime";
             this.Prezime.ReadOnly = true;
             // 
-            // BrojIndexa
+            // BrojIndeksa
             // 
-            this.BrojIndexa.DataPropertyName = "BrojIndexa";
-            this.BrojIndexa.HeaderText = "Index";
-            this.BrojIndexa.Name = "BrojIndexa";
-            this.BrojIndexa.ReadOnly = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 372);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Pronađeno studenata :";
-            // 
-            // txtBrojStudentata
-            // 
-            this.txtBrojStudentata.AutoSize = true;
-            this.txtBrojStudentata.Location = new System.Drawing.Point(145, 372);
-            this.txtBrojStudentata.Name = "txtBrojStudentata";
-            this.txtBrojStudentata.Size = new System.Drawing.Size(35, 13);
-            this.txtBrojStudentata.TabIndex = 9;
-            this.txtBrojStudentata.Text = "label5";
+            this.BrojIndeksa.DataPropertyName = "BrojIndeksa";
+            this.BrojIndeksa.HeaderText = "Index";
+            this.BrojIndeksa.Name = "BrojIndeksa";
+            this.BrojIndeksa.ReadOnly = true;
             // 
             // Students
             // 
@@ -226,6 +227,6 @@
         private System.Windows.Forms.Label txtBrojStudentata;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BrojIndexa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BrojIndeksa;
     }
 }

@@ -12,6 +12,8 @@ namespace FITBiD.DA
     {
         public static void getStudents(DSStudents.Student_PreviewDataTable dtStudents, string ime, string prezime, string index)
         {
+            dtStudents.Clear();
+
             SqlConnection cn = Connection.GetConnection();
             if (cn.State == ConnectionState.Closed)
                 cn.Open();
