@@ -42,7 +42,7 @@ namespace FITBiD.DA
 
             try
             {
-                SqlCommand cmd = new SqlCommand("usp_getEvidencijeKljuceva", cn);
+				SqlCommand cmd = new SqlCommand("usp_getAllEvidencijeKljuceva", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

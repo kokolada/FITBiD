@@ -17,6 +17,7 @@ namespace FITBiD.DA {
 				cn.Open();
 			try {
 				SqlCommand cmd = new SqlCommand("usp_EvidencijaKljuceva_Insert", cn);
+												
 				cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
 				cmd.Parameters.Add("@NastavnoOsobljeID", SqlDbType.Int).Value = NastavnoOsobljeID;
@@ -30,6 +31,35 @@ namespace FITBiD.DA {
 			finally {
 				cn.Close();
 			}
+		}
+		public static void GetEvidencijaByDNU(DSEvidencijaIzdavanjaKljuceva.EvidencijaKljucevasDataTable dtEvidencijaIzdavanja, DateTime datumPreuzimanja, DateTime datumVracanja, string nastavnik, string ucionica) {
+			dtEvidencijaIzdavanja.Clear();
+			SqlConnection cn = Connection.GetConnection();
+
+			if (cn.State == System.Data.ConnectionState.Closed)
+				cn.Open();
+			try {
+				SqlCommand cmd = new SqlCommand("usp_getEvidencijaByDNU", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+
+				if (nastavnik != "")
+					cmd.Parameters.Add("@Nastavnik", SqlDbType.NVarChar).Value = nastavnik;
+				if (ucionica != "")
+					cmd.Parameters.Add("@Ucionica", SqlDbType.NVarChar).Value = ucionica;
+				if (datumPreuzimanja != null)
+					cmd.Parameters.Add("@DatumPreuzimanja", SqlDbType.DateTime).Value = datumPreuzimanja;
+				if (datumVracanja != null)
+					cmd.Parameters.Add("@DatumVracanja", SqlDbType.DateTime).Value = datumVracanja;
+
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+				adapter.Fill(dtEvidencijaIzdavanja);
+
+				
+			}
+			finally {
+				cn.Close();
+			}
+			
 		}
 
 	}

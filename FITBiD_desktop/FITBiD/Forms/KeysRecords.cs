@@ -24,5 +24,10 @@ namespace FITBiD.Forms
             DA.DAKljucevi.GetEvidencijeKljuceva(kljucevi);
             dataGridView1.DataSource = kljucevi;
         }
+
+		private void traziBtn_Click(object sender, EventArgs e) {
+			DA.DAEvidencijaKljuceva.GetEvidencijaByDNU(kljucevi,datumPreuzimanjaPicker.Value.Date,datumVracanjaPicker.Value.Date,nastavnikTxb.Text,ucionicaTxb.Text);
+			dataGridView1.DataSource = kljucevi;
+		}
     }
 }
