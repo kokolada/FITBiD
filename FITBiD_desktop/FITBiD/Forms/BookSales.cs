@@ -22,7 +22,8 @@ namespace FITBiD.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = DA.DAKnjige.getProdateKnjigeByNaziv(dt, nazivKnjige.Text);                
+			DA.DAKnjige.GetProdateKnjigeByKRD(dt,datumPicker.Value.Date,nazivKnjige.Text,radnikTxb.Text);
+			dataGridView.DataSource = dt;
         }
 
         private void BookSale_Load(object sender, EventArgs e)
