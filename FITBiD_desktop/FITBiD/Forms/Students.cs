@@ -15,6 +15,8 @@ namespace FITBiD.Forms
     public partial class Students : Form
     {
         DSStudents.Student_PreviewDataTable dtStudents = new DSStudents.Student_PreviewDataTable();
+        int id = new int();
+
         public Students()
         {
             InitializeComponent();
@@ -51,6 +53,13 @@ namespace FITBiD.Forms
             dgStudents.AutoGenerateColumns = false;
             dgStudents.DataSource = dtStudents;
             txtBrojStudentata.Text = dtStudents.Count.ToString();
+        }
+
+        private void dgStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id = Convert.ToInt32(dgStudents.SelectedRows[0].Cells[0].Value);
+            Forms.StudentDetails frm = new StudentDetails(id);
+            frm.Show();
         }
     }
 }
