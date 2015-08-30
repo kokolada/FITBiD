@@ -64,6 +64,7 @@
 			this.loginUsername.Name = "loginUsername";
 			this.loginUsername.Size = new System.Drawing.Size(199, 29);
 			this.loginUsername.TabIndex = 2;
+			this.loginUsername.Text = "admin";
 			// 
 			// loginPassword
 			// 
@@ -73,6 +74,7 @@
 			this.loginPassword.PasswordChar = '*';
 			this.loginPassword.Size = new System.Drawing.Size(198, 29);
 			this.loginPassword.TabIndex = 3;
+			this.loginPassword.Text = "admin";
 			this.loginPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loginPassword_KeyPress);
 			// 
 			// loginSubmit

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DA\Connection.cs" />
+    <Compile Include="DA\DAEvidencijaIznajmljivanja.cs" />
     <Compile Include="DA\DAEvidencijaKljuceva.cs" />
     <Compile Include="DA\DAEvidencijaPrijava.cs" />
     <Compile Include="DA\DAKnjige.cs" />
@@ -242,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookSearch.resx">
       <DependentUpon>BookSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BooksRental.resx">
+      <DependentUpon>BooksRental.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EntryRecords.resx">
       <DependentUpon>EntryRecords.cs</DependentUpon>

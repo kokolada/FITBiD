@@ -161,6 +161,30 @@ namespace FITBiD.DA
 				cn.Close();
 			}
 		}
+		public static void GetProdateKnjigeByKRD(DSEvidencijaProdaje.EvidencijaKnjigaZaProdajusDataTable dtProdane, DateTime datum, string knjiga, string radnik) {
+			dtProdane.Clear();
+			SqlConnection cn = Connection.GetConnection();
+
+			if (cn.State == System.Data.ConnectionState.Closed)
+				cn.Open();
+			try {
+				SqlCommand cmd = new SqlCommand("usp_GetProdateKnjigeByKRD", cn);
+				cmd.CommandType = CommandType.StoredProcedure;
+
+				if (knjiga != "")
+					cmd.Parameters.Add("@Knjiga", SqlDbType.NVarChar).Value = knjiga;
+				if (radnik != "")
+					cmd.Parameters.Add("@Radnik", SqlDbType.NVarChar).Value = radnik;
+				if (datum != null)
+					cmd.Parameters.Add("@Datum", SqlDbType.DateTime).Value = datum;
+				SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+				adapter.Fill(dtProdane);
+			}
+			finally {
+				cn.Close();
+			}
+		}
+
 
 	}
 }
