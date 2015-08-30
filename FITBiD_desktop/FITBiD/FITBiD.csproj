@@ -56,6 +56,7 @@
     <Compile Include="DA\DANastavnoOsoblje.cs" />
     <Compile Include="DA\DARadnici.cs" />
     <Compile Include="DA\DAKljucevi.cs" />
+    <Compile Include="DA\DAStudenti.cs" />
     <Compile Include="DA\DSEvidencijaIzdavanjaKljuceva.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +80,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSRadinici.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSStudents.cs">
+      <DependentUpon>DSStudents.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DA\DSStudents.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -165,6 +170,12 @@
     <Compile Include="Forms\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Students.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Students.Designer.cs">
+      <DependentUpon>Students.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Workers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Students.resx">
+      <DependentUpon>Students.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WorkersList.resx">
       <DependentUpon>Workers.cs</DependentUpon>

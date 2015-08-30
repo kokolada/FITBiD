@@ -151,6 +151,13 @@ namespace FITBiD {
 			frm.Show();
 		}
 
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Students frm = new Forms.Students();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
 
 
 
