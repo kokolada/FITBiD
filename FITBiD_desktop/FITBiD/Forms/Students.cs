@@ -37,6 +37,16 @@ namespace FITBiD.Forms
 
         private void Students_Load(object sender, EventArgs e)
         {
+            bindGrid();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bindGrid();
+        }
+        
+        private void bindGrid()
+        {
             DAStudenti.getStudents(dtStudents, txtIme.Text, txtPrezime.Text, txtIndex.Text);
             dgStudents.AutoGenerateColumns = false;
             dgStudents.DataSource = dtStudents;
