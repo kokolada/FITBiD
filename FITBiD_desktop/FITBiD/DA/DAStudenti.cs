@@ -38,5 +38,78 @@ namespace FITBiD.DA
                 cn.Close();
             }
         }
+
+        public static void getStudentById(DSStudents.Student_FullDataTable dtStudent, int id)
+        {
+            dtStudent.Clear();
+
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_getStudentById", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtStudent);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void getStudentReservations(DSStudents.Student_RezervacijeDataTable dtReservations, int id)
+        {
+            dtReservations.Clear();
+
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_getRezervacijaByStudent", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@studentId", SqlDbType.Int).Value = id;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtReservations);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void getStudentIznajmljivanja(DSStudents.Student_IznajmljivanjeDataTable dtIznajmljivanja, int id)
+        {
+            dtIznajmljivanja.Clear();
+
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_getInajmljivanjeByStudent", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@studentId", SqlDbType.Int).Value = id;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtIznajmljivanja);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
     }
 }

@@ -40,6 +40,7 @@
             this.dgStudents = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBrojStudentata = new System.Windows.Forms.Label();
+            this.studentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrojIndeksa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,8 +138,13 @@
             // 
             // dgStudents
             // 
+            this.dgStudents.AllowUserToAddRows = false;
+            this.dgStudents.AllowUserToDeleteRows = false;
+            this.dgStudents.AllowUserToResizeColumns = false;
+            this.dgStudents.AllowUserToResizeRows = false;
             this.dgStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.studentId,
             this.Ime,
             this.Prezime,
             this.BrojIndeksa});
@@ -150,6 +156,7 @@
             this.dgStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgStudents.Size = new System.Drawing.Size(558, 241);
             this.dgStudents.TabIndex = 0;
+            this.dgStudents.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStudents_CellDoubleClick);
             // 
             // label4
             // 
@@ -168,6 +175,14 @@
             this.txtBrojStudentata.Size = new System.Drawing.Size(35, 13);
             this.txtBrojStudentata.TabIndex = 9;
             this.txtBrojStudentata.Text = "label5";
+            // 
+            // studentId
+            // 
+            this.studentId.DataPropertyName = "Id";
+            this.studentId.HeaderText = "Id";
+            this.studentId.Name = "studentId";
+            this.studentId.ReadOnly = true;
+            this.studentId.Visible = false;
             // 
             // Ime
             // 
@@ -225,6 +240,7 @@
         private System.Windows.Forms.DataGridView dgStudents;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtBrojStudentata;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrojIndeksa;
