@@ -158,6 +158,12 @@ namespace FITBiD {
             frm.Show();
         }
 
+		private void iznajmljeneKnjigeToolStripMenuItem_Click(object sender, EventArgs e) {
+			Forms.BooksRental frm = new Forms.BooksRental();
+			frm.MdiParent = this;
+			frm.Show();
+		}
+
 
 
 

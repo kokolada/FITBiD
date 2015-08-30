@@ -110,6 +110,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEvidencijaPrijava.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DA\DSEvidencijaIznajmljivanjaKnjiga.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEvidencijaIznajmljivanjaKnjiga.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +150,12 @@
     </Compile>
     <Compile Include="Forms\BookSearch.Designer.cs">
       <DependentUpon>BookSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BooksRental.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BooksRental.Designer.cs">
+      <DependentUpon>BooksRental.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EntryRecords.cs">
       <SubType>Form</SubType>
@@ -367,6 +378,17 @@
     </None>
     <None Include="DA\DSEvidencijaPrijava.xss">
       <DependentUpon>DSEvidencijaPrijava.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSEvidencijaIznajmljivanjaKnjiga.xsc">
+      <DependentUpon>DSEvidencijaIznajmljivanjaKnjiga.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSEvidencijaIznajmljivanjaKnjiga.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEvidencijaIznajmljivanjaKnjiga.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DA\DSEvidencijaIznajmljivanjaKnjiga.xss">
+      <DependentUpon>DSEvidencijaIznajmljivanjaKnjiga.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\FITBiD.DA.DAKnjige.datasource" />
     <None Include="Properties\DataSources\FITBiD.DA.DSEvidencijaProdaje.datasource" />
