@@ -31,6 +31,9 @@
 			this.Kolicina = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.studentImePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.radnikImePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.prijaveGrid)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -95,11 +98,41 @@
 			this.radnikImePrezime.HeaderText = "Radnik";
 			this.radnikImePrezime.Name = "radnikImePrezime";
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(22, 10);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(44, 13);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Student";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(142, 10);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(41, 13);
+			this.label2.TabIndex = 6;
+			this.label2.Text = "Radnik";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(266, 9);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(44, 13);
+			this.label3.TabIndex = 7;
+			this.label3.Text = "Količina";
+			// 
 			// EntryRecords
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(556, 331);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.traziBtn);
 			this.Controls.Add(this.kolicinaTxb);
 			this.Controls.Add(this.radnikTxb);
@@ -124,5 +157,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Kolicina;
 		private System.Windows.Forms.DataGridViewTextBoxColumn studentImePrezime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn radnikImePrezime;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label3;
 	}
 }

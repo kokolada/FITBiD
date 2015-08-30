@@ -23,7 +23,8 @@ namespace FITBiD.Forms {
 
 		}
 		private void traziBtn_Click(object sender, EventArgs e) {
-			
+			DA.DAEvidencijaPrijava.GetEvidencijaBySRK(prijave,studentTxb.Text,radnikTxb.Text,kolicinaTxb.Text);
+			prijaveGrid.DataSource = prijave;
 		}
 	}
 }

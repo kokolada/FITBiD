@@ -32,9 +32,6 @@ namespace FITBiD.Forms {
 			cbxKljuc.DataSource = dsEvidencija.Kljucs;
 			cbxKljuc.DisplayMember = "Barcode";
 			cbxKljuc.ValueMember = "Id";
-
-
-			//na osnovu učionice preuzeti ključId i dodati u bazu
 			
 		}
 
