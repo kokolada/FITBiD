@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DA\Connection.cs" />
     <Compile Include="DA\DAEvidencijaKljuceva.cs" />
+    <Compile Include="DA\DAEvidencijaPrijava.cs" />
     <Compile Include="DA\DAKnjige.cs" />
     <Compile Include="DA\DALoginEvidencija.cs" />
     <Compile Include="DA\DAMenadzeri.cs" />
@@ -99,6 +100,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEvidencijaIspitnogMaterijala.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DA\DSEvidencijaPrijava.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSEvidencijaPrijava.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     </Compile>
     <Compile Include="Forms\BookSearch.Designer.cs">
       <DependentUpon>BookSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EntryRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EntryRecords.Designer.cs">
+      <DependentUpon>EntryRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\KeysRecord.cs">
       <SubType>Form</SubType>
@@ -202,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookSearch.resx">
       <DependentUpon>BookSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EntryRecords.resx">
+      <DependentUpon>EntryRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KeysRecord.resx">
       <DependentUpon>KeysRecord.cs</DependentUpon>
@@ -327,6 +342,17 @@
     </None>
     <None Include="DA\DSEvidencijaIspitnogMaterijala.xss">
       <DependentUpon>DSEvidencijaIspitnogMaterijala.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSEvidencijaPrijava.xsc">
+      <DependentUpon>DSEvidencijaPrijava.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSEvidencijaPrijava.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSEvidencijaPrijava.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DA\DSEvidencijaPrijava.xss">
+      <DependentUpon>DSEvidencijaPrijava.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\FITBiD.DA.DAKnjige.datasource" />
     <None Include="Properties\DataSources\FITBiD.DA.DSEvidencijaProdaje.datasource" />

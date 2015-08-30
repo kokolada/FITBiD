@@ -32,6 +32,7 @@
 			this.bestWorkersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.materialUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.booksSalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.materialsRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.workersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.listOfWorkersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addWorkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,8 @@
 			this.keysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.izdavanjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pregledIzdavanjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.materialsRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.entryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.pregledIzdavanjaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -53,7 +55,8 @@
             this.reportsToolStripMenuItem,
             this.workersToolStripMenuItem,
             this.booksToolStripMenuItem,
-            this.keysToolStripMenuItem});
+            this.keysToolStripMenuItem,
+            this.entryToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(598, 24);
@@ -123,6 +126,13 @@
 			this.booksSalesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
 			this.booksSalesToolStripMenuItem.Text = "Books Sales";
 			this.booksSalesToolStripMenuItem.Click += new System.EventHandler(this.booksSalesToolStripMenuItem_Click);
+			// 
+			// materialsRecordToolStripMenuItem
+			// 
+			this.materialsRecordToolStripMenuItem.Name = "materialsRecordToolStripMenuItem";
+			this.materialsRecordToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+			this.materialsRecordToolStripMenuItem.Text = "Materials Record";
+			this.materialsRecordToolStripMenuItem.Click += new System.EventHandler(this.materialsRecordToolStripMenuItem_Click);
 			// 
 			// workersToolStripMenuItem
 			// 
@@ -210,12 +220,20 @@
 			this.pregledIzdavanjaToolStripMenuItem.Text = "Pregled izdavanja";
 			this.pregledIzdavanjaToolStripMenuItem.Click += new System.EventHandler(this.pregledIzdavanjaToolStripMenuItem_Click);
 			// 
-			// materialsRecordToolStripMenuItem
+			// entryToolStripMenuItem
 			// 
-			this.materialsRecordToolStripMenuItem.Name = "materialsRecordToolStripMenuItem";
-			this.materialsRecordToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.materialsRecordToolStripMenuItem.Text = "Materials Record";
-			this.materialsRecordToolStripMenuItem.Click += new System.EventHandler(this.materialsRecordToolStripMenuItem_Click);
+			this.entryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pregledIzdavanjaToolStripMenuItem1});
+			this.entryToolStripMenuItem.Name = "entryToolStripMenuItem";
+			this.entryToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+			this.entryToolStripMenuItem.Text = "Entry";
+			// 
+			// pregledIzdavanjaToolStripMenuItem1
+			// 
+			this.pregledIzdavanjaToolStripMenuItem1.Name = "pregledIzdavanjaToolStripMenuItem1";
+			this.pregledIzdavanjaToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+			this.pregledIzdavanjaToolStripMenuItem1.Text = "Pregled izdavanja";
+			this.pregledIzdavanjaToolStripMenuItem1.Click += new System.EventHandler(this.pregledIzdavanjaToolStripMenuItem1_Click);
 			// 
 			// Menu
 			// 
@@ -259,5 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem izdavanjeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregledIzdavanjaToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem materialsRecordToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem entryToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem pregledIzdavanjaToolStripMenuItem1;
 	}
 }

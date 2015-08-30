@@ -145,6 +145,12 @@ namespace FITBiD {
             frm.Show();
         }
 
+		private void pregledIzdavanjaToolStripMenuItem1_Click(object sender, EventArgs e) {
+			Forms.EntryRecords frm = new Forms.EntryRecords();
+			frm.MdiParent = this;
+			frm.Show();
+		}
+
 
 
 
