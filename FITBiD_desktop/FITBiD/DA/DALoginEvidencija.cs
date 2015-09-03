@@ -28,5 +28,90 @@ namespace FITBiD.DA {
 				cn.Close();
 			}
 		}
+
+        public static void GetLoginByRadnik(DSLogin.RadnikDataTable dtRadnici, string Radnik)
+        {
+            dtRadnici.Clear();
+
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_getLoginByRadnik", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                if (Radnik != "")
+                {
+                    cmd.Parameters.Add("@radnik", SqlDbType.NVarChar).Value = Radnik;
+                }
+                
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtRadnici);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void GetLoginByStudent(DSLogin.StudentDataTable dtStudenti, string Student)
+        {
+            dtStudenti.Clear();
+
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_getLoginByStudent", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                if (Student != "")
+                {
+                    cmd.Parameters.Add("@student", SqlDbType.NVarChar).Value = Student;
+                }
+                
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtStudenti);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+        public static void GetLoginByMenadzment(DSLogin.MenadzemntDataTable dtManagement, string Management)
+        {
+            dtManagement.Clear();
+
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_getLoginByMenadzemnt", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                if (Management != "")
+                {
+                    cmd.Parameters.Add("@menadzemnt", SqlDbType.NVarChar).Value = Management;                  
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtManagement);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
 	}
 }

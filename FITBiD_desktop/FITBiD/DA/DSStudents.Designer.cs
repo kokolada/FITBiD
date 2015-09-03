@@ -1335,7 +1335,7 @@ namespace FITBiD.DA {
             
             private global::System.Data.DataColumn columnDatumRezervacije;
             
-            private global::System.Data.DataColumn columnRezervacijaPotvrdjena;
+            private global::System.Data.DataColumn columnPotvrdjena;
             
             private global::System.Data.DataColumn columnNaziv;
             
@@ -1382,9 +1382,9 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RezervacijaPotvrdjenaColumn {
+            public global::System.Data.DataColumn PotvrdjenaColumn {
                 get {
-                    return this.columnRezervacijaPotvrdjena;
+                    return this.columnPotvrdjena;
                 }
             }
             
@@ -1433,11 +1433,11 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Student_RezervacijeRow AddStudent_RezervacijeRow(string DatumRezervacije, string RezervacijaPotvrdjena, string Naziv) {
+            public Student_RezervacijeRow AddStudent_RezervacijeRow(string DatumRezervacije, string Potvrdjena, string Naziv) {
                 Student_RezervacijeRow rowStudent_RezervacijeRow = ((Student_RezervacijeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DatumRezervacije,
-                        RezervacijaPotvrdjena,
+                        Potvrdjena,
                         Naziv};
                 rowStudent_RezervacijeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStudent_RezervacijeRow);
@@ -1462,7 +1462,7 @@ namespace FITBiD.DA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnDatumRezervacije = base.Columns["DatumRezervacije"];
-                this.columnRezervacijaPotvrdjena = base.Columns["RezervacijaPotvrdjena"];
+                this.columnPotvrdjena = base.Columns["Potvrdjena"];
                 this.columnNaziv = base.Columns["Naziv"];
             }
             
@@ -1471,8 +1471,8 @@ namespace FITBiD.DA {
             private void InitClass() {
                 this.columnDatumRezervacije = new global::System.Data.DataColumn("DatumRezervacije", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatumRezervacije);
-                this.columnRezervacijaPotvrdjena = new global::System.Data.DataColumn("RezervacijaPotvrdjena", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRezervacijaPotvrdjena);
+                this.columnPotvrdjena = new global::System.Data.DataColumn("Potvrdjena", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPotvrdjena);
                 this.columnNaziv = new global::System.Data.DataColumn("Naziv", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNaziv);
             }
@@ -1616,6 +1616,8 @@ namespace FITBiD.DA {
             
             private global::System.Data.DataColumn columnVracena;
             
+            private global::System.Data.DataColumn columnIme;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Student_IznajmljivanjeDataTable() {
@@ -1683,6 +1685,14 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ImeColumn {
+                get {
+                    return this.columnIme;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1718,13 +1728,14 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Student_IznajmljivanjeRow AddStudent_IznajmljivanjeRow(string DatumIzdavanja, string DatumVracanja, string Naziv, string Vracena) {
+            public Student_IznajmljivanjeRow AddStudent_IznajmljivanjeRow(string DatumIzdavanja, string DatumVracanja, string Naziv, string Vracena, string Ime) {
                 Student_IznajmljivanjeRow rowStudent_IznajmljivanjeRow = ((Student_IznajmljivanjeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DatumIzdavanja,
                         DatumVracanja,
                         Naziv,
-                        Vracena};
+                        Vracena,
+                        Ime};
                 rowStudent_IznajmljivanjeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStudent_IznajmljivanjeRow);
                 return rowStudent_IznajmljivanjeRow;
@@ -1751,6 +1762,7 @@ namespace FITBiD.DA {
                 this.columnDatumVracanja = base.Columns["DatumVracanja"];
                 this.columnNaziv = base.Columns["Naziv"];
                 this.columnVracena = base.Columns["Vracena"];
+                this.columnIme = base.Columns["Ime"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1764,6 +1776,8 @@ namespace FITBiD.DA {
                 base.Columns.Add(this.columnNaziv);
                 this.columnVracena = new global::System.Data.DataColumn("Vracena", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVracena);
+                this.columnIme = new global::System.Data.DataColumn("Ime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIme);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2388,18 +2402,17 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string RezervacijaPotvrdjena {
+            public string Potvrdjena {
                 get {
                     try {
-                        return ((string)(this[this.tableStudent_Rezervacije.RezervacijaPotvrdjenaColumn]));
+                        return ((string)(this[this.tableStudent_Rezervacije.PotvrdjenaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RezervacijaPotvrdjena\' in table \'Student_Rezervacije\' is DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Potvrdjena\' in table \'Student_Rezervacije\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableStudent_Rezervacije.RezervacijaPotvrdjenaColumn] = value;
+                    this[this.tableStudent_Rezervacije.PotvrdjenaColumn] = value;
                 }
             }
             
@@ -2433,14 +2446,14 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRezervacijaPotvrdjenaNull() {
-                return this.IsNull(this.tableStudent_Rezervacije.RezervacijaPotvrdjenaColumn);
+            public bool IsPotvrdjenaNull() {
+                return this.IsNull(this.tableStudent_Rezervacije.PotvrdjenaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRezervacijaPotvrdjenaNull() {
-                this[this.tableStudent_Rezervacije.RezervacijaPotvrdjenaColumn] = global::System.Convert.DBNull;
+            public void SetPotvrdjenaNull() {
+                this[this.tableStudent_Rezervacije.PotvrdjenaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2538,6 +2551,22 @@ namespace FITBiD.DA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Ime {
+                get {
+                    try {
+                        return ((string)(this[this.tableStudent_Iznajmljivanje.ImeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ime\' in table \'Student_Iznajmljivanje\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudent_Iznajmljivanje.ImeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDatumIzdavanjaNull() {
                 return this.IsNull(this.tableStudent_Iznajmljivanje.DatumIzdavanjaColumn);
             }
@@ -2582,6 +2611,18 @@ namespace FITBiD.DA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVracenaNull() {
                 this[this.tableStudent_Iznajmljivanje.VracenaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsImeNull() {
+                return this.IsNull(this.tableStudent_Iznajmljivanje.ImeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetImeNull() {
+                this[this.tableStudent_Iznajmljivanje.ImeColumn] = global::System.Convert.DBNull;
             }
         }
         

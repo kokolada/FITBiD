@@ -37,13 +37,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dgStudents = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtBrojStudentata = new System.Windows.Forms.Label();
             this.studentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrojIndeksa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtBrojStudentata = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudents)).BeginInit();
@@ -128,6 +129,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dgStudents);
             this.groupBox2.Location = new System.Drawing.Point(12, 91);
             this.groupBox2.Name = "groupBox2";
@@ -136,45 +138,38 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Studenti";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(11, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(212, 12);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "* Dupli klik na studenta otvara detaljnije informacije";
+            // 
             // dgStudents
             // 
             this.dgStudents.AllowUserToAddRows = false;
             this.dgStudents.AllowUserToDeleteRows = false;
             this.dgStudents.AllowUserToResizeColumns = false;
             this.dgStudents.AllowUserToResizeRows = false;
+            this.dgStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.studentId,
             this.Ime,
             this.Prezime,
             this.BrojIndeksa});
-            this.dgStudents.Location = new System.Drawing.Point(6, 19);
+            this.dgStudents.Location = new System.Drawing.Point(6, 40);
             this.dgStudents.MultiSelect = false;
             this.dgStudents.Name = "dgStudents";
             this.dgStudents.ReadOnly = true;
             this.dgStudents.RowHeadersVisible = false;
             this.dgStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgStudents.Size = new System.Drawing.Size(558, 241);
+            this.dgStudents.Size = new System.Drawing.Size(558, 220);
             this.dgStudents.TabIndex = 0;
             this.dgStudents.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStudents_CellDoubleClick);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 372);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Pronađeno studenata :";
-            // 
-            // txtBrojStudentata
-            // 
-            this.txtBrojStudentata.AutoSize = true;
-            this.txtBrojStudentata.Location = new System.Drawing.Point(138, 372);
-            this.txtBrojStudentata.Name = "txtBrojStudentata";
-            this.txtBrojStudentata.Size = new System.Drawing.Size(35, 13);
-            this.txtBrojStudentata.TabIndex = 9;
-            this.txtBrojStudentata.Text = "label5";
             // 
             // studentId
             // 
@@ -205,6 +200,24 @@
             this.BrojIndeksa.Name = "BrojIndeksa";
             this.BrojIndeksa.ReadOnly = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 372);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Pronađeno studenata :";
+            // 
+            // txtBrojStudentata
+            // 
+            this.txtBrojStudentata.AutoSize = true;
+            this.txtBrojStudentata.Location = new System.Drawing.Point(138, 372);
+            this.txtBrojStudentata.Name = "txtBrojStudentata";
+            this.txtBrojStudentata.Size = new System.Drawing.Size(35, 13);
+            this.txtBrojStudentata.TabIndex = 9;
+            this.txtBrojStudentata.Text = "label5";
+            // 
             // Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,6 +233,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStudents)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -244,5 +258,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrojIndeksa;
+        private System.Windows.Forms.Label label5;
     }
 }

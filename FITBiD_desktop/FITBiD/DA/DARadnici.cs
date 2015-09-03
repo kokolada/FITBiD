@@ -95,5 +95,27 @@ namespace FITBiD.DA {
 				cn.Close();
 			}
 		}
+
+        public static void getRadnikById(DSRadinici.RadniciDataTable dtRadnici, int id)
+        {
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_getRadnikById", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+               
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dtRadnici);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 	}
 }

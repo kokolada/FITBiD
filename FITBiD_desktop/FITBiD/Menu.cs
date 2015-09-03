@@ -112,7 +112,7 @@ namespace FITBiD {
 
 		private void pretragaToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			Forms.BookSearch frm = new Forms.BookSearch();
+            Forms.BookSearch frm = new Forms.BookSearch();
 			frm.MdiParent = this;
 			frm.Show();
 		}
@@ -163,6 +163,20 @@ namespace FITBiD {
 			frm.MdiParent = this;
 			frm.Show();
 		}
+
+        private void rezervacijeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.Rezervacije frm = new Forms.Rezervacije();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void logsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Forms.LoginLogs frm = new Forms.LoginLogs();
+            frm.MdiParent = this;
+            frm.Show();
+        }
 
 
 

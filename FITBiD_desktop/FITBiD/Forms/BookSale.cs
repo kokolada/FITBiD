@@ -14,7 +14,7 @@ namespace FITBiD.Forms
 {
     public partial class BookSale : Form
     {
-        DSKnjige.KnjigasDataTable knjige = new DSKnjige.KnjigasDataTable();
+        DSKnjige.KnjigaPretragaDataTable knjige = new DSKnjige.KnjigaPretragaDataTable();
         int id = new int();
         public BookSale()
         {
@@ -29,8 +29,8 @@ namespace FITBiD.Forms
 
         private void BookSale_Load(object sender, EventArgs e)
         {
-            DAKnjige.KnjigaSearch(knjige, null, null);
-            dataGridView1.DataSource = knjige;
+           // DAKnjige.KnjigaSearch(knjige, null, null);
+            //dataGridView1.DataSource = knjige;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,8 +48,8 @@ namespace FITBiD.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DA.DAKnjige.KnjigaSearch(knjige, nazivKnjiga.Text, null);
-            dataGridView1.DataSource = knjige;
+           // DA.DAKnjige.KnjigaSearch(knjige, nazivKnjiga.Text, null);
+            //dataGridView1.DataSource = knjige;
 
         }
     }

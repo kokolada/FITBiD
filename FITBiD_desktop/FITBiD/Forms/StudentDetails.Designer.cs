@@ -37,8 +37,15 @@
             this.Ime = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgIznajmljene = new System.Windows.Forms.DataGridView();
+            this.DatumIzdavanja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumVracanja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Naziv_knjige = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vracena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgRezervisane = new System.Windows.Forms.DataGridView();
+            this.DatumRezervacije = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Potvrdjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,13 +55,6 @@
             this.txtEmail = new System.Windows.Forms.Label();
             this.txtRezervisane = new System.Windows.Forms.Label();
             this.txtIznajmljene = new System.Windows.Forms.Label();
-            this.DatumRezervacije = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RezervacijaPotvrdjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatumIzdavanja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatumVracanja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Naziv_knjige = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vracena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgIznajmljene)).BeginInit();
@@ -73,7 +73,7 @@
             this.groupBox1.Controls.Add(this.Ime);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(190, 100);
+            this.groupBox1.Size = new System.Drawing.Size(221, 100);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lični podaci";
@@ -137,7 +137,7 @@
             this.groupBox2.Controls.Add(this.dgIznajmljene);
             this.groupBox2.Location = new System.Drawing.Point(12, 323);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(407, 158);
+            this.groupBox2.Size = new System.Drawing.Size(438, 175);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Iznajmljene knjige";
@@ -148,6 +148,7 @@
             this.dgIznajmljene.AllowUserToDeleteRows = false;
             this.dgIznajmljene.AllowUserToResizeColumns = false;
             this.dgIznajmljene.AllowUserToResizeRows = false;
+            this.dgIznajmljene.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgIznajmljene.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgIznajmljene.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DatumIzdavanja,
@@ -159,16 +160,49 @@
             this.dgIznajmljene.Name = "dgIznajmljene";
             this.dgIznajmljene.ReadOnly = true;
             this.dgIznajmljene.RowHeadersVisible = false;
+            this.dgIznajmljene.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgIznajmljene.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgIznajmljene.Size = new System.Drawing.Size(395, 133);
+            this.dgIznajmljene.Size = new System.Drawing.Size(426, 133);
             this.dgIznajmljene.TabIndex = 0;
+            // 
+            // DatumIzdavanja
+            // 
+            this.DatumIzdavanja.DataPropertyName = "DatumIzdavanja";
+            this.DatumIzdavanja.HeaderText = "Izdata";
+            this.DatumIzdavanja.Name = "DatumIzdavanja";
+            this.DatumIzdavanja.ReadOnly = true;
+            this.DatumIzdavanja.Width = 61;
+            // 
+            // DatumVracanja
+            // 
+            this.DatumVracanja.DataPropertyName = "DatumVracanja";
+            this.DatumVracanja.HeaderText = "Datum vracanja";
+            this.DatumVracanja.Name = "DatumVracanja";
+            this.DatumVracanja.ReadOnly = true;
+            this.DatumVracanja.Width = 98;
+            // 
+            // Naziv_knjige
+            // 
+            this.Naziv_knjige.DataPropertyName = "Naziv_knjige";
+            this.Naziv_knjige.HeaderText = "Naziv";
+            this.Naziv_knjige.Name = "Naziv_knjige";
+            this.Naziv_knjige.ReadOnly = true;
+            this.Naziv_knjige.Width = 59;
+            // 
+            // Vracena
+            // 
+            this.Vracena.DataPropertyName = "Vracena";
+            this.Vracena.HeaderText = "Vraćena";
+            this.Vracena.Name = "Vracena";
+            this.Vracena.ReadOnly = true;
+            this.Vracena.Width = 72;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dgRezervisane);
             this.groupBox3.Location = new System.Drawing.Point(12, 128);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(407, 164);
+            this.groupBox3.Size = new System.Drawing.Size(438, 180);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Rezervacije knjiga";
@@ -179,10 +213,11 @@
             this.dgRezervisane.AllowUserToDeleteRows = false;
             this.dgRezervisane.AllowUserToResizeColumns = false;
             this.dgRezervisane.AllowUserToResizeRows = false;
+            this.dgRezervisane.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRezervisane.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgRezervisane.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DatumRezervacije,
-            this.RezervacijaPotvrdjena,
+            this.Potvrdjena,
             this.Naziv});
             this.dgRezervisane.Location = new System.Drawing.Point(6, 19);
             this.dgRezervisane.MultiSelect = false;
@@ -190,13 +225,34 @@
             this.dgRezervisane.ReadOnly = true;
             this.dgRezervisane.RowHeadersVisible = false;
             this.dgRezervisane.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgRezervisane.Size = new System.Drawing.Size(395, 139);
+            this.dgRezervisane.Size = new System.Drawing.Size(426, 139);
             this.dgRezervisane.TabIndex = 0;
+            // 
+            // DatumRezervacije
+            // 
+            this.DatumRezervacije.DataPropertyName = "DatumRezervacije";
+            this.DatumRezervacije.HeaderText = "Datum rezervacije";
+            this.DatumRezervacije.Name = "DatumRezervacije";
+            this.DatumRezervacije.ReadOnly = true;
+            // 
+            // Potvrdjena
+            // 
+            this.Potvrdjena.DataPropertyName = "Potvrdjena";
+            this.Potvrdjena.HeaderText = "Rezervacija potvrđena";
+            this.Potvrdjena.Name = "Potvrdjena";
+            this.Potvrdjena.ReadOnly = true;
+            // 
+            // Naziv
+            // 
+            this.Naziv.DataPropertyName = "Naziv";
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 295);
+            this.label1.Location = new System.Drawing.Point(15, 290);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 0;
@@ -206,7 +262,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 484);
+            this.label2.Location = new System.Drawing.Point(15, 480);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 1;
@@ -238,7 +294,7 @@
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.txtTelefon);
             this.groupBox4.Controls.Add(this.txtEmail);
-            this.groupBox4.Location = new System.Drawing.Point(208, 12);
+            this.groupBox4.Location = new System.Drawing.Point(239, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(211, 100);
             this.groupBox4.TabIndex = 4;
@@ -266,7 +322,7 @@
             // txtRezervisane
             // 
             this.txtRezervisane.AutoSize = true;
-            this.txtRezervisane.Location = new System.Drawing.Point(111, 296);
+            this.txtRezervisane.Location = new System.Drawing.Point(114, 291);
             this.txtRezervisane.Name = "txtRezervisane";
             this.txtRezervisane.Size = new System.Drawing.Size(41, 13);
             this.txtRezervisane.TabIndex = 10;
@@ -275,66 +331,17 @@
             // txtIznajmljene
             // 
             this.txtIznajmljene.AutoSize = true;
-            this.txtIznajmljene.Location = new System.Drawing.Point(104, 485);
+            this.txtIznajmljene.Location = new System.Drawing.Point(107, 481);
             this.txtIznajmljene.Name = "txtIznajmljene";
             this.txtIznajmljene.Size = new System.Drawing.Size(41, 13);
             this.txtIznajmljene.TabIndex = 11;
             this.txtIznajmljene.Text = "label13";
             // 
-            // DatumRezervacije
-            // 
-            this.DatumRezervacije.DataPropertyName = "DatumRezervacije";
-            this.DatumRezervacije.HeaderText = "Datum rezervacije";
-            this.DatumRezervacije.Name = "DatumRezervacije";
-            this.DatumRezervacije.ReadOnly = true;
-            // 
-            // RezervacijaPotvrdjena
-            // 
-            this.RezervacijaPotvrdjena.DataPropertyName = "RezervacijaPotvrdjena";
-            this.RezervacijaPotvrdjena.HeaderText = "Rezervacija potvrđena";
-            this.RezervacijaPotvrdjena.Name = "RezervacijaPotvrdjena";
-            this.RezervacijaPotvrdjena.ReadOnly = true;
-            // 
-            // Naziv
-            // 
-            this.Naziv.DataPropertyName = "Naziv";
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            this.Naziv.ReadOnly = true;
-            // 
-            // DatumIzdavanja
-            // 
-            this.DatumIzdavanja.DataPropertyName = "DatumIzdavanja";
-            this.DatumIzdavanja.HeaderText = "Izdata";
-            this.DatumIzdavanja.Name = "DatumIzdavanja";
-            this.DatumIzdavanja.ReadOnly = true;
-            // 
-            // DatumVracanja
-            // 
-            this.DatumVracanja.DataPropertyName = "DatumVracanja";
-            this.DatumVracanja.HeaderText = "Datum vracanja";
-            this.DatumVracanja.Name = "DatumVracanja";
-            this.DatumVracanja.ReadOnly = true;
-            // 
-            // Naziv_knjige
-            // 
-            this.Naziv_knjige.DataPropertyName = "Naziv";
-            this.Naziv_knjige.HeaderText = "Naziv";
-            this.Naziv_knjige.Name = "Naziv_knjige";
-            this.Naziv_knjige.ReadOnly = true;
-            // 
-            // Vracena
-            // 
-            this.Vracena.DataPropertyName = "Vracena";
-            this.Vracena.HeaderText = "Vraćena";
-            this.Vracena.Name = "Vracena";
-            this.Vracena.ReadOnly = true;
-            // 
             // StudentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 507);
+            this.ClientSize = new System.Drawing.Size(462, 507);
             this.Controls.Add(this.txtIznajmljene);
             this.Controls.Add(this.txtRezervisane);
             this.Controls.Add(this.groupBox4);
@@ -381,12 +388,12 @@
         private System.Windows.Forms.Label txtEmail;
         private System.Windows.Forms.Label txtRezervisane;
         private System.Windows.Forms.Label txtIznajmljene;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DatumRezervacije;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RezervacijaPotvrdjena;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumIzdavanja;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumVracanja;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv_knjige;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vracena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatumRezervacije;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Potvrdjena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
     }
 }

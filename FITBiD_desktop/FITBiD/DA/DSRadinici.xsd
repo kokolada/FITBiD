@@ -114,6 +114,17 @@ SELECT Id, Ime, Prezime, Email, Username, Password FROM dbo.Radniks WHERE (Id = 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Radnici" msprop:Generator_TableClassName="RadniciDataTable" msprop:Generator_TableVarName="tableRadnici" msprop:Generator_RowChangedName="RadniciRowChanged" msprop:Generator_TablePropName="Radnici" msprop:Generator_RowDeletingName="RadniciRowDeleting" msprop:Generator_RowChangingName="RadniciRowChanging" msprop:Generator_RowEvHandlerName="RadniciRowChangeEventHandler" msprop:Generator_RowDeletedName="RadniciRowDeleted" msprop:Generator_RowClassName="RadniciRow" msprop:Generator_UserTableName="Radnici" msprop:Generator_RowEvArgName="RadniciRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:string" minOccurs="0" />
+              <xs:element name="Ime" msprop:Generator_ColumnVarNameInTable="columnIme" msprop:Generator_ColumnPropNameInRow="Ime" msprop:Generator_ColumnPropNameInTable="ImeColumn" msprop:Generator_UserColumnName="Ime" type="xs:string" minOccurs="0" />
+              <xs:element name="Prezime" msprop:Generator_ColumnVarNameInTable="columnPrezime" msprop:Generator_ColumnPropNameInRow="Prezime" msprop:Generator_ColumnPropNameInTable="PrezimeColumn" msprop:Generator_UserColumnName="Prezime" type="xs:string" minOccurs="0" />
+              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" type="xs:string" minOccurs="0" />
+              <xs:element name="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_UserColumnName="Username" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
