@@ -216,7 +216,7 @@
             this.groupBox2.Controls.Add(this.dgPretraga);
             this.groupBox2.Location = new System.Drawing.Point(212, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(599, 233);
+            this.groupBox2.Size = new System.Drawing.Size(599, 378);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Knjige";
@@ -225,7 +225,7 @@
             // 
             this.txtBroj.AutoSize = true;
             this.txtBroj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtBroj.Location = new System.Drawing.Point(92, 217);
+            this.txtBroj.Location = new System.Drawing.Point(92, 365);
             this.txtBroj.Name = "txtBroj";
             this.txtBroj.Size = new System.Drawing.Size(35, 13);
             this.txtBroj.TabIndex = 12;
@@ -235,7 +235,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(3, 217);
+            this.label8.Location = new System.Drawing.Point(3, 365);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 6;
@@ -273,7 +273,7 @@
             this.dgPretraga.RowHeadersVisible = false;
             this.dgPretraga.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgPretraga.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPretraga.Size = new System.Drawing.Size(587, 187);
+            this.dgPretraga.Size = new System.Drawing.Size(587, 332);
             this.dgPretraga.TabIndex = 0;
             this.dgPretraga.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgPretraga_MouseDoubleClick);
             // 
@@ -331,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 260);
+            this.ClientSize = new System.Drawing.Size(823, 402);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "BookSearch";

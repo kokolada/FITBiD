@@ -142,7 +142,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(12, 117);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(260, 121);
+            this.groupBox2.Size = new System.Drawing.Size(260, 133);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Logiranja";
@@ -185,7 +185,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 241);
+            this.label6.Location = new System.Drawing.Point(15, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 5;
@@ -194,7 +194,7 @@
             // txtukupno
             // 
             this.txtukupno.AutoSize = true;
-            this.txtukupno.Location = new System.Drawing.Point(104, 241);
+            this.txtukupno.Location = new System.Drawing.Point(104, 234);
             this.txtukupno.Name = "txtukupno";
             this.txtukupno.Size = new System.Drawing.Size(35, 13);
             this.txtukupno.TabIndex = 4;
