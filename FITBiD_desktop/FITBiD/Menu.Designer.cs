@@ -41,7 +41,6 @@
             this.prodaneKnjigeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iznajmljeneKnjigeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prodajKnjiguToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izdavanjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -173,7 +172,6 @@
             this.prodaneKnjigeToolStripMenuItem,
             this.iznajmljeneKnjigeToolStripMenuItem,
             this.rezervacijeToolStripMenuItem,
-            this.prodajKnjiguToolStripMenuItem,
             this.addBookToolStripMenuItem});
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
             this.booksToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
@@ -206,13 +204,6 @@
             this.rezervacijeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.rezervacijeToolStripMenuItem.Text = "Rezervisane knjige";
             this.rezervacijeToolStripMenuItem.Click += new System.EventHandler(this.rezervacijeToolStripMenuItem_Click);
-            // 
-            // prodajKnjiguToolStripMenuItem
-            // 
-            this.prodajKnjiguToolStripMenuItem.Name = "prodajKnjiguToolStripMenuItem";
-            this.prodajKnjiguToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.prodajKnjiguToolStripMenuItem.Text = "Prodaj knjigu";
-            this.prodajKnjiguToolStripMenuItem.Click += new System.EventHandler(this.prodajKnjiguToolStripMenuItem_Click);
             // 
             // addBookToolStripMenuItem
             // 
@@ -285,7 +276,7 @@
             // logsToolStripMenuItem
             // 
             this.logsToolStripMenuItem.Name = "logsToolStripMenuItem";
-            this.logsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logsToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.logsToolStripMenuItem.Text = "Logs";
             this.logsToolStripMenuItem.Click += new System.EventHandler(this.logsToolStripMenuItem_Click);
             // 
@@ -326,7 +317,6 @@
 		private System.Windows.Forms.ToolStripMenuItem addBookToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem pretragaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prodaneKnjigeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prodajKnjiguToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem keysToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izdavanjeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregledIzdavanjaToolStripMenuItem;

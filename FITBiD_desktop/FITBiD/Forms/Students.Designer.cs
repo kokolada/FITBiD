@@ -133,7 +133,7 @@
             this.groupBox2.Controls.Add(this.dgStudents);
             this.groupBox2.Location = new System.Drawing.Point(12, 91);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(570, 266);
+            this.groupBox2.Size = new System.Drawing.Size(570, 278);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Studenti";
@@ -203,7 +203,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 372);
+            this.label4.Location = new System.Drawing.Point(15, 353);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 13);
             this.label4.TabIndex = 8;
@@ -212,7 +212,7 @@
             // txtBrojStudentata
             // 
             this.txtBrojStudentata.AutoSize = true;
-            this.txtBrojStudentata.Location = new System.Drawing.Point(138, 372);
+            this.txtBrojStudentata.Location = new System.Drawing.Point(130, 353);
             this.txtBrojStudentata.Name = "txtBrojStudentata";
             this.txtBrojStudentata.Size = new System.Drawing.Size(35, 13);
             this.txtBrojStudentata.TabIndex = 9;
