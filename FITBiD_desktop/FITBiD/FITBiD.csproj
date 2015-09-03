@@ -77,6 +77,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSEvidencijaProdaje.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DA\DSKnjige.cs">
+      <DependentUpon>DSKnjige.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DA\DSLogin.cs">
+      <DependentUpon>DSLogin.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DA\DSLogin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSLogin.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DA\DSRadinici.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +147,12 @@
     <Compile Include="Forms\Book.Designer.cs">
       <DependentUpon>Book.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BookDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookDetails.Designer.cs">
+      <DependentUpon>BookDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BookSale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,11 +195,35 @@
     <Compile Include="Forms\KeysRecords.Designer.cs">
       <DependentUpon>KeysRecords.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LoginLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginLogs.Designer.cs">
+      <DependentUpon>LoginLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenadzemntDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenadzemntDetails.Designer.cs">
+      <DependentUpon>MenadzemntDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RadnikDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RadnikDetails.Designer.cs">
+      <DependentUpon>RadnikDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reports.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Rezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Rezervacije.Designer.cs">
+      <DependentUpon>Rezervacije.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentDetails.cs">
       <SubType>Form</SubType>
@@ -235,6 +278,9 @@
     <EmbeddedResource Include="Forms\Book.resx">
       <DependentUpon>Book.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BookDetails.resx">
+      <DependentUpon>BookDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BookSale.resx">
       <DependentUpon>BookSale.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,8 +302,20 @@
     <EmbeddedResource Include="Forms\KeysRecords.resx">
       <DependentUpon>KeysRecords.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginLogs.resx">
+      <DependentUpon>LoginLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenadzemntDetails.resx">
+      <DependentUpon>MenadzemntDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RadnikDetails.resx">
+      <DependentUpon>RadnikDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rezervacije.resx">
+      <DependentUpon>Rezervacije.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentDetails.resx">
       <DependentUpon>StudentDetails.cs</DependentUpon>
@@ -325,6 +383,17 @@
     </None>
     <None Include="DA\DSEvidencijaProdaje.xss">
       <DependentUpon>DSEvidencijaProdaje.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSLogin.xsc">
+      <DependentUpon>DSLogin.xsd</DependentUpon>
+    </None>
+    <None Include="DA\DSLogin.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSLogin.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DA\DSLogin.xss">
+      <DependentUpon>DSLogin.xsd</DependentUpon>
     </None>
     <None Include="DA\DSRadinici.xsc">
       <DependentUpon>DSRadinici.xsd</DependentUpon>

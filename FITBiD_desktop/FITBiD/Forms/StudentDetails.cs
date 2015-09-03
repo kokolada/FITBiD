@@ -54,8 +54,11 @@ namespace FITBiD.Forms
             txtIznajmljene.Text = dtIznajmljivanje.Count.ToString();
             txtRezervisane.Text = dtRezervacije.Count.ToString();
 
-            dgIznajmljene.DataSource = dgIznajmljene;
-            dgRezervisane.DataSource = dgRezervisane;
+            dgRezervisane.AutoGenerateColumns = false;
+            dgIznajmljene.AutoGenerateColumns = false;
+
+            dgIznajmljene.DataSource = dtIznajmljivanje;
+            dgRezervisane.DataSource = dtRezervacije;
 
         }
     }

@@ -40,5 +40,25 @@ namespace FITBiD.DA
 			}
 			return 0;
 		}
+
+        public static void GetManagerById(DA.DSMenadzeri.ManagementDataTable dt, int id)
+        {
+            SqlConnection cn = Connection.GetConnection();
+            if (cn.State == ConnectionState.Closed)
+                cn.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("usp_getManagementById", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dt);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
 	}
 }
