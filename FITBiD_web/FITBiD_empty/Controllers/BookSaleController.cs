@@ -48,7 +48,7 @@ namespace FITBiD_empty.Controllers
         public ActionResult Create(string knjiges)
 		{
 			EvidencijaKnjigaZaProdaju evK = new EvidencijaKnjigaZaProdaju();
-            Knjiga k = ctx.Knjiga.Where(x => x.Naziv == knjiges).FirstOrDefault();
+            Knjiga k = ctx.Knjiga.Where(x => x.Barcode == knjiges).FirstOrDefault();
 
             if (k != null)
             {
@@ -56,10 +56,14 @@ namespace FITBiD_empty.Controllers
                 evK.KnjigaId = k.Id;
                 evK.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
                 ctx.EvidencijaKnjigaZaProdaju.Add(evK);
-            }			
-
+            }
+            else
+            {
+                //TempData["error"] = "<script>alert('Greška: Uneseni ISBN ne postoji');</script>";
+                ViewData["Greska"] = "Greška: Uneseni ISBN ne postoji";
+                return View();
+            }
 			ctx.SaveChanges();
-
 			return RedirectToAction("Index", "BookSale");
 		}
 
