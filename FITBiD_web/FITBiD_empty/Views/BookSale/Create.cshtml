@@ -1,4 +1,10 @@
-﻿@model FITBiD_empty.ViewModels.EvidencijaProdajeKnjigaViewModel
+﻿@using System.Collections
+@using FITBiD_empty.Helper
+@using FITBiD_empty.Models
+@using System.Web
+@using Mvc.RazorTools.FontAwesome
+
+@model FITBiD_empty.ViewModels.EvidencijaProdajeKnjigaViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -7,7 +13,7 @@
 <h2>Prodaja knjige</h2>
 
 
-@using (Html.BeginForm("Create","BookSale"))
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
@@ -18,12 +24,15 @@
             <div class="col-md-10">
                 <div class="ui-widget ">
                     <label for="knjiges">Knjiga: </label>
-                    @Html.TextBox("knjiges", null, new { @class = "form-control" , required = "required"})
+                    @Html.TextBox("knjiges", null, new { @class = "form-control", required = "required" })
                 </div>
             </div>
         </div>
-
-
+        <br />
+       @if (ViewData["Greska"] != null)
+       {
+        <div class="alert alert-warning"><p>Greška: Uneseni ISBN ne postoji</p></div>
+       }
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
 				<input type="submit" value="Potvrdi" class="btn btn-default"/>
