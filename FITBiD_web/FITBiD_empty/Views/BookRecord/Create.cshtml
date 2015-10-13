@@ -22,11 +22,19 @@
             @Html.TextBox("knjiges", null, new { @class = "form-control", required = "required" })
         </div>
         <br />
-
+        @if (TempData["KnjigaGreska"] != null)
+        {
+            <div class="alert alert-warning"><p>Greška: Uneseni knjiga ne postoji</p></div>
+        }
         <div class="ui-widget ">
             <label for="students">Student (Broj indeksa): </label>
             @Html.TextBox("students", null, new { @class = "form-control", required = "required"})
         </div>
+        <br />
+        @if (TempData["StudentGreska"] != null)
+        {
+            <div class="alert alert-warning"><p>Greška: Uneseni student ne postoji</p></div>
+        }
         <br />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
