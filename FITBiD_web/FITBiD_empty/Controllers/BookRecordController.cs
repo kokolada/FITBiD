@@ -44,7 +44,6 @@ namespace FITBiD_empty.Controllers
 			BooksRecordCreateViewModel Model = new BooksRecordCreateViewModel();
 			Model.Knjige = ctx.Knjiga.ToList();
 			Model.Studenti = ctx.Student.ToList();
-
 			return View(Model);
 		}
 
@@ -71,18 +70,28 @@ namespace FITBiD_empty.Controllers
 		{
             Knjiga k = ctx.Knjiga.Where(x => x.Barcode == knjiges ).FirstOrDefault();
             Student s = ctx.Student.Where(x => x.BrojIndeksa == students).FirstOrDefault();
+            if (k != null && s != null) { 
+			    EvidencijaKnjigaZaIznajmljivanje evIZ = new EvidencijaKnjigaZaIznajmljivanje();
+			    evIZ.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
+			    evIZ.KnjigaId = k.Id;
+			    evIZ.StudentId = s.Id;
+			    evIZ.DatumIzdavanja = DateTime.Now;
+			    evIZ.DatumVracanja = DateTime.Now.AddMonths(1);
+			    ctx.EvidencijaKnjigaZaIznajmljivanje.Add(evIZ);
+   
+            }
 
-			EvidencijaKnjigaZaIznajmljivanje evIZ = new EvidencijaKnjigaZaIznajmljivanje();
-			evIZ.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
-			evIZ.KnjigaId = k.Id;
-			evIZ.StudentId = s.Id;
-			evIZ.DatumIzdavanja = DateTime.Now;
-			evIZ.DatumVracanja = DateTime.Now.AddMonths(1);
-			ctx.EvidencijaKnjigaZaIznajmljivanje.Add(evIZ);
-			ctx.SaveChanges();
+            else {
+                if (k == null)
+                    TempData["KnjigaGreska"] = "Greška";
+                if (s == null)
+                    TempData["StudentGreska"] = "Greška";
 
-			return RedirectToAction("Index", "BookRecord");
-		}
+                return RedirectToAction("Create", "BookRecord");
+            }
+            ctx.SaveChanges();
+            return RedirectToAction("Index", "BookRecord");      
+           }
 
         public ActionResult BookSearch(string term)
         {
