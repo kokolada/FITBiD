@@ -30,16 +30,38 @@ namespace FITBiD_empty.Controllers
 
 		public ActionResult Edit(int bookId)
 		{
-			Knjiga Model = ctx.Knjiga.Find(bookId);            
-			return View(Model);
+			Knjiga k = ctx.Knjiga.Find(bookId);
+
+            BookCreateViewModel Model = new BookCreateViewModel()
+            {
+                Id = bookId,
+                Autor = k.Autor,
+                BarCode = k.Barcode,
+                Cijena = Convert.ToInt32(k.Cijena),
+                GodinaObjavljivanja = k.GodinaObjavljivanja,
+                Naziv = k.Naziv,
+                OznakaStalaze = k.OznakaStalaze,
+                ZaProdaju = k.ZaProdaju
+            };
+
+            Model.ListaKategorija = ctx.KategorijaKnjige.ToList();
+            int kategorijaId = ctx.KnjigaKategorija.Where(x => x.KnjigaId == bookId).FirstOrDefault().KategorijaKnjigeId;
+            Model.KategorijaId = kategorijaId;
+            return View(Model);
 		}
 
 		public ActionResult Save(BookCreateViewModel k, int izabranaKategorijaKnjiga)
 		{
 			if (ModelState.IsValid)
 			{
-				Knjiga knjiga = new Knjiga();
-				knjiga.Naziv = k.Naziv;
+                bool isEdit = true;
+                Knjiga knjiga = ctx.Knjiga.Find(k.Id);
+                if (knjiga == null)
+                {
+                    knjiga = new Knjiga();
+                    isEdit = false;
+                }
+                knjiga.Naziv = k.Naziv;
 				knjiga.GodinaObjavljivanja = Convert.ToDateTime(k.GodinaObjavljivanja);
 				knjiga.Autor = k.Autor;
 				knjiga.Barcode = k.BarCode;
@@ -47,15 +69,21 @@ namespace FITBiD_empty.Controllers
 				knjiga.Cijena = k.Cijena;
 				knjiga.ZaProdaju = k.ZaProdaju;
 
-				ctx.Knjiga.Add(knjiga);
-				ctx.SaveChanges();
+                if (!isEdit)
+                {
+                    ctx.Knjiga.Add(knjiga);
+                }
+                ctx.SaveChanges();
 
-				KnjigaKategorija kkg = new KnjigaKategorija();
-				kkg.KnjigaId = knjiga.Id;
-				kkg.KategorijaKnjigeId = izabranaKategorijaKnjiga;
+                if (!isEdit)
+                {
+                    KnjigaKategorija kkg = new KnjigaKategorija();
+                    kkg.KnjigaId = knjiga.Id;
+                    kkg.KategorijaKnjigeId = izabranaKategorijaKnjiga;
 
-				ctx.KnjigaKategorija.Add(kkg);
-				ctx.SaveChanges();
+                    ctx.KnjigaKategorija.Add(kkg);
+                    ctx.SaveChanges();
+                }	
 
 			}
 
