@@ -105,7 +105,10 @@ namespace FITBiD_empty.Controllers
 			Model.evidencijaLogina = db.LoginEvidencija
 					.Include(x=>x.Radnik)
 					.Include(x=>x.Student)
-					.Include(x=>x.Menadzment).ToList();
+					.Include(x=>x.Menadzment)
+                    .OrderByDescending(x=>x.DatumLogina)
+                    .Take(10)
+                    .ToList();
 
 			//Model.iznajmljeneKnjige = ctx.EvidencijaKnjigaZaIznajmljivanje
 			//		.Where(x => x.StudentId == studentId)
