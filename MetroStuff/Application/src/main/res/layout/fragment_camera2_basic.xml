@@ -68,7 +68,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="10dp"
-            android:layout_gravity="center"
+            android:layout_gravity="center|top"
             android:background="@drawable/ic_camera_white_24dp"/>
 
         <ImageButton
