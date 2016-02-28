@@ -17,21 +17,29 @@
 package com.example.android.camera2basic;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Camera;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Point;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -44,6 +52,8 @@ import android.hardware.camera2.TotalCaptureResult;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -58,6 +68,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -185,6 +196,8 @@ public class Camera2BasicFragment extends Fragment
     /**
      * {@link CameraDevice.StateCallback} is called when {@link CameraDevice} changes its state.
      */
+    public ImageButton mPreviewBtn;
+
     private final CameraDevice.StateCallback mStateCallback = new CameraDevice.StateCallback() {
 
         @Override
@@ -418,6 +431,7 @@ public class Camera2BasicFragment extends Fragment
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         view.findViewById(R.id.picture).setOnClickListener(this);
+        mPreviewBtn = (ImageButton) view.findViewById(R.id.info);
         view.findViewById(R.id.info).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
         view.findViewById(R.id.changeCamera).setOnClickListener(this);
@@ -491,10 +505,11 @@ public class Camera2BasicFragment extends Fragment
 
                 // We don't use a front facing camera in this sample.
                 Integer facing = characteristics.get(CameraCharacteristics.LENS_FACING);
-                if (camera_id != null && facing != null && facing == CameraCharacteristics.LENS_FACING_BACK) {
+//                if(facing == CameraCharacteristics.LENS_FACING_BACK)
+//                    cameraId = "1";
+                if (facing != null && camera_id != null) {
                     cameraId = camera_id;
                 }
-
                 StreamConfigurationMap map = characteristics.get(
                         CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
                 if (map == null) {
@@ -588,6 +603,7 @@ public class Camera2BasicFragment extends Fragment
     /**
      * Opens the camera specified by {@link Camera2BasicFragment#mCameraId}.
      */
+    @TargetApi(Build.VERSION_CODES.M)
     private void openCamera(int width, int height,String cameraId) {
         if (getActivity().checkSelfPermission(Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -839,6 +855,8 @@ public class Camera2BasicFragment extends Fragment
         }
     }
 
+
+
     /**
      * Unlock the focus. This method should be called when still image capture sequence is
      * finished.
@@ -866,16 +884,29 @@ public class Camera2BasicFragment extends Fragment
         switch (view.getId()) {
             case R.id.picture: {
                 takePicture();
+                Bitmap myBitmap = BitmapFactory.decodeFile(mFile.getAbsolutePath());
+                //TODO:prebaciti update thumbnail-a
+                final int THUMBNAIL_SIZE = 72;
+                myBitmap = Bitmap.createScaledBitmap(myBitmap, THUMBNAIL_SIZE, THUMBNAIL_SIZE, false);
+                Drawable drawable = new BitmapDrawable(getResources(), myBitmap);
+                if(myBitmap != null)
+                    mPreviewBtn.setImageDrawable(drawable);
                 break;
             }
             case R.id.info: {
                 Activity activity = getActivity();
-                if (null != activity) {
-                    new AlertDialog.Builder(activity)
-                            .setMessage(R.string.intro_message)
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show();
-                }
+
+//                ImagePreview imagePreview = new ImagePreview();
+//                activity.getFragmentManager()
+//                        .beginTransaction()
+//                        .replace(R.id.image,imagePreview,null)
+//                        .addToBackStack(null)
+//                        .commit();
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setDataAndType(Uri.parse(mFile.toString()), "image/jpeg");
+                startActivity(i);
+
                 break;
             }
             case R.id.flashToggle:{
@@ -895,19 +926,15 @@ public class Camera2BasicFragment extends Fragment
 
     private void switchCamera() throws CameraAccessException {
         Activity activity = getActivity();
-        CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
-
-        for (String cameraId : manager.getCameraIdList()) {
-            CameraCharacteristics characteristics = manager.getCameraCharacteristics(cameraId);
-
-            Integer facing = characteristics.get(CameraCharacteristics.LENS_FACING);
-            if (facing != null && facing == CameraCharacteristics.LENS_FACING_BACK) {
-                mCameraId = cameraId;
+        //CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
+            //Integer facing = characteristics.get(CameraCharacteristics.LENS_FACING);
+            if (mCameraId.contains("0")) {
+                mCameraId = "1";
             }
-        }
+            else
+                mCameraId = "0";
         closeCamera();
         openCamera(mTextureView.getWidth(), mTextureView.getHeight(),mCameraId);
-
     }
 
     private void toggleFlash() {

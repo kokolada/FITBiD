@@ -68,7 +68,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="10dp"
-            android:layout_gravity="center"
+            android:layout_gravity="center|top"
             android:background="@drawable/ic_camera_white_24dp"/>
 
         <ImageButton
@@ -85,4 +85,4 @@
     </FrameLayout>
 
 </RelativeLayout>
-<!-- From: file:/C:/Users/ezio/Documents/Anroid%20Studio%201.3%20Projects/MetroStuff/Sample/Application/src/main/res/layout/fragment_camera2_basic.xml -->
+<!-- From: file:/D:/Android%20Studio%20Projects/MetroStuff/Application/src/main/res/layout/fragment_camera2_basic.xml -->

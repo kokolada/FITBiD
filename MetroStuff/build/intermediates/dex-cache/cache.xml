@@ -2,53 +2,67 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.0\jars\classes.jar"
+        jar="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\exploded-aar\com.android.support\support-v13\23.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="1a57337a520bf40b9ad1e074cb780527dffa1aac">
-        <dex dex="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\pre-dexed\debug\classes-9d313b5e439f61bc487c813fb727d592b6aca779.jar" />
+        sha1="f3a3189a228a65d03b3ea92a1b58a2b44bc7366e">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\classes-183be5a07528350dabf8188a440172b3a0249c3a.jar" />
     </item>
     <item
-        jar="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jar="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-4ecd9bf9ce02428f54389edb9e9799e774f12857.jar" />
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\classes-1a9ff905301d5443fb57f907143efa348eedff6d.jar" />
     </item>
     <item
-        jar="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\exploded-aar\com.android.support\support-v13\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jar="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="076c7d9e22cc325b8008ff799e0c06dfb8eefdf3">
-        <dex dex="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-4a6aee3140da6845edff30c5a7d1db8525e0ab8f.jar" />
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\internal_impl-23.2.0-60e5ccb8fd1fff6b6bae233007501e38a81655cb.jar" />
     </item>
     <item
-        jar="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jar="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\pre-dexed\debug\classes-36426addf6193b4c3b62622287c810fa7e3dd489.jar" />
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\classes-fa3a6052edd9331919374b10296c0c0ac768ff37.jar" />
     </item>
     <item
-        jar="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jar="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\pre-dexed\debug\classes-8a93a7eeb3e435346c3309c99d3ca3810d63d2b5.jar" />
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\classes-b46ab9bb2f927e5d6b58f50d3c4bd78a26872ee1.jar" />
     </item>
     <item
-        jar="C:\Users\ezio\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jar="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-22144b7eedaa9267376cc160341f5c0f5124ea14.jar" />
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\classes-f6e9276805afa22dbd111b11b8f83f6a0bac0393.jar" />
     </item>
     <item
-        jar="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
+        jar="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
-        <dex dex="C:\Users\ezio\Documents\Anroid Studio 1.3 Projects\MetroStuff\Sample\Application\build\intermediates\pre-dexed\debug\classes-ceb64c655ea395732f12c290499ee78b6e20aac2.jar" />
+        sha1="bc599eb9531da9d18bc58ec4eb0b1a1d895f6839">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\classes-d6b6718d380304ba9c8185c4008e98295352b543.jar" />
+    </item>
+    <item
+        jar="C:\Users\Edis\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\support-annotations-23.2.0-7c232844c28683c3cea95bda95057e96e7f50fd4.jar" />
+    </item>
+    <item
+        jar="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\exploded-aar\com.android.support\support-v13\23.2.0\jars\libs\internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="58d0010cb4373696cfdc5894c4b23649af58ed18">
+        <dex dex="D:\Android Studio Projects\MetroStuff\Application\build\intermediates\pre-dexed\debug\internal_impl-23.2.0-cb989216b9e8908c5e091f23109d619260c28153.jar" />
     </item>
 
 </items>
