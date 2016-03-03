@@ -35,8 +35,7 @@ namespace FITBiD_empty.DAL
 		public DbSet<Student> Student { get; set; }
 		public DbSet<Ucionica> Ucionica { get; set; }
 		public DbSet<Komentar> Komentar { get; set; }
-
-
+        
 
 		public MojContext() : base("Name=MojConnectionString"){}
 
