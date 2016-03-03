@@ -94,9 +94,13 @@ namespace FITBiD_empty.Controllers
 		[Autorizacija("radnik")]
 		public ActionResult CreateIspitniMaterijal(int materijal, int kolicina)
 		{
+            if(materijal == -1){
+                TempData["MaterijalGreska"] = "Potrebno odabrati materijal";
+                return RedirectToAction("CreateIspitniMaterijal", "Workers");
+            }
 			EvidencijaNarudzbeIspitnogMaterijala evIM = new EvidencijaNarudzbeIspitnogMaterijala();
 			evIM.DatumNarudzbe = DateTime.Now;
-			evIM.IspitniMaterijalId = materijal;
+            evIM.IspitniMaterijalId = materijal;
 			evIM.RadnikId = Autentifikacija.GetLogiraniKorisnik(HttpContext).Id;
 			evIM.Kolicina = kolicina;
 
